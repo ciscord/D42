@@ -3,7 +3,7 @@ cffi==1.8.3
 cryptography==1.5.2
 Django==1.10.7
 django-storages==1.5.1
-djangorestframework==3.5.2
+djangorestframework==3.9.1
 ecdsa==0.13
 enum34==1.1.6
 feedparser==5.2.1
