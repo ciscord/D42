@@ -1,0 +1,192 @@
+    $total_width: 1206;
+    $total_height: 814;
+
+        .sprite-appdynamics {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-apptio {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-306 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-atlassian {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-avaya {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-bottomline {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-bt {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-concur {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-306 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-echostar {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-306 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-fifgroup {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-408 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-fijitsu {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-408 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-homeaway {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-jasper {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-jll {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-livingsocial {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-mercedesbenz {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-408 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-mitre {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-510 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-optus {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-510 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-peak6 {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-510 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-pico {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-612 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-qlik {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-612 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-schoolofbeijing {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-612 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-singtel {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-714 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-sprint {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-714 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-stackoverflow {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-604 / ($total_width - 300)) * -100%) ((-714 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-ucsb {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-906 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-verizon {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-906 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-westerndigital {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-logos.png');
+        background-position: ((-906 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }

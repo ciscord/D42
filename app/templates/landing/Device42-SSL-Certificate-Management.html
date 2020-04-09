@@ -1,0 +1,88 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'Manage your SSL certificates with auto-import and get notified before certificates expire.' %}"/>
+{% endblock %}
+{% block title %}{% trans "SSL Certificate management made easy with Device42" %}{% endblock %}
+{% block landingHeadingText %}{% trans "SSL Certificate Management" %}{% endblock %}
+{#{% block landingLeadText %}{% endblock %}#}
+
+{% block landingfeature %}
+<section class="row landing-section flat-top">
+    <div class="col-sm-8">
+        <p class="lead">{% trans "One of the biggest pain points encountered managing a complex IT infrastructure is making sure that you are aware when your certificates are coming up for renewal as well as keeping the inventory of certificates up-to-date. Device42 offers simple yet powerful certificate management tool with following benefits." %}</p>
+        <ul class="dash">
+            <li>{% trans "Easy to manage inventory of all your SSL certificates" %}</li>
+            <li>{% trans "Securely store your keys with granular access control" %}</li>
+            <li>{% trans "Get notified in advance before your certificates expire" %}</li>
+            <li>{% trans "Visual heatmap shows time remaining to renewal at a glance" %}</li>
+            <li>{% trans "Manage all the certificates in the chain" %}</li>
+            <li>{% trans "Certificate Auto-Discovery by IP range" %}</li>
+            <li>{% trans "Auto-import your certificates with full details" %}</li>
+            <li>{% trans "Use custom fields for additional data storage" %}</li>
+            <li>{% trans "Relate devices to certificates and know which devices need to be updated." %}</li>
+            <li>{% trans "Track your purchase orders, costs etc. around certificates" %}</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-responsive" alt="{% trans 'Certificate Lifecycle Management' %}" src="{% static 'img/landing/ssl-certificate-management/cert-lifecycle2.png' %}">
+    </div>
+</section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row is-table-row">
+    <div class="col-sm-6 col-sm-push-6">
+        <h3>{% trans "Manage your entire Certificate Inventory" %}</h3>
+        <p>{% trans "Manage certificates with subject, serial number and all the relevant details in the system.  Load the certificates automatically from a url or from a file." %}</p>
+        <p>{% trans "Keys can be stored securely with the Device42 certificate management system – Give access to only those who need it via granular access control." %}</p>
+    </div>
+    <div class="col-sm-6 col-sm-pull-6">
+        <img class="img-responsive" alt="{% trans 'Manage Certificate Inventory' %}" src="{% static 'img/sections/solutions/ManageCertInventoryHeatmap.png' %}">
+    </div>
+    </section>
+    <br>
+    <section class="row is-table-row">
+    <div class="col-sm-6">
+        <h3>{% trans "Get notified before certificates expire!" %}</h3>
+        <p>{% trans "Prevent downtime and embarrassment caused by certificates expiring before it’s noticed via Device42’s certificate lifetime management.  Prevent your customers from seeing the dreaded SSL certificate “warning” screen by getting an e-mail alert well in advance of expiration." %}</p>
+    </div>
+    <div class="col-sm-6">
+        <img class="img-responsive center-block img-rounded" alt="{% trans 'Expired Certificate Warning' %}" src="{% static 'img/landing/ssl-certificate-management/ExpiredCertWarning.png' %}">
+    </div>
+    </section>
+    <br>
+    <section class="row is-table-row">
+    <div class="col-sm-6 col-sm-push-6">
+        <h3>{% trans "See all the devices that use a particular certificate" %}</h3>
+        <p>{% trans "Fortunately, you’ve noticed that your certificate is about to expire before it has – But where is it in use?  Find out FAST with Device42’s digital certificate manager.  FQDN’s, devices and IP’s can now be associated with Certificates, and they can even have more than one expiry date." %}</p>
+    </div>
+    <div class="col-sm-6 col-sm-pull-6">
+        <img class="img-responsive center-block" alt="{% trans 'Complete digital certificate chain management.' %}" src="{% static 'img/landing/ssl-certificate-management/Chain_of_trust.png' %}">
+    </div>
+    </section>
+    <br>
+    <section class="row is-table-row">
+    <div class="col-sm-6">
+        <h3>{% trans "Auto-Discover deployed certificates from an IP address range" %}</h3>
+        <p>{% trans "Provide Device42 with an IP range and ports (custom port supported!), and its intelligent auto-discovery engine will go out to each IP, find in-use certificates, and automatically import them for you." %}</p>
+        <br>
+        <h3>{% trans "Auto-Import your certificates from a URL with full details" %}</h3>
+        <p>{% trans "Device42’s certificate management tool allows import of a digital SSL certificate right from a URL!  All details (and expiration dates!) are captured, automatically. You can also imports SSL certificates from a file." %}</p>
+    </div>
+    <div class="col-sm-6 text-center">
+        <img class="img-responsive" alt="{% trans 'Add Certificate from URL' %}" src="{% static 'img/landing/ssl-certificate-management/AddCertFromURL.png' %}">
+    </div>
+    </section>
+    <br>
+    <section class="row is-table-row">
+    <div class="col-sm-10">
+        <h3>{% trans "Full SSL and Digital Certificate Lifecycle Management" %}</h3>
+        <p>{% trans "Associate a Purchase order with a given certificate, and a certificate with a set of devices.  Track your full Certificate lifecycle costs with Device42’s SSL certificate management software." %}</p>
+    </div>
+    <div class="col-sm-2">
+        <img class="img-responsive center-block" alt="{% trans 'Certificate Lifecycle' %}" src="{% static 'img/landing/ssl-certificate-management/cert-lifecycle1.png' %}">
+    </div>
+    </section>
+
+{% endblock %}

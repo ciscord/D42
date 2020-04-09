@@ -1,0 +1,100 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Creating and managing an accurate and up-to-date configuration management database (CMDB) is a vital component in effectively managing today’s data center and IT Infrastructure. Device42 software does just that and a lot more.' %}"/>
+{% endblock %}
+{% block title %}{% trans "CMDB to use with JIRA or JIRA service desk" %}{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        $(function () {
+            $("i.fa").tooltip();
+        });
+    </script>
+{% endblock %}
+
+
+{% block landingHeadingText %}{% trans "CMDB to use with JIRA or JIRA service desk" %}{% endblock %}
+{% block landingfeature %}
+    <section class="row">
+        <div class="col-xs-12 col-sm-8">
+            <p class="lead">{% trans "You can sync-up configuration items(CIs) from Device42 (devices, racks, PDUs, parts, etc...) to JIRA or JIRA service desk.  When creating new issues/service tickets or workflow, you can choose CIs from Device42.  The CIs are added as custom fields in JIRA and are available to be added to list views, on edit pages, and also in search." %}</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+            <p class="infobox lead-small bg-alt text-dark-blue font-stack-roboto">
+                <em>{% trans "If you are looking for an integrated CMDB for your JIRA, or JIRA service desk applications - Device42 might be the perfect CMDB solution for you!" %}</em>
+            </p>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block maincontent %}
+    <section>
+        <p class="h2 lead">{% trans "If you are looking for a CMDB, there are several reasons to consider Device42..." %}</p>
+        <div class="media">
+            <div class="media-left">
+                <i class="fa fa-check-square-o fa-2x"></i>
+            </div>
+            <div class="media-body">
+                <p class="">{% trans "First, you don’t need to spend a lot of time designing your CI’s and their interrelationships.  Device42 offers pre-defined Cis and relationships that will work for most companies and offers extensive customization features where needed." %}</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <i class="fa fa-check-square-o fa-2x"></i>
+            </div>
+            <div class="media-body">
+                <p class="">{% trans "Second, Device42 offers strong autodiscovery features that you can use to populate most of the CMDB." %}</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <i class="fa fa-check-square-o fa-2x"></i>
+            </div>
+            <div class="media-body">
+                <p class="">{% trans "Third, once the CMDB is populated, you get some great visualizations including application dependency maps, room and rack layout views, network topology maps, power and IP connectivity, and much more." %}</p>
+            </div>
+        </div>
+        <div class="media">
+            <div class="media-left">
+                <i class="fa fa-check-square-o fa-2x"></i>
+            </div>
+            <div class="media-body">
+                <p class="">{% trans "Last and probably most important, Device42 gives you a single source of truth for all of IT because it is not just a CMDB, it is also a full DCIM tool, a full ITAM tool, and also offers cable management (with great visualizations), and a full password manager." %}</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="lead vert-offset-top-1 flat-bottom">{% trans "Following are some of the features of Device42 JIRA connector:" %}</p>
+    <section class="row image-left-4x8 padded">
+        <div class="col-sm-4">
+            <img src="{% static 'img/landing/Create-JIRA-issue.png' %}" class="img-responsive img-xs-restrict"
+                 alt="{% trans 'JIRA Integration' %}"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Link CMDB items to issues in JIRA" %}</h3>
+            <p>{% trans "Once the Device42 CMDB is synced to JIRA, users can select any of the CIs to create issues in JIRA. Currently the sync encompasses devices and racks. When new issues are created in JIRA, users can select the CIs from a drop-down list or search for CIs by name to refine the list selections." %}</p>
+        </div>
+    </section>
+    <section class="row image-right-8x4 padded">
+        <div class="col-sm-4">
+            <img src="{% static 'img/landing/Device42_CI_details_in_JIRA.png' %}" class="img-responsive img-thumbnail"
+                 alt="{% trans 'CI Details in JIRA' %}"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "View CI details from JIRA issues" %}</h3>
+            <p>{% trans "Once the Device42-JIRA connection is made, users can see details from Device42 (such as serial, asset, and hardware model numbers) for that CI in JIRA.  Similarly, you can see the associated rack info.  Conversly, the CIs in JIRA can be linked to view the Device42 page for that Configuration Item enabling users to easily view device or rack details in Device42." %}</p>
+        </div>
+    </section>
+    <section class="row image-left-4x8 padded">
+        <div class="col-sm-5">
+            <img src="{% static 'img/landing/JIRA-search-by-CI.png' %}" class="img-responsive img-thumbnail"
+                 alt="{% trans 'CI Details in JIRA' %}"/>
+        </div>
+        <div class="col-sm-7">
+            <h3 class="sub-heading">{% trans "Search JIRA issues by CI names" %}</h3>
+            <p>{% trans "Users can search for issues using the name of the CIs (as synced from the Device42 instance)." %}</p>
+        </div>
+    </section>
+{% endblock %}

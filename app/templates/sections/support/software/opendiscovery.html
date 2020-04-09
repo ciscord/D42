@@ -1,0 +1,49 @@
+{% load i18n static %}
+<h2 class="flat-top">{% trans "Free Network Discovery" %}</h2>
+<div class="row">
+    <div class="col-sm-5">
+        <p>{% trans "Device42 Open Discovery software is a .NET based utility that will discover Windows and Linux devices in your network and populate device details in an Excel file." %}</p>
+    </div>
+    <div class="col-sm-7">
+        <ul class="checklist">
+            <li>{% trans "100% Free & Open Source Software" %}</li>
+            <li>{% trans "Gets Hardware, OS, CPU, Memory Info" %}</li>
+            <li>{% trans "IP address information" %}</li>
+            <li>{% trans "Documents IPv6 as well" %}</li>
+            <li>{% trans "No agents to install" %}</li>
+            <li>{% trans "No dependency on Excel, office" %}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">{% trans 'Download' %}</h2>
+        </div>
+        <div class="panel-body" style="padding-bottom:0;background-color:#efefef;">
+            <form action="." method="post" role="form" class="form-inline" id="opendisc" name="opendisc">{% csrf_token %}
+                <div class="form-group col-xs-12">
+                    <input style="display:none;" type="text" name="main" value="opendisc" maxlength="64">
+                    <label class="alt-font col-xs-6 inline-block" for="email">{% trans 'Email' %}</label>
+                    <input type="email" class="form-control inline-block" name="email" required="required"
+                           placeholder="{% trans 'Work Email' %}">
+                    <div class="clearfix"></div>
+                    <label class="alt-font col-xs-6" for="eula">{% trans 'I agree to EULA' %}
+                        <a href="{% url 'legal_d42_open_disc_eula' %}" target="_blank">
+                            <small>({% trans "End User License Agreement" %})</small>
+                        </a></label>
+                    <input type="checkbox" class="form-control" name="eula" id="OpenDiscovery_EULA" required="required">
+                </div>
+                <div class="text-center vert-offset-bottom-1 vert-offset-top-1">
+                    <button type="submit" name="download" value="open disc msi"
+                            class="btn btn-primary">{% trans "Download<br>Installer" %}<br><small>(783kb)</small></button>
+
+                    <button type="submit" name="download" value="open disc bin"
+                            class="btn btn-warning">{% trans "Download<br>Binaries" %}<br><small>(504kb)</small></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

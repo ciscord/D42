@@ -1,0 +1,109 @@
+{% extends 'base/_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load include_partial %}
+{% block title %}{% trans "An Easier Alternative to Infoblox" %}{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Device42 is an Infoblox IPAM alternative. Here's why you should consider switching…"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <h1>Device42 &ndash;{% trans "A powerful alternative to Infoblox IPAM" %}</h1>
+                <h5>{% trans "Device42 Is A Powerful Infoblox IPAM Alternative. Here's Why You Should Consider Switching…" %}</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-info padded">
+        <div class="container">
+            <div class="infobox shadow-1 col-sm-10 col-sm-offset-1">
+                <p>{% trans "Thinking of making the switch to Device42 or one of the other Infoblox IPAM competitors?" %}</p>
+                <p>{% trans "We want to make your decision as easy as possible, so we’ve put together some info that will help you decide which option is best for you." %}</p>
+                <p>{% trans "Below, you will find information to help you compare Device42 and Infoblox IPAM, including features, customer experiences and reviews from current Device42 customers who have made the switch." %}</p>
+                <p class="prelist">{% trans "We hope this helps…" %}</p>
+            </div>
+        </div>
+    </div>
+
+    <article class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 has native auto-discovery that can be scheduled" %}</h3>
+                <p>{% trans "With the base Infoblox IPAM you can't run scheduled scans of your IP space, you can only do manual discovery/scans. However, you can add this functionality with a separate Infoblox product called NetMRI." %}</p>
+                <p>{% trans "In Device42, auto-discoveries are natively available. This makes it possible for you to keep your IP information up-to-date and in addition you can find all the relationships like port connectivity, inventory of the network devices, etc." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Infoblox IPAM is a DDI Solution (DNS/DHCP Management) - Device42 is not" %}</h3>
+                <p>{% trans "Infoblox becomes your DNS and DHCP server. With Device42 there is no active management of DNS/DHCP, but we can integrate with your existing DNS servers for auto-discovery, etc." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 helps you manage your IT Infrastructure as a whole" %}</h3>
+                <p>{% trans "With the advent of virtualization, containers, cloud computing, and software-defined networks, your IT infrastructure is orders of magnitude more complex than it was 10 years ago. It is no longer practical to manage your IT infrastructure using separate tools for asset management, IP management, cloud management, application dependency management, and software license management. The interrelationships are too important and too complex and can only be adequately captured in a single integrated tool like Device42. Too much time is wasted trying to manage all these interrelationships in different tools." %}</p>
+                <p>{% trans "Device42 looks at IT Infrastructure holistically and gives you a single console to manage your Data center (DCIM), IP addresses(IPAM) and passwords in addition to ITAM (IT asset management) and CMDB." %}</p>
+                <p>{% trans "Infoblox provides add-on tools like device tracker and others to see relationships between different configuration items(CIs) in your IT infrastructure." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Great Visualizations" %}</h3>
+                <p>{% trans "In Device42, your endpoints aren't just MAC and/or IP addresses, they are devices, applications, services and software." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row padded">
+            <div class="col-xs-4">
+                <a href="{% static 'img/sections/compare/subnet-frag-vs-alloc-subnets.png' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive center-block img-border"
+                         src="{% static 'img/sections/compare/subnet-frag-vs-alloc-subnets.png' %}"
+                         alt="{% trans 'Subnet Fragmentation Visualizations' %}">
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive center-block img-border"
+                         src="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                         alt="{% trans 'Auto-generated Visualizations' %}">
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="{% static 'img/sections/compare/impact_chart.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border"
+                         src="{% static 'img/sections/compare/impact_chart.png' %}"
+                         alt="{% trans 'Auto-generated Map Visualizations' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Multitenancy" %}</h3>
+                <p>{% trans "You don’t necessarily want every user to be able to see every vrf groups, subnet, and IP address. And drilling down further, you may want to control which users can view and change these and other objects like devices, racks, and so on. Device42 offers very flexible multitenancy control based on user groups, subnet categories, and vrf groups." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 lets you manage your IPs from " %}<code>&lt;cmd/&gt;</code></h3>
+                <p>{% trans "Device42's IP address management tool provides simple API calls to find next available IP, search for an IP, or assign a new IP using scripting language." %}</p>
+            </div>
+        </div>
+        <div class="row padded">
+            <div class="col-sm-6 col-sm-offset-3">
+                <a href="{% static 'img/sections/compare/ip-address-management-apis.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border"
+                         src="{% static 'img/sections/compare/ip-address-management-apis.png' %}"
+                         alt="{% trans 'IP Address Management APIs' %}">
+                </a>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </article>
+
+{% endblock %}

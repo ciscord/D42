@@ -1,0 +1,19 @@
+image: jourdanrodrigues/python-postgresql:1.0.0
+
+pipelines:
+  default:
+    - step:
+        script:
+          - export DJANGO_SETTINGS_MODULE=project.settings.prod
+          - export DJANGO_SECRET_KEY='3KmeFgGa1LYNFetu6iMFMB/bC18inZQz5GwgAYgasl4k5OwDZ2E='
+          - export NVM_DIR="$HOME/.nvm"
+          - /etc/init.d/postgresql start
+          - sudo -u postgres sh -c 'createuser d42user && createdb d42'
+          - pip install -r requirements.txt
+          - sudo apt-get update && apt-get install -y python-psycopg2 libpq-dev
+          - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+          - source $NVM_DIR/nvm.sh
+          - nvm install 4.4.3
+          - nvm use 4.4.3 && npm install
+          - npm install -g gulp
+          - gulp migrate && gulp

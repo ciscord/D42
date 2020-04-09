@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block img-border img-rounded"
+             alt="{% trans 'Visualize Switch Port Relationships' %}"
+             src="{% static 'img/sections/features/ipam/switch_impact_chart.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Visualize Switch Port Relationships" %}</h2>
+        <p>{% trans "Device42's IP address manager builds graphic network visualizations of switch port to switch port connections. Auto-generated diagrams are based on auto-discovered and manually entered network data. In addition, diagrams also depict virtual devices detected on switch ports." %}</p>
+    </div>
+</div>

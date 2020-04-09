@@ -1,0 +1,250 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Download your copy of Device42 now!" %}{% endblock %}
+{% block site_section_software %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Download a free trial of comprehensive data center infrastructure management software (DCIM) with integrated IPAM and centralized password management by Device42.' %}">
+{% endblock %}
+{% block body_scripts %}
+    <style>
+    #modal_eula {
+        transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        -webkit-transition: all 300ms ease-in-out;
+    }
+    </style>
+    <script>
+        $(function () {
+            $("#modal_eula").modal();
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    {% if not error_message %}
+        <div class="modal fade" id="modal_eula" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="eulaModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fa fa-download fa-2x fa-pull-right" style="color:#ddd;"></i>
+                        <h3 class="modal-title text-capitalize font-stack-condensed text-dark-blue text-primary">{% trans "Your download is ready" %}!</h3>
+                    </div>
+                    <div class="modal-body">
+                        <span class="inline-block">{% trans "By downloading and/or installing Device42, you agree to" %} <a
+                                href="{% url 'legal_eula' %}" class="inline-block"
+                                target="_blank">Device42 {% trans "End User License Agreement" %}</a>.</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" id="eula_agree" data-dismiss="modal">{% trans "I Agree" %} <i class="fa fa-check" style="color:inherit!important;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>{% trans "Download Device42" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    {% if not error_message %}
+                        <h4 class="vert-offset-bottom-3 text-dark-blue">{% trans "You can download your ready-to-go Device42 virtual appliance below!" %}</h4>
+                        <div class="download_links_container row padded">
+                            {% for link in the_links %}
+                                <div class="download_link col-xs-15 text-center padded">
+                                    <a href="{{ link.link }}">
+
+                                    </a>
+                                    <a href="{{ link.link }}" class="dl-link font-stack-condensed text-dark-blue"
+                                       style="line-height:initial;">
+                                        <img src="{{ link.img_src }}" style="width:64px;height:64px;"
+                                             class="center-block img-responsive">
+                                        {{ link.name }}
+                                        <small class="center-block font-stack-alt">({{ link.size }})</small>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <h5 class="text-muted vert-offset-top-3 vert-offset-bottom-1">{% trans "By downloading and/or installing Device42, you agree to" %}
+                            <a href="{% url 'legal_eula' %}"
+                               target="_blank">{% trans "Device42 End User License Agreement" %}</a>.</h5>
+                    {% else %}
+                        <h4 class="text-danger font-stack-condensed">{% trans "Looks like your link has expired or is not valid!" %}</h4>
+                        <p class="text-muted">{% trans "Please fill out the form below to request another download link." %}</p>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form class="vert-offset-top-2 clearfix" action="." method="POST"
+                                      role="form">{% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group col-xs-12 {% if field.errors %}has-errors{% endif %}">
+                                            <label class="control-label col-sm-4 font-roboto"
+                                                   style="font-weight:400;text-align:left;"
+                                                   for="id_{{ field.name }}">{{ field.label }}</label>
+                                            <div class="field-wrap">
+                                                {{ field }}
+                                            </div>
+                                            {% if field.errors %}
+                                                {% for error in field.errors %}
+                                                    <span class="text-danger text-strong">{{ error|escape }}</span>
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% if field.help_text %}
+                                                <p class="help-block">{{ field.help_text|safe }}</p>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+
+                                    <input type="text" name="main" class="d42_download_form_check"
+                                           style="display:none;">
+                                    <div class="form-group col-xs-12 text-left">
+                                        <button type="submit"
+                                                class="btn btn-sm btn-warning">{% trans "Send me my trial now!" %}</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h5 class="text-muted vert-offset-top-3 vert-offset-bottom-1">{% trans "Your privacy is important to us.  We will never share your information" %}.</h5>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-primary">
+        <div class="container">
+            <h2 class="prelist text-center text-white">{% trans "Frequently Asked Questions" %}</h2>
+            <div class="row padded">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="t1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#c1"
+                                       aria-expanded="true" aria-controls="c1" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "Do you have <em>binaries</em> or executable type installation?" %}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="t1">
+                                <div class="panel-body">
+                                    {% trans "Not at this time and there are no immediate plans for such. You can try Device42 on your PC or demo server using VMware Player or Oracle VM Virtual Box. Opensource Xen/KVM gurus can use our raw/KVM image on your Linux server" %}.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="t2">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#c2"
+                                       aria-expanded="true" aria-controls="c1" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "How long is the trial license valid for" %}?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="t2">
+                                <div class="panel-body">
+                                    {% trans "The demo image comes with a 30 day license. If we haven't uploaded a new image recently, we will automatically email you an extended license key. If you have not received an extended license key or want to extend your trial, please email us at:" %}
+                                    <a href="mailto:support@device42.com">support@device42.com</a>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="t3">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#c3"
+                                       aria-expanded="true" aria-controls="c1" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "My virtual platform is not listed, how can I try Device42" %}?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="c3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="t3">
+                                <div class="panel-body">
+                                    {% trans "If the platform you use is not listed above, please download the VMDK file and use the converter available for your supported platform to convert the image" %}.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0">
+                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="tt1">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#cc1"
+                                       aria-expanded="true" aria-controls="cc1" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "How can I test Device42 on my PC or Mac?" %}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="cc1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tt1">
+                                <div class="panel-body">
+                                    <a href="https://www.virtualbox.org/wiki/Downloads" class="ext-link"
+                                       target="_blank">{% trans "Oracle Virtual Box" %}</a> {% trans "is the easiest way to do so. You can also use VMware player/workstation/fusion etc. for the same" %}.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="tt2">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#cc2"
+                                       aria-expanded="true" aria-controls="cc2" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "Do you support a cloud or hosted version of Device42?" %}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="cc2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tt2">
+                                <div class="panel-body">
+                                    {% trans "Yes we do. We can provide you access to an Amazon AMI if you want to run Device42 as an Amazon EC2 instance. Alternatively, we can provide you access to a cloud VM for demo purposes" %}.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="tt3">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#cc3"
+                                       aria-expanded="true" aria-controls="cc3" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "Can you provide some sample data I can load in my trial instance?" %}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="cc3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tt3">
+                                <div class="panel-body">
+                                    {% trans "Absolutely, we can send you an Excel file to import sample data in Device42. Just send a note to support@device42.com and we will send you the file with instructions" %}.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading" role="tab" id="tt4">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#cc4"
+                                       aria-expanded="true" aria-controls="cc4" style="display:block;"
+                                       class="font-stack-condensed text-dark-blue">
+                                        {% trans "Are all the features supported in this?" %}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="cc4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tt4">
+                                <div class="panel-body">
+                                    {% trans "The demo download supports all the features except real time power and environmental monitoring and control. Please open a support ticket to enable power related features" %}.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

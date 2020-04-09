@@ -1,0 +1,27 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %} flat-top">
+    <div class="col-sm-8">
+        <img class="img-responsive center-block img-xs-restrict img-border"
+             src="{% static 'img/sections/product/capacity-planning-tools.png' %}"
+             alt="{% trans 'Capacity Planning Tools' %}">
+    </div>
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>{% trans "Efficiently manage growth and consolidation with powerful capacity planning tools" %}</h2>
+                <ul class="checklist bullet-blue font-stack-roboto">
+                    <li>{% trans "Find available rack capacity with heat maps colored by available U's" %}</li>
+                    <li>{% trans 'Ensure power availability at a glance with overlaid Color-bars' %}</li>
+                    <li>{% trans 'Quickly find space, outlets, and power capacity for new equipment with “What-If” scenarios ' %}</li>
+                    <li>{% trans 'Ensure all your machines are redundantly connected, visually' %}</li>
+                    <li>{% trans 'Identify any hardware without redundancy easily' %}</li>
+                    <li>{% trans 'View power consumption, temperature, and humidity over time' %}</li>
+                    <li>{% trans 'Locate data center hot spots and eliminate problem areas' %}</li>
+                    <li>{% trans 'Comprehensive reporting including abundant pre-configured reports or create your own' %}</li>
+                    <li>{% trans 'Instantly report <em>Change History</em>, <em>Contracts</em>, <em>Rack Space Availability</em>, and so much more' %}</li>
+                    <li>{% trans 'Remove the guesswork  &mdash;Know if you have room to grow, or power and cooling capacity to consolidate' %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

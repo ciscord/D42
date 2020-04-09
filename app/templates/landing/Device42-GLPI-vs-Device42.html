@@ -1,0 +1,204 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Creating and managing an accurate and up-to-date configuration management database (CMDB) is a vital component in effectively managing today’s data center and IT Infrastructure. Device42 software does just that and a lot more.' %}"/>
+{% endblock %}
+{% block title %}{% trans "GLPI Alternative - Device42 + JIRA / JIRA Service Desk" %}{% endblock %}
+{% block script %}
+    <style>
+        .media-left i.fa {
+            color: #00b6ff;
+        }
+
+        .media-body {
+            vertical-align: middle !important;
+        }
+
+        ul.square-style {
+            font-weight: 300;
+        }
+
+        .blue-back.box {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .media {
+            margin-left: 24px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("i.fa").tooltip();
+        });
+    </script>
+{% endblock %}
+
+
+{% block landingHeadingText %}{% trans "GLPI Alternative - Device42 + JIRA / JIRA Service Desk" %}{% endblock %}
+{% block landingfeature %}
+    <section class="row">
+        <div class="col-md-7">
+            <p class="lead">{% trans "GLPI<sup>&reg;</sup>" %} <em>(Gestion Libre De Parc
+                Informatique)</em> {% trans "by INDEPNET is an opensource software for CMDB, Service Management and ITSM.  It can work well if you are looking to manually configure and manage your CMDB.  But managing your configuration items (CIs) manually and maintaining the relationships between the CIs can get very tedious and thereby eliminate the advantage of using a tool to streamline your IT operations." %}
+            </p>
+        </div>
+        <div class="col-md-5">
+            <p class="infobox">{% trans "Using Device42, JIRA (or other ITSM tools Device42 integrates with), and the Device42 JIRA Connector, you can add automation around your workflow and add efficiency to your IT operations.  Device42 will also mitigates risks and provide nearly everything you need for your IT audits." %}</p>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-xs-12">
+            <p class="lead">{% trans "If you are looking for a CMDB, there are several reasons to consider Device42..." %}</p>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-3x"></i>
+                </div>
+                <div class="media-body"><p class="alt-font">{% trans "First, you don’t need to spend a lot of time designing your CI’s and their interrelationships.  Device42 offers pre-defined Cis and relationships that will work for most companies, and offers extensive customization features where needed." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-3x"></i>
+                </div>
+                <div class="media-body"><p class="alt-font">{% trans "Second, Device42 offers strong autodiscovery features that you can use to populate most of the CMDB." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-3x"></i>
+                </div>
+                <div class="media-body"><p class="alt-font">{% trans "Third, once the CMDB is populated, you get some great visualizations including application dependency maps, room and rack layout views, network topology maps, power and IP connectivity, and much more." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-3x"></i>
+                </div>
+                <div class="media-body"><p class="alt-font">{% trans "Last and probably most important, Device42 gives you a single source of truth for all of IT because it is not just a CMDB, it is also a full DCIM tool, a full IPAM tool, and also offers cable management (with great visualizations), and a full password manager." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+
+    <section class="row">
+        <div class="col-sm-4">
+            <img src="{% static 'img/sections/features/cmdb/impact-1.png' %}" class="img-responsive"
+                 alt="{% trans 'Device impact chart' %}"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Load CI's Fast with Powerful Auto-Discovery Tools" %}</h3>
+            <p>{% trans "Populate your CMDB fast with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide" %}.</p>
+            <ul class="dash">
+                <li>{% trans "All discovery tools are agent-less" %}</li>
+                <li>{% trans "All discoveries can be scheduled so you're always up-to-date" %}</li>
+                <li>{% trans "Multiple protocols supported (e.g. SNMP, WMI, SSH, Modbus" %}, ...)</li>
+                <li>{% trans "Native support for virtualization platforms" %}</li>
+                <li>{% trans "Native support for public and private cloud platforms" %}</li>
+                <li>{% trans "Native support for blade chassis" %}</li>
+                <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+                <li>{% trans "Result is a system that is always audit ready" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-sm-5">
+            <h3 class="sub-heading" id="preconfigured-cmdb">{% trans "Pre-configured CMDB" %}</h3>
+            <p>{% trans "No need for a long, drawn-out CI design process because all your CI’s and relationships are pre-configured.  But Device42 does not simply lock you into an inflexible structure.  You can create your own CIs and relationships to complement the built-in structure provided. Additionally, you can define user, groups, passwords, and object-level permissioning" %}.</p>
+        </div>
+        <div class="col-sm-7">
+            <img class="img-responsive" src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}"/>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'img/landing/qr_codes.png' %}" class="img-responsive inline-block"
+                 alt="{% trans 'QR Codes' %}"/>
+        </div>
+        <div class="col-sm-9">
+            <h3 class="sub-heading">{% trans "QR Codes & Asset Tags" %}</h3>
+            <p>{% trans "Say goodbye to traditional barcode readers and use mobile devices for asset and inventory management. Print customized QR codes and auto-assign customizable asset numbers. Ensure that IT asset audits are both fast and accurate." %}</p>
+        </div>
+
+    </section>
+    <section class="row">
+        <div class="col-sm-7">
+            <h3 class="sub-heading">{% trans "Manage Purchases and Support Contracts" %}</h3>
+            <p>{% trans "Centrally manage all IT contract information for devices, hardware, and software assets within the enterprise infrastructure." %}</p>
+            <ul class="checklist">
+                <li>{% trans "Track purchases and contracts for all asset types" %}</li>
+                <li>{% trans "Generate and schedule reports based on purchase data" %}</li>
+                <li>{% trans "Receive contract expiration reminders to ensure timely renewals" %}</li>
+                <li>{% trans "Easily create reports that support IT audits" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-5 text-center">
+            <img src="{% static 'img/landing/contract_management.png' %}" class="img-responsive inline-block img-border"
+                 alt="{% trans 'Contract Management' %}"/>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-sm-6 text-center">
+            <img src="{% static 'img/sections/features/software-license/software_in_use.png' %}"
+                 class="img-responsive inline-block img-border" alt="{% trans 'Software License Management' %}"/>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "Software License Management" %}</h3>
+            <p>{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure — from the server, to the desktop level." %}</p>
+            <ul class="checklist clean">
+                <li>{% trans "Compare current usage to license counts" %}</li>
+                <li>{% trans "Detect prohibited software" %}</li>
+                <li>{% trans "Track license agreements and expiration dates" %}</li>
+                <li>{% trans "Identify purchased vs. installed software" %}</li>
+                <li>{% trans "Provide customizable notification alerts" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "IT Asset Lifecycle Management" %}</h3>
+            <p>{% trans "Track the lifecycles of both your IP-based and non-IP-based assets from their purchase all the way to their decommissioning." %}</p>
+            <ul class="square-style clean">
+                <li>Reduce costs by avoiding unnecessary equipment purchases</li>
+                <li>Improve utilization of existing infrastructure assets</li>
+                <li>Mitigate network security risks</li>
+                <li>Improve compliance and streamline compliance support workloads</li>
+                <li>Print custom QR codes and auto-assign custom asset numbers</li>
+            </ul>
+        </div>
+        <div class="col-sm-6 text-center">
+            <img src="{% static 'img/landing/asset_lifecycle.png' %}" class="img-responsive inline-block img-border"
+                 alt="{% trans 'Asset Lifecycle' %}"/>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="col-sm-6">
+            <img src="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                 class="hidden-xs img-responsive"/>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="sub-heading" id="visualizations">{% trans "Visualizations" %}</h3>
+            <p>{% trans "Once your data is loaded, it’s time to reap the benefits.  Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data.  But even better, Device42 provides an extensive set of visualizations including" %}....</p>
+            <ul class="square-style">
+                <li>{% trans "Your computer rooms and racks with power and capacity heatmaps" %}</li>
+                <li>{% trans "Your full IP connectivity and power chain" %}</li>
+                <li>{% trans "Your hardware, software, and application dependencies" %}</li>
+            </ul>
+            <hr>
+            <h3 class="sub-heading" id="rapid-deployment">{% trans "Rapid Deployment" %}</h3>
+            <ul class="square-style">
+                <li>{% trans "Most customers find they are up and running much of their infrastructure loaded in less than a day" %}</li>
+                <li>{% trans "Auto-discovery requires just filling in a few forms with parameters like IP ranges and authentication parameters" %}</li>
+                <li>{% trans "Spreadsheet-based imports are available for data that cannot be discovered" %}</li>
+                <li>{% trans "RESTful API’s are available for customized data-loading and mapping" %}</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div class="row logo-scroller text-center vert-offset-bottom-1">
+    <div class="col-xs-12">
+        <div class="logo-scroller-wrapper owl-carousel owl-theme">
+            {% for l in logos %}
+                <div style="width:120px;height:40px;" class="sprite-{{ l }} grayscale"></div>
+{#                <img class="customer-logo grayscale" alt="{{ l }}" src="{% static 'img/customers/' %}{{ l }}.png">#}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-5x7 {% if vcenter %}is-table-row{% endif %} padded">
+    <div class="col-md-4">
+        <img class="img-responsive center-block img-xs-restrict"
+             src="{% static 'img/sections/product/icons_cog_collection.png' %}"
+             alt="{% trans 'Resolve Technical Issues Faster' %}">
+    </div>
+    <div class="col-md-8">
+        <h2>{% trans "Resolve Technical Issues Faster" %}</h2>
+        <ul class="checklist font-stack-roboto bullet-blue clean">
+            <li>{% trans "Improve your IT service delivery with accurate and actionable data" %}</li>
+<li>{% trans "Device42 will discover and correlate relationships between physical, logical, and virtual environments - providing a powerful tool for problem solving" %}</li>
+<li>{% trans "Attaching the actual device to a ticket makes confusion about which device is being referenced a thing of the past" %}</li>
+<li>{% trans "Locating the device has never been easier when it’s attached to a ticket; click the device and get all the relevant details from Device42" %}</li>
+<li>{% trans "The next time a data center emergency arises, save the day in style!" %}</li>
+        </ul>
+    </div>
+</div>

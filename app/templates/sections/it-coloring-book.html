@@ -1,0 +1,59 @@
+{% extends "base/_base.html" %}
+{% load i18n static %}
+{% block title %}{% trans 'Coloring Book Focused on IT' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Coloring book focused on IT' %}">
+{% endblock %}
+
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1 class="flat-top">{% trans "Coloring Book Focused on IT" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 padded">
+                <img src="{% static 'img/branding/coloringbookjpg-01_360.jpg' %}"
+                     class="img-responsive img-border center-block" alt="{% trans 'Get your free copy today!' %}">
+                <br>
+                <p class="">Based on this idea from <a href="https://redd.it/4bm8d5" target="_blank" class="ext-link">/u/chocotaco1981</a>
+                    we are
+                    working on creating an IT focused coloring book. We thought it may be a good way for some of us to
+                    vent or blow off some steam after a nice day of server crashes and support tickets.</p>
+
+                <p class="">In our office we often share memes and jokes about life in the IT world. We decided to turn
+                    them into
+                    a coloring book (all the rage these days). We will make it available to download for free and we are
+                    running some promotions to give away printed copies.</p>
+
+                <hr>
+                <div class="row">
+                    <div class="col-sm-7">
+                        <p><label class="label label-default">{% trans "Current Version" %}</label> <span
+                                style="font-family:monospace;"> <strong>v1</strong> (8 {% trans 'pages' %})</span></p>
+                    </div>
+                    <div class="col-sm-5 text-right">
+                        <form action="." method="post">{% csrf_token %}
+                            <fieldset class="module aligned ">
+                                <input style="display:none;" id="id_main3" type="text" name="main3" maxlength="64"/>
+                                <button class="btn btn-warning btn-sm raised" value="submit" type="submit"
+                                        style="text-align: left;font-weight:700;vertical-align:middle;line-height:2em;"
+                                        name="_service_installer"><i class="fa fa-download fa-2x fa-pull-right"
+                                                                     style="color:#fff;" aria-hidden="true"></i>Download<br>
+                                    Coloring Book <small>(pdf)</small>
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

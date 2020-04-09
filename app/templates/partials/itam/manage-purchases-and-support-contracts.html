@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-5">
+        <img class="img-responsive center-block img-border"
+             alt="{% trans 'Manage Purchases and Support Contracts' %}"
+             src="{% static 'img/sections/features/itam/contract-management.png' %}">
+    </div>
+    <div class="col-sm-7">
+        <h2 class="featurette-heading">{% trans "Manage Purchases and Support Contracts" %}</h2>
+        <p>{% trans "Centrally manage all IT contract information for devices, hardware, and software assets within the enterprise infrastructure." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Track purchases and contracts for all asset types" %}</li>
+            <li>{% trans "Generate and schedule reports based on purchase data" %}</li>
+            <li>{% trans "Receive contract expiration reminders to ensure timely renewals" %}</li>
+            <li>{% trans "Easily create reports that support IT audits" %}</li>
+        </ul>
+
+    </div>
+</div>

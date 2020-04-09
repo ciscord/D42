@@ -1,0 +1,26 @@
+{% load i18n static %}
+<h2 class="featurette-heading xs-center">{% trans "Automation & SIEM" %} <small style="display:inline-block;margin-top:0;">{% trans 'via Device42 Webhooks & API' %}</small></h2>
+<h4 class="text-primary xs-center">{% trans "compatible with StackStorm, Zapier, and any other if-this-then-that tool!" %}</h4>
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6 padded">
+        <div class="row integration-logos">
+            <div class="col-xs-6 col-sm-12">
+                <div class="sprite-zapier"></div>
+            </div>
+            <div class="col-xs-6 col-sm-12">
+                <div class="sprite-stackstorm"></div>
+            </div>
+        </div>
+    </div>
+<div class="col-sm-6">
+        <ul class="bullet-blue checklist">
+            <li>{% trans 'Trigger events with Webhooks from Device42 based on just about any happening in your infrastructure' %}</li>
+            <li>{% trans 'Manipulate any CI within Device42 via its powerful well documented RESTful API' %}</li>
+            <li>{% trans 'Have a ticket automatically created in your ITSM system when a new piece of hardware is detected on your network' %}</li>
+            <li>{% trans 'Get a list of all servers running a specific version of software, and automate the upgrade across your infrastructure' %}</li>
+            <li>{% trans 'Automatically power on extra instances to react to high-load situations, or shut some down in times of low demand' %}</li>
+            <li>{% trans 'Automate anything, from common tasks to complex workloads' %}</li>
+            <li>{% trans 'Centrally manage multiple DNS providers from within Device42!' %}</li>
+        </ul>
+    </div>
+</div>

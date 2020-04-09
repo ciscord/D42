@@ -1,0 +1,180 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="Creating and managing an accurate and up-to-date configuration management database (CMDB) is a vital component in effective ITIL. Make that easy with Device42."/>
+{% endblock %}
+{% block title %}{% trans "Automated CMDB for ITIL done right" %}{% endblock %}
+{% block script %}
+    <style>
+        .media-left i.fa {
+            color: #00b6ff;
+        }
+
+        .media-body {
+            vertical-align: middle !important;
+        }
+
+        p,
+        ul.dash {
+            font-weight: 300;
+        }
+
+        .landing-section {
+            margin-bottom: 24px;
+        }
+
+        .media-left,
+        .media-right {
+            padding-top: 4px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("i.fa").tooltip();
+        });
+    </script>
+{% endblock %}
+
+
+{% block landingHeadingText %}{% trans "Automated CMDB for ITIL done right" %}{% endblock %}
+{% block landingLeadText %}
+    {% trans "Accurate and automated CMDB is critical for implementing ITIL v3 correctly. Stop worrying about importing raw data and data quality issues. Use Device42's pre-configured CMDB that comes with powerful auto-discovery methods. Automatically populate CMDB with relationships from physical to virtual to services level. Built-in integration with ITSM tools such as JIRA service desk or servicenow. With easy to use REST APIs to integrate with other ITSM/ITIL products." %}{% endblock %}
+
+{% block maincontent %}
+    <section class="landing-section">
+        <p class="h2 vert-offset-bottom-1">{% trans "If you are looking for a CMDB, there are several reasons to consider Device42..." %}</p>
+    </section>
+    <section class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-2x"></i>
+                </div>
+                <div class="media-body">
+                    <p class="">{% trans "First, you don’t need to spend a lot of time designing your CI’s and their interrelationships.  Device42 offers pre-defined Cis and relationships that will work for most companies and offers extensive customization features where needed." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-2x"></i>
+                </div>
+                <div class="media-body">
+                    <p class="">{% trans "Second, Device42 offers strong autodiscovery features that you can use to populate most of the CMDB." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-2x"></i>
+                </div>
+                <div class="media-body">
+                    <p class="">{% trans "Third, once the CMDB is populated, you get some great visualizations including application dependency maps, room and rack layout views, network topology maps, power and IP connectivity, and much more." %}</p>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <i class="fa fa-check-square-o fa-2x"></i>
+                </div>
+                <div class="media-body">
+                    <p class="">{% trans "Last and probably most important, Device42 gives you a single source of truth for all of IT because it is not just a CMDB, it is also a full DCIM tool, a full ITAM tool, and also offers cable management (with great visualizations), and a full password manager." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <img src="{% static 'img/sections/features/cmdb/impact-1.png' %}" class="img-responsive"
+                 alt="{% trans 'Device impact chart' %}"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Load CI's Fast with Powerful Auto-Discovery Tools" %}</h3>
+            <p>{% trans "Populate your CMDB fast with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide" %}.</p>
+            <ul class="checklist">
+                <li>{% trans "All discovery tools are agent-less" %}</li>
+                <li>{% trans "All discoveries can be scheduled so you're always up-to-date" %}</li>
+                <li>{% trans "Multiple protocols supported (e.g. SNMP, WMI, SSH, Modbus" %}, ...)</li>
+                <li>{% trans "Native support for virtualization platforms" %}</li>
+                <li>{% trans "Native support for public and private cloud platforms" %}</li>
+                <li>{% trans "Native support for blade chassis" %}</li>
+                <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+                <li>{% trans "Result is a system that is always audit ready" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <h3 class="sub-heading" id="preconfigured-cmdb">{% trans "Pre-configured CMDB" %}</h3>
+            <p>{% trans "No need for a long, drawn-out CI design process because all your CI’s and relationships are pre-configured.  But Device42 does not simply lock you into an inflexible structure.  You can create your own CIs and relationships to complement the built-in structure provided. Additionally, you can define user, groups, passwords, and object-level permissioning" %}.</p>
+        </div>
+        <div class="col-sm-8">
+            <img class="img-responsive" src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}"/>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <img src="{% static 'img/landing/ip-address-tracking-software.png' %}" class="hidden-xs img-responsive"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading" id="visualizations">{% trans "Visualizations" %}</h3>
+            <p>{% trans "Once your data is loaded, it’s time to reap the benefits.  Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data.  But even better, Device42 provides an extensive set of visualizations including" %}....</p>
+            <ul class="dash">
+                <li>{% trans "Your computer rooms and racks with power and capacity heatmaps" %}</li>
+                <li>{% trans "Your full IP connectivity and power chain" %}</li>
+                <li>{% trans "Your hardware, software, and application dependencies" %}</li>
+            </ul>
+        </div>
+    </section>
+    {% include 'partials/cmdb/fast-and-easy-integration.html' %}
+    <section class="row landing-section">
+
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Automated service impact discovery" %}</h3> <br/>
+
+            <p>{% trans "With our powerful agent-less auto-discovery methods, you can easily map services, listening ports on the services and remote connections for windows and linux machines" %}.</p>
+            <p>{% trans "Some of the benefits of this feature listed below" %}:</p>
+            <ul class="dash">
+                <li>{% trans "Know what services are listening on what ports" %}</li>
+                <li>{% trans "Find out all the open ports on a machine" %}</li>
+                <li>{% trans "Visualize all the dependencies for a particular machine" %}</li>
+                <li>{% trans "Get a list view of the service and remote dependencies as well" %}</li>
+                <li>{% trans "No need to configure expensive span ports to get dependencies between servers" %}</li>
+                <li>{% trans "Easy migration path for your legacy systems" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-4"><img src="{% static 'img/sections/features/app-map/automated_service_dependency.png' %}"
+                                   alt="{% trans 'Automated service impact discovery' %}"" />
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <img class="img-responsive img-border" src="{% static 'img/sections/features/software-license/Software_License_Management_Overview.png' %}"
+                 alt="{% trans 'software license management overview' %}"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Software License Management" %}</h3> <br/>
+
+            <p>{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure — from the server, to the desktop level" %}.</p>
+            <ul class="dash">
+                <li>{% trans "Compare current usage to license counts" %}</li>
+                <li>{% trans "Detect prohibited software" %}</li>
+                <li>{% trans "Track license agreements and expiration dates" %}</li>
+                <li>{% trans "Identify purchased vs. installed software" %}</li>
+                <li>{% trans "Provide customizable notification alerts" %}</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="row landing-section">
+        <div class="col-xs-12">
+            <h3 class="sub-heading" id="rapid-deployment">{% trans "Rapid Deployment" %}</h3>
+            <ul class="dash">
+                <li>{% trans "Most customers find they are up and running much of their infrastructure loaded in less than a day" %}</li>
+                <li>{% trans "Auto-discovery requires just filling in a few forms with parameters like IP ranges and authentication parameters" %}</li>
+                <li>{% trans "Spreadsheet-based imports are available for data that cannot be discovered" %}</li>
+                <li>{% trans "RESTful API’s are available for customized data-loading and mapping" %}</li>
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Migrate" %}
+    {% if product %}{{ migrations|get_key:product }}{% else %}{% trans "Other Products" %}{% endif %}
+    {% trans "to Device42" %}{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Migrate' %} {% if product %}an existing {{ migrations|get_key:product }} solution{% else %}{% trans 'other products' %}{% endif %} {% trans 'into Device42' %}">
+{% endblock %}
+{% block head_scripts %}
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+{% endblock %}
+{% block body_scripts %}
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('form').on('submit', function (e) {
+                var form = $(this);
+                var button = $("button[type='submit']");
+                e.preventDefault();
+                $.ajax({
+                    type: "GET",
+                    url: form.attr("action"),
+                    beforeSend: function () {
+                        button.find("i").toggleClass("fa-download fa-spinner fa-spin");
+                    },
+                    success: function (data) {
+                        if (data['status'] == 'ok') {
+                            window.location = data['link'];
+                        }
+                    },
+                    error: function () {
+                    },
+                    complete: function () {
+                        button.find("i").toggleClass("fa-download fa-spinner fa-spin");
+                    }
+                });
+            })
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <h1>{% trans "Migrate" %} {% if product %}{{ migrations|get_key:product }}{% else %}
+                    {% trans "Other Products" %}{% endif %} {% trans "to Device42" %}</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="container">
+            <div class="row flat-top">
+                <div class="col-sm-3">
+                    <h2 class="hidden-xs"><a href="{% url 'migrations' %}">{% trans "Migrations" %}</a></h2>
+                    <div class="custom-collapse">
+                        <button class="collapse-toggle visible-xs btn btn-block btn-info sharp" type="button"
+                                data-toggle="collapse" data-parent="custom-collapse" data-target="#side-menu-collapse">{% trans 'Migrations' %} <i class="fa fa-chevron-circle-down fa-pull-right" aria-hidden="true"></i></button>
+                        <ul class="dash tight bullet-blue section-menu collapse" id="side-menu-collapse">
+                            {% for i in migrations %}
+                                <li class="{% if migrations|get_key:product == i %}active-item{% endif %}"><a
+                                        href="{% url 'migrations_detail' product=migrations|get_item:i %}">{{ i }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    {% if product %}
+                        {% include 'sections/support/migrations/'|add:product|add:'.html' with product=migrations|get_key:product %}
+                    {% else %}
+                        <div class="row is-table-row">
+                            <div class="col-sm-8">
+                                <p>{% trans "Device42 provides robust APIs and bulk data management tools that makes it easier to import data from any data format." %}</p>
+                                <p>{% trans "Use the navigation links on left to get information about turnkey migrations." %}</p>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <img src="{% static 'img/landing/v2imgs/server-migrations.png' %}"
+                                     class="img-responsive center-block " alt="{% trans 'Migrations' %}">
+                            </div>
+                        </div>
+                        <p class="font-stack-condensed">{% trans "If you would like to migrate from some other tool and don't find an easy way to do so, please reach out to us and we'll be happy to provide support: " %}<a
+                                href="mailto:support@device42.com">support@device42.com</a></p>
+                        <p class="prelist">{% trans "The migration links below may also be helpful:" %}</p>
+                        <ul class="tight bullet-gray">
+                            <li><a class="text-strong"
+                                   href="{% url 'software_detail' package='bulk-data-management' %}">{% trans "Generic Bulk Import Tool" %}</a>
+                            </li>
+                            <li><a class="text-strong" href="http://api.device42.com" target="_blank">Device42
+                                API {% trans "Documentation" %}</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,233 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Cases" %}{% endblock %}
+{% block meta %}
+<meta name="description" content="{% trans 'Use cases in-which Device42 benefits your team.' %}"/>
+{% endblock %}
+{% block site_section_product %}active{% endblock %}
+{% block body_scripts %}
+<script>
+$(function(){
+   $(".photo-card").matchHeight();
+});
+</script>
+{% endblock %}
+{% block body %}
+<header class="row head-home bg-primary">
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h1>{% trans "Use Cases" %}</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<article class="container use-cases-listing">
+    <div class="row padded">
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_hardware_audit' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Hardware Audit.png' %}" alt="{% trans 'Hardware Audit' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Hardware Audit" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Device42's Audit Export functionality provides a very efficient means to handle audit rectification on the fly, exporting a pre-formatted spreadsheet that lists all the contents of a building, room, or rack, ready to match to what your barcode scanner sees.  Rack to rack, Isle to isle, no WiFi or connection of any kind needed."|truncatewords:24 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_hardware_audit' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_software_audit' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Software Audit and Compliance.png' %}" alt="{% trans 'Software Audit & Compliance' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Software Audit & Compliance" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "IT Infrastructure teams are typically required to conduct, assist in, and endure a number of different types of audit every year - finance audits, security audits, risk-related audits, budget cycle audits, and more."|truncatewords:24 %}</p>
+
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_software_audit' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_data_center_and_cloud_migration' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Data center and Cloud Migration.png' %}" alt="{% trans 'Data Center & Cloud Migration' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Data Center & Cloud Migration" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Data Center migrations require extremely careful planning and execution. They also carry significant business risk, as botched cutovers can results in runaway costs compensating customers for downtime, as well as unplanned spend on extra time in the original data center."|truncatewords:24 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_data_center_and_cloud_migration' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_budgeting_and_finance' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Budget and Finance.png' %}" alt="{% trans 'Budget and Finance' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Budgeting & Finance" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "The Device42 system tracks all your IT purchase orders by cost center and department at the line item level. You can easily produce reports showing capital and operating costs by cost center and department for chargebacks, analyzing departmental usage, and creating budgets. Reports are always available to provide the CFO how last yearâ€™s and all prior year capex expenditures are being used."|truncatewords:24 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_budgeting_and_finance' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_it_agility' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/IT Agility.png' %}" alt="{% trans 'Data Center & Cloud Migration' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "IT Agility" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "When you open a ticket in your ITSM system, Device42 is right there to give you all the information you need. Pop up an application dependency diagram to view what users and applications are dependent on a piece of equipment. Donâ€™t try to locate warranty contracts in a dusty cabinet. All the warranty information is right there in your ticket along with who to call, the device serial number, and anything else you need. Tired of playing â€œwho knows the passwordâ€? You donâ€™t have to do that any more with Device42."|truncatewords:24 %}</p>
+
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_it_agility' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+             <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_security_and_compliance' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Security and Compliance.png' %}" alt="{% trans 'Security and Compliance' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Security & Compliance" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Your infrastructure has a lot of servers that need managing, and every single server could be running hundreds of pieces of software, each of which might have security vulnerabilities. How do you identify if a vulnerability affects you, match the affected version to servers in your infrastructure that are running it, and remediate in a timely manner?"|truncatewords:24 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_security_and_compliance' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_capacity_planning' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/capacity planning.png' %}" alt="{% trans 'Capacity Planning' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Capacity Planning" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Capacity planning for the both future need and peak transient loads can prove a tricky undertaking. Too much capacity, and your spend can quickly get out of control supporting idle machines, blowing your budget. Too little, and your companyâ€™s site or services can experience embarrassing downtime, leaving you to answer to angry customers and executives alike."|truncatewords:24 %}</p>
+
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_capacity_planning' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_it_automation' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/IT Automation.png' %}" alt="{% trans 'IT Automation' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "IT Automation" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Whether automating common tasks or complex workloads, Device42 is a DevOps team's best friend &mdash;featuring WebHooks, a Powerful RESTful API, and countless integrations ..."|truncatewords:24 %}</p>
+
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_it_automation' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_mergers_and_acquisitions' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/Mergers and Acquisition.png' %}" alt="{% trans 'Mergers & Acquisitions' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "Mergers & Acquisitions" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Mergers and acquisitions are a lot more than paperwork and a name change. When companies merge, each company will initially have its own supporting IT Infrastructure that comes along with it. There will likely be a lot of duplication of both hardware and services between the two infrastructures, with each company relying on the services from their own Active Directory domains, e-mail servers & services, and web hosting arrangements, just to name a few."|truncatewords:24 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_mergers_and_acquisitions' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-sm-offset-0">
+            <div class="card-container">
+                <div class="photo-card center-block">
+                    <div class="image">
+                        <a href="{% url 'use_cases_migrations' %}">
+                            <img class="img-responsive center-block img-restrict" src="{% static 'img/components/study-a/use-cases/OS Migration.png' %}" alt="{% trans 'OS Stack Migration' %}">
+                        </a>
+                    </div>
+                    <div class="heading">
+                        <h2 class="title font-stack-condensed">{% trans "OS Stack Migration" %}</h2>
+                    </div>
+                    <div class="description">
+                        <p class="font-stack-serif">{% trans "Computers running unsupported operating systems continue to function. However, using unsupported software may increase the risks of viruses and other security threats. Negative consequences could include the loss of confidentiality, integrity, and or availability of data, system resources and business assets."|truncatewords:20 %}</p>
+                    </div>
+                    <div class="actions">
+                        <a href="{% url 'use_cases_migrations' %}" class="button">{% trans "Continue reading" %}...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

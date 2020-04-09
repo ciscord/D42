@@ -1,0 +1,117 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Maxihost Data Center - Case Study" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Case studies for Device42 - with Maxihost, a co-lo provider' %}"/>
+{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Case Studies" %} - {% trans "Maxihost, a co-lo provider" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li class="active-item"><a
+                            href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+                <hr class="hidden-xs">
+                <div class="list-group">
+                    <h3 class="list-group-heading">{% trans "Case Studies" %}</h3>
+                    <a class="list-group-item"
+                       href="{% url 'case_studies_intl_financial_service_provider' %}">{% trans "International Financial Services Provider" %}</a>
+                    <a class="list-group-item"
+                       href="{% url 'case_studies_coventry_university' %}">{% trans "Coventry University" %}</a>
+                    <a class="list-group-item active"
+                       href="{% url 'case_studies_maxihost' %}">{% trans "Maxihost Data Center Ltd." %}</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <h3 class="text-muted">{% trans "Device42 User Case Study – Maxihost Datacenter Ltd" %}.</h3>
+                <ul>
+                    <li><strong>{% trans "Company" %}</strong>: {% trans "Maxihost Datacenter Ltd" %}.</li>
+                    <li><strong>{% trans "Industry" %}</strong>: {% trans "Co-location Services Provider" %}</li>
+                    <li><strong>{% trans "Location" %}</strong>: {% trans "São Paulo, Brazil" %}</li>
+                    <li><strong>{% trans "Solution" %}</strong>: {% trans "Device42 Core" %}</li>
+                </ul>
+                <h2>{% trans "Device42 Helps Latin American co-location Provider, Maxihost, Expand Business Operations" %}</h2>
+                    <h3 class="text-muted">{% trans "Maxihost Background" %}</h3>
+                    <p>{% trans "Founded in 2001, Maxihost is one of the fastest growing cloud and dedicated server solutions provider in Brazil. Maxihost began hosting websites in data centers outside of Brazil, and has since expanded to more than five data centers in Brazil, including its newest data center which opened in December 2015. The majority of Maxihost’s clients are located in South America with a few clients located in other global regions" %}.</p>
+                    <h3 class="text-muted">{% trans "The Problem" %}</h3>
+                    <p>{% trans "With a rapidly growing customer base and multiple hosting locations under management, Maxihost recognized the need for data center software supporting its operations. Unfortunately, the solution used for nearly five years had multiple shortcomings" %}:</p>
+                    <ul>
+                        <li><strong>{% trans "Operation latency" %}</strong>
+                            - {% trans "With the incumbent solution, Maxihost experienced screen refresh delays and slow command executions — often 30 seconds, or more. This frustrated users and negatively impacted use of the system by data center staff" %}.
+                        </li>
+                        <li><strong>{% trans "Infrequent product updates" %}</strong>
+                            - {% trans "Software releases occurred only two times each year, an unacceptable period for much needed functionality improvements, software fixes, and new feature enhancements" %}.
+                        </li>
+                        <li><strong>{% trans "No cabling documentation" %}</strong>
+                            - {% trans "the existing solution could not document rack cabling, or provide useful rack visualizations resulting in less than optimal service and support capabilities and operational efficiencies" %}.
+                        </li>
+                        <li><strong>{% trans "Challenged inventory management" %}</strong>
+                            - {% trans "Maxihost utilized spreadsheets to track and manage device inventory. This presented challenges in maintaining accurate information, as well as difficulty in maintaining the integrity of inventory data. As a result, locating assets required manual intervention which added additional cost and time to data center management tasks" %}.
+                        </li>
+                        <li><strong>{% trans "ROI failure" %}</strong>
+                            - {% trans "The previous software failed to deliver the expected ROI. The software’s performance shortcomings, along with its lack of comprehensive capabilities and feature enhancements, resulted in minimal perceived value to both the Maxihost’s data center users and its colocation tenants" %}.
+                        </li>
+                    </ul>
+                    <p>
+                        <em>“{% trans "It became evident to us that our current DCIM software fell short of our needs and expectations”, stated Guilherme Soubihe Alberto, Chief Operations Officer of Maxihost. “We realized that the time had come to implement a data center management platform that would better support our operational needs along with our commitment to delivering an exceptional client experience" %}."</em>
+                    </p>
+                    <h3 class="text-muted">{% trans "Solution Requirements" %}</h3>
+                    <p>{% trans "Maxihost began a search for a solution with comprehensive technical capabilities that, at a minimum, included" %}:</p>
+                    <ul>
+                        <li><strong>{% trans "Managing data center assets" %}</strong>
+                            - {% trans "This included devices in operation for multiple clients as well as maintaining adequate inventory stocking levels for supporting existing clients and onboarding new clients" %}.
+                        </li>
+                        <li><strong>{% trans "IP address management" %}</strong>
+                            - {% trans "IPAM requirements included accurate management of IP addresses and their device associations, along with powerful sub-net management capabilities — all requiring immediate, real-time, system response times" %}.
+                        </li>
+                        <li><strong>{% trans "Rack management" %}</strong>
+                            - {% trans "Maxihost required accurate visual representations of rack configurations and the patch panel wiring including device network hops. The system also needed mobile device support to enable data center operators to view and edit information while inside the data center" %}.
+                        </li>
+                        <li><strong>{% trans "Dependency mapping" %}</strong>
+                            - {% blocktrans %}
+                            Maxihost also realized that the ability to understand and visualize critical hardware and software dependencies, would be vital to minimizing client service interruptions and remediating trouble tickets. These application dependency maps would also enable Maxihost to more effectively anticipate and plan for client growth.
+                            Integration - The ability for the new solution to integrate with JIRA workflow software,
+                            currently in use, would help to maximize existing software investments. By integrating JIRA
+                            and Device42, the work order process could be could be enhanced with immediate access to
+                            accurate asset data directly from within the JIRA application.
+                            {% endblocktrans %}
+                        </li>
+                    </ul>
+                    <h3 class="text-muted">{% trans "The Device42 Solution" %}</h3>
+                    <p>{% trans "Maxihost evaluated multiple data center software solutions and as part of the evaluation process, completed a free trial download of Device42 software. After using Device42 for more than a month and carefully considering alternative products, Maxihost selected Device42 as the single solution for managing their colocation data centers" %}.</p>
+                    <p>{% trans "Within several hours of their Device42 purchase, the Maxihost team had completed an initial device discovery which accurately identified more than 90% of the active asset inventory" %}.</p>
+                    <p>
+                        “{% trans "With our initial device discovery completed, we had an accurate picture of our physical and logical infrastructure including; device inventory, manufacturer data, IP addresses, switch to device connectivity, VM to VM-host relationships, and MAC addresses. In addition, we immediately had visual representations and clear understanding of device and software dependencies throughout our infrastructure for both Maxihost and all of its clients.” stated" %},
+                        <span class="text-muted">{% trans "Guilherme Soubihe Alberto" %}</span>.</p>
+                    <p>{% trans "Maxihost completed the entire implementation during the next several weeks. Device42’s extensive API library and integration connectors also enabled the import of select information from the incumbent software along with enabling simple integration to Maxihost’s existing JIRA workflow and ticketing system. Working several hours each day (for a total of approximately 1. 5 man weeks), Maxihost completed the building, room, and rack rack assignments of the discovered inventory and identified other information such as software licenses, network services currently running, asset ownership, and other device identification data" %}.</p>
+                    <h3 class="text-muted">{% trans "Solution Benefits" %}</h3>
+                    <p>{% trans "Maxihost now utilizes Device42 as the single, complete tool for managing all aspects of their data center operations. Device42 is the central repository for infrastructure information and it serves as the one source for managing daily operations including MACD, client support, trouble ticket resolution, operations planning, and more. Long gone are the problems of inaccurate data asset inventories, challenging IP assignment and management, performance latency, lack of cabling documentation…and more" %}.</p>
+                    <p>{% trans "With Device42, Maxihost has a centralized data center asset management console that contains accurate device and infrastructure relationship information. Device42 capabilities such as device and software impact dependency mapping, password management, cabling management, room, rack, and device visualizations, have all added new levels of awareness and visibility needed for their routine data center management. Device42 has also enhanced Maxihost’s strategic planning and capacity management capabilities – both important aspects of their growing business" %}.</p>
+                    <p>
+                        <em>“{% trans "There is no way to effectively manage a facility or datacenter equipped with a reasonable number of servers without a software solution designed specifically for this purpose,” said Guilherme Soubihe Alberto. “It’s difficult to find a product that can offer the comprehensive capabilities and extensive features that Device42 offers, at a cost that was" %}
+                            <strong>{% trans "one-tenth (1/10" %})</strong> {% trans "the cost of our previous solution and many other less-featured solutions on the market today. For Maxihost, the bottom line is about delivering exceptional functionality and support to our customers and Device42 software delivers the functionality and value that helps make that happen" %}.”</em>
+                    </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

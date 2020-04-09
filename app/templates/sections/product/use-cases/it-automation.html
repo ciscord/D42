@@ -1,0 +1,53 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: IT Automation" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'IT Automation - Automating common IT workflows and maintenance tasks requires an accurate, up-to-date source of information regarding the current state of the infrastructure.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "IT Automation" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <img src="{% static 'img/components/study-a/use-cases/IT Automation.png' %}" class="img-inline-right" alt="{% trans 'IT Automation' %}" />
+                    <h2>{% trans 'Challenge' %}</h2>
+                    <p>{% trans "DevOps teams are tasked with automating both common IT workflows and maintenance tasks, which requires an accurate, up-to-date source of information regarding the current state of the infrastructure." %}</p>
+                    <p class="prelist">{% trans "Example automation needs include:" %}</p>
+                    <ul>
+                        <li>{% trans "In an Ansible/Puppet/Chef automation script, you need to locate all servers with OpenSSH v2 and then do a refresh." %}</li>
+                        <li>{% trans "When deploying new servers, you need to find the next available IP address to assign" %}</li>
+                        <li>{% trans "You need to schedule maintenance (e.g., upgrade servers) and must know which internal or external customers are using which servers." %}</li>
+                        <li>{% trans "You are opening a service request or an issue for a configuration item and would like to link that issue to the actual CI for relevant details." %}</li>
+                        <li>{% trans "You need alerts that tell you when you are using too much power or the temperature is too high." %}</li>
+                    </ul>
+                    <h2>{% trans 'Solution' %}</h2>
+                    {% blocktrans %}
+                    <p>Device42 is your always up to date, single source of truth for any automation system. From out of the box automation solutions including if-this-then-that tools to homegrown scripts, Device42’s powerful Webhooks & well documented RESTful APIs can both provide the triggers to drive automation as well as the facilities to be quickly and easily populated by automation. All this plus its many 3rd party integrations mean Device42 should be a go-to tool in the DevOps toolbox.</p>
+                    <p>When you open a ticket in your ITSM system, Device42 is right there to give you all the information you need. Integrations with many popular ticketing systems allow direct linking of CI to service tickets. Pop up an application dependency diagram to view what users and applications are dependent on a piece of equipment.</p>
+                    <p>When planning IP allocations, view network diagrams and fragmentation charts and have your script request the next available IP from Device42 via a call to the RESTful API. DevOps can also leverage the API to easily return a list of software installed on a machine, so both finding instances with versions in need of upgrade, and performing the upgrades can be fully automated</p>
+                    {% endblocktrans %}
+                    <p class="vert-offset-top-2">{% trans "Device42 also tracks" %} <a href="{% url 'tours_data_center_power_management' %}">{% trans "power usage" %}</a>, {% trans "which includes notifications and alerts regarding imminent overages, bad battery packs, high temperatures, and" %} <span class="font-stack text-italic text-strong text-warning">{% trans "much more!" %}</span></p>
+
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

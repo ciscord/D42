@@ -1,0 +1,18 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-5x7 {% if vcenter %}is-table-row{% endif %} padded">
+    <div class="col-sm-6">
+        <img class="img-responsive center-block img-xs-restrict"
+             src="{% static 'img/sections/product/mascot_at_desk.png' %}"
+             alt="{% trans 'Reduce duration of data entry' %}">
+    </div>
+    <div class="col-sm-6">
+        <h2>{% trans "Dramatically Reduce Data Entry" %}</h2>
+        <p>{% trans "Increase data center staff productivity.  By minimizing or eliminating redundant and low value data entry, IT staff can spend more time on high value business initiatives." %}</p>
+        <ul class="checklist bullet-blue tight">
+            <li>{% trans "Device42's auto-discovery, import tools, and 3rd party integrations do a vast majority of the hard work for you" %}</li>            <li><p>{% trans "All the documentation you could ever want on our open API available at" %} <a
+                    href="http://api.device42.com/" target="_blank">http://api.device42.com</a></p></li>
+            <li>{% trans "Device42's open and powerful REST API is thoroughly documented, easy to use, and extremely powerful &mdash;enabling input and output of data to and from external sources with features like .XLS API imports" %}</li>
+            <li>{% trans "Freedom from excessive data entry means you can focus on building the next cool thing and making the world a better place" %}</li>
+        </ul>
+    </div>
+</div>

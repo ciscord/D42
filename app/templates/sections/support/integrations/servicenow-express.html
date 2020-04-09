@@ -1,0 +1,46 @@
+{% load i18n static %}
+<h2>{% trans "Device42 to ServiceNow Express Integration" %}</h2>
+<p>{% trans "Using the" %} <a href="https://github.com/device42/device42_to_servicenow_express" rel="nofollow" class="ext-link" target="_blank">Device42-ServiceNow Express Sync Script</a> {% trans "integration, ServiceNow Express users can synchronize Device42’s enhanced asset management and tracking capabilities to their ServiceNow Express instance. This synchronization can be manually refreshed at any time by re-running the script, and can also scheduled <em>(via crontab or similar)</em> for regular, automatic refreshes." %}</p>
+<form action="." method="post" role="form" class="text-center">{% csrf_token %}
+    <button class="btn btn-sm btn-primary" type="submit">{% trans "Download ServiceNow Express" %}<br>{% trans "Integration" %}</button>
+</form>
+<hr>
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/servicenow/servicenow-express-1.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/servicenow/servicenow-express-1.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'ServiceNow Express Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Sync your CIs from Device42 to ServiceNow Express" %}</h3>
+        <p>{% trans "Once you sync your Device42 CMDB to ServiceNow Express, any CIs you configured to sync will be available in ServiceNow Express. CI data can be refreshed manually at any time, or kept up-to-date by scheduling automatic syncs." %}</p>
+    </div>
+</div>
+<h3>{% trans "View CI details in ServiceNow Express" %}</h3>
+<p>{% trans "Once synced, users of ServiceNow Express can see imported details from Device42 (name, serial #, model, service level, tags, mac addresses, cpu details, RAM, HD, OS info, and more) for that CI, and can then tie those assets to related service requests. View problems associated with a CI with a simple click. " %}</p>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/servicenow/servicenow-express-2.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/servicenow/servicenow-express-2.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'ServiceNow Express Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "View Service and Software information imported from Device42" %}</h3>
+        <p>{% trans "Services and Software information can also be synced from Device42 to ServiceNow Express. Synced software information includes all relevant licensing information, and supplementary information such as tags, category, vendor, a description, and any aliases that might be in use. Synced Service information includes service name, description, category, tags, and the associated vendor as well." %}</p>
+        <p>{% trans "Detailed Vendor information can also be synced from Device42. This data includes the Vendor’s name, notes, the vendor’s home page and contact information, and escalation information for troubleshooting and support contacts." %}</p>
+    </div>
+</div>
+<p>{% trans "Let Device42 populate Software, Service, and Vendor information into your ServiceNow Express instance. Use this imported information to create custom service request workflows and tailor them to each department's needs!" %}</p>
+
+<h3>{% trans "Associate imported CIs when creating new ServiceNow Express requests" %}</h3>
+<p>{% trans "When a creating a new request in ServiceNow Express, users can select configuration items synced from Device42. They can then be managed natively within ServiceNow Express, utilizing the Kanban Style Visual Task Boards, and drag and drop task management you’ve gotten used to. Assign teams and create task checklists related to CI’s imported from Device42." %}</p>
+<hr>
+<h3 class="text-strong text-default">{% trans "Download our ServiceNow Express script today!" %}</h3>
+<p class="vert-offset-bottom-1 font-stack-roboto">{% trans "The latest script can be found on our" %} <a
+        href="https://github.com/device42/device42_to_servicenow_express" target="_blank" class="ext-link">Github repo</a> &mdash;{% trans "and while you are there, check out all of our other open source integrations, too!" %}
+</p>

@@ -1,0 +1,105 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Partner Program" %}{% endblock %}
+{% block site_section_partners %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Device42 DCIM software offers unique revenue opportunity for resellers and partners.">
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Partner Program Overview" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="prelist flat-top"><a href="{% url 'partners' %}">{% trans "Sections" %}</a></h2>
+                <menu class="list-group">
+                    <a class="active list-group-item" href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a>
+                </menu>
+            </div>
+            <div class="col-sm-9">
+                <p>{% trans "With a revolutionary approach to data center asset management we offer unique opportunities to referral and reseller partners of all sizes. In addition to fast paced incremental revenue and new customer acquisitions, Device42 offers many other partner benefits that are unique in the DCIM marketplace:" %}</p>
+                <ul>
+                    <li>{% trans "Recurring revenue model" %}</li>
+                    <li>{% trans "Large addressable market" %}</li>
+                    <li>{% trans "Rapid sales cycle" %}</li>
+                    <li>{% trans "Client support handled by Device42" %}</li>
+                    <li>{% trans "Dynamic product development" %}</li>
+                </ul>
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-condensed table-hover table-bordered alt-font">
+                        <tbody>
+                        <tr>
+                            <th></th>
+                            <th><h3>{% trans "Referral" %}</h3></th>
+                            <th><h3>{% trans "Enhanced Resellers" %}</h3></th>
+                            <th><h3>{% trans "Premium Resellers" %}</h3></th>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Volume Commitment" %}</td>
+                            <td>{% trans "No" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Minimum Commitment" %}</td>
+                            <td>{% trans "$0" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "SE's Certification" %}</td>
+                            <td>{% trans "N/A" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Sales Certification" %}</td>
+                            <td>{% trans "N/A" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Discount" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                            <td>{% trans "Enhanced" %}</td>
+                            <td>{% trans "Premium" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Registration Incentive" %}</td>
+                            <td>{% trans "N/A" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Marketing Support" %}</td>
+                            <td>{% trans "N/A" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                            <td>{% trans "Yes*" %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Client Support" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                            <td>{% trans "Yes" %}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="flat-top text-right text-muted"><em>* - {% trans "Tiered Levels" %}</em></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

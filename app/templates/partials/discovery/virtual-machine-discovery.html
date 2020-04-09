@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive box-shadow center-block"
+             alt="{% trans 'Virtual Machine Discovery' %}"
+             src="{% static 'img/sections/features/discovery/vmware-auto-discovery.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Virtual Machines Discovery" %}</h2>
+        <p>{% trans "Connect to VMWare vCenter Server/ESX/ESXi/Citrix Xen servers and have hosts and VMs details automatically populated.  Schedule the discovery to keep VM documentation up-to-date as VMs migrate between hosts." %}</p>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Featured Integrations" %}{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Device42 is a powerful Configuration management (CMDB) solution that integrates with JIRA, Servicenow, and Zendesk through REST APIs.' %}"/>
+{% endblock %}
+{% block styles %}
+    <style>
+        .integration-logos [class^='sprite-'] {
+            max-width:100%;
+            width:200px;
+            height:70px;
+            margin:0 auto;
+        }
+        @media screen and (max-width: 767px) {
+            .integration-logos [class^='sprite-'] {
+                width:150px;
+                height:50px;
+            }
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette is-table-row">
+                <div class="col-xs-12 col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading"><span class="text-primary">{% trans "Integrations" %}</span></h1>
+                    <p>{% trans "Device42 integrates with many popular applications used in managing IT Infrastructure such as ITSM and orchestration. These integrations can enhance performance and usability of IT management systems. In addition to webhooks and an extensive, well documented RESTful API, Device42 provides various connectors that make integrations easy and effective, and automation possibilities nearly endless…!" %}</p>
+                    <small class="prelist text-dark-blue">{% trans 'Check out some of Device42’s integration specific features below.' %}</small>
+                </div>
+                <div class="col-sm-4 hidden-xs">
+                    <img class="featurette-image img-responsive center-block animated"
+                         alt="{% trans 'Integration With Services' %}"
+                         src="{% static 'img/components/study-a/callouts/services.png' %}" style="max-width:60%!important;height:auto!important;">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#itsm" data-offset="top-nav">{% trans "ITSM" %}</a>
+            <a href="#" data-jump="#cm" data-offset="top-nav">{% trans "Configuration Management" %}</a>
+            <a href="#" data-jump="#siem" data-offset="top-nav">{% trans "Automation & SIEM" %}</a>
+        </div>
+    </div>
+    <div class="container featurette-wrap">
+        {% include_partial "partials/integrations/itsm-integrations.html" image="left" id="itsm" vcenter="true"%}
+        {% include_partial "partials/integrations/cm-integrations.html" image="right" id="cm" vcenter="true"%}
+        {% include_partial "partials/integrations/automation-siem.html" image="right" id="siem" vcenter="true"%}
+     <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small><br>
+                <a href="{% url 'features_password_management' %}"><i class="fa fa-chevron-left"></i> {% trans 'Password Management' %}</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                 <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'download' %}">{% trans 'Download Free Trial Now' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

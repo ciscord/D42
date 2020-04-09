@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive box-shadow center-block"
+             alt="{% trans 'Ping Sweep Utility' %}"
+             src="{% static 'img/sections/features/discovery/ping_sweep.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Ping Sweep Utility" %}</h2>
+        <p>{% trans "Device42's .NET-based ping sweep utility parses Nmap output for a ping sweep on given network(s) and auto-uploads this data to the Device42 appliance." %}</p>
+    </div>
+</div>

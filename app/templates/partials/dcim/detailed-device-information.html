@@ -1,0 +1,31 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-4">
+        <img class="featurette-image img-responsive center-block box-shadow"
+             alt="{% trans 'Web-based rack layouts with drag and drop' %}"
+             src="{% static 'img/sections/features/device_details.png' %}">
+    </div>
+    <div class="col-md-8">
+        <h2 class="featurette-heading">{% trans "Detailed Device Information" %}</h2>
+        <p>{% trans "Document physical, virtual, blade, clustered, and more device types.  Easy to use network switch or server selections.  Record server processing power and connection properties along with asset tags, serial numbers, and support information. Robust integration with built-in IPAM." %}</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="checklist">
+                    <li>{% trans "Complete device details" %}</li>
+                    <li>{% trans "CPU, memory HDD, IP &amp; MAC address" %}</li>
+                    <li>{% trans "Hardware components" %}</li>
+                    <li>{% trans "Network switch and PDU port connectivity" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul class="checklist">
+                    <li>{% trans "Check out/assign to users" %}</li>
+                    <li>{% trans "Assign and store passwords" %}</li>
+                    <li>{% trans "Add device URLs" %}</li>
+                    <li>{% trans "Assign custom values" %}</li>
+                    <li>{% trans "Categorize per customer/department" %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

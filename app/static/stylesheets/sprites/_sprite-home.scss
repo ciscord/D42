@@ -1,0 +1,255 @@
+    $total_width: 852;
+    $total_height: 807;
+
+        .sprite-budgeting-and-finance {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-630 / ($total_width - 120)) * -100%) ((-244 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-capacity-planning {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-202 / ($total_width - 120)) * -100%) ((-403 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-data-center-cloud {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-630 / ($total_width - 120)) * -100%) ((-366 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-hardware-audit {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-630 / ($total_width - 120)) * -100%) ((0 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-it-agility {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-446 / ($total_width - 120)) * -100%) ((-403 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-it-automation {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-324 / ($total_width - 120)) * -100%) ((-403 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-mergers-and-acquisitions {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-428 / ($total_width - 120)) * -100%) ((-202 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-os-stack-migration {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-226 / ($total_width - 120)) * -100%) ((-202 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-security-compliance {
+        background-size: (($total_width / 120) * 100%) (($total_height / 120) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-630 / ($total_width - 120)) * -100%) ((-122 / ($total_height - 120)) * -100%);
+        width: 120px;
+        height: 120px;
+        }
+        .sprite-cloud-tools {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-612 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-cogwheel {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-306 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-db1 {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-db2 {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((0 / ($total_width - 100)) * -100%) ((-707 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-graph-magnifier {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-102 / ($total_width - 100)) * -100%) ((-707 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-cloud {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((0 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-db {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-102 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-qr {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-204 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-resize {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-408 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-tape {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-510 / ($total_width - 100)) * -100%) ((-605 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-home-media-tree {
+        background-size: (($total_width / 100) * 100%) (($total_height / 104) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-630 / ($total_width - 100)) * -100%) ((-488 / ($total_height - 104)) * -100%);
+        width: 100px;
+        height: 104px;
+        }
+        .sprite-icon-flags {
+        background-size: (($total_width / 224) * 100%) (($total_height / 199) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((0 / ($total_width - 224)) * -100%) ((0 / ($total_height - 199)) * -100%);
+        width: 224px;
+        height: 199px;
+        }
+        .sprite-internet-port {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((-510 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-media-database {
+        background-size: (($total_width / 200) * 100%) (($total_height / 200) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((0 / ($total_width - 200)) * -100%) ((-201 / ($total_height - 200)) * -100%);
+        width: 200px;
+        height: 200px;
+        }
+        .sprite-media-graph {
+        background-size: (($total_width / 200) * 100%) (($total_height / 200) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-226 / ($total_width - 200)) * -100%) ((0 / ($total_height - 200)) * -100%);
+        width: 200px;
+        height: 200px;
+        }
+        .sprite-media-monitor {
+        background-size: (($total_width / 200) * 100%) (($total_height / 200) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-428 / ($total_width - 200)) * -100%) ((0 / ($total_height - 200)) * -100%);
+        width: 200px;
+        height: 200px;
+        }
+        .sprite-nhp-media-cloud {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-480 / ($total_width - 50)) * -100%) ((-324 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-nhp-media-db {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-428 / ($total_width - 50)) * -100%) ((-324 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-nhp-media-qr {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-532 / ($total_width - 50)) * -100%) ((-324 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-nhp-media-resize {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-550 / ($total_width - 50)) * -100%) ((-254 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-nhp-media-tape {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-550 / ($total_width - 50)) * -100%) ((-202 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-nhp-media-tree {
+        background-size: (($total_width / 50) * 100%) (($total_height / 50) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 50)) * -100%) ((-612 / ($total_height - 50)) * -100%);
+        width: 50px;
+        height: 50px;
+        }
+        .sprite-qrcode {
+        background-size: (($total_width / 200) * 100%) (($total_height / 200) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((0 / ($total_width - 200)) * -100%) ((-403 / ($total_height - 200)) * -100%);
+        width: 200px;
+        height: 200px;
+        }
+        .sprite-setings1 {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-settings2 {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-settings3 {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((-306 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }
+        .sprite-structure {
+        background-size: (($total_width / 100) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-home.png');
+        background-position: ((-752 / ($total_width - 100)) * -100%) ((-408 / ($total_height - 100)) * -100%);
+        width: 100px;
+        height: 100px;
+        }

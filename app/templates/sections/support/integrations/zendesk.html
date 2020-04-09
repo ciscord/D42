@@ -1,0 +1,76 @@
+{% load i18n static %}
+<h2>Zendesk + Device42 {% trans "CMDB Integration" %}</h2>
+<div class="row is-table-row">
+    <div class="col-sm-8">
+        <p>{% trans "Easily add this free module to your Zendesk installation via the Zendesk Marketplace, and begin including accurate Device42 CI in your Zendesk tickets today!" %}</p>
+    </div>
+    <div class="col-sm-4 text-center">
+        <a href="https://www.zendesk.com/apps/device42/" class="btn btn-sm btn-primary" id="zendesk_download" target="_blank">{% trans "Download" %}<br>Zendesk {% trans "Module" %}</a>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>{% trans "Device42 / Zendesk connector at a glance:" %}</h3>
+        <ul class="dash">
+            <li>{% trans "Associate configuration items (CIs) from Device42, including devices, racks, parts, and PDUs with Zendesk tickets" %}</li>
+            <li>{% trans "View device type, service level, and serial numbers from Device42 directly in Zendesk" %}</li>
+            <li>{% trans "Click through from Zendesk to view the CI details in Device42" %}</li>
+            <li>{% trans "Add Device42 items as a column in Zendesk to see CIs in list view" %}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/zendesk/Zendesk-connector.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/zendesk/Zendesk-connector.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Zendesk Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Link CMDB items to issues in Zendesk" %}</h3>
+        <p>{% trans "Now you can associate auto-discovered IT assets (or Configuration Items, CI) including devices, parts, PDUs and racks from Device42 with Zendesk tickets. Within Zendesk, Device42 Configuration Items can be directly selected when creating a Zendesk ticket." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/zendesk/Zendesk-connector-populated.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/zendesk/Zendesk-connector-populated.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Zendesk Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "View CI details from Zendesk tickets" %}</h3>
+        <p>{% trans "With the Device42 Zendesk connector, detailed device information from Device42" %} <em>{% trans "(such as serial #, asset #, and hardware model)" %}</em> {%trans "for that Configuration Item can be viewed directly from within Zendesk. Similarly, you can see the associated info for other CI types. Conversely, the CI in Zendesk is a link to view the Device42 page for that Configuration Item, enabling quick navigation to a detailed view of a given configuration item’s details in Device42." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Add Device42 items as columns within Zendesk, and view CIs in list view" %}</h3>
+        <p>{% trans "If you add a Device42 column to Zendesk, you will be able to see detailed information about each linked CI within the ticket. You are also able to follow the link to jump directly to the CI details within Device42." %}</p>
+    </div>
+</div>
+<div class="row image-left-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/zendesk/Zendesk-table-columns.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/zendesk/Zendesk-table-columns.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Zendesk Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <p>{% trans "You can also create a custom view in Zendesk to associate Device42 CIs with your tickets. To do so, simply open your Zendesk settings by clicking the gear in the bottom left, click Views, then “add view” and drag “Device42 CI” from the “Columns not included in the table” column to the “Columns included in the table” column." %}</p>
+    </div>
+</div>
+<p class="text-center prelist text-primary-dark padded"><em>{% trans "Now when viewing your tickets, you will also see the associated Device42 CI within the main view!" %}</em></p>
+<a href="{% static 'img/sections/support/integrations/zendesk/Zendesk-tickets-with-CI.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/zendesk/Zendesk-tickets-with-CI.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Zendesk Integration' %}">
+        </a>
+        <br>
+        <h3>{% trans "Download the Zendesk / Device42 CMDB connector for better ITSM Today!" %}</h3>
+        <p>{% trans "The Zendesk / Device42 connector can be found in the" %} <a href="https://www.zendesk.com/apps/device42/" target="_blank" class="ext-link">Zendesk Apps {% trans "Marketplace" %}</a>.</p>

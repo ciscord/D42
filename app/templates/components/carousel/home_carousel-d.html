@@ -1,0 +1,46 @@
+{% load i18n static %}
+<div class="row">
+    <section class="container">
+        <div class="home-carousel-d vert-offset-bottom-1">
+            <div class="row is-table-row">
+                <div class="col-sm-9">
+                    <h1 class="rw-lead text-left xs-center vert-offset-top-1">{% trans 'Continuous Discovery for your IT Infrastructure' %}</h1>
+                    <p class="lead font-stack-roboto xs-center vert-offset-top-1">{% trans 'Automatically maintain an up-to-date inventory of your physical, virtual, and cloud servers and containers, network components, software/services/applications, and their inter-relationships and inter-dependencies.' %}</p>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-0">
+                    <div class="embed-responsive embed-responsive-16by9" style="padding-bottom:50%;">
+                        <div>
+                            <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                <span class="wistia_embed wistia_async_igc5qfvoyr popover=true popoverAnimateThumbnail=true videoFoam=true popoverBorderColor=22a3df popoverBorderWidth=2" style="display:inline-block;height:100%;width:100%">&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="text-primary font-stack-roboto text-center">{% trans "90 Second Overview" %}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <section class="rw-cta col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 text-center">
+                    <a href="{% url 'schedule_form' %}" class="btn btn-warning btn-block-xs"><i
+                            class="fa fa-clock-o fa-pull-left"></i>{% trans 'Request Online Demo' %}</a>
+                    <a href="{% url 'download' %}" class="btn btn-primary btn-block-xs"><i
+                            class="fa fa-download fa-pull-left"></i>{% trans 'Try Now' %}</a>
+                </section>
+            </div>
+            <div class="row">
+                <section class="rw-sentence col-xs-12">
+                    <div class="rw-lead-words text-center">
+                        <span>{% trans 'DCIM' %}<small>{% trans 'Next generation data center infrastructure management.' %}</small></span>
+                        <span>{% trans 'Continuous Discovery' %}
+                <small><em>{% trans 'Always up-to-date inventory/interrelationships.' %}</em></small></span>
+                        <span>{% trans 'Modern CMDB' %}
+                <small>{% trans 'Pre-built and self-documenting.' %}</small></span>
+                        <span>{% trans 'IPAM' %}
+                <small>{% trans 'Manage IPv4 and IPv6 addresses with VRF groups and nested subnets.' %}</small></span>
+                        <span>{% trans 'Application dependency mappings' %}
+                <small>{% trans 'Automated and agentless.' %}</small></span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,13 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-sm-offset-0 vert-offset-bottom-1">
+        <img class="img-responsive center-block box-shadow animated"
+             src="{% static 'img/sections/features/role-based-access/tenant_services.png' %}"
+             alt="{% trans 'Multitenancy' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Multitenancy" %}</h2>
+        <p>{% trans "Device42 supports a number of multi-tenancy use cases. A corporation might want to restrict access by geographic location, department, division, corporate entity, and so on. More importantly, they might want a user to have access to just one department while another user has access to all departments within a division." %}</p>
+
+    </div>
+</div>

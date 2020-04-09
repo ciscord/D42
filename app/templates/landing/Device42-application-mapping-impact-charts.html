@@ -1,0 +1,31 @@
+﻿{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block title %}{% trans "Application Mapping Impact Charts" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Application dependency mapping software to record what is running where and what would be the impact of a single server, or virtual host, full rack or a room using Device42 software.' %}"/>
+{% endblock %}
+
+{% block landingHeadingText %}<i class="fa fa-database fa-fw"></i> {% trans "Application Mapping" %}{% endblock %}
+{% block landingSubHeadingText %}{% trans "Impact charts and more" %}!{% endblock %}
+
+{% block landingfeature %}
+    <h4 class="prelist">{% trans 'Automated service impact discovery, dependency flow diagrams, application impact lists, easy impact visualizations, and more!' %}</h4>
+    <p class="lead">{% trans 'Device42 enables data center managers to create a centralized repository of application, service and device relationships and dependencies whether running on premises on physical machines, on virtual machines, or in the cloud.  You can confidently retire or consolidate assets only if you understand their inter-dependencies and business impact. You can facilitate effective migrations by having a clear understanding of application interdependencies.' %}</p>
+{% endblock %}
+
+{% block maincontent %}
+    {% include 'partials/app-map/app-overview.html' %}
+    <br><br>
+    {% include 'partials/app-map/app-continuous-discovery.html' with image='left' %}
+    <br><br>
+    {% include 'partials/app-map/app-discovery-methods.html' %}
+    <br><br>
+    {% include 'partials/app-map/app-automated-service-impact-discovery.html' with image='left'%}
+    <br><br>
+    {% include 'partials/app-map/app-dependency-flow.html' %}
+    <br><br>
+    {% include 'partials/app-map/app-impact-lists.html' with image='left' %}
+    <br><br>
+    {% include 'partials/app-map/app-visual-impacts.html' %}
+{% endblock %}
+

@@ -1,0 +1,77 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans 'DevOps Evangelist' %} - {% trans "Jobs" %} @ Device42{% endblock %}
+{% block site_section_company %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'DevOps Evangelist opportunity at Device42' %}.">
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="text-primary-dark">{% trans "Jobs" %} @ Device42 <small>{% trans "DevOps Evangelist" %}</small></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+        <div class="container vert-offset-bottom-1">
+            <div class="row padded">
+                <div class="col-sm-3 left-col">
+                    <h2 class="flat-top"><a href="{% url 'company_jobs' %}">{% trans "Job Listing" %}</a></h2>
+                    <ul class="dash tight bullet-blue font-stack-condensed section-menu">
+                        <li class="active-item"><a href="{% url 'company_jobs_devops' %}">{% trans "DevOps Evangelist" %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 right-col">
+                    <h2 class="flat-top">{% trans "DevOps Evangelist" %}</h2>
+                    <p>{% trans "This is a great opportunity for a motivated DevOps person to join a company where they will have a huge impact. Device42 is looking to hire its first DevOps Evangelist who will take the reins and help explain the value of our software to the DevOps community." %}</p>
+                    <h3>{% trans "About Device42" %}</h3>
+                    <p>{% trans "Device42 is a single source of truth for all IT Infrastructure related configuration items with simple to use REST APIs. DevOps teams can automate their workflow with this CMDB tool and effectively manage their complex IT infrastructure. Teams at Cisco, Concur, Apple, Joyent, Splunk and many other organizations around the globe are using Device42 to do more faster." %}</p>
+                    <h3 class="flat-bottom">{% trans "About you..." %}</h3>
+                    <ul class="checklist flat-top">
+                        <li>{% trans "You’re driven and self motivated." %}</li>
+                        <li>{% trans "You enjoy writing and collaborating with and speaking with like-minded Cloud and DevOps engineers." %}</li>
+                        <li>{% trans "You’re comfortable working on your own or with a team and know what you need to do to get things done." %}</li>
+                        <li>{% trans "You’re an excellent communicator – via the written and spoken word. Comfortable speaking one-on-one and in front of small and large groups alike." %}</li>
+                        <li>{% trans "You’re high energy." %}</li>
+                        <li>{% trans "You’re experienced (in DevOps, continuous integration, system administration) and have an insistence on staying up to speed with current developments in DevOps. Come to this position from a web-developer/application-building perspective, or an ops/sys admin perspective – but either way know the value of these groups and the roles they play in system development and uptime." %}</li>
+                        <li>{% trans "You’ve a passion for helping system engineers and developers do more faster." %}</li>
+                        <li>{% trans "You’re comfortable traveling when necessary" %}</li>
+                    </ul>
+
+                    <h3 class="flat-bottom">{% trans "Nice to Have" %}</h3>
+                    <ul class="flat-top dash">
+                        <li>{% trans "You have an active Github profile with your work" %}</li>
+                        <li>{% trans "You have contributed meaningfully to the DevOps function for a modern cloud-powered application" %}</li>
+                        <li>{% trans "Proficient with tools commonly used for DevOps, such as Chef/Puppet, Nagios, Graphite, etc." %}</li>
+                        <li>{% trans "Active on social media" %}</li>
+                        <li>{% trans "Experience as a software engineer and have contributed to open source projects" %}</li>
+                        <li>{% trans "Active well read blog related to DevOps, open source, and/or cloud" %}</li>
+                    </ul>
+
+                    <h3>{% trans "About Working at Device42" %}</h3>
+                    <p>{% trans "Device42 was built to be an awesome place to work. You own the company via option grants and you get:" %}</p>
+                    <ul class="dash">
+                        <li>{% trans "Competitive salary" %}</li>
+                        <li>{% trans "Comprehensive health insurance plan" %}</li>
+                        <li>{% trans "Generous parental leave policy" %}</li>
+                        <li>{% trans "Flextime" %}</li>
+                        <li>{% trans "Three weeks paid vacation" %}</li>
+                    </ul>
+                    <p>{% trans "We’ll make sure you have all the gear and books you need. We care deeply about your professional development and long term goals. We work with you to grow your skills." %}</p>
+                    <h3>{% trans "How to Apply" %}</h3>
+                    <p class="flat-bottom">{% trans "To give us a better idea of how you think about DevOps, please answer the following questions in your email:" %}</p>
+                    <ul class="dash flat-top">
+                        <li>{% trans "Why are you passionate about DevOps?" %}</li>
+                        <li>{% trans "What traits do you possess that make you a good fit as a DevOps Evangelist and why?" %}</li>
+                    </ul>
+                    <p class="font-stack-condensed">{% trans "To apply, please email us at" %} <a
+                            href="mailto:jobs@device42.com">jobs@device42.com</a>, {% trans "attaching a current resume and your answers to the above questions." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Social Mentions" %}{% endblock %}
+{% block meta %}<meta name="description" content="{% trans 'Various Social Mentions for Device42 - Comprehensive Data Center Documentation Software' %}" />{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Social Mentions" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li class="active-item"><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a></li>
+                    <li><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2>Linkedin {% trans "Recommendations" %} <i class="fa fa-linkedin-square fa-pull-left"></i></h2>
+                <img src="{% static 'img/customers/social/michael_linkedin.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <br>
+                <img src="{% static 'img/customers/social/chris_linkedin.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <hr>
+                <h2>Twitter {% trans "Recommendations" %} <i class="fa fa-twitter-square fa-pull-left"></i></h2>
+                <img src="{% static 'img/customers/social/steve_twitter.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <br>
+                <img src="{% static 'img/customers/social/john_twitter.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <hr>
+                <h2>Reddit {% trans "Mentions" %} <i class="fa fa-reddit-square fa-pull-left"></i></h2>
+                <img src="{% static 'img/customers/social/burning_1rr_reddit.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <br>
+                <img src="{% static 'img/customers/social/NXDOMAIN_reddit.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <br>
+                <img src="{% static 'img/customers/social/tacmot_reddit.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+                <br>
+                <img src="{% static 'img/customers/social/brkdncr_reddit.jpg' %}" class="img-responsive" alt="{% trans 'Social Mentions' %}">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

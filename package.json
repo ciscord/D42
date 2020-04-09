@@ -1,0 +1,56 @@
+{
+  "name": "device42-website",
+  "version": "0.0.9",
+  "private": true,
+  "repository": {},
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=2.7.3"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "migrate": "python app/manage.py migrate",
+    "build:dev": "gulp --debug",
+    "build": "gulp",
+    "dev": "gulp --serve --debug --watch",
+    "prod": "gulp --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "1.12.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "babelify": "^7.3.0",
+    "bower": "^1.7.9",
+    "browser-sync": "^2.17.2",
+    "browserify": "^13.1.0",
+    "cssnano": "^3.7.7",
+    "del": "^2.2.1",
+    "gulp": "^3.8.11",
+    "gulp-changed": "^1.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-prompt": "^0.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.4",
+    "gulp.spritesmith": "^6.2.1",
+    "imagemin-pngquant": "^5.0.0",
+    "merge-stream": "^1.0.0",
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  }
+}

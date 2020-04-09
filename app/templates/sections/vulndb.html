@@ -1,0 +1,205 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block title %}Device42 + VulnDB - {% trans 'Rapid Vulnerability Identification and Remediation' %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 + VulnDB - Rapid Vulnerability Identification and Remediation' %}">
+{% endblock %}
+{% block styles %}
+    <style>
+
+
+        .error {
+            color: #d21309;
+            font-weight: 400;
+        }
+
+        span.text-logo {
+            font-weight: 400;
+            color: #00b6ff;
+        }
+
+        span.text-logo > span {
+            font-weight: 400;
+            color: #777;
+        }
+
+        .alt-font {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        li.lead-small {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .checklist.clean {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+{% endblock %}
+{% block body_scripts %}
+    <script type="text/javascript">
+        $(function () {
+            $("input[name='ship100']").bind("change", function () {
+                var toggle = ($(this).val() == 'true') ? true : false;
+                $("section.shipped").toggle(toggle);
+            });
+            $("#vulndb").validate({
+                ignore: ".ignore",
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true
+                    },
+                    hiddenRecaptcha: {
+                        required: {
+                            depends: function () {
+                                if (window.grecaptcha.getResponse() == '') {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+{% endblock %}
+{% block landingfeature %}
+    <div class="container">
+        <div class="row" style="padding-bottom:2em;">
+            <div class="col-md-12 text-center">
+                <img src="{% static 'img/branding/transparent-logo.png' %}" alt="Device42"
+                     class="img-responsive inline-block" style="max-width:200px;margin-bottom:0;margin-right:6px;">
+                <i class="fa fa-plus fa-2x"></i>
+                <img src="{% static 'img/customers/vulndb/riask-based-security-trans.png' %}" alt="Risk Based Security"
+                     class="img-responsive inline-block" style="max-width:200px;margin-bottom:0;margin-left:6px;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-8">
+                <img src="{% static 'img/customers/vulndb/reduce-time.png' %}"
+                     alt="{% trans 'Quickly be alerted to vulnerabilities with Device42 and VulnDB' %}"
+                     class="img-responsive center-block">
+            </div>
+            <div class="col-sm-8 col-sm-pull-4">
+                <p class="lead"><span
+                        style="border-bottom: 2px solid #22a3df;font-style:italic;">{% trans 'Quickly' %}</span> {% trans "be alerted to vulnerabilities with <em>Device42</em> and <em>VulnDB</em>.  Get detailed alerts containing valuable impact and remediation information, describing problem locations and prioritized by CVE severity." %}
+                </p>
+                <p class="lead">{% trans 'With Device42 + VulnDB, your teams will never overlook another CVE, and no affected system will go un-remediated without your knowledge.' %}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block tryFreeCallout %}{% endblock %}
+{% block maincontent %}
+    <div class="container">
+        <div class="row flat-bottom">
+            <div class="col-sm-12">
+                <h2>{% trans 'The Problem' %}</h2>
+                <p class="lead-small">{% trans 'There exist numerous products on the market that can detect vulnerabilities in your networks but will likely overwhelm you with a sea of information.' %}</p>
+                <p class="lead-small">{% trans 'The challenge is correlating the affected software instance to its physical location, locating the machine owner and determining downstream impact. How do you efficiently sort through, make sense of, and prioritize what can often be an overwhelming amount of information?' %}</p>
+                <p class="lead-small">{% trans 'For example, suppose you are alert that certain versions of certain software products have new vulnerabilities.  How do you know what physical, virtual, and cloud machines are running those software products and specific version?  Even if you know what software is running on each machine, you still need to manually match up the software names in the vulnerabilities list to the software names in your list.' %}</p>
+                <p class="lead-small">{% trans 'Then, once you do all the matching, how do you create a patching plan?  You don’t want to take down a machine, patch it, and then discover that you have more vulnerabilities on that same machine.  Or worse, you aren’t what user applications depend on that machine, take it down, and get complaints.' %}</p>
+                <p class="lead-small">{% trans 'Additionally, if you have a lot of machines to patch, how do you create a plan.  Ideally, you will get a list of the machines in order of the severity of the vulnerabilities.  Or, you might want to get a list of machines by rack or by cloud provider.  Then, you need to get the <code>root</code> passwords for each machine, the access URL’s, and on and on' %}...</p>
+                <br>
+                <p class="lead text-center text-muted">
+                    <em>{% trans 'Wouldn’t it be nice if you could just press a button and get all this information in one place' %}</em>?
+                </p>
+            </div>
+        </div>
+        <div class="row flat-top">
+            <div class="col-sm-12">
+                <h2>{% trans 'The Solution' %}</h2>
+                <p class="lead-small">{% trans 'Device42’s ITAM/CMDB solution maintains an up-to-date database of discovered software assets deployed across your enterprise. We have teamed up with VulnDB to get near real time vulnerability information and cross reference this against all versions of your deployed software.  You are immediately alerted to serious vulnerabilities.  You can generate customized reports that have all the information you need to create remediation plans.  Instead of a sea of overwhelming information, you are provided with the concise, actionable data you need to get vulnerable systems patched.' %}</p>
+            </div>
+        </div>
+
+        <div class="row is-table-row">
+
+            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-sm-push-7">
+                <img src="{% static 'img/customers/vulndb/the-solution.png' %}" class="img-responsive center-block"
+                     alt="Device42 is a comprehensive data center and network management software. Loved by organizations around the world for its open APIs and ease of use.">
+            </div>
+            <div class="col-sm-7 col-sm-pull-5">
+                <h3>{% trans 'Benefits' %}</h3>
+                <ul class="">
+                    <li>{% trans 'Stop wasting valuable time correlating generic security reports, finding required remediation data, and manually determining user impacts' %}</li>
+                    <li>{% trans 'Eliminate the tedious, manual work of trying to identify instances and locations of affected software, and triaging their respective support teams' %}</li>
+                    <li>{% trans 'Instead, spend time remediating!' %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-7 col-sm-offset-0 col-md-6">
+                <h3>{% trans 'Key Features' %}</h3>
+                <ul class="checklist">
+                    <li class="">{% trans 'Scan your network for software installations across your infrastructure' %}</li>
+                    <li class="">{% trans 'Device42 automatically correlates device with its CVEs.' %}</li>
+                    <li class="">{% trans 'Get automated alerts when CVEs are detected:' %}</li>
+                    <ul style="list-style:none;">
+                        <li style="padding-left:0;">{% trans 'Get immediate alerts for high vulnerability CVEs with location, downstream impact and detailed information to plan the remediation' %}</li>
+                        <li style="padding-left:0;">{% trans 'Receive reports at desired intervals for medium/low impact CVEs, automatically emailed to key stakeholders allowing less urgent remediations to be planned accordingly' %}</li>
+                    </ul>
+                    <li class="">{% trans 'Always have an accurate picture of the software risk across the enterprise' %}</li>
+                    <li class="">{% trans 'Spend less time sorting through data, and more time remediating issues!' %}</li>
+
+                </ul>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 vert-offset-top-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Signup for the Invite
+                            <label class="label label-warning pull-right">BETA</label>
+                        </h2>
+                    </div>
+                    <div class="panel-body" style="padding-bottom:0;background-color:#efefef;">
+                        <form action="." method="POST" id="vulndb" role="form">{% csrf_token %}
+                            <input type="hidden" name="type" value="vulndb" style="display:none;">
+                            {% for field in form %}
+                                <div class="form-group col-xs-12 {% if field.errors %}has-errors{% endif %}">
+                                    <label class="control-label col-md-4 font-roboto"
+                                           style="font-weight:400;text-align:left;"
+                                           for="id_{{ field.name }}">{{ field.label }}</label>
+                                    <div class="field-wrap">
+                                        {{ field }}
+                                    </div>
+                                    {% if field.errors %}
+                                        {% for error in field.errors %}
+                                            <span class="text-danger text-strong">{{ error|escape }}</span>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {% if field.help_text %}
+                                        <p class="help-block">{{ field.help_text|safe }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                            <span class="text-muted"><small>{% trans "We will not spam you or share your info." %}</small></span>
+                            <div class="form-group text-center">
+                                <div class="center-block" style="display:table;">
+                                    <div class="g-recaptcha"
+                                         data-sitekey="6LdxPCYTAAAAADYUR5AACcfH7RlHPLy5O2ocC6W1"></div>
+                                    <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha"
+                                           id="hiddenRecaptcha">
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 12px 0 12px;display:block;">
+                                <div class="col-xs-12 text-center inline-block">
+                                    <input class="btn btn-warning btn-sm"
+                                           style="font-size:1.4em;font-weight:400;margin-top:0;" id="btnSubmit"
+                                           type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

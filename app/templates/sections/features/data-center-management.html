@@ -1,0 +1,58 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Data Center Infrastructure Management (DCIM) Software" %}{% endblock %}
+{% block meta %}
+<meta name="description"
+          content="{% trans 'Data center management made easy with intuitive, integrated software by device42. Loved by organizations around the world for its open APIs.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container featurette-wrap">
+            <div class="row featurette">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "Data Center Management" %}</h1>
+                    <h2 class="text-primary flat-top">{% trans "Interactive and Intuitive" %}</h2>
+                    <p class="">{% trans "Device42's powerful data center infrastructure management (DCIM) capabilities have revolutionized the way IT departments manage their data centers." %}</p>
+                    <p class="">{% trans "With powerful data center visualization tools, IT staff now have access to intelligent data center diagrams that accurately reflect their IT environment." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <img class="featurette-image img-responsive center-block"
+                         alt="{% trans 'Server Room Layout' %}"
+                         src="{% static 'img/generic/DCIM-Feature.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#layouts" data-offset="top-nav">{% trans "Room Layouts" %}</a>
+            <a href="#" data-jump="#diagrams" data-offset="top-nav">{% trans "Rack Diagrams" %}</a>
+            <a href="#" data-jump="#patchpanel" data-offset="top-nav">{% trans "Patch Panels" %}</a>
+            <a href="#" data-jump="#deviceinfo" data-offset="top-nav">{% trans "Detailed Data" %}</a>
+            <a href="#" data-jump="#spareparts" data-offset="top-nav">{% trans "Spare Parts" %}</a>
+            <a href="#" data-jump="#powerthermal" data-offset="top-nav">{% trans "Power & Thermal" %}</a>
+            <a href="#" data-jump="#automation" data-offset="top-nav">{% trans "Automatation" %}</a>
+        </div>
+    </div>
+    <div class="container featurette-wrap">
+        {% include "partials/dcim/data-center-room-layouts.html" with vcenter=True id="layouts" %}
+        {% include_partial "partials/dcim/auto-generate-rack-diagrams.html" vcenter=True image="left" id="diagrams" %}
+        {% include_partial "partials/dcim/it-patch-panel-management.html" vcenter=True id="patchpanel" %}
+        {% include_partial "partials/dcim/detailed-device-information.html" vcenter=True image="left" id="deviceinfo" %}
+        {% include_partial "partials/dcim/manage-spare-parts.html" vcenter=True id="spareparts" %}
+        {% include_partial "partials/dcim/power-and-thermal-management.html" vcenter=True image="left" id="powerthermal" %}
+        {% include_partial "partials/dcim/automated-data-center-management.html" vcenter=True id="automation" %}
+        <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small><br>
+                <a href="{% url 'features_cmdb_for_cloud_era' %}"><i class="fa fa-chevron-left"></i> {% trans 'CMDB for the Cloud Era' %}</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small><br>
+                <a href="{% url 'features_itam' %}">{% trans 'IT Asset Management' %} <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

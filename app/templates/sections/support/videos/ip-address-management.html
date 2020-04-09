@@ -1,0 +1,126 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans "IP Address Management" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video introduction to IP Address Management in Device42, the most comprehensive solution for data center infrastructure management.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('t73hcu61mj');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "IP Address Management" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "IP Address Management(IPAM) with IPv4/IPv6 and overlapping IP ranges support with Device42." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p>Welcome! This Device42 solution overview will introduce you to key IP Address Management
+                            capabilities in Device42 software. Let’s start with a brief introduction of Device42’s IPV4
+                            and IPV6 functionality</p>
+
+                        <p class="text-strong">IPV4 and IPV6</p>
+
+                        <p>Device 42 natively supports both IPV4 and IPV6.</p>
+
+                        <p>You can filter IPs by type. And each device can have multiple IP associations so you can view
+                            a device and see all of its associated IPV4 and IPV6 addresses.</p>
+
+                        <p>In the next section, we’ll talk about Device42’s powerful, agentless auto-discovery
+                            capabilities.</p>
+
+                        <p class="text-strong">Auto Discovery</p>
+
+                        <p>Device42 has a wide range of agentless, auto discovery tools based on native protocols. For
+                            example, you can connect to network devices using SNMP. You can discover by IP range or you
+                            can use CDP or LLDP discovery to capture basic inventory information, ARP table, or MAC
+                            table.</p>
+
+                        <p>You also have options like ping sweep, DNS zone sync, Windows discovery using WMI and Linux
+                            discovery using SSH.</p>
+
+                        <p>All of the tools utilize IP for discovery and your IP information is also kept up-to-date and
+                            accurate.</p>
+
+                        <p class="text-strong">Network Connectivity</p>
+
+                        <p>Device42’s powerful auto-discovery capabilities can also document device switch port
+                            connections.</p>
+
+                        <p>By clicking on “Follow Remote Ports” we can view a full Layer-2 network connectivity diagram
+                            that is dynamically generated based on the actual network connectivity.</p>
+
+                        <p>With Device42, understanding network connectivity is both easy and clear!</p>
+
+                        <p>Now lets see how Device42 handles overlapping IP ranges</p>
+
+                        <p class="text-strong">Overlapping Ranges</p>
+
+                        <p>Device42 utilizes a concept called VRF Group. A VRF group enables easy management of
+                            overlapping IP ranges across multiple data centers. Once subnets are arranged in VRF groups,
+                            they can be further nested into other subnets. This feature gives you great flexibility in
+                            managing your subnets and VRF groups.</p>
+
+                        <p>For example, we can add subnets, or add IP addresses. When we click on the “add a subnet”
+                            icon”, we can see what IPs are available and we can save that information all from a single
+                            page.</p>
+
+                        <p>In the next section, we’ll provide a brief overview of Device42’s bulk operations for IP
+                            address management.</p>
+
+                        <p class="text-strong">Bulk Operations</p>
+
+                        <p>Device42 has multiple tools that make managing bulk IP operations easy.</p>
+
+                        <p>For example, if we want to add a group of IPs to a particular subnet, we choose the subnet,
+                            add the beginning and ending IP for the group, choose a type for the IP group, mark them as
+                            available, or not available, and then save the IP group to the subnet.</p>
+
+                        <p>Now that all the IPs have been added to the subnet, we can view the subnet and choose to view
+                            the individual IP’s that were added.</p>
+
+                        <p>Device42’s second bulk IP operation allows us to modify or create almost any data in Device42
+                            using Excel files.</p>
+
+                        <p>Under the “Tools”, “Import Export”, we provide you with Excel templates and even your current
+                            data from Device42 that you can quickly edit offline, and then re-import to Device42.</p>
+
+                        <p>Device42’s third component for bulk data management is its powerful API capabilities -- which
+                            allow you to make any changes in Device42. Device42 provides clear, easy to use API code
+                            examples that enable you to add data, update data, or delete data regarding your subnet or
+                            VRF group of IPs.</p>
+
+                        <p>That wraps up this brief introduction of the IP address management capabilities found in
+                            Device42 software. Please contact us to learn more about how Device42 software can transform
+                            the management of your IT infrastructure.</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

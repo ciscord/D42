@@ -1,0 +1,75 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans "Hierarchy" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video outlining a basic understanding of Device42&#39;s hierarchy and terminology.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('5ic4mi3xmq');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>{% trans "Hierarchy" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "Gain a basic understanding of Device42's hierarchy and terminology." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>+
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p>This is the Device42 homepage. The Dashboard provides a high level view of your inventory …
+                            you can arrange your dashboard widgets, add and remove widgets, and personalize your
+                            dashboard. The search box enables quick access to your data. Almost everything in Device42
+                            is searchable … the search bar is also part of the main menu, and accessible at the top of
+                            every page. Before we drill-down into all the cool features and functionality of Device42, I
+                            would like to briefly review the hierarchy and a bit of terminology. The hierarchy …
+                            buildings are the top level object in the Device42 … Buildings include one or more computer
+                            rooms. At the next level we have rooms … each room can contain racks and stand-alone
+                            objects. Next we have racks …racks can contain devices and assets. In Device42 terms,
+                            devices have IP addresses, and assets do not.</p>
+
+                        <p>There are 6 categories of devices. Remember, devices have IP addresses. Everything else is an
+                            asset.</p>
+
+                        <p>Physical devices like servers, switches, disk controllers, and chassis.</p>
+                        <p>Blades devices - hardware modules that are housed in a chassis.</p>
+                        <p>Virtual devices - virtual machines and appliances like Device42!</p>
+                        <p>Cluster devices - containers that can include physical, blade, and virtual devices for
+                            example: a group of web servers that function as a web farm.</p>
+                        <p>Other devices - this is a user-defined subtype to enable you to create any device type wish,
+                            examples are: Printers, scanners, faxes, modems, and tablets.</p>
+                        <p>Unknown devices - this is how devices are sometimes categorized if type was not found during
+                            the discovery process, unknown devices must have their type assigned manually.</p>
+                        <p>Finally, The Device Tree View is a good way recap the Device42 hierarchy, starting with the
+                            building, room, rack, physical device, blade device, and virtual device.</p>
+
+                        <p>This concludes our introduction, thanks for watching!</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

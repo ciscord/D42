@@ -1,0 +1,107 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'Device42 is a powerful IP Address management solution that integrates IT Infrastructure management.' %}"/>
+{% endblock %}
+{% block title %}{% trans "Device42 vs Power IQ Solutions" %}{% endblock %}
+{% block landingHeadingText %}{% trans "Data Center Power Management" %}{% endblock %}
+{% block landingLeadText %}{% trans "Playing tetris with your servers in racks with no visibility into power consumption?  Wasting money and resources on under optimized data center power?  Device42's comprehensive DCIM solution can help you take the complexity out of your data center energy management giving you full visibility and control.  Optimize your data center power and add efficiency to your capacity planning" %}.{% endblock %}
+
+{% block landingfeature %}
+<section class="row padded is-table-row">
+    <div class="col-sm-12 col-md-7">
+        <div class="table-responsive padded">
+            <table class="table table-condensed table-hover d42-sw-compare">
+            <thead>
+                <tr>
+                    <th class="table-title"><p class="text-left alt-text" style="margin:0;font-size:24px;">{% trans "Solution Comparison" %}</p></th>
+                    <th class="product-heading text-primary">{% trans "Device42 Core" %}</th>
+                    <th class="product-heading text-primary">{% trans "Power IQ" %}<sup>&reg;</sup></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="comp-feature">{% trans "Effective IPMI Power Monitoring" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Smart PDU Monitoring" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "IPMI Temperature Monitoring" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-5">
+        <img class="img-responsive center-block img-border" src="{% static 'img/landing/datacenterpower/pdu-ports-power-data.png' %}" alt="{% trans 'PDU Port Power Data Charts and Graphs' %}">
+    </div>
+</section>
+{% endblock %}
+
+{% block maincontent %}
+   <section class="row image-right-8x4 padded is-table-row">
+   <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border" src="{% static 'img/sections/features/dcim/device_energy.jpg' %}" alt="{% trans 'Power & Thermal Management' %}">
+        </div>
+         <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "Power & Thermal Management" %}</h3>
+            <p class="light-weight">{% trans "Power and thermal management in the data center has never been easier.  Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities" %}:</p>
+             <div class="row is-table-row">
+                 <div class="col-xs-6">
+                     <ul class="light-weight bullet-blue">
+                        <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+                        <li>{% trans "Power estimation for servers" %}</li>
+                         <li>{% trans "Track historical power and thermal data" %}</li>
+                    </ul>
+                 </div>
+                 <div class="col-xs-6">
+                     <ul class="light-weight bullet-blue">
+                        <li>{% trans "Better capacity planning" %}</li>
+                        <li>{% trans "Power On/Off PDU outlets for supported models" %}</li>
+                        <li>({% trans "Add-on module - additional cost" %})</li>
+                     </ul>
+                 </div>
+             </div>
+        </div>
+    </section>
+    <section class="row image-left-5x7 padded is-table-row">
+        <div class="col-md-6">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/datacenterpower/vendor-agnostic.png' %}" alt="{% trans 'Vendor Agnostic' %}">
+        </div>
+        <div class="col-md-6">
+            <h3>{% trans "Vendor Agnostic Management" %}</h3>
+            <p class="light-weight">{% trans "There are multiple proprietary power measurement and control protocols supported by different OEMs, which make it challenging to have a single solution for power management across" %} <strong><em>{% trans "all" %}</em></strong> {% trans "devices in the data center.  Device42's Energy Management Module powered by Intel DCM Software works across different vendors.  It provides accurate, real time power and thermal monitoring and management for individual servers, group of servers, racks and IT equipment such as PDUs in the data centers" %}.</p>
+        </div>
+    </section>
+    <section class="row image-right-5x7 padded is-table-row">
+    <div class="col-sm-7">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/datacenterpower/server-room-heat-map.png' %}" alt="{% trans 'Server room heat-map diagram' %}">
+        </div>
+        <div class="col-sm-5">
+            <h3>{% trans "Thermal and Power Heat-maps" %}</h3>
+            <ul class="light-weight bullet-blue">
+                <li>{% trans "Rack-level heat maps based on power and thermal data from individual servers" %}</li>
+                <li>{% trans "Heat-maps on the room layout view based on capacity, power usage and thermal data" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row padded image-left-7x5 is-table-row">
+        <div class="col-sm-6">
+            <img class="img-responsive img-border center-block" src="{% static 'img/landing/datacenterpower/pdu-port-power-control.png' %}" alt="Power control for PDU Ports">
+        </div>
+        <div class="col-sm-6">
+            <h3>{% trans "Power Control for Servers and PDU Ports" %}</h3>
+            <ul class="light-weight bullet-blue">
+                <li>{% trans "Power On/Off servers using IPMI" %}</li>
+                <li>{% trans "PDU Ports power on/off supported via SNMP" %} <small>({% trans "For supported PDU models" %})</small></li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

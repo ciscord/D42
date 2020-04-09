@@ -1,0 +1,80 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Software Download" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Download a free trial of comprehensive data center infrastructure management software (DCIM) with integrated IPAM and centralized password management by Device42.' %}"/>
+{% endblock %}
+{% block site_section_product %}active{% endblock %}
+{% block head_scripts %}
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+
+{% endblock %}
+{% block body_scripts %}
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Free Trial" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="container padded">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="flat-top">{% trans "Please fill out the following form and we will email you the download link right away!" %}</h3>
+                    <hr>
+                    <form role="form" id="downloadForm" action="." method="POST">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-group {% if field.errors %}has-errors{% endif %}">
+                                <label class="control-label col-md-4 font-roboto" style="font-weight:400;text-align:left;"
+                                       for="id_{{ field.name }}">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <span class="text-danger text-strong">{{ error|escape }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if field.help_text %}
+                                    <p class="help-block">{{ field.help_text|safe }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+
+                        <input style="display:none" id="id_main" type="text" name="main" maxlength="64"/>
+                        <div class="form-group text-right xs-center">
+                            <button class="btn btn-primary" type="submit">{% trans "Send My Download Link" %}</button>
+                        </div>
+                    </form>
+                    <br>
+                    <p class="text-muted">
+                        <small>{% trans "We respect your privacy and will not misuse or sell your personal information.  Read our " %}<a
+                                href="{% url 'legal_privacy' %}">{% trans "Privacy Policy" %}</a></small>
+                    </p>
+                </div>
+                <div class="col-sm-4 good-company text-center">
+                    <h3 class="flat-top text-warning">{% trans "You are in good company" %}!</h3>
+                    <div class="good-company--imgs padded clearfix">
+                        <img src="{% static 'img/customers/128x128/concurcom.png' %}" alt="concur">
+                        <img src="{% static 'img/customers/128x128/singtelcom.png' %}" alt="singtel" class="hidden-xs">
+                        <img src="{% static 'img/customers/128x128/ucsbedu.png' %}" alt="ucsb" class="hidden-xs">
+                        <img src="{% static 'img/customers/128x128/sprintcom.png' %}" alt="sprint">
+                        <img src="{% static 'img/customers/128x128/wdccom.png' %}" alt="western digital">
+                        <img src="{% static 'img/customers/128x128/optuscomau.png' %}" alt="optus">
+                        <img src="{% static 'img/customers/128x128/homeawaycom.png' %}" alt="homeaway"
+                             class="hidden-xs">
+                        <img src="{% static 'img/customers/128x128/livingsocialcom.png' %}" alt="living social">
+                        <img src="{% static 'img/customers/128x128/atlassiancom.png' %}" alt="atlassian">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

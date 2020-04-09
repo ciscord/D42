@@ -1,0 +1,36 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block box-shadow"
+             alt="{% trans 'Web-based rack layouts with drag and drop' %}"
+             src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}">
+    </div>
+    <div class="col-md-7">
+        <h2 class="featurette-heading">{% trans "Auto-generate Rack Diagrams" %}</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="">{% trans "Managing data center racks has never been easier or more accurate! Device42's automatically generated rack diagrams make manual drawings and spreadsheet records a thing of the past.  Creating accurate rack diagrams is now fast and easy!" %}</p>
+            </div>
+            <div class="col-md-12">
+                <div class="row is-table-row">
+                    <div class="col-xs-6">
+                        <ul class="checklist">
+                            <li>{% trans "Support for ½ U devices" %}</li>
+                            <li>{% trans "Back to back devices(½ depth)" %}</li>
+                            <li>{% trans "Show filler panels, patch panels" %}</li>
+                            <li>{% trans "See available rack units" %}</li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <ul class="checklist">
+                            <li>{% trans "Show PDUs in and around the rack" %}</li>
+                            <li>{% trans "Drag and drop objects between racks" %}</li>
+                            <li>{% trans "Find next available slot" %}</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

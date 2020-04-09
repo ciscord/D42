@@ -1,0 +1,78 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: IT Agility" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'IT Agility - Responsiveness to Service Issues / Change Requests' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "IT Agility" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <img src="{% static 'img/components/study-a/use-cases/IT Agility.png' %}" class="img-inline-right"
+                         alt="{% trans 'IT Agility' %}"/>
+                    <h2>{% trans 'Challenge' %}</h2>
+                    <p>{% trans "<strong>IT Agility</strong>:  Responsiveness to Service Issues & Change Requests" %}</p>
+                    <p class="text-italic">{% trans "Speed of processing of ITSM tickets is one measure of IT agility.  Customers report that as much as 75% of the time required to process tickets involves time-consuming research." %}</p>
+                    <p class="prelist">{% trans "Device42 gives you instant access to questions such as:" %}</p>
+
+                    <ul>
+                        <li>{% trans 'What users will be impacted if I have to take down a network/server/storage component?' %}</li>
+                        <li>{% trans 'What is my warranty on a piece of equipment?  Who do I call for service?  ' %}</li>
+                        <li>{% trans 'What is the remote IP address?  What are the authentication credentials?' %}</li>
+                        <li>{% trans 'What IP / subnet should I assign to minimize fragmentation?' %}</li>
+                        <li>{% trans 'What is the password to the device on the ticket?' %}</li>
+                    </ul>
+                    <h2>{% trans 'Solution' %}</h2>
+                    {% blocktrans %}
+                        <p>When you open a ticket in your ITSM system, Device42 is right there to give you all the
+                            information you need. Pop up an application dependency diagram to view what users and
+                            applications are dependent on a piece of equipment. Don’t try to locate warranty contracts
+                            in a dusty cabinet. All the warranty information is right there in your ticket along with
+                            who to call, the device serial number, and anything else you need. Tired of playing “who
+                            knows the password”? You don’t have to do that any more with Device42. When planning IP
+                            allocations, view network diagrams and fragmentation charts or just click the “What’s the
+                            next available IP button”.</p>
+                        <p>Device42 also integrates with many popular ITSM solutions:</p>
+                        <ul>
+                            <li>JIRA & Confluence</li>
+                            <li>ServiceNow</li>
+                            <li>ZenDesk</li>
+                            <li>BMC Remedy</li>
+                        </ul>
+                    {% endblocktrans %}
+                    <p>{% trans "Device42 also" %} <a
+                            href="{% url 'tours_patch_cable_management' %}">{% trans "tracks all cabling" %}</a>,
+                        {% blocktrans %}
+                        including both electrical and network. Network SNMP discovery inventories
+                        switches, routers, and firewalls, and can even work out IP to MAC relationships to map MACs
+                        to ports. Tracking devices in transit is no problem, as Device42 tracks physical equipment
+                        transfers between locations, too. No need to log onto every server to check the config -
+                        Device42 can show you your configurations for popular applications.</p>
+                        {% endblocktrans %}
+                    <h5 class="lead font-stack text-center vert-offset-top-2">{% trans "Check out our" %} <a href="{% url 'integrations' %}">{% trans "integrations" %}</a> {% trans "page, and" %} <a href="{% url 'download' %}">{% trans "download" %}</a> {% trans "a free 30-day trial today!" %}</h5>
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i
+                        class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% load i18n static %}
+<section class="row image-right-7x5 is-table-row vert-offset-bottom-1">
+    <div class="col-sm-6">
+        <a href="{% static 'img/sections/features/cmdb/Solution-Components.png' %}" data-featherlight="image">
+            <img src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}" class="img-responsive">
+        </a>
+    </div>
+    <div class="col-sm-6">
+        <h2 class="text-primary text-italic">{% trans 'See' %} <span style="font-style:normal;">IT</span> {% trans 'All in One Place!' %}</h2>
+        <p class="">{% trans "Once your data is loaded, it's time to reap the benefits. Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data. But even better, Device42 provides an extensive set of visualizations including:" %}</p>
+        <ul class="dash">
+            <li>{% trans 'Your computer rooms and racks with power and capacity heatmaps' %}</li>
+            <li>{% trans 'Your full IP connectivity and power chain' %}</li>
+            <li>{% trans 'Your hardware, software, and application dependencies' %}</li>
+        </ul>
+    </div>
+</section>

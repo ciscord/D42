@@ -1,0 +1,143 @@
+footer {
+  min-width: 100%;
+  margin: 0;
+  min-height: 100px;
+  background-color: $footer-background;
+  margin-bottom: 0 !important;
+  padding: 10px 0 0 0;
+
+  h5 {
+    color: #aaa;
+    font-weight: $weight-semibold;
+    font-size: 1.2em;
+    border-bottom: 2px solid $footer-links-text-color;
+    line-height: 1.4;
+    font-family: $font-stack-roboto-condensed;
+    text-transform:uppercase;
+  }
+
+  ul {
+    //margin-left:-28px;
+    @extend .no-style;
+
+    li {
+      margin-bottom:3px;
+
+      &:before {
+        content: "\f0da";
+        font-family: "FontAwesome";
+        color: #aaa;
+        font-size:0.8em;
+        vertical-align: text-top;
+        //margin-left:-10px;
+      }
+
+      a {
+        color: #aaa;
+        font-size:0.8em;
+        &:hover,
+        &:hover:before {
+          color: $white-color;
+        }
+
+        &:before {
+
+        }
+      }
+    }
+  }
+
+  .language-select {
+    position: relative;
+    text-align: left;
+    outline:0;
+    border:0;
+
+    &:hover {
+      ul.langs {
+        display: block;
+        opacity: 0.9;
+      }
+    }
+    a:before {
+      content: initial;
+    }
+    li:before, a:before {
+      list-item:none!important;
+      content: ''!important;
+    }
+    ul.langs {
+      position: absolute;
+      bottom: 0;
+      left: -12px;
+      padding-left:0;
+      display: none;
+      opacity: 0;
+      background-color: $footer-background;
+
+      li {
+        background-color: $footer-background;
+        display: table;
+        padding: 12px;
+        &:hover {
+          color: darken($navigation-background-color, 10%);
+        }
+        a {
+          padding-left: 12px;
+          float: right;
+        }
+        i {
+          float: left;
+        }
+
+      }
+    }
+  }
+
+  .footer-links {
+    background-color: $footer-links-background;
+    .container {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  .footer-floor {
+    > .row {
+      @extend .is-table-row;
+      .footer-social {
+        position: relative;
+
+        .footer-social-wrap {
+          line-height: 2;
+          margin: 12px 0;
+        }
+      }
+    }
+    .footer-legal > p {
+      margin: 12px 0;
+    }
+  }
+
+  .fa {
+    margin-right: 12px;
+    color: #415261;
+    font-size:24px;
+    display: inline-table;
+    @extend .animated, .infinite;
+    &:hover {
+      color:$brand-primary;
+      @extend .rubberBand;
+    }
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    & {
+      text-align: left;
+    }
+    ul li:before {
+      content: ''!important;
+      padding-right:initial!important;
+    }
+  }
+
+}

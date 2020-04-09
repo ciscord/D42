@@ -1,0 +1,60 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Manage Spare Parts" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Data Center Management Software.  Manage your spare parts and components with a comprehensive and easy to use solution from Device42.' %}"/>
+
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Manage Spare Parts" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tour-page">
+        <div class="row is-table-row">
+            <div class="col-sm-8">
+                <h2>{% trans "Manage Spare Parts" %}</h2>
+                <ul>
+                    <li>{% trans "Easily manage your hardware components and spare parts inventory" %}</li>
+                    <li>{% trans "Keep tabs on how many are used" %}</li>
+                    <li>{% trans "Assign components to devices" %}</li>
+                    <li>{% trans "Manage assignments from the Change component page, or from the Hardware tab on a given device page" %} </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="{% static 'img/landing/spareparts/support-for-custom-components.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/spareparts/support-for-custom-components.png' %}"
+                         alt="{% trans 'Support for Custom Components' %}"
+                         class="center-block img-responsive box-shadow img-xs-restrict">
+                </a>
+            </div>
+        </div>
+        <div class="row is-table-row">
+            <div class="col-sm-8">
+                <h2>{% trans "Support for Custom Components" %}</h2>
+                <ul>
+                    <li>{% trans "Support for unlimited component types, plus CPU, RAM, HDD" %}</li>
+                    <li>{% trans "For additional information, please see our" %} <a
+                            href="{% url 'features_itam' %}">{% trans "IT Asset Management" %}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                 <a href="{% static 'img/landing/spareparts/SpareParts.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/spareparts/SpareParts.png' %}"
+                         alt="{% trans 'Support for Custom Components' %}"
+                         class="center-block img-responsive box-shadow img-xs-restrict">
+                </a>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </div>
+{% endblock %}

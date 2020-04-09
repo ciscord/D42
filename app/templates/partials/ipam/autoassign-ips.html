@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block"
+             alt="{% trans 'Overlapping IP Ranges and Nested Subnets' %}"
+             src="{% static 'img/sections/product/mascot_checklist.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Auto-assign IPs" %}</h2>
+        <p>{% trans "Allow staff members to auto-assign available IPs to devices. Worrying about outdated IPAM.xlsx is now a thing of the past." %}</p>
+    </div>
+</div>

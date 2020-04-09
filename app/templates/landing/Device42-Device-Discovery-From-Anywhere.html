@@ -1,0 +1,75 @@
+﻿{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'Multiple Device Discovery Tools including SNMP Discovery, Virtual Machine Discovery, Ping Sweeps, SSH/WMI Discovery to automate your network documentation.' %}"/>
+{% endblock %}
+
+{% block title %}{% trans "Device42 Device Discovery From Anywhere" %}{% endblock %}
+
+{% block landingHeadingText %}{% trans "Device Discovery From Anywhere" %}{% endblock %}
+{% block landingLeadText %}.{% trans "NET based agent-less software discovers devices on the network, compiles detailed device information and automatically uploads the information to the Device42 appliance" %}.{% endblock %}
+{% block landingfeature %}
+<section class="row landing-section flat-top">
+
+    <div class="col-sm-6">
+        <p class="ul-heading">{% trans "Features include" %}:</p>
+        <ul class="square-style">
+            <li>{% trans "Windows devices using WMI" %}</li>
+            <li>*{% trans "nix servers using SSH" %}</li>
+            <li>{% trans "Hyper-V hosts and VMs" %}</li>
+            <li>{% trans "Custom discovery scheduling" %}</li>
+            <li>{% trans "Run discoveries from remote locations" %}</li>
+        </ul>
+    </div>
+   <div class="col-sm-6">
+        <img class="img-responsive center-block" src="{% static 'img/sections/features/windows-auto-discovery.png' %}">
+    </div>
+</section>
+
+{% endblock %}
+
+{% block maincontent %}
+    <h3 class="sub-heading">{% trans "Network SNMP Discovery" %}</h3>
+    <section class="row landing-section">
+        <div class="col-sm-8">
+            <p class="lead">{% trans "Device42 enables SNMP discovery for network devices...and more. SNMP discovery provides comprehensive capabilities to identify and track physical and logical components, and their relationship inter-dependencies" %}.</p>
+        </div>
+        <div class="col-sm-4">
+            <ul class="checklist clean">
+                <li>{% trans "Switch/Router inventory" %}.</li>
+                <li>{% trans "IP to MAC address relation" %}</li>
+                <li>{% trans "MAC address to Switch port relation" %}</li>
+                <li>{% trans "VLANs/Subnets" %}</li>
+                <li>{% trans "SNMP v1/v2c/v3 supported" %}</li>
+                <li>{% trans "Schedulable" %}</li>
+                <li>{% trans "Discover CDP/LLDP neighbors" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-xs-12">
+            <h3 class="sub-heading">{% trans "Virtual Machines Discovery" %}</h3>
+            <p class="lead">{% trans "Connect to VMWare vCenter Server/ESX/ESXi/Citrix Xen servers and have hosts and VMs details automatically populated.  Schedule the discovery to keep VM documentation up-to-date as VMs migrate between hosts" %}.</p>
+        </div>
+    </section>
+
+    <section class="row landing-section">
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Cisco UCS Manager Auto-discovery" %}</h3>
+            <p class="lead">{% trans "Connect with Cisco UCS Manager to automatically populate chassis, blades, and service profile information.  Powerful search with automatic service profile to blade device correlation" %}.</p>
+        </div>
+        <div class="col-sm-4">
+            <img src="{% static 'img/sections/features/cisco-ucs-manager-auto-discovery.png' %}" class="img-responsive center-block">
+        </div>
+    </section>
+
+    <section class="row landing-section">
+        <div class="col-sm-5">
+            <img src="{% static 'img/landing/ping_sweep.png' %}" class="img-responsive center-block">
+        </div>
+        <div class="col-sm-7">
+            <h3 class="sub-heading">{% trans "Ping Sweep Utility" %}</h3>
+            <p class="lead">{% trans "Device42's .NET-based ping sweep utility parses Nmap output for a ping sweep on given network(s) and auto-uploads this data to the Device42 appliance" %}.</p>
+        </div>
+    </section>
+{% endblock %}

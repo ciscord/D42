@@ -1,0 +1,21 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block box-shadow"
+             alt="{% trans 'Power & Thermal Management' %}"
+             src="{% static 'img/sections/features/dcim/device_energy.jpg' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Power & Thermal Management" %}</h2>
+        <p>{% trans "Power and thermal management in the data center has never been easier. Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities:" %}</p>
+        <ul class="checklist">
+            <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+            <li>{% trans "Track historical power and thermal data" %}</li>
+            <li>{% trans "Power estimation for servers" %}</li>
+            <li>{% trans "Better capacity planning" %}</li>
+            <li>{% trans "Power On/Off PDU outlets for supported models" %}</li>
+            <li>{% trans "(Add-on module - additional cost)" %}</li>
+        </ul>
+    </div>
+</div>

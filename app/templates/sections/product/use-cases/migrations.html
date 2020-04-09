@@ -1,0 +1,89 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: OS Stack Migration" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Computers running unsupported operating systems continue to function. However, using unsupported software may increase the risks of viruses and other security threats.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "OS Stack Migration" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <img src="{% static 'img/components/study-a/use-cases/OS Migration.png' %}" class="img-inline-right"
+                         alt="{% trans 'Migration and Processing Flowchart' %}"/>
+                    <h2>Challenge</h2>
+                    <p>{% trans "Computers running unsupported operating systems continue to function. However, using unsupported software may increase the risks of viruses and other security threats. Negative consequences could include the loss of confidentiality, integrity, and or availability of data, system resources and business assets." %}</p>
+                    <p>{% trans "For example, there are an millions of active Microsoft Windows Server 2003 installations still in production. As of July 2015, 175 million websites were reported to be served directly by Server 2k3. Many banks scrambled to move ATMs off of Windows XP, and many PCs still run this OS. In April of next year, Windows 2003 will turn 14, and come August, XP turns 16. Windows 2003 support ended July 2015, while for XP support ended April 2014." %}</p>
+                    <p>{% trans "That means these products no longer receive security patches that can protect them from exploits utilized by viruses, spyware, and other malicious software, and that Microsoft will no longer support them." %}</p>
+                    {% blocktrans %}
+                        <h5>The <a href="https://support.microsoft.com/en-us/help/17140/support-lifecycle-policy-faq"
+                                   class="ext-link text-italic" target="_blank">"Microsoft Support Lifecycle Policy
+                            FAQ"</a> page offers additional reading & details.</h5>
+                    {% endblocktrans %}
+                    <p>{% trans "Operating system migrations can be a large undertaking, and their planning and execution are often very stressful times for the IT Staff involved. They also carry business risk. Detailed knowledge of your current application dependencies must be known and tested to prove their suitability to run on the newer OS." %}</p>
+                    <p style="margin-bottom:6px;">{% trans "Whether your goal is to migrate away from an unsupported OS like Windows 2003, XP (gasp!), or even Solaris to a more modern, and supported OS like Windows Server 2012, 2016 or Linux, <em>you need to be able to answer questions such as:</em>" %}</p>
+                    <ul>
+                        <li>{% trans "Which physical, virtual, and cloud devices need upgrades, and where are they?" %}</li>
+                        <li>{% trans "What is running on all the machines to be migrated, what are their interdependencies, and what users depend on them?" %}</li>
+                        <li>{% trans "Where are all the passwords and config files?" %}</li>
+                        <li>{% trans "When do my support contracts expire?" %}</li>
+                        <li>{% trans "What licenses are in use by each server, and is there a shortage or duplicates?" %}</li>
+                    </ul>
+                    <h2>{% trans "Solution" %}</h2>
+                    {% url 'features' as features_url %}
+                    {% url 'features_discovery' as device_disc %}
+                    {% url 'features_app_mapping' as features_appmapping %}
+                    {% url 'tours_patch_cable_management' as cable_management %}
+                    {% url 'features_software_license' as soft_lic %}
+                    {% blocktrans %}
+                        <p>If you are using Device42, all this information is at your fingertips and available in
+                            easy-to-understand <a href="{{ features_url }}">visualizations, charts, graphs, and
+                                reports</a>. Device42’s <a href="{{ device_disc }}">auto-discovery
+                                capabilities</a> can help identify all the IT assets and how they are interconnected.
+                        </p>
+                        <p>Pop up an <a href="{{ features_appmapping }}">application dependency
+                            diagram</a> to view what users and applications are dependent on a piece of equipment. Don’t
+                            struggle trying to find warranty contracts; all the warranty information is right there in
+                            the ticket along with who to call, the device serial number, and everything else you need. A
+                            quick report can identify all instances running Operating systems that are candidates for
+                            upgrade or retirement. Tired of playing “who knows the password”? You don’t have to do that
+                            anymore if you have Device42. When planning IP allocations, view network diagrams and
+                            fragmentation charts or just click the “What’s the next available IP” button.</p>
+                        <p>Device42 also <a href="{{ cable_management }}">tracks all
+                            cabling</a>, including both electrical and network. With <a
+                                href="{{ soft_lic }}">Software License
+                            Management</a>, software is automatically discovered and a comprehensive, accurate picture
+                            of the software deployed on Windows and Linux machines across the entire IT infrastructure
+                            is available at your fingertips. The comprehensive, bundled ITAM (IT Asset Management)
+                            module tracks the full Asset Lifecycle of both IP and non-IP devices, including warranty and
+                            support contracts, and can alert you when renewal time approaches. VLAN’s and subnets can
+                            also be discovered, and are tracked along with CDP/LLDP neighbors. No need to log onto every
+                            server to check the config - Device42 discovers configurations for popular applications
+                            which can be found in the device view.</p>
+                        <h5 class="text-strong text-muted">If you utilize automation via tools like Puppet, Chef, or Ansible to assist with your OS
+                            migration project, you can get visibility into these tools in Device42 via APIs.</h5>
+                    {% endblocktrans %}
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i
+                        class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

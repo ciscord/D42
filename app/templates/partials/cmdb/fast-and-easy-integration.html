@@ -1,0 +1,52 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row padded featurette image-{{ image|default:'right' }} {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <a href="{% static 'img/sections/features/cmdb/RESTful-APIs.png' %}" data-featherlight="image">
+            <img class="img-responsive center-block img-rounded img-xs-restrict"
+             src="{% static 'img/sections/features/cmdb/RESTful-APIs.png' %}"
+             alt="{% trans 'Fast and Easy Integration' %}">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <h3>{% trans "Fast and Easy Integration" %}</h3>
+        <p>{% trans "Device42 includes a very granular and secure set of RESTful APIs for integration with other applications used to manage your IT infrastructure." %}</p>
+        <h4 class="text-italic text-muted">{% trans "Some out-of-the-box integrations include:" %}</h4>
+    </div>
+</div>
+<div class="row is-table-row padded">
+    <div class="col-sm-4 img-group-inline-xs text-center">
+        <img src="{% static 'img/customers/integrations/confluence.png' %}" alt="{% trans 'Confluence' %}" class="img-responsive img-restrict">
+        <img src="{% static 'img/customers/integrations/servicenow.png' %}" alt="{% trans 'ServiceNow' %}" class="img-responsive img-restrict">
+        <img src="{% static 'img/customers/integrations/chef.png' %}" alt="{% trans 'Chef' %}" class="img-responsive img-restrict">
+        <img src="{% static 'img/customers/integrations/ansible.png' %}" alt="{% trans 'Ansible' %}" class="img-responsive img-restrict">
+        <img src="{% static 'img/customers/integrations/puppetlabs.png' %}" alt="{% trans 'Puppet Labs' %}" class="img-responsive img-restrict">
+        <img src="{% static 'img/customers/integrations/jira.png' %}" alt="{% trans 'JIRA' %}" class="img-responsive img-restrict">
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8">
+        <h4 class="flat-bottom text-strong">{% trans "ServiceNow" %}</h4>
+        <ul class="checklist alt-font">
+            <li>{% trans "See all CIs from Device42 in ServiceNow" %}</li>
+            <li>{% trans "View or Edit CI details from ServiceNow requests" %}</li>
+            <li>{% trans "Choose Device42 CIs when creating new requests" %}</li>
+        </ul>
+        <h4 class="flat-bottom text-strong">{% trans "Puppet" %}</h4>
+        <ul class="checklist alt-font">
+            <li>{% trans "Device42 utilizes system information data stored in puppet manifests to populate asset inventory" %}</li>
+            <li>{% trans "Eliminating the need to run redundant auto-discovery processes across the IT infrastructure" %}</li>
+        </ul>
+        <h4 class="flat-bottom text-strong">{% trans "Chef" %}</h4>
+        <ul class="checklist alt-font">
+            <li>{% trans "Streamline the task of provisioning, configuring, and maintaining servers" %}</li>
+            <li>{% trans "Device42 utilizes Chef-discovered system information data to populate asset inventory" %}</li>
+            <li>{% trans "Integration connector works with all Chef-supported versions of Chef software" %}</li>
+        </ul>
+        <h4 class="flat-bottom text-strong">{% trans "JIRA" %}</h4>
+        <ul class="checklist alt-font">
+            <li>{% trans "Link CMDB items to issues in JIRA" %}</li>
+            <li>{% trans "View CI details from JIRA issues" %}</li>
+            <li>{% trans "Search JIRA issues by CI names" %}</li>
+            <li>{% trans "Display racks and devices inside JIRA when adding/creating/modifying issues" %}</li>
+        </ul>
+        <p class="lead text-primary-dark text-right text-italic">{% trans "And many more are under development..." %}</p>
+    </div>
+</div>

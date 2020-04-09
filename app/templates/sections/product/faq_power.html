@@ -1,0 +1,46 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Frequently Asked Questions" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Frequently asked questions for Device42, a comprehensive data center management software.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Frequently Asked Questions" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row videos-listing">
+        <div class="flat-top container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="prelist xs-center flat-top">{% trans "Sections" %}</h2>
+                    {% url 'faq_sales' as sales_faq %}
+                    {% url 'faq_power' as power_faq %}
+                    <div class="list-group">
+                        <a href="{{ sales_faq }}" class="list-group-item">{% trans "Sales FAQ" %}</a>
+                        <a href="{{ power_faq }}" class="list-group-item active">{% trans "Power & Energy Module" %}</a>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    {% url 'company_contact' as contact_url %}
+                    <h2 class="h1 flat-top">{% trans "Pricing" %} <small>{% trans "with Energy Management Modules" %}</small></h2>
+                    <section class="well bg-alt">
+                        {% blocktrans %}
+                        <p>Device42 is also available with two add-on modules for energy management. The Power Monitoring (Enterprise) option includes power and thermal monitoring from supported SNMP enabled PDUs. The Power Control (Enterprise plus) option includes the ability to power on/off PDU ports on supported PDU Models.</p>
+                        <p>Please <a href="{{ contact_url }}">contact us</a> to get more details on our energy management add-on.</p>
+                    {% endblocktrans %}
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

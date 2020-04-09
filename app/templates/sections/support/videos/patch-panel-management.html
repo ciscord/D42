@@ -1,0 +1,212 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans 'Patch Panel Management' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video introduction to Cable Management in Device42, the most comprehensive solution for data center infrastructure management.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('q29whe46w5');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Patch Panel Management" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "Cable Management with web based interface." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p>Welcome, in this Device42 data center management software video, we’ll introduce you to the
+                            powerful Patch Panel Cable Management features of Device42.</p>
+
+                        <p>Let’s begin by viewing a completed patch panel layout view</p>
+
+                        <p>Patch Panel Layout Overview</p>
+
+                        <p>We’ll start with a view of the patch panel connectivity page. In this view, we see a model of
+                            a patch panel with six modules installed in it. Here you can see each module has 12
+                            ports.</p>
+
+                        <p>---</p>
+
+                        <p>If we hover over any port, we can see its connectivity details. On the left side of our
+                            screen, we see port one in “Module A” is connected to DCMO5, which is connected to the “Main
+                            Fiber Panel”, then another patch panel port, and terminated to “Demo device 01” – showing
+                            all of the port connections.</p>
+
+                        <p>We can also hover over a device and see all of its connections. For example, this device,
+                            DCMO5, has 5 connections.</p>
+
+                        <p>If we turn on the edit mode, we can document new connections between a port and device using
+                            familiar drag and drop functionality. We can then create a port label and select “OK” or
+                            skip the labeling step.</p>
+
+                        <p>Now that we have seen how patch panel visualization can make our patch panel management
+                            easier and clearer, let’s explore the details of how we create new patch panel cabling
+                            records.</p>
+
+                        <p>Add a patch Pane – Create a template</p>
+
+                        <p>In Device42 software, nearly all functionality is template based – and so is documenting a
+                            new patch panel. To start, we’ll see how to create a patch panel template, also called a
+                            “model”.</p>
+
+                        <p>Here we can create a singular panel (such as a 24 or 48 port panel) or modular panel
+                            configuration, similar to the six-module patch panel model we viewed a few moments ago.</p>
+
+                        <p>For this demonstration, we’ll select a singular panel type.</p>
+
+                        <p>We’ll name this a 24-port model and we can optionally choose an image and manufacturer for
+                            displaying in the rack diagram. In the port type field we can define what types of ports are
+                            in the panel. In this case RJ45 Ethernet ports.</p>
+
+                        <p>And we have 24 ports in the panel and 12 ports in a row.</p>
+
+                        <p>Paired ports can be used to track single strands for a fiber connection.</p>
+
+                        <p>We’ll save this patch panel model.</p>
+
+                        <p>Now that we created our model or template, let’s create an actual patch panel record, based
+                            on that model.</p>
+
+                        <p>> Creating a Patch Panel</p>
+
+                        <p>We’ll select “Devices”, “Assets” then select “Add Asset”.</p>
+
+                        <p>Let’s name the asset “Test42 - panel” and well make this asset type a patch panel. Then we’ll
+                            choose the patch panel model we just created. – the “24 port” model.</p>
+
+                        <p>If we scroll down and select “Save and continue editing” we see that Device42 has created all
+                            of the ports based on the model we selected, allowing us to begin documenting their
+                            connections. Here you can see the 24 ports that were just created.</p>
+
+                        <p>We can also select several options, such as the starting port number, or if your back
+                            connection ends on a switch instead of a patch panel, we make that adjustment here.</p>
+
+                        <p>Now let’s talk about documenting patch panel connections.</p>
+
+                        <p>> Panel Connectivity Methods – Using a Form</p>
+
+                        <p>With the patch panel created, there are multiple ways to document the connections to the
+                            panel, including forms, drag and drop, and bulk operations. We’ll start with using
+                            forms.</p>
+
+                        <p>Here we can see the input form for the patch panel. Each port can have a label, and we can
+                            choose from multiple connection points including; circuits, devices, patch panel port,
+                            switch port or TAP port. We’ll connect port 1 to a device.</p>
+
+                        <p>If we click on the look-up icon, we can select from a list of devices on our network.</p>
+
+                        <p>We can also choose a switch port connection and the lookup will show us a list of available
+                            switch ports.</p>
+
+                        <p>Here we can input a label for the remote end of the cable; this could be the device side or
+                            the switch port side. The “label2” field is for single strand cables.</p>
+
+                        <p>The MAC address field will be editable for device connectivity and we can specify down to the
+                            NIC port level and choose which MAC address the patch panel is connected to.</p>
+
+                        <p>We can also select the back connection and we’ll see how to create bulk connections later in
+                            this video.</p>
+
+                        <p>That illustrates connectivity defined through a form. Now, lets refresh what we saw earlier
+                            about defining patch panel connectivity using drag and drop.</p>
+
+                        <p>> Connections: Drag and Drop</p>
+
+                        <p>But before we actually use drag and drop to document patch panel connections, we need to
+                            mount the patch panel we just created to a rack.</p>
+
+                        <p>On the asset page we were just working in, we’ll search our rack list, select “RA100” input
+                            the patch panel U size (two), and we’ll let Device42 tell us the next available U position
+                            in the rack, in this case “8”.</p>
+
+                        <p>Well save our input and then view the Patch panel layout diagram we saw earlier in our
+                            video.</p>
+
+                        <p>After turning on the “Edit” capability, we can make patch panel connections by simply using a
+                            familiar drag and drop functionality that we saw earlier in this video.</p>
+
+                        <p>Now lets move to the third option for creating bulk patch panel connectivity – using Excel
+                            imports.</p>
+
+                        <p>> Bulk Connections: Excel Imports</p>
+
+                        <p>Excel gives us a lot of flexibility when it comes to documenting bulk connections.</p>
+
+                        <p>Once again, we’ll go back to our assets list, search for “Test42” panel, and select the panel
+                            we created earlier in our demo.</p>
+
+                        <p>After we have selected the panel or panels, we indicate the action we wish to take. In this
+                            case, we’ll select “ Do a re-importable export for Patch Panel Ports in selected assets”</p>
+
+                        <p>This will provide us with a ready-to-go Excel spreadsheet that can be used for bulk
+                            connection imports. This sheet has all the fields necessary including the connected to
+                            device, switch and switch port, and patch panel port connection fields.</p>
+
+                        <p>Once this sheet is completed offline, we can select our patch panel in the asset view, then
+                            select “Import/Exports” in the “Tools” menu, then select our saved Excel import file and
+                            complete the bulk import.</p>
+
+                        <p>Now that we have addressed the three connectivity modes for the front of the patch panel,
+                            let’s take a look at how we handle bulk back panel connectivity.</p>
+
+                        <p>> Bulk Connections: Back Panels</p>
+
+                        <p>To make bulk back connectivity, under “Tools” then “Templates and Bulk Operations” we’ll
+                            select “Panel Back Connectivity”. From the “Patch Panel back connectivity in bulk” screen
+                            we’ll select the patch panel we created in our demo (Test42) … and then choose to connect it
+                            to the “main-fiber-panel”.</p>
+
+                        <p>Then we’ll specify the port numbers, in this case 1 to 12, we’ll connect to module C-3 and
+                            then we’ll identify the starting C-3 port number, number one, and then click continue.</p>
+
+                        <p>And the back connectivity has now been added between the two panels we selected.</p>
+
+                        <p>Using the hyperlink, we can go back to the “Main-Fiber-Panel” and select “View Patch Panel
+                            Layout”. In the patch panel layout view, if we mouse over panel C-3 we see that we now have
+                            documented back connectivity between panel “C-3” and “Test42”.</p>
+
+                        <p>For example, we can see port 1 is connected to port 1 and port 12 is connected to port 12 –
+                            verifying we have made the back connectivity in bulk.</p>
+
+                        <p>---</p>
+
+
+                        <p>> Summary</p>
+
+                        <p>That wraps this brief introduction of the patch panel cable management capabilities found in
+                            Device42 software.</p>
+
+                        <p>We hope you will contact us to learn more about how Device42 can transform the management of
+                            your IT Infrastructure.</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

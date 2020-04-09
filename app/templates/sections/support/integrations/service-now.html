@@ -1,0 +1,51 @@
+{% load i18n static %}
+<h2>{% trans "Make ServiceNow better by syncing CI data from Device42" %}</h2>
+<p>{% trans "Using the" %} <a href="https://github.com/device42/servicenow_device42_mapping" rel="nofollow" target="_blank" class="ext-link">Device42-ServiceNow integration</a>, {% trans "users can synchronize data in both directions &mdash;from Device42 to ServiceNow, and from ServiceNow to Device42. The integration script can synchronize Device42's enhanced asset management and tracking capabilities to ServiceNow's Configuration Management Database (CMDB), or from a populated ServiceNow instance into Device42." %}</p>
+<p>{% trans "You can rely on Device42's Continuous Discovery technology to automatically maintain an up-to-date inventory of your physical, virtual, and cloud servers and containers, network components, software, services, applications, and their inter-relationships and interdependencies, and then sync that data with ServiceNow at any time. The synchronization can be manually refreshed at any time by the user and also scheduled for automatic refresh (via Crontab or similar) at user-defined intervals." %}</p>
+<form action="." method="post" role="form" class="text-center">{% csrf_token %}
+    <button class="btn btn-sm btn-primary" type="submit">{% trans "Download ServiceNow" %}<br>{% trans "Integration Package" %}</button>
+</form>
+<hr>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/servicenow/Device42-CIs-in-servicenow.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/servicenow/Device42-CIs-in-servicenow.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'ServiceNow Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Sync your CIs between Device42 and ServiceNow" %}</h3>
+        <p>{% trans "Once you sync your Device42 CMDB with ServiceNow, any CIs that were configured to sync will be available in both systems. If you are transitioning from ServiceNow to Device42, this integration makes that move a breeze, as well. When both systems are in concurrent use, CI data can be refreshed manually at any time, or kept up-to-date by scheduling automatic syncs in either direction!" %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/servicenow/edit-Device42-CIs-in-servicenow.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/servicenow/edit-Device42-CIs-in-servicenow.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'ServiceNow Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "View CI details in ServiceNow" %}</h3>
+        <p>{% trans "Once synced, users of ServiceNow can see details imported from Device42 (name, serial #, model, service level, tags, mac addresses, cpu details, RAM, HD, OS info, and more) for that CI, and can then tie those assets to related service requests. View any problems that may be associated with a CI with a click, just like you’re used to." %}</p>
+    </div>
+</div>
+<h3>{% trans "Sync Software, Service, and Vendor information from Device42" %}</h3>
+<p>{% trans "Let Device42 populate Software, Service, and Vendor information into your ServiceNow instance. Use this imported information to create custom service request workflows and tailor them to each department's needs!"%}</p>
+<p>{% trans "Services and Software information can be synced from Device42 to ServiceNow (custom fields need to be created for this and related information). Synced software information can include all relevant licensing information, as well as supplementary information such as tags, category, vendor, a description, and any aliases that might be in use. Synced Service information includes service name, description, category, tags, and the associated vendor as well."%}</p>
+<div class="row padded">
+    <div class="col-xs-10 col-xs-offset-1">
+        <a href="{% static 'img/sections/support/integrations/servicenow/servicenow-change-request-with-Device42-CIs.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/servicenow/servicenow-change-request-with-Device42-CIs.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'ServiceNow Integration' %}">
+        </a>
+    </div>
+</div>
+<p>{% trans "Vendor information can also be synced from Device42. The default configuration includes the Vendor’s name and the vendor’s home page. Notes, contact information, and escalation information for troubleshooting and support contacts can also be synced if those target fields are created in ServiceNow." %}</p>
+<h3>{% trans "Associate imported CIs when creating new ServiceNow requests" %}</h3>
+<p class="vert-offset-bottom-1">{% trans "When a creating a new request in ServiceNow, users can select configuration items synced from Device42. They can then be managed natively within ServiceNow, utilizing the task management workflow you’re already used to. Assign teams and create task checklists related to CI’s imported from Device42." %}</p>
+

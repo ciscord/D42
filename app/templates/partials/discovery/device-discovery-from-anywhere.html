@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive box-shadow center-block"
+             alt="{% trans 'Device Discovery From Anywhere' %}"
+             src="{% static 'img/sections/features/discovery/windows-auto-discovery.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Device Discovery From Anywhere" %}</h2>
+        <p>{% trans ".NET based agent-less software discovers devices on the network, compiles detailed device information and automatically uploads the information to the Device42 appliance." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Windows devices using WMI" %}</li>
+            <li>{% trans "*nix servers using SSH" %}</li>
+            <li>{% trans "Hyper-V hosts and VMs" %}</li>
+            <li>{% trans "Custom discovery scheduling" %}</li>
+            <li>{% trans "Run discoveries from remote locations" %}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Jobs" %} @ Device42{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Job opportunities and employee information.' %}">
+{% endblock %}
+{% block site_section_company %}active{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="text-primary-dark">{% trans "Jobs" %} @ Device42</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+        <div class="container font-stack-roboto vert-offset-bottom-1">
+            <div class="row padded">
+                <div class="col-sm-3 left-col">
+                    <h2 class="flat-top"><a href="{% url 'company_jobs' %}">{% trans "Job Listing" %}</a></h2>
+                    <ul class="dash tight bullet-blue font-stack-condensed section-menu">
+                        <li><a href="{% url 'company_jobs_devops' %}">{% trans "DevOps Evangelist" %}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9 right-col">
+                    <p>{% trans "Device42 is a single source of truth for IT Infrastructure Management. With Device42 IT teams can see all their data in one place - their servers, IT assets, IP addresses, software, services, server & app dependencies and passwords." %}</p>
+                    <p>{% trans "If you want to join a fast-growing startup that's making an outsized impact (and that's making a lot of people happy), please click on the left menu bar for details on the current job openings from Device42 and get in touch!" %}</p>
+                    <h3>{% trans "Working at Device42" %}</h3>
+                    <p>{% trans "Device42 was built to be an awesome place to work.  You own the company via option grants and you get:" %}</p>
+                    <ul class="font-stack-condensed bullet-gray">
+                        <li>{%trans "Competitve salary" %}</li>
+                        <li>{%trans "Comprehensive health insurance plan" %}</li>
+                        <li>{%trans "Flextime" %}</li>
+                        <li>{%trans "Three weeks paid vacation" %}</li>
+                    </ul>
+                    <p>{% trans "We’ll make sure you have all the gear and books you need. We care deeply about your professional development and long term goals. We work with you to grow your skills." %}</p>
+                    <h3>{% trans "Help us shape the future of IT Infrastructure Management" %}</h3>
+                    <p>{% trans "We are an agile team that likes to move fast and produce results. That can be fun, frustrating, and ultimately rewarding. Come join us to make life easier for system, network and devops engineers and IT Managers." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

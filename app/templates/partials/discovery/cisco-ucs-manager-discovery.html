@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive box-shadow center-block"
+             alt="{% trans 'Cisco UCS Manager Discovery' %}"
+             src="{% static 'img/sections/features/discovery/cisco-ucs-manager-auto-discovery.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Cisco UCS Manager Discovery" %}</h2>
+        <p>{% trans "Connect with Cisco UCS Manager to automatically populate chassis, blades, and service profile information. Powerful search with automatic service profile to blade device correlation." %}</p>
+    </div>
+</div>

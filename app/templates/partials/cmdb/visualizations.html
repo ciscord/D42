@@ -1,0 +1,17 @@
+{% load i18n static  %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block box-shadow"
+             src="{% static 'img/sections/features/ipam/switch_impact_chart.png' %}"
+             alt="{% trans 'Visualizations' %}">
+    </div>
+    <div class="col-md-6">
+        <h3>{% trans "Visualizations" %}</h3>
+        <p>{% trans "Once your data is loaded, it's time to reap the benefits. Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data.  But even better, provides an extensive set of visualizations including:" %}</p>
+        <ul class="dash">
+            <li>{% trans "Your computer rooms and racks with power and capacity heatmaps" %}</li>
+            <li>{% trans "Your full IP connectivity and power chain" %}</li>
+            <li>{% trans "Your hardware, software, and application dependencies" %}</li>
+        </ul>
+    </div>
+</div>

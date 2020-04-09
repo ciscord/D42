@@ -1,0 +1,31 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block"
+             alt="{% trans 'Overlapping IP Ranges and Nested Subnets' %}"
+             src="{% static 'img/generic/icons_cog_treelist.png' %}" style="max-width:60%;height:auto!important;">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Overlapping IP Ranges and Nested Subnets" %}</h2>
+        <h4 class="text-muted">{% trans "The Device42 IP address Management (IPAM) software provides:" %}</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="checklist">
+                    <li>{% trans "Overlapping IP ranges with VRF groups" %}</li>
+                    <li>{% trans "Create nested IPv4 and IPv6 subnets with a single click" %}</li>
+                    <li>{% trans "Subnet tree view with nested subnets & IPs" %}</li>
+                    <li>{% trans "Assign subnets to customer/departments" %}</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="checklist">
+                    <li>{% trans "Easily track usage per subnet" %}</li>
+                    <li>{% trans "Keep accurate IP information using auto-discovery tools" %}</li>
+                    <li>{% trans "Merge subnets into parents" %}</li>
+                    <li>{% trans "Relocate subnets" %}</li>
+                    <li>{% trans "Merge VLANs" %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

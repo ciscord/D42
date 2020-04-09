@@ -1,0 +1,120 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: Hardware Audit" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'You are generally required to audit your data center for a variety of reasons - finance audits, security audits, budgeting cycles, need to update that visio nobody has touched in last 6 months etc.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Hardware Audit" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+        <div class="container use-case">
+            <div class="row flat-top">
+                <div class="col-xs-12">
+                    <article>
+                        <img src="{% static 'img/components/study-a/use-cases/Hardware Audit.png' %}"
+                            class="img-inline-right" alt="{% trans 'Hardware Audit' %}">
+                        <h2>{% trans 'Challenge' %}</h2>
+                        <p>{% trans 'You are generally required to audit your data center for a variety of reasons - finance audits, security audits, budgeting cycles, need to update that visio nobody has touched in the last 6 months etc.' %}</p>
+                        <ol type="1">
+                            <li>{% trans "Auditing a data center - big or small, can be daunting task" %}.<br><span class="text-italic text-muted">{% trans "The problem is compounded if:" %}</span></li>
+                            <ol type="a">
+                                <li>{% trans 'You don’t have an accurate inventory of all your equipment' %}</li>
+                                <li>{% trans 'The data you do have exists only in somebody’s head, and you have personnel changes' %}</li>
+                                <li>{% trans 'Servers and other equipment are frequently added and moved within the datacenter and across data centers' %}</li>
+                            </ol>
+                            <li>{% trans 'The generic solution that most companies use (whenever the audit cycle comes around) - is creating Excel/Visio files. Most of the time, you have to start the process from scratch.<br><em>Issues with excel/vision approach:</em>' %}</li>
+                            <ol type="a">
+                                <li>{% trans 'Spend weeks or months to get everything documented in excel and visio. It takes a long time to do this right.' %}</li>
+                                <li>{% trans 'The process is like taking a snapshot of a running horse and things will change invariably sooner or later.' %}</li>
+                                <li>{% trans 'Even if you create processes to keep Excel/Visio up-to-date you end up with multiple versions and data issues as there is no centralized editing and no standard template.' %}</li>
+                            </ol>
+                        </ol>
+
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <a href="{% static 'img/components/study-a/use-cases/hw-audit-table.png' %}"
+                                class="center-block" data-featherlight="image">
+                                    <img src="{% static 'img/components/study-a/use-cases/hw-audit-table.png' %}"
+                                        alt="{% trans 'Hardware Audit Solution' %}" class="img-responsive box-shadow">
+                                </a>
+                            </div>
+                        </div>
+
+                        <h2>{% trans 'Solution' %}</h2>
+                        {% blocktrans %}
+                            <p>Device42’s Audit Export functionality provides a very efficient means to handle audit
+                                rectification on the fly, exporting a pre-formatted spreadsheet that lists all the contents
+                                of a building, room, or rack, ready to match to what your barcode scanner sees.</p>
+                            <p>Rack to rack, Isle to isle, no WiFi or connection of any kind needed. A quick macro can serve
+                                to ensure that what you’ve scanned matches what should be there; turning the cell/line
+                                green. In the case of a mismatch, the box/line turns red, and you know rectification is
+                                required.</p>
+                            <p>What was once an error prone, time consuming, highly manual process is simplified to scanning
+                                rack to rack, top to bottom, and only pausing momentarily should something be amiss. No
+                                lengthy rectifications when you return to your desk; only update the few differences you
+                                uncover. Your audit time is reduced approximately 7-fold.</p>
+                        {% endblocktrans %}
+                        <h2>{% trans 'Highlights' %}</h2>
+                        <ul class="checklist bullet-yellow">
+                            <li>{% trans "<em>No</em> more manual rectification" %}</li>
+                            <li>{% trans "<em>No</em> connectivity/WiFi needed" %}!</li>
+                            <li>{% trans "<em>No</em> more playing catch-up" %}</li>
+                            <li>{% trans "~7x reduction in audit time" %}</li>
+                            <li>{% trans "Auditing no longer a huge task" %}</li>
+                            <li>{% trans "No need to invest a massive amount of time and manpower to get a one-time-use point in time snapshot" %}</li>
+                        </ul>
+                        <br>
+                        <h4 class="text-primary text-strong">{% trans 'Device42 auto-discovers' %}</h4>
+                        <ul class="bullet-gray dash">
+                            <li>{% trans 'Discovery can be run on a schedule so you can stop playing catch-up with your infrastructure' %}</li>
+                            <li>{% trans 'Auditing is no longer a giant undertaking to identify the state of your infra at a point in time' %}</li>
+                            <li>{% trans 'Less manual entry, reduced investment of time & manpower, and less errors' %}</li>
+                        </ul>
+                        <h4 class="text-primary text-strong">{% trans 'Device42 means consistency' %}</h4>
+                        <ul class="bullet-gray dash">
+                            <li>{% trans 'Add any number of custom fields, ensuring the ability to document any desired attribute' %}</li>
+                            <li>{% trans 'Central interface ensures everyone documents the same attributes about each CI' %}</li>
+                        </ul>
+                        <h4 class="text-primary text-strong">{% trans 'Device42 utilizes existing data' %}</h4>
+                        <ul class="bullet-gray dash">
+                            <li>{% trans 'Data in spreadsheets and CSV files can be ingested and organized, eliminating duplicated effort' %}</li>
+                            <li>{% trans 'Data can be pulled from CMDB software like Microsoft SCCM and BMC Remedy' %}</li>
+                        </ul>
+                        <h4 class="text-primary text-strong">{% trans 'Device42 supports ITAM' %}
+                            <small><strong>[{% trans "IT Asset Management" %}]</strong></small>
+                        </h4>
+                        <ul class="bullet-gray dash">
+                            <li>{% trans 'Generate barcodes & QR codes unique to a piece of hardware. ' %}</li>
+                            <li>{% trans 'Supports scanning barcodes with a mobile device, displaying that items CI' %}</li>
+                        </ul>
+                        <h4 class="text-primary text-strong">{% trans "Device42 Rack-Audit sheets save time" %}</h4>
+                        <ul class="bullet-gray dash">
+                            <li>{% trans 'Scan racks top to bottom, only pausing momentarily should you see something is amiss' %}</li>
+                            <li>{% trans 'Offline auditing of your data center is simplified to a 3-step export/scan/rectify process ' %}</li>
+                            <li>{% trans 'Customers have reported ~7x reduction in audit time' %}</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i
+                            class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+                </div>
+            </div>
+      </div>
+    </section>
+{% endblock %}
+

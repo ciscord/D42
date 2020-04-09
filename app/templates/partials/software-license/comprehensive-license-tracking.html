@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block"
+             src="{% static 'img/generic/icons_cog_collection.png' %}"
+             alt="{% trans 'Comprehensive Licensing Tracking' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Comprehensive Licensing Tracking" %}</h2>
+        <p>{% trans "Device42's license tracking models provide optimal flexibility in tracking software licenses - making accurate software auditing easier and faster." %}</p>
+        <h4 class="text-muted">{% trans "Licensing models include:" %}</h4>
+        <ul class="checklist dark-blue">
+            <li><strong>{% trans "User based" %}</strong> - {% trans "perpetual or subscription, restricted to specific user, or free software" %}</li>
+            <li><strong>{% trans "Device or CPU based" %}</strong> - {% trans "device license count, CPU count (by socket/core/virtual)" %}</li>
+            <li><strong>{% trans "Client access" %}</strong> - {% trans "per seat – device, per seat – user, or on a per server, processor, or mailbox basis" %}</li>
+            <li><strong>{% trans "Key based" %}</strong> - {% trans "usage counting based on key (as opposed to counting the software component instances)" %}</li>
+        </ul>
+    </div>
+</div>

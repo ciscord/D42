@@ -1,0 +1,55 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Register a Deal as Device42 Partner" %}{% endblock %}
+{% block site_section_partners %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="Register a Deal as Device42 Partner">
+{% endblock %}
+{% block head_scripts %}
+    <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
+{% endblock %}
+{% block styles %}
+    <style>
+        .hbspt-form h2 {
+            margin-top: 0!important;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Partner Deal Registration" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="prelist flat-top"><a href="{% url 'partners' %}">{% trans "Sections" %}</a></h2>
+                <menu class="list-group">
+                    <a class="list-group-item" href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                    <a class="active list-group-item" href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a>
+                </menu>
+            </div>
+            <div class="col-sm-9">
+                <div class="well bg-alt">
+                    <p>{% trans "Device42 offers payments for referrals that lead to closed deals.  If you are an existing partner, you can also register a deal using the form below." %}</p>
+                <p class="flat-bottom">{% trans "Please fill out the following form to discuss the referral with a Device42 Channel Manager. For any questions please contact" %} <a href="mailto:partners@device42.com">partners@device42.com</a>.</p>
+                </div>
+                <script>
+                    hbspt.forms.create({
+                        sfdcCampaignId: '701o00000001yI6AAI',
+                        portalId: '433338',
+                        formId: 'e1f80474-d8b1-4066-aecb-96f6beda6952'
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

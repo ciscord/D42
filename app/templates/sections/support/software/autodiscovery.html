@@ -1,0 +1,89 @@
+{% load i18n static custom_tags %}
+<div class="well">
+    <h2 class="flat-top">{% trans "Windows based Auto Discovery Software" %}</h2>
+    <p>{% trans "Automatically populate device details in Device42 appliance for easier documentation. D42 Auto Discovery software is a .NET based utility that will discover windows & linux devices or connect to Hyper V server to get host/VM details in your network and upload device details to Device42 appliance. This can be run one time or can be scheduled to run at user defined intervals." %}</p>
+    <div class="row flat-bottom" style="padding-bottom: 0;">
+        <div class="col-sm-8 font-stack-condensed">
+            <p class="flat-bottom vert-offset-top-1">{% trans "Current Version" %} <code><strong>11.5.0</strong></code></p>
+            <p><a href="http://www.device42.com/blog/tag/auto-discovery-client/" target="_blank">{% trans "Latest Notes" %}</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <form action="." method="POST" role="form">{% csrf_token %}
+                <input type="hidden" name="main" value="">
+                <button type="submit" name="download" value=".net auto disc tool"
+                        class="btn btn-warning">{% trans "Download" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="well">
+    <h2 class="flat-top">{% trans "Linux based Auto Discovery Software" %}</h2>
+    <p>{% trans "Automatically discover and docoument your linux devices. Linux based D42 Auto Discovery software is a portable executable that will discover linux and unix devices in your network and upload device details to Device42 appliance. This can be run one time or can be scheduled using crontab etc. to run at user defined intervals." %}</p>
+    <div class="row flat-bottom" style="padding-bottom: 0;">
+        <div class="col-sm-8 font-stack-condensed">
+            <p class="flat-bottom vert-offset-top-1">{% trans "Current Version" %} <code><strong>1.3.3</strong></code></p>
+            <p><a href="http://www.device42.com/blog/tag/auto-discovery-linux/" target="_blank">{% trans "Latest Notes" %}</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <form action="." method="POST" role="form">{% csrf_token %}
+                <input type="hidden" name="main" value="">
+                <button type="submit" name="download" value="linux auto disc tool"
+                        class="btn btn-warning">{% trans "Download" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="well">
+    <h2 class="flat-top">{% trans "D42 Ping Sweep" %}</h2>
+    <p>{% trans "D42 Ping Sweep software is a self-contained and portable utility that does a ping sweep on given network(s), and uploads the discovered IPs (possibly with MAC and device name) to Device42 appliance. It runs on Windows or Linux hosts. Just drop it in a folder, then copy <code>ping.cfg.sample</code> to <code>ping.cfg</code> &mdash;add your settings, and you are ready to go!  For Linux, you have to do <code>chmod +x</code> on the executable.  It has to be run as root (or Administrator)."%}  <em>{% trans "Please note that it only works with Device42 v11.0.0 and above." %}</em></p>
+
+
+    <div class="row flat-bottom" style="padding-bottom: 0;">
+        <div class="col-sm-8 font-stack-condensed">
+            <p class="flat-bottom vert-offset-top-1">{% trans "Current Version" %} <code><strong>3.1.0</strong></code></p>
+            <p><a href="http://www.device42.com/blog/tag/ping-sweep/" target="_blank">{% trans "Latest Notes" %}</a> | <a href="http://docs.device42.com/auto-discovery/ping-sweep/" target="_blank">{% trans "Documentation" %}</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <form action="." method="POST" role="form">{% csrf_token %}
+                <input type="hidden" name="main" value="">
+                <button type="submit" name="download" value=".net ping sweep"
+                        class="btn btn-warning">{% trans "Download" %}</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="well">
+    <h2 class="flat-top">{% trans "D42 NetFlow Collector" %}</h2>
+    <p>{% trans "D42 netflow collector software is a self-contained and portable utility that lets you point your network device to it, collect netflow data, analyze it and send to your Device42 instance for enhanced application dependency mapping. Available for Windows and linux." %}</p>
+     <div class="row">
+        <div class="col-sm-8 font-stack-condensed">
+            <p class="flat-bottom vert-offset-top-1">{% trans "Current Version" %} <code><strong>1.0.0</strong></code></p>
+            <p><a href="http://www.device42.com/blog/tag/netflow/" target="_blank">{% trans "Latest Notes" %}</a></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <form action="." method="POST" role="form">{% csrf_token %}
+                <input type="hidden" name="main" value="">
+                <button type="submit" name="download" value="netflow"
+                        class="btn btn-warning">{% trans "Download" %}</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="well">
+    <h2 class="flat-top">D42 <em>{% trans "Open-sourced" %}</em> {% trans "Auto Discovery Scripts" %}</h2>
+    <ul class="dash font-stack-condensed">
+        <li><a href="https://github.com/device42/nix_bsd_mac_inventory"
+                  target="_blank">{% trans "*Nix/BSD/OSX/Solaris-based Machines" %}</a></li>
+        <li><a href="https://github.com/device42/Device42-AutoDiscovery-Scripts"
+                  target="_blank">{% trans "Scripts for Windows/Linux/Puppet" %}</a></li>
+        <li><a href="https://github.com/device42/chef_to_device42_sync_py"
+                  target="_blank">{% trans "Chef to Device42 Sync" %}</a></li>
+        <li><a href="https://github.com/device42/puppet_to_device42_sync_py"
+                  target="_blank">{% trans "Puppet to Device42 Sync" %}</a></li>
+    </ul>
+</div>

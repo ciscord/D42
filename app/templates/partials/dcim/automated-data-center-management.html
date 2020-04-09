@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block box-shadow"
+             alt="{% trans 'Automated Data Center Management' %}"
+             src="{% static 'img/sections/features/dcim/automated-dc-with-apis.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Automated Data Center Management" %}</h2>
+        <p>{% trans "Automate data center management with a variety of auto-discovery tools for network, physical, or virtual infrastructures. Use powerful REST APIs to integrate with other tools and keep accurate data center documentation." %}</p>
+    </div>
+</div>

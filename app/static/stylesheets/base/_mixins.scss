@@ -1,0 +1,309 @@
+/**
+ * device42.com - mixins style file
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+
+// FUNCTIONS
+@function contrast-color($color, $dark: $contrasted-dark-default, $light: $contrasted-light-default, $threshold: null) {
+  @if $threshold {
+    @warn "The $threshold argment to contrast-color is no longer needed and will be removed in the next release.";
+  }
+  @if $color == null {
+    @return null;
+  }
+  @else {
+    $color-brightness: brightness($color);
+    $dark-text-brightness: brightness($dark);
+    $light-text-brightness: brightness($light);
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+  }
+}
+@function brightness($color) {
+  @if type-of($color) == color {
+    @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) / 255 * 100%;
+  }
+  @else {
+    @return unquote("brightness(#{$color})");
+  }
+}
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  $conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - $value;
+}
+
+
+// MIXINS
+@mixin padding-left-right($pleft : 0px, $pright : 0px) {
+  padding-left: $pleft;
+  padding-right: $pright;
+}
+
+@mixin margin-left-right($mleft : 0px, $mright : 0px) {
+  padding-left: $mleft;
+  padding-right: $mright;
+}
+
+@mixin absolute-left-right($aleft : 0px, $aright : 0px) {
+  left: $aleft;
+  right: $aright;
+}
+
+@mixin primaryGrad($gradDeg: 180 , $gradStart: $brand-primary-light , $gradEnd : $brand-primary) {
+  /* Old browsers */
+  background: $gradStart;
+  /* FF3.6+ */
+  background: -moz-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, $gradStart), color-stop(100%, $gradEnd));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* W3C */
+  background: linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$gradStart', endColorstr='$gradEnd', GradientType=0);
+}
+
+@mixin grayGrad($gradDeg: 180 , $gradStart: $gray-lighter , $gradEnd : $gray) {
+  /* Old browsers */
+  background: $gradStart;
+  /* FF3.6+ */
+  background: -moz-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, $gradStart), color-stop(100%, $gradEnd));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* W3C */
+  background: linear-gradient($gradDeg, $gradStart 0%, $gradEnd 100%);
+  /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$gradStart', endColorstr='$gradEnd', GradientType=0);
+}
+
+@mixin border-radius($radius : $border-radius-base) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow : 0px 1px 3px rgba(0,0,0,.5)) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin text-shadow($tShadow : 0px 1px 3px rgba(0,0,0,.5)) {
+  -webkit-box-shadow: $tShadow;
+  -moz-box-shadow: $tShadow;
+  -o-box-shadow: $tShadow;
+  box-shadow: $tShadow;
+}
+
+@mixin transition($transitionvalue : all .25s ease-in-out) {
+  -webkit-transition: $transitionvalue;
+  -o-transition: $transitionvalue;
+  -moz-transition: $transitionvalue;
+  transition: $transitionvalue;
+}
+
+@mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str}, endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin grayscale_element($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter:#{"grayscale(#{$value})"};
+}
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+@mixin bw(){
+  ms-filter: gray;
+  -webkit-filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: grayscale(100%);
+}
+
+@mixin shadow-z-1(){
+  box-shadow:
+    0 1px 6px 0 rgba(0, 0, 0, 0.12),
+    0 1px  6px 0 rgba(0, 0, 0, 0.12);
+}
+@mixin shadow-z-1-hover(){
+  box-shadow:
+    0 5px 11px 0 rgba(0, 0, 0, 0.18),
+    0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+@mixin shadow-z-2(){
+  box-shadow:
+    0 8px 17px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@mixin shadow-z-3(){
+  box-shadow:
+    0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+@mixin shadow-z-4(){
+  box-shadow:
+    0 16px 28px 0 rgba(0, 0, 0, 0.22),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+@mixin shadow-z-5(){
+  box-shadow:
+    0 27px 24px 0 rgba(0, 0, 0, 0.2),
+    0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+@mixin focus-shadow(){
+  box-shadow: 0 0 8px rgba(0,0,0,.18),
+  0 8px 16px rgba(0,0,0,.36);
+}
+
+.shadow {
+  &-1 {
+    @include shadow-z-1;
+    &.focus {
+      &:hover,
+      &:focus {
+        @include shadow-z-1-hover;
+      }
+    }
+  }
+  &-2 {
+    @include shadow-z-2;
+  }
+  &-3 {
+    @include shadow-z-3;
+  }
+  &-4 {
+    @include shadow-z-4;
+  }
+  &-6 {
+    @include shadow-z-5;
+  }
+  &-focus {
+    @include focus-shadow;
+  }
+}
+
+
+// VERTICAL OFFSET Generation
+@for $i from 0 through 12 {
+  .vert-offset-top-#{$i} {
+    margin-top: #{$i}em;
+  }
+
+  .vert-offset-bottom-#{$i} {
+    margin-bottom: #{$i}em;
+  }
+}
+
+@mixin image($url) {
+  @if $url == null {
+    @return null;
+  } @else {
+    background-image: url($base-image-path + $url);
+  }
+}
+
+@mixin linear-gradient($direction, $start-colour, $end-colour) {
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+    background-image: -webkit-linear-gradient($direction, $start-colour, $end-colour);
+    background-image:    -moz-linear-gradient($direction, $start-colour, $end-colour);
+    background-image:     -ms-linear-gradient($direction, $start-colour, $end-colour);
+    background-image:      -o-linear-gradient($direction, $start-colour, $end-colour);
+    background-image:         linear-gradient($direction, $start-colour, $end-colour);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$start-colour}', endColorstr='#{$end-colour}', GradientType=0 );
+}

@@ -1,0 +1,67 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Find a Device42 Channel Partner" %}{% endblock %}
+{% block site_section_partners %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="Apply to be a channel partner with Device42">
+{% endblock %}
+{% block head_scripts %}
+    <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .hbspt-form .field {
+            width: 50%;
+            dispaly: inline;
+            float: left;
+        }
+
+        .hbspt-form {
+            width: 100% !important;
+            display: table;
+        }
+
+        .hs-form .hs-button {
+            float: right;
+            margin-top: 1em;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Find a Device42 Channel Partner" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="flat-top prelist"><a href="{% url 'partners' %}">{% trans "Sections" %}</a></h2>
+                <menu class="list-group">
+                    <a class="list-group-item" href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                    <a class="active list-group-item" href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a>
+                </menu>
+            </div>
+            <div class="col-sm-9">
+                <div class="well bg-alt">
+                    <h5 class="flat-bottom">{% trans "To find a Device42 channel partner, please complete the form below.  One of our inside sales representatives will contact you within 24 hours." %}</h5>
+                </div>
+                <script>
+                    hbspt.forms.create({
+                        sfdcCampaignId: '701o00000001yI6AAI',
+                        portalId: '433338',
+                        formId: 'c40a6728-324f-453e-9828-7ee5a26325f7'
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block title %}{% trans "Application Mapping Impact Charts" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Application dependency mapping software to record what is running where and what would be the impact of a single server, or virtual host, full rack or a room using Device42 software.' %}"/>
+{% endblock %}
+
+{% block landingHeadingText %}<i class="fa fa-database fa-fw"></i> {% trans "Application Impact Lists" %}{% endblock %}
+{% block landingSubHeadingText %}{% trans "Impact charts and more" %}!{% endblock %}
+{% block landingLeadText %}{% trans "Data center application impact lists provide details about the organizational groups using network applications, enabling IT managers to better support their users during planned and unplanned network changes. But Device42 does more than identify organizational groups associated with applications." %}{% endblock %}
+{% block landingfeature %}
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <p>{% trans "Device42 also creates application dependency flow diagrams that are powerful and easy to use. Application dependencies are defined from the bottom-up and dependency flow diagrams show the relationships between applications and devices." %}</p>
+            <hr>
+            <p><span
+                    class="prelist">{% trans "The result" %}:</span> {% trans "Data center management can easily know the applications, the associated devices, and the organizational groups using the applications." %}
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'img/sections/features/app-map/impact-list.png' %}" alt="{% trans 'Impact List' %}"
+                 class="img-responsive center-block">
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row image-right is-table-row landing-section">
+        <div class="col-sm-6">
+            <a href="{% static 'img/landing/impact_list.png' %}" data-featherlight="image">
+                <img class="img-responsive center-block box-shadow" src="{% static 'img/landing/impact_list.png' %}" alt="{% trans 'Impact List' %}">
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <h2 class="sub-heading">{% trans "Outlined Impact" %}</h2>
+            <p class="lead">{% trans "Impact lists provide the necessary details about the organizational groups using the applications, enabling IT managers to better support their users during planned and unplanned network changes" %}.</p>
+        </div>
+    </section>
+    <section class="row image-left-4x8 landing-section is-table-row">
+        <div class="col-sm-4">
+            <a href="{% static 'img/sections/features/app-map/impact_chart.png' %}" data-featherlight="image">
+                <img class="img-responsive center-block img-xs-restrict"
+                     src="{% static 'img/sections/features/app-map/impact_chart.png' %}" alt="{% trans 'Impact Chart' %}">
+            </a>
+        </div>
+        <div class="col-sm-8">
+            <h2 class="sub-heading">{% trans "Visualized Impacts" %}</h2>
+            <p class="lead">{% trans "Device42 makes understanding network device relationships, fast, easy, and accurate. Using auto-generated diagrams, IT staff members have “anytime access” to impact charts that show the relationships between applications, hardware components (racks, servers, devices, etc.), and facilities (rooms, buildings)" %}.</p>
+            <p class="lead"><span class="prelist">{% trans "The results" %}:</span> {% trans "An easier, faster disaster recovery and better business continuance planning" %}.</p>
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-md-7">
+            <h2>{% trans "Application Dependency Flow" %}</h2>
+            <p class="lead">{% trans "Device42's application dependency mapping component is powerful and easy to use. Application dependencies are defined from the bottom up, and Device42 automatically generate dependency flow diagrams showing the relationships between application components. The result: Application locations and their inter-dependencies are always crystal clear" %}.</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-5 col-md-offset-0">
+            <a href="{% static 'img/sections/solutions/app-deps/application_chart.png' %}" data-featherlight="image" alt="{% trans 'Application Chart' %}">
+                <img src="{% static 'img/sections/solutions/app-deps/application_chart.png' %}"
+                 class="img-responsive box-shadow center-block">
+            </a>
+        </div>
+    </section>
+
+
+{% endblock %}
+

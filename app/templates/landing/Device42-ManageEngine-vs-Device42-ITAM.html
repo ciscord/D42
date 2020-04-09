@@ -1,0 +1,127 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Compare Device42 with ManageEngine IT asset explorer.' %}"/>
+{% endblock %}
+
+{% block title %}{% trans "ManageEngine's Asset Explorer vs Device42" %}{% endblock %}
+{% block landingHeadingText %}{% trans "ManageEngine Asset Explorer vs Device42" %}{% endblock %}
+{% block landingLeadText %}{% trans "Looking for Manageengine's Asset Explorer alternative? Find out how Device42 beats the competition. Device42 provides comprehensive IT asset management capabilities including powerful and agentless auto-discovery and configurable asset types. With RESTful APIs and a holistic approach to IT infrastructure, you can use a single Device42 product vs using multiple separate products from Manage engine." %}{% endblock %}
+
+{% block landingfeature %}
+    <div class="table-responsive padded">
+            <table class="table table-condensed d42-sw-compare">
+            <thead>
+                <tr>
+                    <th class="table-title"><p class="dark-blue text-left alt-text" style="margin:0;font-size:24px;">{% trans "Solution Comparison" %}</p></th>
+                    <th class="product-heading blue">{% trans "Device42" %}</th>
+                    <th class="product-heading blue">{% trans "ManageEngine" %}<sup>&reg;</sup></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="comp-feature">{% trans "Data Center Management" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><a href="#" class="tooltip-toggle" aria-label="{% trans 'Add-on with very limited functionality' %}" data-placement="top"><i class="fa fa-exclamation-triangle"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "IT Asset Management" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "IP Address Management" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><a href="#" class="tooltip-toggle" aria-label="{% trans 'Separate product and limited functionality' %}" data-placement="top"><i class="fa fa-exclamation-triangle"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Agentless Auto-Discovery" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Hardware/Software Dependency Maps" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Multi-tenancy" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Workflow Management" %}</td>
+                    <td class="text-center"><a href="#" class="tooltip-toggle" aria-label="{% trans 'Service integrations with JIRA and ServiceNow' %}" data-placement="top"><i class="fa fa-exclamation-triangle"></i></a></td>
+                    <td class="text-center"><a href="#" class="tooltip-toggle" aria-label="{% trans 'Separate product' %}" data-placement="top"><i class="fa fa-exclamation-triangle"></i></a></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Power Control" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td class="comp-feature">{% trans "Single/Unified Product" %}</td>
+                    <td class="text-center"><i class="fa fa-check"></i></td>
+                    <td class="text-center"><i class="fa fa-times"></i></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+{% endblock %}
+
+{% block maincontent %}
+<section class="row landing-section">
+    <div class="col-sm-4">
+        <img src="{% static 'img/sections/features/cmdb/impact-1.png' %}" class="img-responsive" alt="{% trans 'Device impact chart' %}" />
+    </div>
+    <div class="col-sm-8">
+        <h3 class="sub-heading">{% trans "Load CI's Fast with Powerful Auto-Discovery Tools" %}</h3>
+        <p>{% trans "Populate your CMDB fast with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide" %}.</p>
+        <ul class="dash">
+            <li>{% trans "All discovery tools are agent-less" %}</li>
+            <li>{% trans "All discoveries can be scheduled so you're always up-to-date" %}</li>
+            <li>{% trans "Multiple protocols supported (e.g. SNMP, WMI, SSH, Modbus" %}, ...)</li>
+            <li>{% trans "Native support for virtualization platforms" %}</li>
+            <li>{% trans "Native support for public and private cloud platforms" %}</li>
+            <li>{% trans "Native support for blade chassis" %}</li>
+            <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+            <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+            <li>{% trans "Result is a system that is always audit ready" %}</li>
+        </ul>
+    </div>
+</section>
+<section class="row landing-section">
+    <div class="col-sm-4">
+        <h3 class="sub-heading" id="preconfigured-cmdb">{% trans "Pre-configured CMDB" %}</h3>
+        <p>{% trans "No need for a long, drawn-out CI design process because all your CI’s and relationships are pre-configured.  But Device42 does not simply lock you into an inflexible structure.  You can create your own CIs and relationships to complement the built-in structure provided. Additionally, you can define user, groups, passwords, and object-level permissioning" %}.</p>
+    </div>
+    <div class="col-sm-8">
+        <img class="img-responsive" src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}" />
+    </div>
+</section>
+<section class="row landing-section">
+    <div class="col-sm-4">
+        <img src="{% static 'img/landing/ip-address-tracking-software.png' %}" class="hidden-xs img-responsive" />
+    </div>
+    <div class="col-sm-8">
+        <h3 class="sub-heading" id="visualizations">{% trans "Visualizations" %}</h3>
+        <p>{% trans "Once your data is loaded, it’s time to reap the benefits.  Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data.  And even better, Device42 provides an extensive set of visualizations including" %}....</p>
+        <ul class="square-style">
+            <li>{% trans "Your computer rooms and racks with power and capacity heatmaps" %}</li>
+            <li>{% trans "Your full IP connectivity and power chain" %}</li>
+            <li>{% trans "Your hardware, software, and application dependencies" %}</li>
+        </ul>
+    </div>
+</section>
+<section class="row landing-section">
+    <div class="col-xs-12">
+        <h3 class="sub-heading" id="rapid-deployment">{% trans "Rapid Deployment" %}</h3>
+        <ul class="square-style">
+            <li>{% trans "Most customers find they are up and running much of their infrastructure loaded in less than a day" %}</li>
+            <li>{% trans "Auto-discovery requires just filling in a few forms with parameters like IP ranges and authentication parameters" %}</li>
+            <li>{% trans "Spreadsheet-based imports are available for data that cannot be discovered" %}</li>
+            <li>{% trans "RESTful API’s are available for customized data-loading and mapping" %}</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load i18n static %}
+<div class="row bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="font-stack-condensed text-uppercase xs-center">{% trans "Why Device42?" %}</h2>
+                <div class="row is-table-row">
+                    <div class="col-sm-3">
+                        <div class="hor-btns clearfix padded">
+                            <button data-panel="1"
+                                    class="btn btn-info btn-block active focus">{% trans "Intuitive Web-Based Interface" %}</button>
+                            <button data-panel="2" class="btn btn-info btn-block">{% trans "Restful APIs & Webhooks" %}</button>
+                            <button data-panel="3"
+                                    class="btn btn-info btn-block">{% trans "Agentless & Continuous Discovery" %}</button>
+                            <button data-panel="4" class="btn btn-info btn-block">{% trans 'Integration with other tools' %}</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 hor-info padded">
+                        <div class="tab active animated fadeIn" data-tab="1">
+                            <h3 class="flat-top h2"><a style="color:inherit!important" href="{% url 'features' %}">{% trans "Intuitive Web-Based Interface" %}</a></h3>
+                            <p class="h4">{% trans "No complicated client installs. No need to spend money on training. Get started in a jiffy by importing the ready-to-go virtual appliance." %}</p>
+                        </div>
+                        <div class="tab animated fadeIn" data-tab="2">
+                            <h3 class="flat-top h2"><a style="color:inherit!important;" class="ext-link" target="_blank" href="http://api.device42.com">{% trans "Restful APIs and Webhooks" %}</a></h3>
+                            <p class="h4">{% trans "Easy data population from language of your choice using REST APIs. Integrates with AD/LDAP with role based access." %}</p>
+                        </div>
+                        <div class="tab animated fadeIn" data-tab="3">
+                            <h3 class="flat-top h2"><a style="color:inherit!important;" href="{% url 'features_discovery' %}">{% trans "Agentless & Continuous Discovery" %}</a></h3>
+                            <p class="h4">{% trans "Agentless auto-discovery keeps your infrastructure up-to-date becoming a single source of truth." %}</p>
+                        </div>
+                        <div class="tab animated fadeIn" data-tab="4">
+                            <h3 class="flat-top h2"><a style="color:inherit!important;" href="{% url 'integrations' %}">{% trans 'Integration with other tools' %}</a></h3>
+                            <p class="h4">{% trans 'Device42 natively integrates with tools like JIRA, Confluence, ServiceNow, Splunk, Slack, Logstash, Zapier, StackStorm, Ansible, Puppet, Chef and many more.' %}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row is-table-row padded">
+                    <div class="col-xs-12 col-sm-8 text-right xs-center">
+                        <p class="font-stack-condensed float-left text-white h3 text-uppercase">{% trans "Industry Recognition" %}</p>
+                        </div>
+                    <div class="col-xs-6 col-sm-2">
+                        <img class="img-responsive img-restrict center-block"
+                                 src="{% static 'img/branding/recognition/gartner-logo-trans.png' %}"
+                                 alt="Gartner CoolVendor">
+                    </div>
+                    <div class="col-xs-6 col-sm-2">
+                        <img class="img-responsive img-restrict center-block"
+                                 src="{% static 'img/branding/recognition/mitsloan-logo-trans.png' %}"
+                                 alt="MIT Sloan CIO">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

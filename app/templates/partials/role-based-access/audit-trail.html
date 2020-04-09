@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block animated"
+             src="{% static 'img/generic/icons_cog_treelist.png' %}"
+             alt="{% trans 'Audit Trail' %}" style="max-width:60%;height:auto!important;">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Audit Trail" %}</h2>
+        <p>{% trans "Device42 tracks network changes, additions, or deletions showing a comprehensive audit trail of who, when, and what took place. History records allow easy search and filtering. IT administrators can view audit trails per object from a centralized history page." %}</p>
+    </div>
+</div>

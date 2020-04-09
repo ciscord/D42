@@ -1,0 +1,235 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Tour Pages" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Device42 Product Tour Pages' %}">
+{% endblock %}
+{% block body_scripts %}
+<script>
+$(function(){
+   $(".photo-card").matchHeight();
+});
+</script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary is-table-row">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Features Tour" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tours-main">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'tours_server_room_management' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+
+                                <img class="center-block" src="{% static 'img/sections/features/server-room-layout.gif' %}"
+                                     alt="{% trans 'Web Based Server Room Layout' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Server Room Layout" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Visually manage your server room layout with color coded racks based on availability, power and temperature. Easy drag and drop web based interface" %}.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                 <div class="card-container">
+                    <a href="{% url 'tours_server_rack_diagrams' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/server-rack-diagram.png' %}"
+                                     alt="{% trans 'Server Rack Diagrams' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Server Rack Diagrams" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Visually see devices in rack exactly how they look in real life and click on device to get detailed info. Automatically generated from device details" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'tours_patch_cable_management' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+
+                                <img class="center-block" src="{% static 'img/landing/patch-panel-cable-management-software.png' %}"
+                                     alt="{% trans 'Easy patch panel cable management software' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Patch panel cable management software" %}</h3>
+
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Simple way to manage your patch panel connectivity. Use APIs, UI to quickly bring your patch panel documentation under control" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'tours_server_inventory' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/server-inventory-management.png' %}"
+                                     alt="{% trans 'Complete Server Inventory Management' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Inventory Management" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Document the details of every device in your infrastructure. Aided with multiple auto-discovery tools and APIs" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'features_itam' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/it-asset-management.png' %}"
+                                     alt="{% trans 'Comprehensive IT Asset Management' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "IT Asset Management" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Manage lifecycle of your all IT asset including servers and workstations. Use QR codes and mobile phones for easy inventory management" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'tours_manage_spare_parts' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/manage-spare-parts.png' %}"
+                                     alt="{% trans 'Manage Spare Parts' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Manage Spare Parts" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Keep tab on your hardware spare parts inventory in your data center" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'features_ipam' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/ip-address-management.png' %}"
+                                     alt="{% trans 'Comprehensive IP Address Management' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "IP Address Management" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Manage IPv4 and IPv6 addresses with easy to use web based tool with support for VRF groups and extensive auto-discovery" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'features_discovery' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/auto-discovery-tools.png' %}"
+                                     alt="{% trans 'Multiple network auto-discovery tools' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Auto Discovery Tools" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Device42 is a comprehensive IT Infrastructure management software. Batteries included. Multiple tools to help you discover, load, and maintain your data fast and easy" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'features_password_management' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/enterprise-password-management.png' %}"
+                                     alt="{% trans 'Enterprise password management solution' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Enterprise Password Management" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Device42 comes bundled with an useful enterprise password management software. You can securely manage all your shared password for devices and applications" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'features_app_mapping' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/application-topology-mappings.png' %}"
+                                     alt="{% trans 'Application topology mappings software' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Application Topology Mappings" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "With Application mapping component of device42 software you can map the topology of your application components and its impact all the way from a single component to a rack of servers and to the whole data center" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-container">
+                    <a href="{% url 'tours_data_center_documentation' %}">
+                        <div class="photo-card img-xs-restrict center-block">
+                            <div class="image">
+                                <img class="center-block" src="{% static 'img/landing/data-center-layout-v2_small.png' %}"
+                                     alt="{% trans 'Data Center Documentation Software' %}">
+                            </div>
+                            <div class="heading">
+                                <h3 class="flat-bottom">{% trans "Data Center Documentation" %}</h3>
+                            </div>
+                            <div class="description">
+                                <p class="font-stack-condensed">{% trans "Powerful data center documentation software makes it easier for teams to manage their IT infrastructure.  Features include, server room layouts with heatmaps showing availability, cable management for both network and power connections, and much more!" %}.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

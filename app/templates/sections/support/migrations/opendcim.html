@@ -1,0 +1,12 @@
+{% load static i18n %}
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Migrate" %} {% if product %}{{ product }}{% endif %} {% trans "data into Device42" %}</h3>
+        <p>{% trans "If you are managing your server rooms in openDCIM, you can migrate your data to Device42 using the script linked below.  This script connects to OpenDCIM database server, extracts the data and sends it to Device42 using REST based APIs." %}</p>
+        <p class="font-stack-condensed text-muted">{% trans "This python script can be run from Windows or Linux machines, and supports OpenDCIM v3.x.  More details are in <code>README.md</code> file in the zip below." %}</p>
+        <br>
+        <form action="." method="POST" role="form">{% csrf_token %}
+            <button type="submit" id="download_opendcim_script" class="btn btn-sm btn-primary"><i class="fa fa-download text-white"></i> {% trans "Download Script" %} ZIP</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block"
+             alt="{% trans 'DNS Integration' %}"
+             src="{% static 'img/sections/product/mascot_presenting_left.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "DNS Integration" %}</h2>
+        <p>{% trans "Transfer zones and zone records automatically from DNS servers for easy search and up-to-date documentation and correlation to IP addresses." %}</p>
+    </div>
+</div>

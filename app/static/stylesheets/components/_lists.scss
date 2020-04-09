@@ -1,0 +1,256 @@
+/**
+ * website
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+ul {
+  list-style-image: none !important;
+  list-style: none;
+
+  &.text-small li {
+    font-size: 100%;
+  }
+  &.bullet-blue {
+    li:before {
+      color:$brand-primary;
+    }
+  }
+  &.bullet-yellow {
+    li:before {
+      color:$brand-warning;
+    }
+  }
+  &.bullet-gray {
+    li:before {
+      color:$text-muted;
+    }
+  }
+
+  &.dark-blue {
+    > li:before {
+      color: $pricing-blue-dark;
+    }
+  }
+
+  &.alt-font {
+    li {
+      font-family: $font-stack-roboto;
+      &:before {
+        margin-right: 10px;
+      }
+    }
+
+  }
+
+  &.section-menu {
+    font-family: $font-stack-roboto-condensed;
+    li {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  &.right {
+    text-align: right;
+
+    li:after {
+      color: $brand-primary;
+      content: "\2022";
+      font-size: 1.5em;
+      padding-left: .25em;
+      position: relative;
+      top: .1em;
+    }
+    li:before {
+      content: "";
+    }
+  }
+  &.tight {
+    padding-left:24px;
+  }
+
+  li {
+    &:before {
+      color:initial;
+      content: "\2022";
+      font-size: 2em;
+      margin-left:-24px;
+      margin-right:12px;
+      position: relative;
+      vertical-align: text-top;
+      display: inline-block;
+    }
+
+    &.active-item {
+      &:before {
+        color: $color-warning;
+      }
+      a {
+        font-style:italic;
+      }
+    }
+
+    > p {
+      margin: 0 !important;
+    }
+
+  }
+  &.muted {
+    li {
+      &:before {
+        @extend .text-muted;
+      }
+    }
+  }
+  &.checklist, &.dash {
+    list-style-image: initial;
+
+    li {
+      color: inherit;
+      list-style: none;
+      &:before {
+        margin-right:8px;
+      }
+    }
+  }
+
+  &.dash {
+    &.alt-font {
+      li:before {
+        margin-left: -24px;
+      }
+    }
+
+    li {
+      &:before {
+        font-size: 1em;
+        content: "\2014\a0";
+        width:16px;
+        //margin-left: -30px;
+      }
+    }
+  }
+  &.dash.right {
+    li {
+      text-align: right;
+      &:before {
+        content: "";
+      }
+      &:after {
+        content: "\2014\a0";
+      }
+    }
+  }
+  &.checklist {
+    text-align: left;
+    list-style: none;
+    li {
+      &.plus {
+        &:before {
+          content: '\f067';
+        }
+      }
+      &:before {
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        margin-left: -25px;
+        margin-top: 1px;
+        position: relative;
+        font-size: 1em;
+      }
+    }
+  }
+
+  &.no-style {
+    padding-left: 0;
+    list-style:none;
+    li:before {
+      color: initial !important;
+      content: normal !important;
+      font-size: inherit !important;
+      margin-left: initial !important;
+      margin-right: initial !important;;
+      position: inherit;
+      vertical-align: inherit;
+      display: inherit;
+    }
+  }
+}
+
+
+.bg-primary ul.checklist li {
+  color: $white-color;
+  font-size: 1.4em;
+  letter-spacing: 0;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 100;
+  &:before {
+    color: $brand-primary-dark;
+  }
+}
+
+.bg-info ul.dash li {
+  color: darken($brand-primary, 30%);
+}
+
+.checkmark, .red-x {
+  text-shadow: 0 -1px 2px #222;
+}
+
+.checkmark:before {
+  content: '\2714';
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  color: green;
+}
+
+.red-x:before {
+  content: '\00D7';
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  font-size: 28px;
+  color: red;
+  font-weight: 700;
+}
+
+ul.dash {
+  li.active-item {
+    ul li:before {
+      color: $color-warning;
+    }
+  }
+  ul {
+    > li {
+      &:before {
+        content: '\2022';
+      }
+    }
+  }
+
+}
+
+.pricing-page ul.dash,
+.pricing-page ul.checklist {
+  padding-left: 6px;
+  display: inline-block;
+
+  li {
+    margin-left: 24px;
+
+    &:before {
+      margin-left: -24px;
+      margin-right: 10px;
+    }
+  }
+}
+
+li[role='presentation'] {
+
+  &:before {
+    content: "" !important;
+    display: none;
+  }
+}
+

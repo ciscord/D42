@@ -1,0 +1,68 @@
+{% load i18n static custom_tags %}
+{% lang_code as context_language %}
+<!DOCTYPE html>
+<html lang="{{ context_language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+    <meta name='author' content='Device42'>
+	<meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>{% block title %}{% endblock %} | Device42 Software</title>
+    <meta property='og:url' content='http{% if request.is_secure %}s{% endif %}:{{ request.build_absolute_uri }}'>
+    <meta property='og:type' content='website'>
+    <meta property='og:image' content='http{% if request.is_secure %}s{%endif %}://d42cdn.s3.amazonaws.com/img/branding/device42-logo-400x400.png'>
+    <meta property='og:title' content='Continuous Discovery for your IT Infrastructure | Device42'>
+    <meta property='og:description' content="{% trans 'Automatically maintain an up-to-date inventory of your physical, virtual, and cloud servers and containers, network components, software/services/applications, and their inter-relationships and inter-dependencies.' %}">
+    {% block meta %}
+    <meta name="description" content="{% trans 'Automatically maintain an up-to-date inventory of your physical, virtual, and cloud servers and containers, network components, software/services/applications, and their inter-relationships and inter-dependencies.' %}">
+    {% endblock %}
+    {% block icons %}
+    <link rel='shortcut icon' href='{% static "img/favicon.png" %}'>
+    <link rel='apple-touch-icon' href='{% static "img/apple-touch-icon.png" %}'>
+    <link rel='apple-touch-icon' sizes='57x57' href='{% static "img/apple-touch-icon-57x57.png" %}'>
+    <link rel='apple-touch-icon' sizes='72x72' href='{% static "img/apple-touch-icon-72x72.png" %}'>
+    <link rel='apple-touch-icon' sizes='114x114' href='{% static "img/apple-touch-icon-114x114.png" %}'>
+    {% endblock %}
+    <link rel="dns-prefetch" href="//d42cdn.s3.amazonaws.com">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="alternate" href="http{% if request.is_secure %}s{% endif %}:{{ request.build_absolute_uri }}" hreflang="x-default">
+    {% get_available_languages as languages %}
+    {% for language_code, lang_name in languages %}
+        {% if language_code not in context_language %}
+        <link rel="alternate" hreflang="{{ language_code }}" href="{{ STATIC_DOMAIN }}{% change_lang language_code %}" />
+        {% endif %}
+    {% endfor %}
+    {% block fonts %}{% endblock %}
+    {% block styles %}{% endblock %}
+    {% block head_scripts %}{% endblock %}
+    {% block head %}{% endblock %}
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>window.STATIC_URL = '{{ STATIC_URL }}';</script>
+  </head>
+  <body>
+    {% navigation %}
+    <div class="main-content" id="top-container" role="main">
+        {% block body %}{% endblock %}
+    </div>
+    {% include 'base/footer.html' %}
+
+    <button type="button" class="go2top animated" data-jump="#top-container" style="opacity: 0;">
+        <i class="fa fa-arrow-up fa-2x"></i>
+    </button>
+
+    <script src="{% static 'build.js' %}"></script>
+
+    {% include 'base/analytics.html' with remarketing=False %}
+
+
+    {% block body_scripts %}{% endblock %}
+    {% block rich_snippets %}
+        {% include 'base/rich-snippets.html' %}
+    {% endblock %}
+  </body>
+</html>

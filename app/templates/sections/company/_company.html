@@ -1,0 +1,96 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Company" %}{% endblock %}
+{% block site_section_company %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'About Device42 - Comprehensive Data Center Documentation Software' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1 class="flat-top">{% trans "About Device42" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row bg-info company-page">
+        <div class="container">
+             <div class="row flat-top">
+                    <div class="col-xs-12 font-stack-roboto padded">
+                        <p>{% trans "Device42 Inc., a leader in Data Center Infrastructure Management (DCIM), delivers comprehensive, low cost solutions that helps companies visualize their infrastructure, understand network inter-dependencies, improve network security, and mitigate the impacts of planned and unplanned IT network changes. Device42 software centralizes data center management making IT assets visible, understandable, and controllable." %}</p>
+                        <p>{% trans "From its inception, in 2010, Device42 has listened closely to customer needs and designed solutions that meet and exceed customer requirements. As a result, Device42 software is used by a rapidly growing number of companies of all sizes, in more than 20 countries." %}</p>
+                        <p class="text-italic ">{% trans "You can follow our growth on the" %} <a href="http://www.device42.com/blog/" target="_blank">{% trans "Device42 Blog" %}</a>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="container vert-offset-top-1">
+            <div class="row is-table-row">
+                <div class="col-sm-2">
+                    <img src="{% static 'img/branding/company/raj.png' %}"
+                         class="img-responsive img-circle center-block face-photo"
+                         alt="Raj Jalan">
+                    <h4 class="text-uppercase text-center">Raj Jalan</h4>
+                    <h5 class="flat-top text-uppercase text-center">{% trans "Founder & CEO" %}</h5>
+                </div>
+                <div class="col-sm-10 font-stack-condensed">
+                    <p>{% trans "Raj Jalan, previously an IT consultant for numerous companies, recognized that many corporate data centers lacked visibility and control they require to most effectively manage both planned and unplanned changes within their IT infrastructure." %}</p>
+                    <p>{% trans "When Raj looked for DCIM tools to help, he found very expensive, non-integrated, point solutions that simply didn't deliver the functionality that data center managers require. This motivated him to start Device42." %}</p>
+                    <p>{% trans "Today, as CEO, Raj’s experience and insight continue to fuel Device42’s technology innovation and corporate growth." %}</p>
+                    <p>{% trans "When he’s not working, Raj enjoys running, photography, and board games -- with “Settlers of Catan” being his favorite." %}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row is-table-row">
+                <div class="col-sm-2">
+                    <img src="{% static 'img/branding/company/steve.png' %}"
+                         class="img-responsive img-circle center-block face-photo"
+                         alt="Steve Shwartz">
+                    <h4 class="text-uppercase text-center">Steve Shwartz</h4>
+                    <h5 class="flat-top text-uppercase text-center">{% trans "Co-founder & CTO" %}</h5>
+                </div>
+                <div class="col-sm-10 font-stack-condensed">
+                    <p>{% trans "Dr. Steve Shwartz has been the Chief Technology Officer for multiple, successful, high-technology organizations. In these roles he also experienced the problems that ultimately led to the development of Device42." %}</p>
+                    <p>{% trans "Steve’s prior CTO experiences contribute to Device42’s comprehensive capabilities including: the ability to immediately determine application and departmental impact resulting from production outages, the ability to allocate IT costs to departments and projects, and Device42’s robust server password documentation and controls – to name a few." %}</p>
+                    <p>{% trans "Steve enjoys playing golf and basketball when he’s not behind the desk." %}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row is-table-row">
+                <div class="col-sm-2">
+                    <img src="{% static 'img/branding/company/al.png' %}"
+                         class="img-responsive img-circle center-block face-photo"
+                         alt="Raj Jalan">
+                    <h4 class="text-uppercase text-center">Al Rossini</h4>
+                    <h5 class="flat-top text-uppercase text-center">{% trans "COO" %}</h5>
+                </div>
+                <div class="col-sm-10 font-stack-condensed">
+                    <p>{% trans "Prior to Device42, Al Rossini provided executive-level sales and technical solution leadership at numerous private and public sector organizations. In these roles, Al’s management insight was instrumental in repeatedly enabling record sales growth, successful margin expansion, global team building, and successful product/service introductions." %}</p>
+                    <p>{% trans "Al’s proven expertise and practical experience are vital assets in Device42’s rapid, scalable, growth in global markets." %}</p>
+                    <p>{% trans "Al is an avid skier, cyclist, and regularly enjoys a competitive basketball game -- when he’s not tethered to his laptop keyboard." %}</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{% trans "Device42's Open Source Contributions" %}</h3>
+                </div>
+                <div class="panel-body bg-info">
+                    <p>{% trans "We have open sourced some of our work to help fellow system and network engineers/administrators better manage their infrastructure documentation. These open source projects can work independently or in conjunction with Device42 software. Please read more at" %}
+                        <a href="https://www.github.com/device42"
+                           target="_blank">Device42 {% trans "open-source software" %}</a></p>
+                    <p>{% trans "We strive to improve Device42's data center infrastructure management software, so if you find an error or have a suggestion, please send us an e-mail at" %} <a
+                            href="mailto:support@device42.com">support@device42.com</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

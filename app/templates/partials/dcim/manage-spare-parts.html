@@ -1,0 +1,17 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block"
+             alt="{% trans 'Manage Spare Parts' %}"
+             src="{% static 'img/sections/product/pricing_icons.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Manage Spare Parts" %}</h2>
+        <p>{% trans "Easily manage IT spare parts hardware inventory. Track what spares are in use or check out spares for deployment." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Supports CPU, RAM, HDD and customizable hardware components" %}</li>
+            <li>{% trans "Manage devices globally and/or by individual device(s)" %}</li>
+            <li>{% trans "Sort and view inventory by custom criteria" %}</li>
+        </ul>
+    </div>
+</div>

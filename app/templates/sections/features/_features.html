@@ -1,0 +1,276 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Device42 Features Tour" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Featured highlights and screenshots of Device42' %}.">
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "Highlights & Screenshots" %}</h1>
+                    <h2 class="text-primary flat-top">{% trans "Comprehensive IT Infrastructure Management" %}</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+        <div class="container tours-main text-center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/feat_contdel.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/feat_contdel.png' %}"
+                             class="img-responsive img-border center-block"
+                             alt="{% trans 'Web-based automatic rack diagrams' %}">
+                    </a>
+                    <br>
+                    <h3>{% trans "Continuous Discovery" %}</h3>
+                    <p>{% trans "Discoveries are continuously run on a schedule, automatically detecting changes to your infrastructure as they are made, ensuring your CMDB is always up to date." %}.</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/racks.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/racks.png' %}"
+                             class="img-responsive img-border center-block"
+                             alt="{% trans 'Web-based automatic rack diagrams' %}">
+                    </a>
+                    <br>
+                    <h3>{% trans "Automatic Rack Diagram" %}</h3>
+                    <p>{% trans "Visually see devices in rack exactly how they look in real life and click on device to get detailed info. Automatically generated from device details" %}.</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/room.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/room.png' %}"
+                             class="img-responsive img-border center-block"
+                             alt="{% trans 'Room layouts with heat maps' %}">
+                    </a>
+                    <br>
+                    <h3>{% trans "Room Layouts" %}</h3>
+                    <p>{% trans "Visual room layout. Heat Maps based on available Us. Hover over to see rack/object details. Easy drag and drop right in your browser" %}.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/cable_management.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/cable_management.png' %}"
+                             class="img-responsive img-border center-block"
+                             alt="{% trans 'Patch panel cable management' %}">
+                    </a>
+                    <br>
+                    <h3>{% trans "Cable Management" %}</h3>
+                    <p>{% trans "Simple way to manage your patch panel connectivity. Use APIs, UI to quickly bring your patch panel documentation under control. Visualize your cable management" %}.</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/search.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/search.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Super easy search" %}</h3>
+                    <p>{% trans "Super easy search from the dashboard for any object using partial or full strings. Searches through all the objects and creates listing for all categories based on permissions. Custom values included in search" %}.</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/device_details.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/device_details.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Detailed Device Info" %}</h3>
+                    <p>{% trans "Document physical, virtual, blade, clustered, switches or any other device types. Record any properties. Asset lifecycle management. Custom key pair values. Integrated with built-in IPAM" %}.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/easy-data-entry.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/easy-data-entry-thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Intuitive Data Entry" %}</h3>
+                    <p>{% trans "Easy multi-edit data entry.  e.g. you can add all devices in a rack while editing the rack in easy multi-entry form or while adding IPs for a device, you can open a new tab from same place to see IPs being used in that subnet" %}.</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/device_details.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/device_list_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Intuitive Navigation" %}</h3>
+                    <p>{% trans "Easily search, sort and multi filter for any list whether it is device, IP address, Hardware models, Switch Ports etc. e.g. Filter all devices with a certain hardware, certain OS in a specific location." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/auto-discovery.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/network_discover_v3_thumb.jpg' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Auto Populate Objects" %}</h3>
+                    <p>{% trans "Network auto-discovery using SNMP. Also the Software lets you use your favorite scripting platforms to create and keep your documentation up-to date using APIs." %}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/history.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/history_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Audit Log" %}</h3>
+                    <p>{% trans "Sortable, searchable and filterable audit log of the changes being made by all the Administrators." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/ip-address-management.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/iplist_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "IP Address Management" %}</h3>
+                    <p>{% trans "Sort IPs, easy search, filter by subnets. Support for IPv6. Add detailed info for VLANs and subnets. Subnet ranges can be automatically calculated based on mask and IP validation done." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/network_visualization.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/network_visualization.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Switch port visualization" %}</h3>
+                    <p>{% trans "What MAC address is connected to what switch port and belongs to which device. Define and see what IPs are mapped(NAT) on firewall/router/load balancer etc." %}</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/DNS.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/DNS_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "DNS Integration" %}</h3>
+                    <p>{% trans "Just allow domain transfers from your DNS servers, schedule the auto-discovery and easily search and filter DNS records. Support for A, AAAA, CNAME, MX & PTR records" %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/app_dependency.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/impactlist_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Application Dependency" %}</h3>
+                    <p>{% trans "Automatically generate dependency and impact visuals once you define Application components from bottom up. Visualize inter-dependencies and even load balanced services" %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/impact.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/impact_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Impact Charts" %}</h3>
+                    <p>{% trans "You can see impact from application, device, rack, room or building level. Impress your boss with the visuals or free beer on us" %}<strong>*</strong>.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/role_based_access.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/role_based_access_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Role Based Access" %}</h3>
+                    <p>{% trans "Define who can see what. You can get granular with individual and/or group level permissions and define who can view/edit/add/delete what resources." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/device_tree.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/device_tree_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Device Tree" %}</h3>
+                    <p>{% trans "Expandable device tree, see all devices in a rack, virtuals in a physical, blades in a chassis etc. virtuals in blades." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/export.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/export_thumb.jpg' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Export Your Data" %}</h3>
+                    <p>{% trans "No lock in. Export your data anytime! Create excel Reports of your data. CSV files can be generated containing related columns for each resource." %}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/password.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/pass_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Centralized Password Management" %}</h3>
+                    <p>{% trans "Password store with granular permission control. Passwords are stored encrypted(AES256) and sent to the backup file encrypted. With full audit trail for password access" %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/asset_mgmt.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/asset_mgmt_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Inventory Management" %}</h3>
+                    <h5 class="text-strong text-muted text-italic flat-top">{% trans "with QR Codes!" %}</h5>
+                    <p>{% trans "Print customizable QR codes and manage your IT assets and inventory from mobile devices. Auto assign asset numbers and bulk print asset labels with embedded QR codes." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/api.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/api_thumb.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Integrate Using RESTful APIs" %}</h3>
+                    <p>{% trans "Open APIs to automate your IT Infrastructure management. Easily integrate with other systems using RESTful APIs." %}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/import.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/thumbs/import.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Easy Import" %}</h3>
+                    <p>{% trans "Import IP Addresses from existing or new Excel files. And easily add devices using device import with columns like name, serial, mac, asset number etc" %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/feat_webhooks.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/feat_webhooks.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Webhooks" %}</h3>
+                    <p>{% trans "Webhooks are a way for one application to provide another application with near-realtime data updates." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <a href="{% static 'img/sections/features/feat_netflow.png' %}" data-featherlight="image">
+                        <img src="{% static 'img/sections/features/feat_netflow.png' %}"
+                             class="img-responsive img-border center-block">
+                    </a>
+                    <br>
+                    <h3>{% trans "Netflow & NMAP Support" %}</h3>
+                    <p>{% trans "Device42’s Netflow Collector is a powerful tool used to get continuous auto-discovery information from your environment." %}</p>
+                </div>
+            </div>
+
+            <div class="row foot-nav">
+                <div class="col-xs-6 text-left">
+
+                </div>
+                <div class="col-xs-6 text-right">
+                    <small class="text-uppercase text-muted">Next</small>
+                    <br>
+                    <a href="{% url 'features_cmdb_for_cloud_era' %}">{% trans 'CMDB for the Cloud Era' %} <i
+                            class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

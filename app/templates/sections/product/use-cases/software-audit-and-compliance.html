@@ -1,0 +1,108 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: Software Audit & Compliance" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 does Asset Management, License Management, Password management, and CVE alerting, the system contains all the information you need to identify affected software, the servers running that software, and the access credentials you’ll need. All that’s left to do is execute the remediation.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans 'Software Audit & Compliance' %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+  <img src="{% static 'img/components/study-a/use-cases/Software Audit and Compliance.png' %}"
+                         class="img-inline-right" alt="{% trans 'Software Audit & Compliance' %}"/>
+                    <h2>{% trans "Challenge" %}</h2>
+                    <p>{% trans "IT Infrastructure teams are typically required to conduct, assist in, and endure a number of different types of audit every year - finance audits, security audits, risk-related audits, budget cycle audits, and more." %}</p>
+                    <h4>{% trans "A software audit can be particular difficult if" %}:</h4>
+                    <ol>
+                        <li>{% trans "You don’t have an accurate inventory of all your software" %}</li>
+                        <li>{% trans "The data you do have exists only in somebody’s head, or you have personnel changes" %}</li>
+                        <li>{% trans "Software is frequently installed and removed on servers and end user machines without record" %}</li>
+                    </ol>
+
+                    <p>{% trans "A common strategy is to attempt a “full inventory” in order to prepare for a software audit,  with results stored in Excel and/or Visio files." %}</p>
+                    <h4>{% trans "This approach is problematic for several reasons" %}:</h4>
+                    <ul>
+                        <li>{% trans "It can take weeks or months to get everything documented and organized into Excel. " %}</li>
+                        <li>{% trans "By the time the software inventory is completed, so many things have been changed that it’s again out of date.  At best, it will be out of date come the next audit." %}</li>
+                        <li>{% trans "Even if you create processes to keep your spreadsheet up-to-date, you will inevitably end up with multiple versions, resulting in data issues as there is no centralized editing support and no standardized data template." %}</li>
+                        <li>{% trans "While it might be possible to keep some data up to date manually, other data such as IP usage is virtually impossible to track manually." %}</li>
+                    </ul>
+
+                    <div class="row">
+                        <h2>{% trans "Solution" %}</h2>
+                    <a href="{% static 'img/components/study-a/use-cases/sa-compliance-img.png' %}" data-featherlight="image">
+                            <img src="{% static 'img/components/study-a/use-cases/sa-compliance-img.png' %}"
+                             style="max-width:50%;margin:0 0 24px 24px;float:right;"
+                             class="box-shadow" alt="{% trans 'Software Audit & Compliance' %}"/>
+                        </a>
+                        <p>{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of all deployed software on Windows, Linux, and BSD machines alike across the entire IT infrastructure — from the server to the desktop level." %}</p>
+                        {% blocktrans %}
+                            <h2>Highlights</h2>
+                            <ul>
+                                <li>Compare current usage to license counts</li>
+                                <li>Detect prohibited software and generate immediate alerts</li>
+                                <li>Track license agreements and expiration dates</li>
+                                <li>Identify purchased vs. installed software</li>
+                                <li>Supports common licensing models (user, device, CPU, key)</li>
+                                <li>Provide customizable notification alerts for licensing issues</li>
+                                <li>Identify installed software with vulnerabilities and provide customizable alerting
+                                </li>
+                                <li>Produce reports showing vulnerabilities by location and device to help create
+                                    patching plans
+                                </li>
+                            </ul>
+                            </div>
+                        {% endblocktrans %}
+                    <h4>{% trans "Device42 auto-discovers" %}</h4>
+                    <ul>
+                        <li>{% trans "Discovery can be run on a schedule so you can stop playing catch-up " %}</li>
+                        <li>{% trans "Auditing is no longer a giant undertaking to identify a ‘point in time’ state of your infra" %}</li>
+                        <li>{% trans "Less manual entry, reduced investment of time & manpower, and fewer errors" %}</li>
+                    </ul>
+                    <h4>{% trans "Device42 means compliance" %}</h4>
+                    <ul>
+                        <li>{% trans "License compliance – identify over-licensed, unlicensed, and expired licenses" %}</li>
+                        <li>{% trans "Standards assurance – identify prohibited and approved software" %}</li>
+                        <li>{% trans "Cost management – report license costs and minimize under-licensed software" %}</li>
+                    </ul>
+                    <h4>{% trans "Device42 means security" %}</h4>
+                    <ul>
+                        <li>{% trans "Know which physical, virtual, and cloud devices have software vulnerabilities" %}</li>
+                        <li>{% trans "Be alerted when new vulnerabilities are discovered" %}</li>
+                        <li>{% trans "View vulnerabilities by device (and lots of other views) to help create patching plans" %}</li>
+                    </ul>
+                    <h4>{% trans "Device42 utilizes existing data" %}</h4>
+                    <ul>
+                        <li>{% trans "Data in spreadsheets and CSV files can be ingested and organized, eliminating duplicated effort" %}</li>
+                        <li>{% trans "Data can be pulled from external systems such as Microsoft SCCM and BMC Remedy" %}</li>
+                    </ul>
+                    <h4>{% trans "Device42 is flexible" %}</h4>
+                    <ul>
+                        <li>{% trans "Select software as ignored – removes software components from the discovery list and ignores these components in future discoveries" %}</li>
+                        <li>{% trans "Mark software as prohibited – sends alerts whenever prohibited software is located on the network" %}</li>
+                        <li>{% trans "Assign software to suite – defines software as part of a software grouping, or “suite”" %}</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

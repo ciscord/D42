@@ -1,0 +1,17 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-4">
+        <img class="featurette-image img-responsive center-block img-rounded"
+             alt="{% trans 'Web-based rack layouts with drag and drop' %}"
+             src="{% static 'img/sections/features/cable_management.png' %}">
+    </div>
+    <div class="col-md-8">
+        <h2 class="featurette-heading">{% trans "IT Patch Panel Management" %}</h2>
+        <p class="">{% trans "Visualize IT patch panel connections and with Device42 software. Manage structured cabling with easy data entry via UI or APIs and update back connectivity using bulk operations." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Hover over images to see full conectivity paths" %}</li>
+            <li>{% trans "Color coded for easier planning" %}</li>
+        </ul>
+    </div>
+
+</div>

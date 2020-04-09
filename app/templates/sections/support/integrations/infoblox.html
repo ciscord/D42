@@ -1,0 +1,62 @@
+{% load i18n static %}
+<h2>{% trans "Enhance your IPAM with the InfoBlox / Device42 integration" %}</h2>
+<p>{% trans "Easily utilize this free script to gather information from an Infoblox installation and send it to your Device42 appliance via the REST APIs." %}</p>
+
+<div class="row is-table-row">
+    <div class="col-sm-8">
+        <h3 class="">{% trans "The Device42 / Infoblox Integration gathers the following from Infoblox:" %}</h3>
+        <ul class="checklist bullet-blue">
+            <li>{% trans 'Subnets' %}</li>
+            <li>{% trans 'Static IP addresses' %}</li>
+            <li>{% trans 'MAC addresses' %}</li>
+            <li>{% trans 'Device names (if detected by Infoblox)' %}</li>
+            <li>{% trans 'Device OS (if detected by Infoblox)' %}</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <div class="center-block xs-center" style="height:60px;width:200px;max-width:100%;">
+            <img src="{% static 'img/branding/transparent-logo.png' %}" alt="{% trans 'Device42 logo' %}"
+                 class="img-responsive">
+        </div>
+        <div class="sprite-infoblox center-block xs-center" style="height:60px;width:200px;"></div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="text-strong flat-top">{% trans 'Pre-Requisites' %}</h3>
+        <ul class="dash bullet-gray">
+            <li>{% trans 'The integration script assumes that you are running Infoblox with web api (wapi) v 1.2' %}</li>
+            <li>{% trans 'The integration script gathers data for fixed IP addresses recorded in Infoblox' %}</li>
+            <li>{% trans 'This integration script works with Device42 v5.8.1 and newer' %}</li>
+            <li>{% trans 'This script runs on Linux and Windows' %}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-strong flat-top">{% trans 'Requirements' %}</h3>
+        <ul class="dash bullet-gray">
+            <li>Python 2.7.x</li>
+            <li>requests <span class="text-muted font-stack-roboto">({% trans 'install via' %} <code>sudo pip install requests</code> or <code>sudo apt-get install python-requests</code>)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p class="font-stack-roboto text-dark-blue vert-offset-top-1">{% trans 'Device42 has IPAM, but if you need a full DDI tool, Infoblox & Bluecat are good choices.  For those needing a DDI tool, Device42 integrates with Infoblox.' %}</p>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-md-12 vert-offset-bottom-2">
+        <h4>{% trans "Download the Infoblox integration script for Device42 for a" %}
+            <em>{% trans "better IPAM" %}</em> {% trans 'today!' %}
+        </h4>
+        <p>{% trans "The latest version is available on our" %} <a
+                href="https://github.com/device42/Sync-From-Infoblox" target="_blank" class="ext-link">Github repo.</a></p>
+
+    </div>
+</div>

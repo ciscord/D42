@@ -1,0 +1,25 @@
+{% load static i18n %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-7x5 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <img class="featurette-image img-responsive center-block"
+             alt="{% trans 'Application Dependency Mapping' %}"
+             src="{% static 'img/generic/ApplicationDependencyFlowCharts.png' %}">
+    </div>
+    <div class="col-sm-6">
+        <h3 class="prelist flat-top">{% trans "Highlighted features" %}:</h3>
+        <ul class="checklist tight bullet-blue text-small">
+            <li>{% trans 'Agentless services and application discovery combines data obtained via Windows (WMI) and Linux (SSH) protocols, and augments this native-protocol deep application discovery with netflow and nmap' %}</li>
+            <li>{% trans 'Agent based solutions available for sensitive and/or often disconnected devices' %}</li>
+            <li>{% trans 'Get a list of all deployed applications, manufacturer / owner, version number and function' %}</li>
+            <li>{% trans 'Get a list of all services, running or not, users, protocols & ports' %}</li>
+            <li>{% trans 'Build application dependency diagrams that quickly communicate application to device relationships' %}</li>
+            <li>{% trans 'Easily view application to server mappings and application to application mapping' %}</li>
+            <li>{% trans 'Map users to devices and applications' %}</li>
+            <li>{% trans 'View services by device or user, and devices by service' %}</li>
+            <li>{% trans 'Autodiscover services running on network devices, protocols & ports' %}</li>
+            <li>{% trans 'View comprehensive application dependency maps even for machines that can’t be directly accessed, built out with Netflow data!' %}</li>
+            <li>{% trans 'Map servers to switch ports' %}</li>
+            <li>{% trans 'No agents to install on thousands of servers' %}</li>
+        </ul>
+    </div>
+</div>

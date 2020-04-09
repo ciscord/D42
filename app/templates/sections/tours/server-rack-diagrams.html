@@ -1,0 +1,71 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Server Rack Diagrams" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Data Center Management Software.  Document and view your server room rack layouts with a comprehensive solution from Device42.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Server Rack Diagrams" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tour-page">
+        <div class="row is-table-row">
+            <div class="col-sm-5">
+                <h2 class="flat-top">{% trans "Rack Diagrams" %}</h2>
+                <ul>
+                    <li>{% trans "Leverage the power of visualization by viewing your rack documentation in a web based diagram" %}</li>
+                    <li>{% trans "Mouse-over for device summary, access links to object details, impact chart" %}</li>
+                    <li>{% trans "Mouse-over a chassis and see the blades installed with links to the blade device details" %}</li>
+                    <li>{% trans "Support for 1/2 depth and back to back devices" %}</li>
+                    <li>{% trans "Show filler panels, patch panels" %}</li>
+                    <li>{% trans "See available U space" %}</li>
+                    <li>{% trans "Show PDUs in and/or around the rack" %}</li>
+                    <li>{% trans "Device42 is a web based solution that works with all popular browsers" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-7">
+                <a href="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                         alt="{% trans 'Animated Server Rack Diagram' %}"
+                         class="img-responsive img-xs-restrict center-block box-shadow">
+                </a>
+            </div>
+        </div>
+        <div class="row flat-top flat-bottom">
+            <div class="col-sm-6">
+                <h2>{% trans "Bulk Rack Operations" %}</h2>
+                <div class="center-block vert-offset-top-1">
+                    <a href="{% static 'img/landing/rack-management/rackbulkoperations.png' %}"
+                       data-featherlight="image">
+                        <img src="{% static 'img/landing/rack-management/rackbulkoperations.png' %}"
+                             alt="{% trans 'Bulk Rack Operations' %}"
+                             class="img-responsive box-shadow center-block img-xs-restrict" style="max-height:320px;">
+                    </a>
+                </div>
+                <p class="prelist text-center text-muted img-xs-restrict center-block">{% trans "Time saving bulk operations can be applied to any number of racks!" %}</p>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Nameplate Options" %}</h2>
+                <div class="center-block vert-offset-top-1">
+                    <a href="{% static 'img/landing/rack-management/rack_layout_nameplate_options.gif' %}"
+                       data-featherlight="image">
+                        <img src="{% static 'img/landing/rack-management/rack_layout_nameplate_options.gif' %}"
+                             alt="{% trans 'Nameplate Options' %}"
+                             class="img-responsive box-shadow center-block img-xs-restrict" style="max-height:320px;">
+                    </a>
+                </div>
+                <p class="prelist text-center text-muted img-xs-restrict center-block">{% trans "Customize the rack layout view by configuring Nameplate Options to one of four presets." %}</p>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }} {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <h2 class="featurette-heading xs-center">{% trans "ITSM Integrations" %}</h2>
+        <h4 class="prelist xs-center">{% trans "with JIRA, Zendesk, and ServiceNow" %}</h4>
+        <ul class="bullet-blue">
+            <li>{% trans 'See all CIs from Device42 in ServiceNow' %}</li>
+            <li>{% trans 'View or Edit CI details from ServiceNow requests' %}</li>
+            <li>{% trans 'Choose Device42 CIs when creating new requests' %}</li>
+            <li>{% trans 'Link CMDB items to issues in JIRA' %}</li>
+            <li>{% trans 'View CI details from JIRA issues' %}</li>
+            <li>{% trans 'Search JIRA issues by CI names' %}</li>
+            <li>{% trans 'Display racks and devices inside JIRA when adding/creating/modifying issues' %}</li>
+        </ul>
+    </div>
+    <div class="col-sm-6 padded">
+        <div class="row integration-logos">
+            <div class="col-xs-6">
+                <div class="sprite-jira"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-bmc"></div>
+            </div>
+            <div class="col-xs-12 padded">
+                <div class="sprite-servicenow"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-confluence"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-zendesk"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

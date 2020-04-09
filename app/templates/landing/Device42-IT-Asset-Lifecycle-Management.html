@@ -1,0 +1,110 @@
+﻿{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'IT Asset Management with an easy and intuitive web based tool that integrates IP address management as well.' %}"/>
+{% endblock %}
+
+{% block title %}{% trans "IT Asset Lifecycle Management" %}{% endblock %}
+
+{% block landingHeadingText %}{% trans "IT Asset Lifecycle Management" %}{% endblock %}
+
+{% block landingLeadText %}{% trans "Device42 provides comprehensive IT asset lifecycle management" %} <span style="font-style:italic;font-weight:300;">({% trans "ITAM" %})</span> {% trans "capabilities that establish and maintain a centralized system of record for managing the entire lifecycle of any IT asset type within your data center infrastructure. Device42’s powerful auto-discovery capabilities also ensure IT asset inventories, whether physical, logical, or cloud, are accurate and up-to-date." %}{% endblock %}
+
+{% block landingfeature %}
+    <section class="row landing-section is-table-row">
+        <div class="col-sm-7">
+            <p class="ul-heading">{% trans "Using Device42’s comprehensive ITAM capabilities, companies can" %}:</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ul class="alt-font square-style">
+                        <li>{% trans "Agentless auto-discovery" %}</li>
+                        <li>{% trans "Hardware and Software inventory" %}</li>
+                        <li>{% trans "Both Physical and Virtual" %}</li>
+                        <li>{% trans "Inventory assets on premise or in the cloud" %}</li>
+                        <li>{% trans "Container inventory" %}</li>
+                        <li>{% trans "Track and Visualize relationships between assets" %}</li>
+                        <li>{% trans "QR codes and barcodes with smart phone support for inventory management" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="alt-font square-style">
+                        <li>{% trans "Integrate with popular ITSM tools  (change history)" %}</li>
+                        <li>{% trans "Scalability, from small to huge – No inventory too large" %}</li>
+                        <li>{% trans "Warranty check, reporting and tracking" %}</li>
+                        <li>{% trans "Ensure compliance and audit security" %}</li>
+                        <li>{% trans "Audits just got a LOT easier via customizable reports, at your fingertips" %}</li>
+                        <li>{% trans "Go beyond just assets with our fully integrated CMDB" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <img class="hidden-xs img-responsive center-block box-shadow"
+                 src="{% static 'img/sections/features/itam/it-asset-management.png' %}">
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+        <section class="row landing-section">
+        <div class="col-xs-12">
+            <h3 class="sub-heading">{% trans "Asset Tagging with QR Codes" %}</h3>
+            <img class="img-responsive center-block pull-right hidden-sm" style="margin-bottom:0;" src="{% static 'img/landing/itassetmanagement/qr_codes.png' %}">
+            <p class="alt-font">{% trans "Say goodbye to traditional barcode readers - use your mobile devices for ITAM procedures. Print customized QR codes and auto-assign customizable asset numbers. Ensure that asset audits are both fast and accurate.  With an optimized web portal for mobile devices, view device and asset inventory while you walk down the aisles of your data center." %}</p>
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-md-2 hidden-sm hidden-xs">
+            <img class="img-responsive center-block" alt="{% trans 'Agentless Autodiscovery' %}" src="{% static 'img/sections/features/app-map/automated_service_dependency.png' %}"">
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <h3 class="sub-heading">{% trans "Agentless auto-discovery" %}&nbsp;&nbsp;{% trans "<small>An accurate inventory that is <strong>always</strong> audit-ready</small>" %}</h3>
+            <p class="alt-font">{% trans "Populate your Infrastructure and inventory quickly and effortlessly with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide." %}</p>
+            <ul class="dash">
+                <li>{% trans "All discovery tools are agentless" %}</li>
+                <li>{% trans "All discoveries can be scheduled so your inventory is always up-to-date" %}</li>
+                <li>{% trans "Multiple discovery protocols supported (e.g. SNMP, WMI, SSH, Modbus, ...)" %}</li>
+                <li>{% trans "Native support for all popular virtualization platforms, both public and private cloud included" %}</li>
+                <li>{% trans "Native support for blade chassis" %}</li>
+                <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+            </ul>
+        </div>
+
+    </section>
+    <section class="row landing-section is-table-row">
+    <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "Manage Non-IP Assets" %}</h3>
+            <p class="alt-font">{% trans "Manage the complete lifecycle of all non-IP based assets. Because Device42 does not count non-IP devices, an unlimited number of non-IP devices can be supported" %}.</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+            <img class="img-responsive center-block box-shadow" src="{% static 'img/landing/itassetmanagement/non_ip_asset.png' %}">
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-sm-6 col-sm-push-6">
+            <h3 class="sub-heading">{% trans "Lifecycle Management" %}</h3>
+            <p class="alt-font">{% trans "Track the lifecycle of your devices and non-IP based assets from their purchase, to all the way to their decommissioning" %}.</p>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+            <img class="img-responsive box-shadow center-block" src="{% static 'img/landing/itassetmanagement/asset_lifecycle.png' %}">
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-xs-12 col-sm-6">
+            <h3 class="sub-heading">{% trans "Manage Purchases and Support Contracts" %}</h3>
+            <p class="alt-font">{% trans "Centrally manage all IT contract information for devices, hardware, and software assets within the enterprise infrastructure" %}.</p>
+            <ul class="checklist" style="font-family:'Raleway',sans-serif;font-weight:normal;">
+                <li>{% trans "Track purchases and contracts for all asset types" %}</li>
+                <li>{% trans "Generate and schedule reports based on purchase data" %}</li>
+                <li>{% trans "Receive contract expiration reminders to ensure timely renewals" %}</li>
+                <li>{% trans "Easily generate reports that support IT audits" %}</li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <img class="img-responsive box-shadow center-block"
+                 src="{% static 'img/landing/itassetmanagement/contract_management.png' %}">
+        </div>
+    </section>
+{% endblock %}

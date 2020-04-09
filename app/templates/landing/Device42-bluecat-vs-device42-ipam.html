@@ -1,0 +1,144 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'Device42 is a powerful IP Address management solution that integrates IT Infrastructure management.' %}"/>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript">
+    $(function() {
+       $("[data-toggle='tooltip']").tooltip();
+    });
+    </script>
+{% endblock %}
+{% block title %}{% trans "Device42 vs Bluecat Proteus IPAM Solution" %}{% endblock %}
+
+{% block landingHeadingText %}Device42 &ndash; {% trans "an easier alternative to " %}Bluecat Proteus IPAM{% endblock %}
+
+{% block landingLeadText %}{% trans "Device42’s IP Address Management" %} (<em>{% trans "IPAM" %}</em>) {% trans "capabilities provide an easy to use, intuitive console for centralized visibility and control including IP tracking, IP assignments, and many other IP management functions" %}.{% endblock %}
+
+{% block landingfeature %}
+<section class="row flat-top flat-bottom">
+    <div class="col-xs-12">
+        <h4 class="lead-small text-muted" style="font-weight: bold;font-style:italic;">{% trans "Here's why Device42 is the better choice" %}:</h4>
+    </div>
+</section>
+<section class="row flat-top landing-section">
+    <div class="col-sm-10 col-sm-offset-1">
+
+        <div class="table-responsive">
+            <table class="table table-condensed table-hover d42-sw-compare">
+            <thead>
+              <tr>
+                <th class="table-title"><p class="dark-blue text-left alt-text" style="margin:0;font-size:24px;">{% trans "Solution Comparison" %}</p></th>
+                <th>{% trans "Device42 Core" %}</th>
+                <th>{% trans "BlueCat Proteus" %}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="comp-feature">{% trans "VRF Groups" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'In Device42, managing overlapping IP ranges is easily managed using VRF groups. With VRF groups you can add subnets to each VRF Group and while IP addresses have to be unique per VRF group, you can have overlapping subnet ranges across VRF groups' %}."></i></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Subnet Tree Functionality" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'Device42 displays the subnet usage tree and enables changes to be made directly from the subnet tree view. (See the image below for a sample of the Subnet tree view and subnet tree editing' %}."></i></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Comprehensive Device Information" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'Device42 IP addresses are linked to: device name, rack, room, sub-net, MAC address, and all of the related hardware and software dependencies (just to name a few).  This information threading is a powerful feature in understanding the complex hardware, software and network inter-dependencies' %}."></i></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Integrated DNS and DHCP Management" %}</td>
+                <td class="text-center"><i class="fa fa-exclamation-triangle" data-toggle="tooltip" data-placement="top" title="{% trans 'Via Web-hooks, Device42 can integrate with your existing DNS server' %}"></i></td>
+                <td class="text-center"><i class="fa fa-check"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Powerful REST APIs" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'Device42 extensive API library facilitates the easy integration with other IT systems leveraging existing and future technology investments' %}."></i></td>
+                <td class="text-center"><i class="fa fa-exclamation-triangle" data-toggle="tooltip" data-placement="top" title="{% trans 'SOAP-based APIs' %}"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Bulk Data Management" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'Device42 allows users to import and export current data using familiar spreadsheets (whether they are xls/xlsx/csv formats) and seamlessly map columns from the spreadsheet(s) to fields in Device42' %}."></i></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+              </tr>
+              <tr>
+                <td class="comp-feature">{% trans "Single/Unified Product" %}</td>
+                <td class="text-center"><i class="fa fa-check" data-toggle="tooltip" data-placement="top" title="{% trans 'Device42 is a single solution of comprehensive, unified capabilities that makes the daily management IT infrastructure possible using a centralized solution and a single version of the “truth' %}.”"></i></td>
+                <td class="text-center"><i class="fa fa-times"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "Device42 has <em>native</em> auto-discovery that can be scheduled" %}</h3>
+            <p class="lead-small text-muted"><em>{% trans "With the base Bluecat IPAM you can't run scheduled scans of your IP space, you can only do manual discovery/scans" %}</em>.</p>
+            <p class="lead-small">{% trans 'In Device42, auto-discoveries are natively available. This makes it possible for you to keep your IP information up-to-date and in addition you can find all the relationships like port connectivity, inventory of the network devices, etc.' %}</p>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans 'BlueCat IPAM is a DDI Solution (DNS/DHCP Management) &ndash;Device42 is not' %}</h3>
+            <p class="lead-small">{% trans 'BlueCat becomes your DNS and DHCP server. With Device42 there is no active management of DNS/DHCP, but we can integrate with your existing DNS servers for auto-discovery, etc.' %}</p>
+{#            <img src="{% static 'img/landing/ip-tracking/iplist.png' %}" class="img-responsive box-shadow center-block">#}
+        </div>
+    </section>
+    <section class="row landing-section">
+            <div class="col-xs-12">
+            <h3 class="sub-heading">{% trans "Device42 helps you manage your IT Infrastructure as a whole" %}</h3>
+                <p class="alt-font">{% trans 'With the advent of virtualization, containers, cloud computing, and software-defined networks, your IT infrastructure is orders of magnitude more complex than it was 10 years ago. It is no longer practical to manage your IT infrastructure using separate tools for asset management, IP management, cloud management, application dependency management, and software license management. The interrelationships are too important and too complex and can only be adequately captured in a single integrated tool like Device42. Too much time is wasted trying to manage all these interrelationships in different tools.' %}</p>
+                <p class="alt-font">{% trans 'Device42 looks at IT Infrastructure holistically and gives you a single console to manage your Data center (DCIM), IP addresses(IPAM) and passwords in addition to ITAM (IT asset management) and a full featured CMDB.' %}</p>
+        </div>
+    </section>
+    <span class="title-break text-muted">{% trans "Features you'll love" %}</span>
+    <section class="row landing-section">
+        <div class="col-sm-7">
+            <h2 class="alt-font sub-heading">{% trans "Auto-assign IPs" %}</h2>
+            <p class="lead-small">{% trans "Allow staff members to auto-assign next available IPs to devices. Worrying about your outdated IPAM spreadsheet is now a thing of the past" %}.</p>
+        </div>
+        <div class="col-sm-5">
+            <img src="{% static 'img/landing/ip-tracking/auto_assign_ip.png' %}" class="box-shadow img-responsive center-block">
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-sm-4 hidden-xs">
+            <img src="{% static 'img/landing/ip-tracking/switch_impact_chart.png' %}" class="img-responsive box-shadow center-block">
+        </div>
+        <div class="col-sm-8">
+            <h2 class="alt-font sub-heading">{% trans "Visualize Switch Port Relationships" %}</h2>
+            <p class="lead-small">{% trans "Device42's IP Address Manager automatically builds graphical network visualizations of switch port to switch port connections. Auto-generated diagrams are based on both auto-discovered and manually entered network data. In addition, diagrams also depict virtual devices detected on switch ports" %}.</p>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <h2 class="alt-font sub-heading">{% trans "DNS Integration" %}</h2>
+            <p class="lead-small">{% trans "Transfer zones and zone records automatically from DNS servers for easy search and up-to-date documentation and correlation to IP addresses" %}.</p>
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'img/landing/ip-tracking/dns-zone-entry.png' %}" class="img-responsive box-shadow center-block">
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-5">
+            <img class="img-responsive box-shadow" src="{% static 'img/sections/compare/ip-address-management-apis.png' %}">
+        </div>
+        <div class="col-sm-7">
+            <h2 class="alt-font sub-heading">{% trans "IPAM from the Command Line" %}</h2>
+            <p class="lead-small">{% trans "Device42's IP address management tool provides simple API calls to find next available IP, search for an IP, or assign a new IP using scripting language" %}.</p>
+        </div>
+    </section>
+    <section class="row landing-section ">
+        <div class="col-sm-10 col-sm-offset-1 well vert-offset-top-1">
+            <h2 class="sub-heading flat-top text-center"><strong>{% trans "Our Solution" %}</strong></h2>
+            <p class="lead-small">{% trans "While many customers use just the IPAM portion of Device42, the product is in fact a fully-integrated suite of products including data center asset management, IT asset management, IPAM, software license management, application dependency management, and password management, and more!" %}</p>
+            <p class="lead-small">{% trans "The architects of Device42 believe that you need a single, unified source of truth to effectively manage your IT infrastructure. IT infrastructure data is so interrelated that it requires a tightly unified and holistic approach. Device42’s approach to IT infrastructure management leads to IT operations efficiencies, better migration planning, more informed decision making, optimal risk mitigation, and faster compliance and auditing response" %}.</p>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "A CMDB for the Cloud Era" %}{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Device42 is a powerful Configuration management (CMDB) solution that integrates with JIRA, Servicenow, and Zendesk through REST APIs.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette is-table-row">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "CMDB For The Cloud Era" %}</h1>
+                    <p>{% trans "Device42's CMDB provides a single source of truth within your organization. This gives you a clear view into your IT ecosystem to identify, manage, and verify all configuration items (CI) in your environment." %}</p>
+                </div>
+                <div class="col-sm-4">
+                    <img class="featurette-image img-responsive center-block animated"
+                         alt="{% trans 'CMDB For The Cloud Era' %}"
+                         src="{% static 'img/generic/icons_cog_randoms.png' %}" style="max-width:60%;height:auto!important;">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#autodiscovery" data-offset="top-nav">{% trans "Auto-Discovery Tools" %}</a>
+            <a href="#" data-jump="#cmdb" data-offset="top-nav">{% trans "CMDB" %}</a>
+            <a href="#" data-jump="#visualizations" data-offset="top-nav">{% trans "Visualizations" %}</a>
+            <a href="#" data-jump="#integrations" data-offset="top-nav">{% trans "Integrations" %}</a>
+            <a href="#" data-jump="#deployment" data-offset="top-nav">{% trans "Rapid Deployment" %}</a>
+        </div>
+    </div>
+    <div class="container featurette-wrap">
+        {% include_partial "partials/cmdb/powerful-auto-discovery-tools.html" image="disabled" id="autodiscovery" %}
+        {% include_partial "partials/cmdb/preconfigured-cmdb.html" id="cmdb" %}
+        {% include_partial "partials/cmdb/visualizations.html" image="left" id="visualizations" %}
+        {% include_partial "partials/cmdb/fast-and-easy-integration.html" id="integrations" %}
+        {% include_partial "partials/cmdb/rapid-deployment.html" image="left" id="deployment" %}
+     <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small><br>
+                <a href="{% url 'features' %}"><i class="fa fa-chevron-left"></i> {% trans 'Highlights / Screenshots' %}</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans "Next" %}</small><br>
+                <a href="{% url 'features_dcim' %}">{% trans 'Data Center Management' %} <i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

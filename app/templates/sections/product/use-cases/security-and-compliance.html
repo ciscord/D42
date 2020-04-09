@@ -1,0 +1,52 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: Performance, Security & Incident Response" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 does Asset Management, License Management, Password management, and CVE alerting, the system contains all the information you need to identify affected software, the servers running that software, and the access credentials you’ll need. All that’s left to do is execute the remediation.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans 'Performance, Security & Incident Response' %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                    <img src="{% static 'img/components/study-a/use-cases/Security and Compliance.png' %}"
+                         class="img-inline-right" alt="{% trans 'Security & Compliance' %}"/>
+                    <h2>{% trans "Challenge" %}</h2>
+                    <p>{% trans "Your infrastructure has a lot of servers that need managing, and every single server could be running hundreds of pieces of software, each of which might have security vulnerabilities. How do you identify if a vulnerability affects you, match the affected version to servers in your infrastructure that are running it, and remediate in a timely manner?" %}</p>
+                    <p>{% trans "And when you aren’t actively remediating vulnerabilities, how can you be sure all of your servers are in compliance with your password security policy, have had their PW’s or Keys rotated, or are coming up due or are overdue for rotation?" %}
+                    <h2>{% trans "Solution" %}</h2>
+                    <p>{% trans "Device42 brings sanity to the software security and remediation process. Because Device42 does Asset Management, License Management, Password management, and CVE alerting, the system contains all the information you need to identify affected software, the servers running that software, and the access credentials you’ll need. All that’s left to do is execute the remediation." %}</p>
+                    <p>{% trans "When it comes to passwords and SSH keys, Device42’s password and audit history trails ensure every password related action is recorded. Reporting capabilities ensure compliance with customizable reports showing exactly which passwords have been changed and when and which passwords are due to be changed." %}
+                    <h2>{% trans "Highlights" %}</h2>
+                    <ul class="dash bullet-gray">
+                        <li>{% trans "Alerts tell you when a CVE affects software you are running" %}</li>
+                        <li>{% trans "Shows you CVE’s by device so that you can patch device-by-device" %}</li>
+                        <li>{% trans "Shows you the recommended remediation" %}</li>
+                        <li>{% trans "All information needed to remediate is readily available" %}</li>
+                        <li>{% trans "Powerful, schedulable reporting ensures password compliance" %}</li>
+                        <li>{% trans "All password related actions are logged (add, change, delete, even view!)" %}</li>
+                        <li>{% trans "A searchable audit trail ensures passwords haven’t been compromised" %}</li>
+                    <ul>
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

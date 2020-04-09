@@ -1,0 +1,28 @@
+{% load static %}
+{% static 'img/branding/device42-logo-400x400.png' as COMPANY_LOGO %}
+{% static 'img/branding/transparent-logo.png' as COMPANY_IMAGE %}
+
+<script type="application/ld+json">
+[
+    {
+        "@type": "http://schema.org/#WebSite",
+        "name": "Device42",
+        "url": "http://www.device42.com"
+    },
+    {
+        "@type": "http://schema.org/#Organization",
+        "name": "Device42 Inc.",
+        "url": "http://www.device42.com/",
+        "logo": "{{ STATIC_DOMAIN }}{{ COMPANY_IMAGE }}",
+        "image": "{{ STATIC_DOMAIN }}{{ COMPANY_IMAGE }}",
+        "description": "A comprehensive data center and network management software.  Device42 is loved by organizations around the world for its open APIs and ease of use.",
+        "sameAs": [
+          "https://www.facebook.com/device42",
+          "https://www.linkedin.com/company/device42",
+          "https://www.youtube.com/user/godevice42",
+          "https://plus.google.com/+Device42",
+          "https://twitter.com/device42"
+        ]
+    }
+]
+</script>

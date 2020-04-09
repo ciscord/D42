@@ -1,0 +1,20 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-8">
+        <img class="img-responsive center-block img-border"
+             src="{% static 'img/sections/product/restful-api.png' %}"
+             alt="{% trans 'RESTful API' %}">
+    </div>
+    <div class="col-sm-4">
+        <h2 class="flat-bottom">{% trans "Enhance IT Service Management" %}</h2>
+        <h4 class="flat-top font-stack-roboto text-muted">{% trans "Device42 integrates with many popular 3rd party tools and imports from almost anywhere!" %}</h4>
+        <ul class="checklist bullet-blue font-stack-roboto">
+            <li>{% trans "No need to input the same data into multiple systems!" %}</li>
+            <li>{% trans "Enhance the information in your ticketing system with data from Device42" %}</li>
+            <li>{% trans "Out-of-the-box integrations with popular ITSM Applications such as JIRA, Confluence, Servicenow, and Zendesk" %}</li>
+            <li>{% trans "Out-of-the-box integrations with automation platforms like Rundeck, Puppet, and Chef" %}</li>
+            <li>{% trans "Import data from other CMDB providers like Aperature, Microsoft SCCM, Solarwinds, OpenDCIM, Racktables, Rackmonkey" %}</li>
+            <li>{% trans "Even import from spreadsheets, Visio docs, and anywhere else you can get a .csv" %}</li>
+        </ul>
+    </div>
+</div>

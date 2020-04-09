@@ -1,0 +1,279 @@
+/**
+ * website - bootstrap custom overridden styles
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+@-moz-document url-prefix() {
+  fieldset {
+    display: table-cell;
+  }
+}
+@-webkit-viewport { width: device-width; }
+@-moz-viewport    { width: device-width; }
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+.well {
+  border-radius: $border-radius-base;
+  margin-top: 11px!important;
+  margin-bottom: 22px!important;
+  h2, h3 {
+    margin-top:initial!important;
+  }
+  @extend .bg-alt;
+  &.bg-primary {
+    background-color: $brand-primary;
+  }
+}
+
+hr {
+  border-color: #dedede;
+}
+
+.carousel-indicators {
+  li {
+    border: 2px solid $brand-primary-light;
+
+    &.active {
+      border: 2px solid $brand-primary-dark;
+      background-color: $brand-primary-dark;
+    }
+  }
+}
+
+.carousel-inner {
+  height: 360px;
+
+  > .item {
+    text-align: center;
+  }
+}
+
+.carousel-caption {
+  position: inherit;
+}
+
+.row.featurette.bg-primary {
+  box-shadow: inset 0 0 12px #454545;
+}
+
+@media (max-width: $screen-xs-max) {
+  .vert-offset-top-6 {
+    margin-top: 0 !important;
+  }
+}
+
+#tryNowForm {
+  @media (min-width: $screen-sm-min) {
+    .control-label {
+      text-align: right;
+    }
+  }
+
+  .help-block {
+    display: none;
+  }
+  label {
+    color: $brand-primary;
+    //font-size: 1em;
+  }
+
+  input[type='text'], input[type='email'] {
+    //font-weight:700;
+    font-size: 1.4em;
+    color: $brand-primary;
+
+  }
+
+}
+
+.help-block {
+  color: $gray-light;
+  font-weight: bold;
+}
+
+.flat-top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.flat-bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+form.bg-primary {
+  label.control-label {
+    color: $white-color;
+  }
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  z-index: 1045;
+}
+
+.modal {
+  padding-right: 0 !important;
+  padding-bottom: 1px;
+}
+
+.form-group {
+  position: relative;
+
+  input {
+    @extend .form-control;
+  }
+}
+
+.form-horizontal {
+  textarea {
+    width: 100%;
+  }
+}
+
+.form-group.has-errors {
+  @media screen and (max-width: $screen-sm-max) {
+    .field-error {
+      right: 15px;
+      top: 0;
+      text-align: right;
+    }
+  }
+  .field-error {
+    position: absolute;
+    display: inline-table;
+    font-size: 90%;
+    font-style: italic;
+    width: 180px;
+    bottom: -0.6em;
+  }
+  .control-label {
+    color: $brand-danger;
+    font-weight: bold;
+  }
+  .form-control {
+    border: 1px solid $brand-danger;
+  }
+}
+
+.company-page .img-circle {
+  @extend .animated, .flipInY;
+  &:hover {
+    @extend .flipOutY;
+  }
+}
+
+.hbspt-form {
+  @include make-sm-column(8);
+  ul {
+    list-style: none;
+    li {
+      text-indent: initial;
+      &:before {
+        content: initial;
+      }
+    }
+  }
+}
+
+.panel {
+  .panel-title {
+    a, a:hover, a:active, a:focus {
+      color: initial;
+      font-weight: initial;
+      text-shadow: initial;
+    }
+  }
+  .panel-body {
+    color: $color-primary-dark;
+  }
+
+}
+
+.row.qf-check {
+  .checklist li {
+    @extend .alt-font;
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+}
+
+.main-content {
+  > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  ul {
+    li > p {
+      display: inline;
+    }
+  }
+  p a {
+    border-bottom: 2px solid rgba(255, 185, 85, 0.65);
+    @include transition(background-color, color, border-bottom .2s ease-in-out);
+    color: inherit;
+    &:hover, &:active {
+      background-color: #EEEEEE;
+      color: $black-color;
+      border-bottom: 2px solid $color-warning-alt;
+    }
+    &:focus {
+      outline: none;
+      text-decoration: none;
+    }
+  }
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+  vertical-align: middle;
+}
+
+.light-weight {
+  font-weight: 300 !important;
+}
+
+.badge.left {
+  @extend .text-dark-blue;
+  font-size: 0.9em;
+  font-family: $font-stack-roboto;
+  position: relative;
+  display: inline-block;
+  line-height: inherit;
+  margin: -6px 4px -6px -12px;
+  top: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  background-color:#fefefe;
+  @include transition(all .2s ease-in);
+
+  .btn-sm & {
+    padding: 8px 6px;
+  }
+  .btn-xs & {
+    padding: 2px 6px;
+  }
+
+  .btn:hover &, .btn:focus & {
+    background-color: $background-color-alt;
+    @include box-shadow(-1px 0px 3px rgba(0, 0, 0, 0.5));
+  }
+}
+
+
+/* IE 10 + IE 11 selector hack */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #nav ul li:before {
+    content: "";
+  }
+  ul > li:before {
+    font-size:16px !important;
+  }
+  .img-responsive {
+    width:100%;
+  }
+}

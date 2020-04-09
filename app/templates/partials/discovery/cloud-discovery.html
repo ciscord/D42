@@ -1,0 +1,11 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <img class="featurette-image img-responsive img-rounded center-block box-shadow"
+             src="{% static 'img/sections/solutions/network-discovery-05.png' %}">
+    </div>
+    <div class="col-sm-6">
+        <h2 class="featurette-heading">{% trans 'Cloud Discovery' %}</h2>
+        <p>{% trans 'Discover your cloud instances and services with support for Amazon AWS, Windows Azure, Linode, DigitalOcean, Joyent, and more under development!' %}</p>
+    </div>
+</div>

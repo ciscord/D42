@@ -1,0 +1,129 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Data Center Documentation and IT Infrastructure Management' %}"/>
+{% endblock %}
+{% block title %}{% trans "Data Center Documentation and IT Infrastructure Management" %}{% endblock %}
+{% block landingHeadingText %}{% trans "Data Center Documentation" %}{% endblock %}
+{#{% block landingLeadText %}{% endblock %}#}
+
+{% block landingfeature %}
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <p class="lead">{% trans "Device42's powerful data center documentation software has made it easier for IT teams to manage their IT infrastructure.  Following is a brief summary of some of the things Device42 can help you document in your data centre:" %}</p>
+            <ul class="square-style">
+                <li>{% trans "Server room layouts with availability heatmaps" %}</li>
+                <li>{% trans "Rack elevation documentation" %}</li>
+                <li>{% trans "Cable management for both network and power connections" %}</li>
+                <li>{% trans "Power and energy management" %}</li>
+                <li>{% trans "Automated data center documentation with auto-discovery and REST APIs" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <img class="img-responsive" alt="{% trans 'Data Center Documentation' %}" src="{% static 'img/landing/data-center-layout-v2.png' %}">
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row is-table-row" id="sect1">
+        <div class="col-sm-6 col-sm-push-6">
+            <h3 class="text-capitalize">{% trans "Server room layouts with availability heatmaps" %}</h3>
+            <p>{% trans "With powerful data center visualization tools, IT staff now have access to intelligent server room diagrams that accurately reflect their IT environment." %}</p>
+            <ul class="checklist tight">
+                <li>{% trans "Drag & drop objects" %}</li>
+                <li>{% trans "Easily change rack orientation" %}</li>
+                <li>{% trans "Hover over object details" %}</li>
+                <li>{% trans "Select for object page" %}</li>
+                <li>{% trans "Heat maps availability" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+            <img class="img-responsive box-shadow" alt="{% trans 'Interactive Server Room Layout' %}"
+                 src="{% static 'img/sections/features/server-room-layout.gif' %}">
+        </div>
+    </section>
+    <br>
+    <section class="row is-table-row" id="sect2">
+        <div class="col-sm-6">
+            <h3 class="text-capitalize">{% trans "Rack elevation documentation" %}</h3>
+            <p>{% trans "Managing data center racks has never been easier or more accurate! Device42's automatically generated rack diagrams make manual drawings and spreadsheet records a thing of the past. Creating accurate rack diagrams is now fast and easy:" %}</p>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <ul class="clean">
+                        <li>{% trans "Support for ½ U devices" %}</li>
+                        <li>{% trans "Back to back devices(½ depth)" %}</li>
+                        <li>{% trans "Show filler panels, patch panels" %}</li>
+                        <li>{% trans "See available rack units" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="clean">
+                        <li>{% trans "Show PDUs in/around the rack" %}</li>
+                        <li>{% trans "Drag and drop objects between racks" %}</li>
+                        <li>{% trans "Find next available slot" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img class="img-responsive" alt="{% trans 'Rack elevation documentation' %}"
+                 src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}">
+        </div>
+    </section>
+    <br>
+    <section class="row">
+        <div class="col-xs-12">
+            <h3 class="text-capitalize">{% trans "Cable management for both network & power connections" %}</h3>
+            <p>{% trans "With Device42 software, keeping track of your patch panel cable connections is fast, easy, and accurate.  Device42 removes cable management complexity and increases the visibility, control, and efficiency of data center cable management." %}</p>
+        </div>
+    </section>
+    <section class="row">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-responsive" alt="{% trans 'Patch Panel - Create Connection' %}" src="{% static 'img/sections/solutions/cablemanagement/patch-panel-create-connection.gif' %}">
+        </div>
+        <div class="col-sm-6">
+            <ul class="checklist clean">
+                <li>{% trans "Manage your patch panels efficiently and effectively" %}</li>
+                <li>{% trans "Support templates for fiber, Ethernet, or any patch panel type" %}</li>
+                <li>{% trans "Load cabling data using spreadsheet imports" %}</li>
+                <li>{% trans "Manage cabling data using easy-to-use web-based GUI" %}</li>
+                <li>{% trans "Visualize end-to-end connectivity using patch panel layouts" %}</li>
+                <li>{% trans "Quickly determine port availability and port status" %}</li>
+            </ul>
+        </div>
+    </section>
+    <br>
+    <section class="row is-table-row">
+        <div class="col-sm-6">
+            <h3 class="text-capitalize">{% trans "Power and energy management" %}</h3>
+            <p>{% trans "Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities:" %}</p>
+            <ul class="checklist clean">
+                <li>{% trans "Better capacity planning" %}</li>
+                <li>{% trans "Power estimation for servers" %}</li>
+                <li>{% trans "Track historical power and thermal data" %}</li>
+                <li>{% trans "Power On/Off PDU outlets for supported models" %}</li>
+                <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+            </ul>
+            <small class="text-italic">{% trans "(Add-on module - additional cost)" %}</small>
+        </div>
+        <div class="col-sm-6">
+            <img class="img-responsive" alt="{% trans 'Power Chain Maps' %}" src="{% static 'img/landing/power-chain-maps.png' %}">
+        </div>
+    </section>
+    <br>
+    <section class="row is-table-row" id="sect5">
+        <div class="col-sm-6">
+            <img style="border-radius:12px;" class="img-responsive box-shadow"
+                 alt="{% trans 'Auto-discovery and REST APIs' %}"
+                 src="{% static 'img/landing/api-return-object.png' %}">
+        </div>
+        <div class="col-sm-6">
+            <h3 class="text-capitalize">{% trans "Automated datacenter documentation with auto-discovery and REST APIs" %}</h3>
+            <p>{% trans "Automate data center management with a variety of auto-discovery tools for network, physical, or virtual infrastructures.  Use powerful REST APIs to integrate with other tools and keep accurate datacenter documentation." %}</p>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}
+    {% trans "Plan breakdown for Data Center Management & IP address management software" %}
+{% endblock %}
+{% block meta %}
+    <meta name="description" content="Compare different modules of Device42 software"/>
+{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block styles %}
+<style>
+        .table {
+            width:100%;
+            border-radius: 6px;
+            border:0;
+        }
+        .table thead th,
+        .table tr.break th {
+            font-size:18px;
+            line-height:1.1em;
+            letter-spacing:0;
+            padding: 6px;
+            color:#269ccc;
+            pointer-events: none;
+        }
+        .table thead th {
+            background: #F4F9FE!important;
+            vertical-align: middle!important;
+            text-align: center;
+        }
+        .table tbody {
+            border-left: 3px solid #daeafa!important;
+            border-right: 3px solid #daeafa!important;
+            border-bottom: 3px solid #daeafa!important;
+        }
+        .table tbody td {
+            vertical-align:middle;
+            font-size:1.2em;
+            letter-spacing:0;
+            border-right:1px solid #ddd;
+            text-align: center;
+        }
+        .table thead {
+            border-bottom:0;
+        }
+        .table tr > th {
+            width: 15%;
+        }
+
+        .table tr > th:first-child {
+            width: 30%;
+        }
+         .table thead th {
+            border-top: 3px solid #daeafa!important;
+        }
+         .table thead th:last-child {
+             border-right: 3px solid #daeafa!important;
+         }
+        .table thead tr > th:first-child {
+            border-left:1px solid #daeafa!important;
+        }
+        .table thead tr > td:first-child {
+            border-top:0!important;
+            border-left:0!important;
+            border-right: 3px solid #daeafa!important;
+            border-bottom: 3px solid #daeafa!important;
+        }
+
+        .table tr.break {
+            border-left: 1px solid #daeafa!important;
+            border: 0;
+            pointer-events:none;
+        }
+        .table tr.break:hover {
+            background:initial;
+        }
+        .table tr.break {
+            background-color: #daeafa!important;
+            border-top:3px solid #daeafa!important;
+            border-bottom:1px solid #daeafa!important;
+        }
+        .table tr.break > th:first-child {
+            border-bottom: 0;
+            border-top: 3px solid #daeafa;
+            border-left: 3px solid #daeafa;
+        }
+        .table tbody tr > td:first-child {
+            text-align:left;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        .table tbody tr > td:nth-child(2) {
+            background-color:#F4F9FE!important;
+        }
+        .table tbody tr.after-break > td:nth-child(2) {
+            background-color:initial!important;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Compare Plans" %}</h1>
+                    <h4 class="text-white text-italic">{% trans "Compare Device42 Features Across Different Plan Levels" %}</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+    <article class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive padded">
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                            <td></td>
+                            <th>{% trans "Core" %}</th>
+                            <th>{% trans "Software License Mgmt" %}</th>
+                            <th>{% trans "Services Discovery" %}</th>
+                            <th>{% trans "Application Dependency Mapping" %}</th>
+                            <th>{% trans "Power Mgmt &amp; Control" %}</th>
+                        </thead>
+                        <tr>
+                            <td>{% trans "Data Center Asset Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Data Center Visualization" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Structured Cable Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "IT Asset & Inventory Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Device & IP Discovery" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Spare Parts Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "QR Codes and Asset Tags" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Asset Lifecycle Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "IP Address Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Role-Based Access" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Contract &amp; Purchase Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "Password Management" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>{% trans "REST APIs" %}</td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr class="break">
+                            <th>{% trans "Add-ons" %}</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr class="after-break">
+                            <td>{% trans "Software License Management" %}</td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="after-break">
+                            <td>{% trans "Services Discovery" %}</td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr class="after-break">
+                            <td>{% trans "Deep Services Mapping" %}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                            <td></td>
+                        </tr>
+                        <tr class="after-break">
+                            <td>{% trans "Power Monitoring" %}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                        <tr class="after-break">
+                            <td>{% trans "Power Control" %}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><i class="fa fa-check"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row padded">
+            <div class="col-xs-6 text-left">
+                <a class="text-strong" href="{% url 'product_pricing' %}">{% trans 'Core Product Pricing' %}</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <a class="text-strong label label-primary" href="{% url 'faq_sales' %}">{% trans 'Sales FAQ' %} <i class="fa fa-info-circle text-white"></i></a>
+            </div>
+        </div>
+    </article>
+
+{% endblock %}

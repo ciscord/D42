@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-4">
+        <img class="featurette-image img-responsive center-block img-rounded img-border"
+             alt="{% trans 'Server Room Layout' %}"
+             src="{% static 'img/sections/features/server-room-layout.gif' %}">
+    </div>
+    <div class="col-md-8">
+        <h2 class="featurette-heading">{% trans "Data Center Room Layouts" %}</h2>
+        <p class="">{% trans "Device42's powerful data center infrastructure management (DCIM) capabilities have revolutionized the way IT departments manage their data centers. With powerful data center visualization tools, IT staff now have access to intelligent data center diagrams that accurately reflect their IT environment." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Drag &amp; drop objects" %}</li>
+            <li>{% trans "Easily change rack orientation" %}</li>
+            <li>{% trans "Hover over object details" %}</li>
+            <li>{% trans "Select for object page" %}</li>
+            <li>{% trans "Heat maps availability" %}</li>
+        </ul>
+    </div>
+</div>

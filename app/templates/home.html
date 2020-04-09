@@ -1,0 +1,55 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Continuous Discovery & Management Software" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 is a comprehensive data center and network management software. Loved by organizations around the world for its open APIs and ease of use.' %}">
+{% endblock %}
+{% block body_scripts %}
+<script type="text/javascript">
+    $(function() {
+
+        D42.initCarousel(".logo-scroller-wrapper", {
+            autoplay: true,
+            autoplayTimeout: 3000,
+            loop: true,
+            dots: false,
+            nav: true,
+            responsiveBaseElement: '.logo-scroller-wrapper',
+            slideBy: 'page',
+            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+            responsive: {
+                0: {
+                    items: 2
+                },
+                400: {
+                    items: 5
+                }
+            }
+        });
+        $("button[data-panel]").on("click", function () {
+            var panel = $(this).data("panel");
+            $(".hor-info .tab.active, .hor-btns .btn.active").removeClass("active");
+            $(".tab[data-tab='" + panel + "'], button[data-panel='"+panel+"']").addClass("active");
+        });
+
+        $(".nav-tabs > div").css("min-height","110px").matchHeight();
+
+        var useCaseTabs = $("[data-toggle='tab']");
+        useCaseTabs.on("click", function() {
+            useCaseTabs.removeClass("active");
+            $(this).addClass("active");
+        });
+        D42.tools.loadJs('//fast.wistia.com/embed/medias/igc5qfvoyr.jsonp', true);
+        D42.tools.loadJs('//fast.wistia.com/assets/external/E-v1.js', true);
+    });
+</script>
+{% endblock %}
+{% block body %}
+    {% include "components/carousel/home_carousel-d.html" %}
+    {% include "components/logoScroller.html" with logos=logos %}
+    {% include "components/use-cases-module.html" %}
+    {% include "components/home-media-blurbs.html" %}
+    {% include "components/home-why-d42-tabs.html" %}
+    {% include "components/blog-feed.html" with feeds=blog_feed %}
+{% endblock %}

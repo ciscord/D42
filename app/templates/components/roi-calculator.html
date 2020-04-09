@@ -1,0 +1,284 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Device42 Savings Calculator" %}{% endblock %}
+{% block site_section_solutions %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Data center management made easy with intuitive, integrated software by device42. Loved by organizations around the world for its open APIs.' %}">
+{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function () {
+            var scope = {
+                // Mandatory input
+                devices: 5420,
+                tickets: 4,
+                change_requests: 4,
+                audits: 4,
+
+                // Optional input
+                hourly_rate: 75,
+
+                ticket_time: 1.25,
+                ticket_time_savings: 50,
+
+                racks_time: 0.5,
+                racks_time_savings: 50,
+
+                cabling_time: 0.5,
+                cabling_time_savings: 50,
+
+                power_time: 0.5,
+                power_time_savings: 50,
+
+                ip_time: 0.5,
+                ip_time_savings: 50,
+
+                meetings_time: 1.25,
+                meetings_time_savings: 75,
+
+                installation_time: 1.5,
+                installation_time_savings: 0
+            };
+
+            function format_number(number, format) {
+                var str = '';
+                var result = '';
+                if (format == 'currency') {
+                    str = Math.round(number).toString()
+                    var count = 0;
+                    for (var i = str.length - 1; i >= 0; i--) {
+                        result = str[i] + result;
+                        if (count == 2 && i > 0) {
+                            result = ',' + result;
+                            count = 0;
+                        } else {
+                            count++;
+                        }
+                    }
+                    result = '$' + result;
+                } else if (format == 'percent') {
+                    str = (Math.round(number * 10) / 10).toString();
+                    if (str.indexOf('.') == -1) str = str + '.0';
+                    result = str + '%';
+                } else {
+                    result = number.toString();
+                }
+                return result;
+            }
+
+            function update() {
+                var input_variables = ['ticket_time', 'racks_time', 'cabling_time',
+                    'power_time', 'ip_time', 'meetings_time', 'installation_time'];
+
+                for (var i = 0; i < input_variables.length; i++)
+                    scope['d42_' + input_variables[i]] =
+                            scope[input_variables[i]] * (1 - scope[input_variables[i] + '_savings'] / 100);
+
+                // Tickets
+
+                scope.tickets_time = scope.ticket_time * scope.tickets;
+                scope.d42_tickets_time = scope.d42_ticket_time * scope.tickets;
+
+                // Change requests
+
+                var change_request_variables = ['racks_time', 'cabling_time',
+                    'power_time', 'ip_time', 'meetings_time', 'installation_time'];
+
+                scope.change_requests_time = 0;
+                for (var i = 0; i < change_request_variables.length; i++)
+                    scope.change_requests_time +=
+                            scope[change_request_variables[i]] * scope.change_requests;
+
+                scope.d42_change_requests_time = 0;
+                for (var i = 0; i < change_request_variables.length; i++)
+                    scope.d42_change_requests_time +=
+                            scope['d42_' + change_request_variables[i]] * scope.change_requests;
+
+
+                // Audits
+
+                scope.audits_time = scope.audits * scope.devices * 3.2 / 60; // 3.2 minutes per device
+                scope.d42_audits_time = scope.audits_time * 0.05; // Device 42 savings are 95%
+
+                // Money totals
+
+                scope.tickets_money = scope.hourly_rate * scope.tickets_time * 52; // There are 52 weeks in a year
+                scope.d42_tickets_money = scope.hourly_rate * scope.d42_tickets_time * 52;
+                scope.tickets_money_reduction = scope.tickets_money - scope.d42_tickets_money;
+                scope.tickets_money_savings = scope.tickets_money_reduction / scope.tickets_money * 100;
+
+                scope.change_requests_money = scope.hourly_rate * scope.change_requests_time * 52;
+                scope.d42_change_requests_money = scope.hourly_rate * scope.d42_change_requests_time * 52;
+                scope.change_requests_money_reduction = scope.change_requests_money - scope.d42_change_requests_money;
+                scope.change_requests_money_savings = scope.change_requests_money_reduction / scope.change_requests_money * 100;
+
+                scope.audits_money = scope.hourly_rate * scope.audits_time;
+                scope.d42_audits_money = scope.hourly_rate * scope.d42_audits_time;
+                scope.audits_money_reduction = scope.audits_money - scope.d42_audits_money;
+                scope.audits_money_savings = scope.audits_money_reduction / scope.audits_money * 100;
+
+                scope.total_money = scope.tickets_money + scope.change_requests_money + scope.audits_money;
+                scope.d42_total_money = scope.d42_tickets_money + scope.d42_change_requests_money + scope.d42_audits_money;
+                scope.total_money_reduction = scope.total_money - scope.d42_total_money;
+                scope.total_money_savings = scope.total_money_reduction / scope.total_money * 100;
+
+
+                $('[text]').each(function () {
+                    $(this).text(format_number(
+                            scope[$(this).attr('text')],
+                            $(this).attr('format')
+                    ));
+                });
+            }
+
+            function enable_slider(element) {
+                var value = parseFloat(element.attr('value'));
+                element.html(
+                        '<label>' +
+                        element.attr('label') +
+                        '<b class="roi-slider-value"> = <span text="' + element.attr('variable') + '"></span></b>' +
+                        '</label>' +
+                        '<div class="roi-slider-container">' +
+                        '<div class="roi-slider"></div>' +
+                        '</div>'
+                );
+
+
+            }
+
+            function tab_click(element) {
+                var tab = element.attr('tab');
+                $('[tabs]').each(function () {
+                    if ($(this).attr('tabs').indexOf(tab) > -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+
+            {#            $('#roi-sliders > div').each(function () { enable_slider($(this)); });#}
+
+            $("input[type='range']").change(function () {
+                var sc = this.getAttribute('id');
+                scope[sc] = this.value;
+                update();
+                $("label[for='" + sc + "']").text(this.value);
+            });
+
+            $("input[type='range']").each(function () {
+                var sc = this.getAttribute('id');
+                $("label[for='" + sc + "']").text(this.value);
+            });
+
+            update();
+
+        });
+    </script>
+{% endblock %}
+{% block styles %}
+    <style>
+        td[format='currency'],
+        td[format='percent'] {
+            font-family:Cambria, Georgia, serif;
+            font-size:1.3em;
+        }
+        input[type='range']:hover {
+            cursor:ew-resize;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Saving Calculator" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container savings-calculator">
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="">{% trans "This calculator provides guidance on the savings that can be experienced using Device42 in three operational areas:" %}</p>
+                <ul class="dash">
+                    <li>{% trans "Trouble ticket support" %}</li>
+                    <li>{% trans "Change requests" %}</li>
+                    <li>{% trans "Audits" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <p class="text-muted ">{% trans "Of course, the many benefits of Device42 go far-beyond these 3 categories!" %}</p>
+                <p class="flat-top">{% trans "For a detailed ROI analysis or additional information, complete our on-line " %}
+                    <a href="{% url 'company_contact' %}">{% trans "contact form" %}</a> {% trans "or e-mail us at" %}:
+                    <a href="mailto:info@device42.com">info@device42.com</a>.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div id="roi-sliders">
+                    <p class="flat-bottom">{% trans "Number of devices" %} = <label for="devices"></label></p>
+                    <input type="range" id="devices" value="5420" step="50" value="5420" min="50" max="10000">
+                    <br><br>
+                    <p class="flat-bottom">{% trans "Trouble tickets per week" %} = <label for="tickets"></label></p>
+                    <input type="range" id="tickets" step="1" value="4" min="1" max="10">
+                    <br><br>
+                    <p class="flat-bottom">{% trans "Change requests per week" %} = <label
+                            for="change_requests"></label></p>
+                    <input type="range" id="change_requests" step="1" value="4" min="1" max="10">
+                    <br><br>
+                    <p class="flat-bottom">{% trans "IT Compliance audits per year" %} = <label for="audits"></label>
+                    </p>
+                    <input type="range" id="audits" step="1" value="4" min="1" max="10">
+                </div>
+            </div>
+        </div>
+        <div class="row vert-offset-top-2">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="roi-table">
+                        <tr style="background:transparent;">
+                            <th style="border:0;"></th>
+                            <th style="border:0;" class="text-left text-default"><em>Before</em> <span class="text-primary">Device</span><span class="text-default">42</span></th>
+                            <th style="border:0;" class="text-left text-default"><em>After</em> <span class="text-primary">Device</span><span class="text-default">42</span></th>
+                            <th style="border:0;" class="text-left text-default">{% trans "Annual Savings" %}</th>
+                            <th style="border:0;" class="text-left text-default">%&nbsp; {% trans "Savings" %}</th>
+                        </tr>
+                        <tr>
+                            <td><strong>{% trans "Trouble Ticket Support" %}</strong></td>
+                            <td text="tickets_money" format="currency"></td>
+                            <td text="d42_tickets_money" format="currency"></td>
+                            <td text="tickets_money_reduction" format="currency"></td>
+                            <td text="tickets_money_savings" format="percent"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>{% trans "Change Requests" %}</strong></td>
+                            <td text="change_requests_money" format="currency"></td>
+                            <td text="d42_change_requests_money" format="currency"></td>
+                            <td text="change_requests_money_reduction" format="currency"></td>
+                            <td text="change_requests_money_savings" format="percent"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>{% trans "Audits" %}</strong></td>
+                            <td text="audits_money" format="currency"></td>
+                            <td text="d42_audits_money" format="currency"></td>
+                            <td text="audits_money_reduction" format="currency"></td>
+                            <td text="audits_money_savings" format="percent"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>{% trans "Totals" %}</strong></td>
+                            <td text="total_money" format="currency"></td>
+                            <td text="d42_total_money" format="currency"></td>
+                            <td text="total_money_reduction" format="currency"></td>
+                            <td text="total_money_savings" format="percent"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-5">
+        <img class="img-responsive vert-offset-top-2 center-block img-border"
+             src="{% static 'img/sections/features/itam/qr-codes.png' %}"
+             alt="{% trans 'QR Codes and Asset Tags' %}">
+    </div>
+    <div class="col-sm-7">
+        <h2 class="featurette-heading">{% trans "Device QR Codes and Asset Tags" %}</h2>
+        <p class="">{% trans "Say goodbye to traditional barcode readers and use mobile devices for asset and inventory management.  Print customized QR codes and auto-assign customizable asset numbers.  Ensure that IT asset audits are both fast and accurate." %}</p>
+    </div>
+</div>

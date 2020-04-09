@@ -1,0 +1,120 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Coventry University Case Study" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Case studies for Device42 - with Coventry University' %}"/>
+{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Case Studies" %} - {% trans "Conventry University" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li class="active-item"><a
+                            href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+                <hr class="hidden-xs">
+                <div class="list-group">
+                    <h3 class="list-group-heading">{% trans "Case Studies" %}</h3>
+                    <a class="list-group-item"
+                       href="{% url 'case_studies_intl_financial_service_provider' %}">{% trans "International Financial Services Provider" %}</a>
+                    <a class="list-group-item active"
+                       href="{% url 'case_studies_coventry_university' %}">{% trans "Coventry University" %}</a>
+                    <a class="list-group-item"
+                       href="{% url 'case_studies_maxihost' %}">{% trans "Maxihost Data Center Ltd." %}</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                    <h3 class="text-muted">{% trans "Device42 User Case Study – Coventry University" %}</h3>
+                    <ul>
+                        <li><strong>{% trans "Company" %}</strong>: {% trans "Coventry University" %}</li>
+                        <li><strong>{% trans "Industry" %}</strong>: {% trans "University: Higher Education" %}</li>
+                        <li><strong>{% trans "Location" %}</strong>: {% trans "Coventry, United Kingdom" %}</li>
+                        <li><strong>{% trans "Solution" %}</strong>: {% trans "Device42 Core" %}</li>
+                    </ul>
+                    <h2 class="headline">{% trans "UK-based Coventry University “Enrolls” Device42 to Optimize its Data Center Management" %}</h2>
+                        <h3 class="text-muted">{% trans "About Coventry University" %}</h3>
+                        <p>{% trans "Coventry University" %} (<a
+                                href="http://www.coventry.ac.uk/">{% trans "www.coventry.ac.uk" %}</a>) {% trans "is one of the UK’s leading business-facing universities with a reputation for excellence in applied research and teaching. With nearly a quarter century of operation, Coventry University provides higher learning opportunities to more than 27,000 students and operates three campuses located in the cities of Coventry, Scarborough, and London. With the large student population and approximately 3000 employees, Coventry University’s multiple data center operations are critical to delivering exceptional work and educational environment to its employees, faculty, and student body" %}.
+                        </p>
+                        <h3 class="text-muted">{% trans "Data Center Challenges" %}</h3>
+                        <p>{% trans "The data center operations team realized that the rapid and continued growth of the data center had resulted in the use of tools and support mechanisms that were less than optimal and that these shortcoming had resulted in opportunities for improvement" %}.</p>
+                        <ul>
+                            <li><strong>{% trans "Data center inventory management" %}</strong>
+                                - {% trans "The data center was using Excel spreadsheets to document and track data center devices. This presented significant challenges in maintaining accurate records and managing access to these records for an increasing number of IT staff. Given the growing University environment, managing inventory with spreadsheets presented increased operational challenges" %}.
+                            </li>
+                            <li><strong>{% trans "Tracking and documenting connections" %}</strong>
+                                - {% trans "Manually tracking physical and virtual device connections had become difficult and risky, especially when tracking PDU connections" %}.
+                            </li>
+                            <li><strong>{% trans "Planning and capacity management" %}</strong>
+                                - {% trans "With inaccurate device inventories, and limited connectivity information, the dependencies between devices and services running on them was very difficult to discern. As a result, data center planning took inordinate amount of time and had to be done on-site, within the data center. Even then, the team lacked a comprehensive view of the the device relationships needed to understand the impact of planned and unplanned changes" %}.
+                            </li>
+                            <li><strong>{% trans "Information access and awareness" %}</strong>
+                                - {% trans "The limited information available to the data center team was challenging to access and interpret.  Spreadsheets tracked information but did not provide detailed room, rack, or device visualizations needed for optimal service and support response times. Furthermore, this real-time, anywhere, access was needed by all data center team members" %}.
+                            </li>
+                            <li><strong>{% trans "Password and access management" %}</strong>
+                                - {% trans "With multiple data centers in operation and the rapid changes required to support an ever expanding university, the team needed to have a centralized and secure way to manage and track passwords used by IT team members" %}.
+                            </li>
+                        </ul>
+                        <p>
+                        <blockquote>
+                            “{% trans "When we had faults/upgrades with servers/switches/PDU’s we were not able to accurately gauge the risk involved and ascertain what services would be effected easily for example if a switch/PDU in a rack were to fail, what server/services would be affected" %}?”
+                        </blockquote>
+                        – {% trans "Yasin Shaikh, Systems Developer, Coventry University" %}</p>
+                        <h3 class="text-muted">{% trans "Solution Requirements" %}</h3>
+                        <p>{% trans "Recognizing the opportunities to optimize and improve the data center management capabilities the team began the search for a solution that delivered specific functionality across multiple areas along with with other high-level requirements" %}:</p>
+                        <ol>
+                            <li>{% trans "The ability to create and maintain accurate device inventory and dependencies data throughout both physical and logical network infrastructures" %}.</li>
+                            <li>{% trans "Infrastructure visualizations that create awareness, not just provide information regarding data center infrastructure including: rooms, racks, PDUs, connections, impact charts… and more" %}.</li>
+                            <li>{% trans "The solution must provide secure, simultaneous, multi-level access to information for the entire data center team who may be using both console- and mobile-based devices to access the solution from multiple data center locations" %}.</li>
+                            <li>{% trans "The software solution must provide the ability to securely track passwords in-use as well as create an audit trail of password changes" %}.</li>
+                            <li>{% trans "All capabilities must be effective for both “in-house” and cloud infrastructure" %}.</li>
+                        </ol>
+                        <h3 class="text-muted">{% trans "The Solution" %}</h3>
+                        <p>{% trans "Coventry University formed a data center team to evaluate multiple solutions and determine which was a best fit for its requirements which included: technical capabilities, implementation process, ease of use, solution maintenance and support, and more. The evaluation team reviewed the technical capabilities of multiple solutions that were considered based on online research and colleague recommendations. Next, the team asked the suppliers for detailed product demonstrations and/or proof of concept access to the various solutions" %}.</p>
+                        <p>{% trans "After careful consideration of the product capabilities, the supporting business issues, and a hands-on review of the various products, Coventry University selected Device42 as their data center solution" %}.</p>
+                        <h3 class="text-muted">{% trans "Device42 Implementation" %}</h3>
+                        <p>{% trans "The data center team wasted no time in implementing Device42. The initial priority was to have the on-site data center assets discovered and mapped as quickly as possible in order to enable new strategic abilities for capacity planning, placement planning, and network mapping" %}.</p>
+                        <p>{% trans "The initial discovery of newer equipment was completed quickly despite challenges created by older servers running Server 2008 R2 (or older). In addition, some of the old devices had SNMP discovery challenges however, the Device42 support team provided solutions to these challenges that enabled a complete and comprehensive data center asset mapping" %}.</p>
+                        <h3 class="text-muted">{% trans "Solution Benefits" %}</h3>
+                        <p>{% trans "The data center benefits Coventry University experienced were immediate and profound" %}:</p>
+                        <ul>
+                            <li><strong>{% trans "Accurate visualizations" %}</strong>
+                                - {% trans "Device42 has enabled the data center team to populate an asset inventory with comprehensive, accurate information and visualize their data centers at the room, rack and device levels. These visualizations, along with Device42’s service and device dependency mapping have enabled the team to have a thorough understanding of their operations" %}.
+                            </li>
+                            <li><strong>{% trans "Network connectivity mapping" %}</strong>
+                                - {% trans "A big success with the Device42 implementation was the mapping of network port connectivity to servers made possible through Device42’s auto-discovery capabilities — which also made the implementation fast and easy" %}.
+                            </li>
+                            <li><strong>{% trans "Device and services dependencies" %}</strong>
+                                - {% trans "With comprehensive device and services dependency mappings, planning, placement, and connectivity decisions can quickly be made. Accurate asset and dependency information also enables better decisions regarding planned and unplanned infrastructure changes" %}.
+                            </li>
+                            <li><strong>{% trans "Asset management" %}</strong>
+                                - {% trans "The data center team now provides the organization with reliable information regarding the entire data center infrastructure including; operating systems in use, physical devices deployed, virtual devices in use, physical capacities (room, rack, and power), cloud usage, password utilization, cabling, and more" %}.
+                            </li>
+                            <li><strong>{% trans "Password management" %}</strong>
+                                - {% trans "Using Device42’s password management capabilities, the Coventry data center team has secure access to a password vault that not only tracks active password data, but also provides comprehensive audit trails and reports of network password changes" %}.
+                            </li>
+                        </ul>
+                        <p>{% trans "Today, the Coventry University data center team uses Device42 as their single source of IT truth. Using Device42, the entire team has anywhere/anytime access to capabilities that deliver accurate, understandable information for all of their data centers" %}.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

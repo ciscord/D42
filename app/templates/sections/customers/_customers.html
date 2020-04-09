@@ -1,0 +1,48 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Device42 Customers" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Customer List for Device42 - Comprehensive Data Center Documentation Software' %}"/>{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>{% trans "Customers of Device42" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li class="active-item"><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2 class="text-center text-muted alt-font"><strong>{% trans "People Around The World Are Loving Device42!" %}</strong></h2>
+                <div class="row customer-logo-panel flat-top flat-bottom">
+                    {% for i in logos %}
+                        <div class="col-sm-3 logo-panel">
+                            <img src="{% static 'img/customers/' %}{{ i }}.png" class="img-responsive" alt="{{ i }} logo">
+                        </div>
+                        {% if forloop.counter|divisibleby:4 %}
+                        </div><div class="row customer-logo-panel flat-top flat-bottom">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

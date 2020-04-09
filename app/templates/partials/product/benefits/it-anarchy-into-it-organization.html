@@ -1,0 +1,29 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <img class="img-responsive center-block"
+             src="{% static 'img/sections/product/office_joke_ipaddr.png' %}"
+             alt="{% trans 'IT Anarchy into IT Organization' %}">
+    </div>
+    <div class="col-sm-6">
+        <h2>{% trans "Transform IT Anarchy into IT Organization" %}</h2>
+        <p>{% trans "Access real-time configuration data to understand where resources are and how those resources are being consumed. Support future capacity and growth planning." %}</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="checklist bullet-blue tight ">
+                    <li>{% trans 'Get the next available IP address <small>(eliminate <em>Ping and Pray</em>)</small>' %}</li>
+                    <li>{% trans 'Locate racks with enough space and power capacity to house new servers' %}</li>
+                    <li>{% trans 'Determine which users are affected by scheduled and unscheduled outages' %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul class="checklist bullet-blue tight ">
+                    <li>{% trans 'Know if a server/OS is still supported, and where to find it' %}</li>
+                    <li>{% trans 'Maintain accurate server-switch port connections' %}</li>
+                    <li>{% trans 'Accurately manage rack power and cooling capacities' %}</li>
+                    <li>{% trans 'Know device inter-dependencies and their service relationships' %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

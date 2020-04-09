@@ -1,0 +1,64 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Partner Benefits" %}{% endblock %}
+{% block site_section_partners %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Device42 DCIM software offers unique revenue opportunity for resellers and partners.">
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Partner Benefits" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="prelist flat-top"><a href="{% url 'partners' %}">{% trans "Sections" %}</a></h2>
+                <menu class="list-group">
+                    <a class="list-group-item" href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                    <a class="active list-group-item"
+                       href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                    <a class="list-group-item"
+                       href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a>
+                </menu>
+            </div>
+            <div class="col-sm-9">
+                <div class="well bg-alt">
+                    <p>{% trans "Device42 Inc., a leader in Data Center Infrastructure Management (DCIM) software, invites you to consider the many benefits of our partner program." %}</p>
+                    <p class="flat-bottom">{% trans "With a revolutionary approach to data center asset management we offer unique opportunities to referral and reseller partners of all sizes. In addition to fast paced incremental revenue and new customer acquisitions, Device42 offers many other partner benefits that are unique in the DCIM marketplace:" %}</p>
+                </div>
+                <ul class="font-stack-condensed">
+                    <li><strong>{% trans "Recurring Revenue Model" %}</strong>
+                        - {% trans "Our partners experience a substantial, high margin, recurring revenue stream. A 90%+ client renewal rate provides partners with a low friction, highly predictable, and repetitive bottom-line impact." %}
+                    </li>
+                    <li><strong>{% trans "Large addressable market" %}</strong>
+                        - {% trans "There is an enormous global market of prospects that operate or outsource data centers. Device42 products service all of these opportunities for client operations of any size." %}
+                    </li>
+                    <li><strong>{% trans "Rapid Sales Cycle – Our sales cycles are short" %}</strong>
+                        - {% trans "generally 120 days or less. Our service does not require travel, complex proposals, or protracted negotiations." %}
+                    </li>
+                    <li><strong>{% trans "Robust Marketing Support" %}</strong>
+                        - {% trans "We provide effective lead generation and market awareness that is specific and effective. We will equip you with the tools necessary to start your own web based leads program, from content to techniques." %}
+                    </li>
+                    <li><strong>{% trans "Low Selling Cost" %}</strong>
+                        - {% trans "The upfront sales investment is normally some web based lead generation followed by a software demo (which Device42 will initially present on your behalf.) We will also supply you with high-quality leads to support your team’s independent sales pursuits." %}
+                    </li>
+                    <li><strong>{% trans "Client support handled by Device42" %}</strong>
+                        - {% trans "Annual client support requirements are minimal. Our easy implementations do not require a complex negotiation or integration. Instead, Device42 solution sales are built around a self-service, free trial download model, supported by delighted client references and a money-back guarantee." %}
+                    </li>
+                    <li><strong>{% trans "Dynamic Product Development" %}</strong>
+                        - {% trans "We listen closely to our customers’ needs and design solutions that exceed client requirements. With an average product release cycle of 2 weeks, Device42 regularly delivers new features and visionary capabilities to an ever-expanding, global user base." %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

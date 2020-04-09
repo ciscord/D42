@@ -1,0 +1,131 @@
+{% extends 'base/_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load include_partial %}
+{% block title %}{% trans "An Easier Alternative to Sunbird" %}{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Here's why you should consider switching…"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <h1>Device42 &mdash;{% trans "An Easier Alternative to Sunbird DCIM" %}</h1>
+            <h5>{% trans "Device42 is a Sunbird alternative. Here's why you should consider switching…" %}</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-info padded">
+        <div class="container">
+            <div class="infobox shadow-1 col-sm-10 col-sm-offset-1">
+                <p>{% trans "Thinking of making the switch to Device42 or one of the other Nlyte competitors?" %}</p>
+
+                <p>{% trans "We want to make your decision as easy as possible, so we’ve put together some info that will help you decide which option is best for you." %}</p>
+
+                <p>{% trans "Below, you will find information to help you compare Device42 and Nlyte, including features, customer experiences, pricing and reviews from current Device42 customers who have made the switch." %}</p>
+
+                <p>{% trans "We hope this helps…" %}</p>
+            </div>
+        </div>
+    </div>
+
+    <article class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 is much easier to use than Sunbird" %}</h3>
+                <p>{% trans "Tired of having to struggle your way through clunky and complex Sunbird user guides, training classes, and lengthy implementation plans?" %}</p>
+                <p>{% trans "With Device42, you won’t have to. Setup is as simple as importing a virtual appliance. Auto-discovery will get nearly all your data into the system in an afternoon." %}</p>
+                <p>{% trans "You’ll get awesome core features like powerful reporting, great visualizations, and integrations with monitoring, automation, and ticketing tools without having to navigate a maze of features you don’t need." %}</p>
+                <p>{% trans "And if you ever want to enhance Device42 beyond the core DCIM, you can do that with custom fields, custom form layouts, and rich REST based API." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-2 text-center padded">
+                <a href="{% static 'img/sections/compare/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive img-border center-block"
+                         src="{% static 'img/sections/compare/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                         alt="{% trans 'Simplicity' %}">
+                </a>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0 text-center padded">
+                <a href="{% static 'img/sections/compare/patch-panel-create-connection.gif' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive img-border center-block"
+                         src="{% static 'img/sections/compare/patch-panel-create-connection.gif' %}"
+                         alt="{% trans 'Simplicity' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Auto-discovery" %}</h3>
+                <p>{% trans "While many enterprise tools claim to have auto-discovery built-in, there are key differences:" %}</p>
+                <ol type="a" class="alt-font">
+                    <li><p>{% trans "Device42 is agentless. You don’t have to find every device and put an agent on it. Device42 finds them for you without agents." %}</p></li>
+                    <li><p>{% trans "Holistic approach. Device42 connects to your network devices, hypervisors (VMware, HyperV, Citrix, Xen, Openstack, Cloudstack, and more), Cloud platforms (Amazon, Azure, Joyent, Linode, Digital Ocean and more), blade systems, UCS, IPMI, DNS, Windows, Linux & Unix OS’s and correlates the interrelationships and dependencies automatically. For example, if Device42 finds a mac address on a switch port from a network device, it correlates that with a Windows VM which is on a blade sitting in a particular slot in a chassis. And it finds what services are on that machine and calculates the dependencies on other machines/services on your network." %}</p></li>
+                    <li><p>{% trans "On the other hand, enterprise data center infrastructure management tools like Sunbird rely on external tools to do the auto-discovery. That not only adds to cost of the solution, but also increases the time to implementation and makes the solution more vulnerable to external dependencies." %}</p></li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row is-table-row">
+            <div class="col-sm-8">
+                <h3>{% trans "Multitenancy" %}</h3>
+                <p>{% trans "Device42 supports a number of multi-tenancy use cases. A corporation might want to restrict access by geographic location, department, division, corporate entity, and so on. More importantly, they might want a user to have access to just one department while another user has access to all departments within a division." %}</p>
+            </div>
+            <div class="col-sm-4 col-xs-6 col-xs-offset-3 text-center padded">
+                <a href="{% static 'img/sections/compare/tenant_services_example.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border" src="{% static 'img/sections/compare/tenant_services_example.png' %}" alt="{% trans 'Tenant Services Example' %}">
+                </a>
+            </div>
+        </div>
+
+        <div class="row flat-bottom">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 helps you manage your IT Infrastructure as a whole" %}</h3>
+                <p>{% trans "With the advent of virtualization, containers, cloud computing, and software-defined networks, your IT infrastructure is orders of magnitude more complex than it was 10 years ago. It is no longer practical to manage your IT infrastructure using separate tools for asset management, IP management, cloud management, application dependency management, and software license management. The interrelationships are too important and too complex and can only be adequately captured in a single integrated tool like Device42. Too much time is wasted trying to manage all these interrelationships in different tools." %}</p>
+                <p>{% trans "Device42 looks at IT Infrastructure holistically and gives you a single console to manage your Data center (DCIM), IP addresses(IPAM) and passwords in addition to ITAM (IT asset management) and CMDB." %}</p>
+            </div>
+        </div>
+
+        <div class="row is-table-row">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-1 text-center padded">
+                 <a href="{% static 'img/sections/compare/impact_chart.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border" src="{% static 'img/sections/compare/impact_chart.png' %}" alt="{% trans 'Impact Charts' %}">
+                </a>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-1 text-center padded">
+                <a href="{% static 'img/sections/compare/ip-address-tracking-software.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border" src="{% static 'img/sections/compare/ip-address-tracking-software.png' %}" alt="{% trans 'IP Address Tracking Software' %}">
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Integrations" %}</h3>
+                <p>{% trans "A true DCIM should not be an isolated application. You likely have monitoring tools, automation tools, ticketing tools, finance tools, and so on that can benefit from the information in your DCIM. Many enterprise DCIMs make these integrations time consuming and expensive. With Device42, you get a lot of integrations out of the box plus REST APIs that make it a breeze to integrate with other tools." %}</p>
+            </div>
+        </div>
+
+        {% include 'partials/integration-logos.html' %}
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 is more affordable" %}</h3>
+                <p>{% trans "With Sunbird you might have a similar initial product cost as Device42 but Sunbird DCIM implementation and maintenance costs far exceed the total cost of ownership with Device42." %}</p>
+                <p>{% trans "Also we believe that the value you’ll get from Device42 far outweighs the cost." %}</p>
+                <p>{% trans "And more than a thousand happy users in 33 countries agree. If our auto-discovery and collaboration features can save your team just ten hours per month, then Device42 will more than pay for itself." %}</p>
+            </div>
+        </div>
+
+        {% include 'partials/try-free-callout.html' %}
+
+    </article>
+
+{% endblock %}

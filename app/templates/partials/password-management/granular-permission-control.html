@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+
+    <div class="col-sm-5">
+        <img class="img-responsive center-block animated box-shadow"
+             src="{% static 'img/sections/features/password-management/granular-permissions.png' %}"
+             alt="{% trans 'Granular Permission Control' %}">
+    </div>
+    <div class="col-sm-7">
+        <h2>{% trans "Granular Permission Control" %}</h2>
+        <p>{% trans "Device42's network password manager controls who can view and change passwords at the global or per-password level:" %}</p>
+        <ul class="dash">
+            <li>{% trans "Users who can view the password" %}</li>
+            <li>{% trans "Groups who can view the password" %}</li>
+            <li>{% trans "Users who can view and edit the password" %}</li>
+            <li>{% trans "Groups who can view and edit the password" %}</li>
+        </ul>
+    </div>
+</div>

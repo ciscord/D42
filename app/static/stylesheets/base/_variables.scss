@@ -1,0 +1,156 @@
+/**
+ * device42.com - root variables
+ * (c) Device42 <dave.amato@device42.com>
+ */
+// Google Fonts are being stored locally in $icon-font-path
+
+// FILE PATHS
+$base-path: './' !default;
+$base-image-path: 'img/' !default;
+$icon-font-path: 'fonts/' !default;
+
+// TYPOGRAPHY - STANDARD FONTS
+$font-stack-alt: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+$font-stack-serif: 'Georgia', serif;
+// TYPOGRAPHY - WEB FONTS
+$font-stack: 'Open Sans', sans-serif;
+$font-stack-roboto: 'Roboto', sans-serif;
+$font-stack-roboto-condensed: 'Roboto Condensed', sans-serif;
+$font-stack-mono: 'Bitstream Vera Sans Mono', Monaco, 'Courier New', Courier, monospace;
+
+// BRAND COLORS
+$brand-primary: #22a3df;
+//$brand-primary: #00b3ee;
+$brand-success: #39bf87;
+$brand-info: #68c7f3;
+//$brand-info: lighten($brand-primary, 15%); /*#99CCCC*/
+$brand-warning: #eb8f34;/*#f0ad4e;*/
+$brand-danger: #d9534f;
+
+
+$color-primary-dark: #246e90;
+$color-primary-light: #a0ddfa;
+$color-primary-alt: #4fc0be;
+$color-primary-alt-light: #e5f6f5;
+$color-yellow: #f0ad4e;
+$color-purple: #705190;
+$offwhite: #e2e0dc;
+
+
+
+//@include palette-town($brand-primary, all);
+//$color-success: #50c3c0;
+$color-primary: $brand-primary;
+$color-success: $brand-success;
+$color-success-alt: darken($brand-success, 10%);
+$color-info: $brand-info;
+//$color-info: $color-primary-lighter;
+//$brand-primary-light: $color-primary-light;
+$brand-primary-light: lighten($brand-primary, 10%);
+
+//$brand-primary-dark: $color-primary-dark;
+$brand-primary-dark: darken($brand-primary, 10%);
+
+$color-danger: $brand-danger;
+$color-danger-alt: #f25454;
+$color-warning: $brand-warning;
+$color-warning-alt: #eb8f34;
+
+// PRICING PAGE
+$pricing-blue: #5b9bd5 !default;
+$pricing-blue-dark: #173d50 !default;
+$pricing-orange: #fcaf3b !default;
+$pricing-background: #b9b9b9 !default;
+$pricing-aqua: #4cc3c1 !default;
+
+// GRAY COLORS
+$gray-darker: lighten(#000, 13.5%); // #222
+$gray-dark: lighten(#000, 20%); // #333
+$gray: lighten(#000, 33.5%); // #555
+$gray-light: lighten(#000, 60%); // #999
+$gray-lighter: lighten(#000, 93.5%); // #eee
+
+// COMMON COLORS
+$white-color: #FFFFFF;
+$white-color-alt: #E2E0DC;
+$black-color: #222 !default;
+$dark-blue: #085977;
+$background-color-alt: #EDEDED;
+$font-color: #445463;
+$headings-sub-color: #3C9FC8;
+$body-bg: #F7F9F8 !default;
+//$text-color: #3E3E3E !default;
+$text-color: $font-color;
+$navigation-background-color: #F7F9F8 !default;
+$navigation-height: 53px !default;
+
+// FOOTER BASE
+$footer-links-text-color: #777777 !default;
+$footer-links-background: #3f3f3f !default;
+$footer-background: #222222;
+
+// TYPOGRAPHY
+$font-size-base: 16px;
+$weight-light: 300;
+$weight-normal: 400;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+$left: left;
+$right: right;
+
+// BORDERS
+$border: 1px solid $gray;
+$borderLight: 1px solid $gray-light;
+$borderDark: 1px solid $gray-dark;
+
+$border-radius-base: 3px !default;
+$border-radius-large: 6px !default;
+$border-radius-small: 3px !default;
+
+// CAROUSEL
+$carousel-text-shadow: 0 1px 2px rgba(0, 0, 0, .6) !default;
+$carousel-control-color: #22a3df !default;
+$carousel-control-width: 6% !default;
+$carousel-control-opacity: .8 !default;
+$carousel-control-font-size: 24px !default;
+$carousel-indicator-active-bg: #fff !default;
+$carousel-indicator-border-color: #146387 !default;
+$carousel-caption-color: #777 !default;
+
+// BUTTONS
+$state-success-text: $brand-success !default;
+$state-success-bg: #dff0d8 !default;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-text: $brand-info !default;
+$state-info-bg: #d9edf7 !default;
+$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%) !default;
+$state-warning-text: $brand-warning !default;
+$state-warning-bg: #fcf8e3 !default;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+$state-danger-text: $brand-danger !default;
+$state-danger-bg: #f2dede !default;
+$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+$outline-white: $white-color;
+$outline-btn-primary-bg: $brand-primary;
+$outline-btn-primary-dark: $brand-primary-dark;
+$outline-btn-primary-light: $brand-primary-light;
+$outline-btn-primary-darker: darken($brand-primary, 20%);
+
+$img-restrict-size: 75%!important;
+$letter-spacing-default: -0.2px!default;
+$letter-spacing-headings: -0.6px!default;
+
+$component-padding-default: 24px;
+
+$well-bg: $background-color-alt!default;
+// <code> <kbd> and <pre> elements
+$code-color:                  $font-color !default;
+$code-bg:                     #ddd !default;
+$kbd-color:                   $brand-primary !default;
+$kbd-bg:                      #222 !default;
+
+$pre-bg:                      #222 !default;
+$pre-color:                   #fff !default;
+$pre-border-color:            #888 !default;
+$pre-scrollable-max-height:   340px !default;

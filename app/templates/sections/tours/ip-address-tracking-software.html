@@ -1,0 +1,161 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Automated IP Address Tracking" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Automated IP Address Tracking with Device42, a Comprehensive IP Address Management Software' %}">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row is-table-row featurette">
+            <div class="col-sm-8">
+                <h1>{% trans "IP Address Tracking Software" %}</h1>
+                <p>{% trans "Tracking your IP addresses doesn’t have to be daunting, time consuming, and error prone  Do away with the spreadsheets. Device42 features a comprehensive IPAM solution that take the complexity out of IP address tracking giving your organization centralized visibility and control. Your network is vital, take control of your IP space today!" %}</p>
+                <ul>
+                    <li>{% trans "Automatically keep track of all your local and remote IPs with extensive auto-discovery options" %}.</li>
+                    <li>{% trans "Agent-less autodiscovery that can be scheduled to run at pre-defined intervals" %}.</li>
+                    <li>{% trans "Support for IPv4/IPv6, overlapping IPs across VRF groups" %}.</li>
+                    <li>{% trans "Build custom reports, create recurring schedule to run reports, deliver to multiple email recipients" %}</li>
+                    <li>{% trans "Track MAC address, switch port and device relationships automatically" %}.</li>
+                    <li>{% trans "Subnet Tree view with Nested subnets & IPs" %}.</li>
+                    <li><a href="#section-2"> {% trans "Read more below" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                 <a href="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                         alt="{% trans 'IT Address Tracking Software' %}" class="center-block img-responsive">
+                </a>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-tracking/ping-sweep.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-tracking/ping-sweep.png' %}"
+                         alt="{% trans 'IP Tracking Software' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Automated IP Tracking" %}</h2>
+                <ul>
+                    <li>{% trans "IP tracking software for centralized management of your IP space" %}</li>
+                    <li>{% trans "Support for IPv4 and IPv6" %}</li>
+                    <li>{% trans "Automatic reconciliation with subnets, VLANs, devices, MAC addresses, DNS" %}</li>
+                    <li>{% trans "Track overlapping IP ranges across different VRF groups" %}</li>
+                    <li>{% trans "Automatic switch port to device mappings" %}</li>
+                    <li>{% trans "Keep your IP address records current using built-in discovery tools" %}</li>
+                    <li>{% trans "Schedule recurring Ping Sweep jobs" %}</li>
+                    <li>{% trans "Build custom reports with recurring schedules, deliver to multiple email recipients" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-left featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-tracking/ping-sweep-networks.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-tracking/ping-sweep-networks.png' %}"
+                         alt="{% trans 'Ping Sweep Auto-discovery' %}" class="img-responsive center-block img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Ping Sweep Auto-discovery" %} </h2>
+                    <ul>
+                        <li>{% trans "Easy to use Ping Sweep options" %}</li>
+                        <li>{% trans "Create multiple Ping Sweep jobs" %}</li>
+                        <li>{% trans "Scan multiple networks per job" %}</li>
+                        <li>{% trans "Schedule to run at pre-defined intervals" %}</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-tracking/ip-address-management-type.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-tracking/ip-address-management-type.png' %}"
+                         alt="{% trans 'Track IP Address Type' %}" class="img-responsive center-block img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+               <h2>{% trans "Track IP Address Type" %}</h2>
+                    <ul>
+                        <li>{% trans "Automatically assign type during discovery" %}</li>
+                        <li>{% trans "Override type post discovery by specifying range and selecting type" %}</li>
+                        <li>{% trans "Types include: DHCP, Static" %}, &amp; {% trans "Reserved" %}</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-left featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-tracking/automated-ping-sweep.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-tracking/automated-ping-sweep.png' %}"
+                         alt="{% trans 'Schedule and Automate Network Discovery' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Schedule and Automate Network Discovery" %}</h2>
+                    <ul>
+                        <li>{% trans "Add a recurring schedule for each ping sweep" %}</li>
+                        <li>{% trans "Add multiple schedules for each ping sweep" %}</li>
+                        <li>{% trans "Ping sweeps can also be started manually" %} </li>
+                    </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-tracking/ip-address-report.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-tracking/ip-address-report.png' %}"
+                         alt="{% trans 'Track relationships between assets' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+               <h2>{% trans "IP Address Reports" %}</h2>
+                    <ul>
+                        <li>{% trans "Create custom reports" %} </li>
+                        <li>{% trans "Filter with partial search strings" %}</li>
+                        <li>{% trans "Boolean filtering for address availability" %}</li>
+                        <li>{% trans "Multiple option filter field for Subnet and Type" %}</li>
+                        <li>{% trans "Date filtering" %}</li>
+                        <li>{% trans "Create recurring schedule for each report or run the report manually" %}</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-left-4x8 featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                         alt="{% trans 'Switch Impact Chart' %}" class="center-block img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Switch Impact Charts" %}</h2>
+                    <ul>
+                        <li>{% trans "Network visualization with what is connected to what switch port all the way to switch port" %} </li>
+                        <li>{% trans "Auto-generated based on auto-discovered and manually entered data. Depicts virtual devices detected on a switch port as well" %}</li>
+                        <li>{% trans "Track Device and MAC address relationships along with the IP address" %}</li>
+                    </ul>
+            </div>
+        </div>
+        {% include 'components/brands-you-trust.html' %}
+
+        <div class="row featurette">
+            <div class="col-xs-6 col-xs-offset-3">
+                <blockquote>
+                    Device42 is taking us from anarchy to organization.
+                    <hr>
+                    <cite>
+                        Matt Iles<br><span>Network Systems Manager<br>International School of Beijing</span>
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+{% endblock %}

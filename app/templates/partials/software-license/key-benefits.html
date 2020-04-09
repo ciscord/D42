@@ -1,0 +1,17 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block box-shadow animated"
+             src="{% static 'img/sections/features/software-license/add-sw-license-model.png' %}"
+             alt="{% trans 'Key Benefits' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Key Benefits" %}</h2>
+        <p>{% trans "Device42’s software management functionality provides key organizational benefits:" %}</p>
+        <ul class="checklist dark-blue">
+            <li><strong>{% trans "License compliance" %}</strong> - {% trans "identify over-licensed, unlicensed, and expired licenses" %}</li>
+            <li><strong>{% trans "Standards assurance" %}</strong> - {% trans "identify prohibited and approved software" %}</li>
+            <li><strong>{% trans "Cost management" %}</strong> - {% trans "report license costs and minimize under-licensed software" %}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <img src="{% static 'img/sections/solutions/load-balancer-autodiscovery.png' %}"
+             class="img-responsive img-restrict center-block box-shadow" alt="{% trans 'Load Balancer Discovery' %}">
+    </div>
+    <div class="col-sm-6">
+        <h2 class="featurette-heading">{% trans 'Load Balancer Discovery' %}</h2>
+        <p>{% trans 'Using SNMP, Device42 connects to your load balancer and does the following:' %}</p>
+        <ol>
+            <li>{% trans 'Discovers basic inventory info such as hardware model, serial number, hostname, OS details, and more!' %}</li>
+            <li>{% trans 'Discovers virtual servers, pools and member nodes' %}</li>
+            <li>{% trans 'Maps the discovered member nodes with auto-discovered devices using other auto-discovery methods.' %}</li>
+            <li>{% trans 'Automatically creates detailed dependency maps for virtual servers.' %}</li>
+        </ol>
+    </div>
+</div>

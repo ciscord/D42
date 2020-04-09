@@ -1,0 +1,119 @@
+{% load i18n static custom_tags %}
+
+<div class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+                <i class="fa fa-bars fa-2x"></i>
+            </button>
+            <a class="navbar-brand" href="{{ URL_PREPEND }}/">
+                <img alt="Device42" class="img-responsive" src="{% static 'img/branding/transparent-logo.png' %}">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" class="dropdown {% block site_section_product %}{% endblock %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{% trans "Product" %}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'product_benefits' %}">{% trans "Benefits" %}</a></li>
+                        <li><a href="{% url 'product_pricing' %}">{% trans "Pricing" %}</a></li>
+                        <li><a href="{% url 'use_cases' %}">{% trans "Use Cases" %}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'schedule_form' %}">{% trans "Schedule Online Demo" %}</a>
+                        </li>
+                        <li><a class="visible-xs visible-sm" href="{% url 'download' %}">{% trans 'Try Now' %}</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown {% block site_section_features %}{% endblock %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{% trans "Features" %}</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'features' %}">{% trans "Feature Highlights / Screenshots" %}</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="{% url 'features_cmdb_for_cloud_era' %}">{% trans "CMDB for the Cloud Era" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'features_dcim' %}">{% trans "Data Center Management" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_itam' %}">{% trans "IT Asset Management" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_ipam' %}">{% trans "IP Address Management" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_discovery' %}">{% trans "Device Discovery" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_role_based_access' %}">{% trans "Role Based Access" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_app_mapping' %}">{% trans "Application Mappings" %}</a></li>
+                        <li>
+                            <a href="{% url 'features_software_license' %}">{% trans "Software License Management" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'features_password_management' %}">{% trans "Password Management" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'features_integrations' %}">{% trans "Integrations" %}</a>
+                        </li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown {% block site_section_customers %}{% endblock %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{% trans "Customers" %}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                        <li><a href="{% url 'customers_testimonials' %}">{% trans "Customer Testimonials" %}</a></li>
+                        <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Media Mentions" %}</a></li>
+                        <li><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown {% block site_section_support %}{% endblock %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{% trans "Resources" %}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://support.device42.com/" target="_blank"
+                               class="ext-link">{% trans "Support Portal" %}</a></li>
+                        <li><a href="{% setting D42_DOCS_SITE %}" target="_blank"
+                               class="ext-link">{% trans "Documentation" %}</a></li>
+                        <li><a href="{% url 'videos' %}">{% trans "Videos" %}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="{% url 'software_detail' package='autodiscovery' %}">{% trans "Auto-Discovery Software" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'software_detail' package='bulk-data-management' %}">{% trans "Bulk Data Management" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'software_detail' package='miscellaneous-tools' %}">{% trans "Miscellaneous Tools" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'opensource' %}">{% trans "Open Source" %}</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'integrations' %}">{% trans "Integrations" %}</a></li>
+                        <li><a href="{% url 'migrations' %}">{% trans "Migrations" %}</a></li>
+                        <li><a href="{% url 'update' %}">{% trans "Update" %}</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="dropdown {% block site_section_company %}{% endblock %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">{% trans "Company" %}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'company_about' %}">{% trans "About" %}</a></li>
+                        <li><a href="{% setting D42_BLOG_SITE %}" class="ext-link" target="_blank">{% trans "Blog" %}</a>
+                        </li>
+                        <li><a href="{% url 'company_contact' %}">{% trans "Contact" %}</a></li>
+                        <li><a href="{% url 'company_jobs' %}">{% trans "Jobs" %}</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="hidden-sm">
+                    <a id="nav_cta" href="{% url 'download' %}" class="btn btn-primary btn-sm" style="margin-top:10px;margin-left:4px;">{% trans "Try Now" %}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

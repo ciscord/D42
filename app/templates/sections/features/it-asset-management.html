@@ -1,0 +1,64 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "IT Asset Management (ITAM) Software" %}{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="IT Asset Management with an easy and intuitive web based tool that integrates IP address management as well."/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette is-table-row">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "IT Asset Management" %}</h1>
+                    <h2 class="text-primary flat-top">{% trans "Insightful Comprehension" %}</h2>
+                    <p class="font-stack-condensed">{% trans "Device42 provides comprehensive IT asset management capabilities including powerful asset auto-discovery and configurable asset types that accommodate any IT asset type within in your infrastructure." %}</p>
+                    <ul class="font-stack-condensed tight">
+                        <li>{% trans "Choose from pre-defined asset types, or create custom types to suit your needs" %}</li>
+                        <li>{% trans "Asset views allow custom search, filter, and sort" %}</li>
+                        <li>{% trans "Create custom asset profiles (e.g. asset profile by location, or by device type)" %}</li>
+                        <li>{% trans "Bulk actions enable asset number assignments or QR code generation for any number of assets" %}</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <img class="featurette-image img-responsive img-border center-block"
+                         alt="{% trans 'IT Asset Management' %}"
+                         src="{% static 'img/sections/features/itam/it-asset-management.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#qrtags" data-offset="top-nav">{% trans "Asset Tags" %}</a>
+            <a href="#" data-jump="#lifecycle" data-offset="top-nav">{% trans "Lifecycle Assets" %}</a>
+            <a href="#" data-jump="#nonip" data-offset="top-nav">{% trans "Non-IP" %}</a>
+            <a href="#" data-jump="#contracts" data-offset="top-nav">{% trans "Purchase & Support Contracts" %}</a>
+        </div>
+    </div>
+
+    <div class="container featurette-wrap">
+        {% include_partial "partials/itam/qr-codes-and-asset-tags.html" vcenter=True id="qrtags" %}
+        {% include_partial "partials/itam/it-asset-lifecycle-management.html" vcenter=True id="lifecycle" image="left" %}
+        {% include_partial "partials/itam/manage-non-ip-assets.html" vcenter=True id="nonip" %}
+        {% include_partial "partials/itam/manage-purchases-and-support-contracts.html" vcenter=True id="contracts" image="left" %}
+        <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small>
+                <br>
+                <a href="{% url 'features_dcim' %}"><i
+                        class="fa fa-chevron-left"></i> {% trans 'Data Center Management' %}</a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'features_ipam' %}">{% trans 'IP Address Management' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

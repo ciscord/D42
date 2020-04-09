@@ -1,0 +1,13 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block animated img-xs-restrict-300 vert-offset-bottom-1"
+             src="{% static 'img/generic/anarchy-to-organization.png' %}"
+             alt="{% trans 'Application Mapping Flow' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Application Dependency Flow" %}</h2>
+        <p>{% trans "Device42's application dependency mapping component is powerful and easy to use. Application dependencies are defined from the bottom up and automatically generates dependency flow diagrams that clearly show relationships between application components."%}</p>
+        <p><span class="prelist text-yellow">{% trans "Reduce service outages" %}</span> {% trans "with predictable change and configuration management intelligence." %}</p>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Case Studies" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Case studies for Device42 - Comprehensive Data Center Documentation Software' %}"/>
+{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Case Studies" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li class="active-item"><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="list-group">
+                    <h2 class="list-group-heading">{% trans "Case Studies" %}</h2>
+                    <a class="list-group-item" href="{% url 'case_studies_intl_financial_service_provider' %}">{% trans "International Financial Services Provider" %}</a>
+                    <a class="list-group-item" href="{% url 'case_studies_coventry_university' %}">{% trans "Coventry University" %}</a>
+                    <a class="list-group-item" href="{% url 'case_studies_maxihost' %}">{% trans "Maxihost Data Center Ltd." %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

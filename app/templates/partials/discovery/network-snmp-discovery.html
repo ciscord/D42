@@ -1,0 +1,21 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block img-restrict"
+             alt="{% trans 'SNMP Discovery' %}"
+             src="{% static 'img/sections/features/discovery/impact-1.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Network SNMP Discovery" %}</h2>
+        <p>{% trans "Device42 enables SNMP discovery for network devices...and more. SNMP discovery provides comprehensive capabilities to identify and track physical and logical components, and their relationship inter-dependencies." %}</p>
+        <ul class="checklist">
+            <li>{% trans "Switch/Router/FW inventory" %}</li>
+            <li>{% trans "IP to MAC address relationships" %}</li>
+            <li>{% trans "MAC address to switch port relationships" %}</li>
+            <li>{% trans "VLANs/Subnets" %}</li>
+            <li>{% trans "SNMP v1/v2c/v3 supported" %}</li>
+            <li>{% trans "Discover CDP/LLDP neighbors" %}</li>
+            <li>{% trans "Custom discovery scheduling" %}</li>
+        </ul>
+    </div>
+</div>

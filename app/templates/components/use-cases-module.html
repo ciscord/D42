@@ -1,0 +1,167 @@
+{% load i18n static %}
+<div class="row tab-backdrop padded" id="use-case-module">
+    <div class="container">
+        <div class="nav nav-tabs" role="tablist">
+            <div class="col-xs-4 col-sm-2">
+                <a class="active" href="#migrations" aria-controls="migrations" role="tab" data-jump="#use-case-module" data-offset="0"
+                   data-toggle="tab">
+                    <div class="sprite-os-stack-migration center-block" style="width:64px;height:64px;"></div>
+{#                    <img src="{% static 'img/components/study-a/tabs/os-stack-migration.png' %}"#}
+{#                         class="center-block img-responsive" alt="{% trans 'OS Stack Migration' %}">#}
+                    <p class="small text-center">{% trans "Migrations" %}</p>
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <a href="#it-automation" aria-controls="it-automation" role="tab"
+                   data-toggle="tab" data-jump="#use-case-module" data-offset="0">
+                    <div class="sprite-it-automation center-block" style="width:64px;height:64px;"></div>
+{#                    <img src="{% static 'img/components/study-a/tabs/it-automation.png' %}"#}
+{#                         class="center-block img-responsive" alt="{% trans 'IT Automation' %}">#}
+                    <p class="small text-center">{% trans "IT Automation" %}</p>
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <a href="#security-compliance" aria-controls="security-compliance" role="tab"
+                   data-toggle="tab" data-jump="#use-case-module" data-offset="0">
+                    <div class="sprite-security-compliance center-block" style="width:64px;height:64px;"></div>
+{#                    <img src="{% static 'img/components/study-a/tabs/security-compliance.png' %}"#}
+{#                         class="center-block img-responsive" alt="{% trans 'Security Compliance' %}">#}
+                    <p class="small text-center">{% trans "Performance, Security & Incident Response" %}</p>
+                </a>
+            </div>
+            <div class="visible-xs-block vert-offset-bottom-1"></div>
+            <div class="col-xs-4 col-sm-2">
+                <a href="#hw-audit" aria-controls="hw-audit" role="tab" data-toggle="tab" data-jump="#use-case-module"
+                   data-offset="0">
+{#                    <img src="{% static 'img/components/study-a/tabs/hardware-audit.png' %}"#}
+{#                         class="center-block img-responsive" alt="{% trans 'Hardware Audit' %}">#}
+                    <div class="sprite-hardware-audit center-block" style="width:64px;height:64px;"></div>
+                    <p class="small text-center">{% trans "Hardware & Software Audits" %}</p>
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <a href="#it-agility" aria-controls="it-agility" role="tab" data-toggle="tab"
+                   data-jump="#use-case-module" data-offset="0">
+{#                    <img src="{% static 'img/components/study-a/tabs/it-agility.png' %}"#}
+{#                         class="center-block img-responsive" alt="{% trans 'IT Agility' %}">#}
+                    <div class="sprite-it-agility center-block" style="width:64px;height:64px;"></div>
+                    <p class="small text-center">{% trans "IT Agility" %}</p>
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <a href="#capacity-planning" aria-controls="capacity-planning" role="tab"
+                   data-toggle="tab" data-jump="#use-case-module" data-offset="0">
+                    <img src="{% static 'img/components/study-a/tabs/capacity-planning.png' %}"
+                         class="center-block img-responsive" alt="{% trans 'Capacity Planning' %}">
+                    <p class="small text-center">{% trans "Capacity Planning & Budgeting" %}</p>
+                </a>
+            </div>
+        </div>
+        <div class="tab-content vert-offset-top-2">
+            <div role="tabpanel" class="tab-pane animated active fadeIn" id="migrations">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/OS Migration.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'Migrations' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "Migrations" %}</h2>
+                            <p>{% trans "Migrations, big or small, all can carry significant business risk. Botched cut-overs can result in runaway costs and embarrassing downtime. Whether your goal is to migrate to a new facility, to the cloud, or to even to a new platform or OS, Device42 has your back." %}</p>
+                            <div class="btn-block xs-center">
+                                <a style="margin-right:12px;" href="{% url 'use_cases_data_center_and_cloud_migration' %}"
+                               class="btn btn-primary btn-sm"><span class="badge left">{% trans "Read" %}</span>{% trans "Data Center Migrations" %}</a>
+                                <a href="{% url 'use_cases_migrations' %}"
+                               class="btn btn-primary btn-sm"><span class="badge left">{% trans "Read" %}</span>{% trans "OS Migrations" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane animated fadeIn" id="hw-audit">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/Hardware Audit.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'Hardware & Software Audits' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "Hardware & Software Audits" %}</h2>
+                            <p>{% trans "Data center audits come in many different shapes and sizes: finance audits, security audits, risk-related audits, budget cycle audits... And auditing a data center, big or small, can be a daunting task. But they all have one thing in common: Device42 is here to help!" %}</p>
+                            <div class="btn-block xs-center">
+                                <a style="margin-right:12px;" href="{% url 'use_cases_software_audit' %}" class="btn btn-primary btn-sm"><span class="badge left">Read</span>{% trans "Software Audits" %}</a>
+                                <a href="{% url 'use_cases_hardware_audit' %}" class="btn btn-primary btn-sm"><span class="badge left">Read</span>{% trans "Hardware Audits" %}</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fadeIn animated" id="security-compliance">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/Security and Compliance.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'Security and Compliance' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "Performance, Security & Incident Response" %}</h2>
+                            <p>{% trans "When a performance issue arises, immediately determine which applications and users are affected."%}</p>
+                            <p>{% trans "When a security issue arises, analyze potential downstream impact." %}</p>
+                            <a href="{% url 'use_cases_security_and_compliance' %}"
+                               class="btn btn-primary btn-sm">{% trans "Read more" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fadeIn animated" id="capacity-planning">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/capacity planning.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'Capacity Planning' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "Capacity Planning & Budgeting" %}</h2>
+                            <p>{% trans "Planning to ensure you've got the capacity to handle both future growth and times of peak transient load, while at the same time keeping costs under control and idle infrastructure to a minimum is a delicate balancing act. Device42 gives you the tools you need to make accurate decisions, which means happy customers, a happy budget, and happy executives." %}</p>
+                            <a style="margin-right:12px;" href="{% url 'use_cases_capacity_planning' %}" class="btn btn-primary btn-sm"><span class="badge left">Read</span>{% trans "Capacity Planning" %}</a>
+                            <a href="{% url 'use_cases_budgeting_and_finance' %}" class="btn btn-primary btn-sm"><span class="badge left">Read</span>{% trans "Budgeting & Finance" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fadeIn animated" id="it-automation">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/IT Automation.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'IT Automation' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "IT Automation" %}</h2>
+                            <p>{% trans "Your automation tools should have access to data about all your IT assets and their interrelationships.  For example, a REST API call to Device42 will return the next available IP or a list of installed software on a device or the location (virtual or physical) of an asset.  Device42 webhooks can pump out notifications for virtually any change in your infrastructure.  Combined with tools like RunDeck, Puppet, Chef, StackStorm, or Zapier, a DevOps team has everything they need to fully automate IT processes." %}</p>
+                            <a href="{% url 'use_cases_it_automation' %}"
+                               class="btn btn-primary btn-sm">{% trans "Read more" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fadeIn animated" id="it-agility">
+                <div class="row">
+                    <div class="col-sm-5 hidden-xs">
+                        <img src="{% static 'img/components/study-a/use-cases/IT Agility.png' %}"
+                             class="img-responsive center-block img-restrict" alt="{% trans 'IT Agility' %}">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tab-info">
+                            <h2>{% trans "IT Agility" %}</h2>
+                            <p>{% trans "Both agility and clear visibility are required to execute large changes successfully. Typically a very stressful time for the IT Staff involved, the weight of ensuring all goes as planned rests on their shoulders. Device42 provides the detailed insight into your infrastructure and a clear picture of the inter-dependencies between the many layers of hardware and the business applications it supports, necessary to ensure seamless execution." %}</p>
+                            <a href="{% url 'use_cases_it_agility' %}"
+                               class="btn btn-primary btn-sm">{% trans "Read more" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

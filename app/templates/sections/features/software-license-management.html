@@ -1,0 +1,67 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Software License Management" %}{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Comprehensive software license management with Device42 to accurately keep track of your software license usage across the IT enterprise.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette is-table-row">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "Software License Management" %}</h1>
+                    <p>{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure — from the server, to the desktop level." %}</p>
+                    <h3 class="flat-bottom">{% trans "Features include:" %}</h3>
+                    <ul class="checklist flat-top alt-font">
+                        <li>{% trans "Compare current usage to license counts" %}</li>
+                        <li>{% trans "Detect prohibited software" %}</li>
+                        <li>{% trans "Track license agreements and expiration dates" %}</li>
+                        <li>{% trans "Identify purchased vs. installed software" %}</li>
+                        <li>{% trans "Provide customizable notification alerts" %}</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <img class="featurette-image img-responsive center-block"
+                         alt="{% trans 'Software License Management' %}"
+                         src="{% static 'img/sections/features/software-license/software-payments.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#keybenefits" data-offset="top-nav">{% trans "Key Benefits" %}</a>
+            <a href="#" data-jump="#flexibility" data-offset="top-nav">{% trans "Flexibility" %}</a>
+            <a href="#" data-jump="#comptracking" data-offset="top-nav">{% trans "Comprehensive Tracking" %}</a>
+            <a href="#" data-jump="#notifications" data-offset="top-nav">{% trans "Alerts & Notifications" %}</a>
+        </div>
+    </div>
+
+    <div class="container featurette-wrap">
+        {% include_partial "partials/software-license/key-benefits.html" vcenter=True id="keybenefits" %}
+        {% include_partial "partials/software-license/software-management-flexibility.html" image="left" vcenter=True id="flexibility" %}
+        {% include_partial "partials/software-license/comprehensive-license-tracking.html" vcenter=True id="comptracking" %}
+        {% include_partial "partials/software-license/alerts-and-notifications.html" image="left" vcenter=True id="notifications" %}
+     <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small>
+                <br>
+                <a href="{% url 'features_app_mapping' %}"><i class="fa fa-chevron-left"></i> {% trans 'Application Mappings' %}
+                </a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'features_password_management' %}">{% trans 'Password Management' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

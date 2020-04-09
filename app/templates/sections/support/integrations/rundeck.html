@@ -1,0 +1,89 @@
+{% load i18n static %}
+ <h2>{% trans "Device42 as Resource Model Source Plugin for Rundeck" %}</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                <p>{% trans "This integration allows for Rundeck automation to be orchestrated using up-to-date Device42 CMDB information." %}</p>
+                <p>{% trans "Device42 plugin works as a resource model source for Rundeck. Using this integration, Rundeck jobs can be built to handle changing environments thanks to the complementary integration with Device42's auto-discoveries providing accurate, up to date information." %}</p>
+            </div>
+            <div class="col-sm-4 hidden-xs">
+                <img src="{% static 'img/sections/support/integrations/rundeck/automate.jpg' %}" alt="{% trans 'Automate Everything' %}" class="img-responsive center-block img-border">
+            </div>
+        </div>
+        <div class="row is-table-row">
+            <div class="col-sm-4 vert-offset-bottom-1 text-center">
+                <form action="." method="POST" role="form">{% csrf_token %}
+                    <button class="btn btn-sm btn-primary" type="submit">{% trans "Download" %} Device42<br>{% trans "Rundeck Plugin" %}</button>
+                </form>
+            </div>
+            <div class="col-sm-8">
+                <p class="font-stack-condensed text-muted">{% trans "This Device42 rundeck plugin will allow you to filter your nodes based on service level, customer, operating system, tags and more. The next time a security vulnerability threatens your organization's data patching affected systems will be a"%} <span class="text-italic text-strong font-stack-roboto">{%trans "quick and painless" %}</span> {% trans "process." %}</p>
+            </div>
+        </div>
+
+<div class="row flat-bottom">
+    <div class="col-sm-12">
+        <h3>{% trans "Open source repository" %}</h3>
+        <p>{% trans "This plugin code is available on" %} <a href="https://github.com/device42/Rundeck-Device42-Nodes-Plugin" class="ext-link" target="_blank">Device42 Rundeck GitHub repo</a> {% trans "as an open-source project. This is licensed under Apache 2.0 and instructions to build from source are included in the README file." %}</p>
+    </div>
+</div>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 vert-offset-bottom-1">
+        <a href="{% static 'img/sections/support/integrations/rundeck/rundeck-1.gif' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/rundeck/rundeck-1.gif' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Rundeck Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Installation and Configuration" %}</h3>
+        <p>{% trans "Installing the plugin is as easy as copying the .jar file to your Rundeck plugins folder. On Ubuntu, the default directory for this is" %} <code>/etc/rundeck/libext</code>.  {% trans "Alternatively you can build the plugin using Gradle by cloning the Github repository" %}.</p>
+        <p>{% trans "To setup the filter, add a new Rundeck resource to the project you are on through Configuration and select" %} <strong>Devices from D42</strong>. {% trans "Enter your Device42 URL and credentials, and then you can enter filter values." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>{% trans "We’ve included some common filters:" %} <em>tags, os, service_level, and customer</em>, {% trans "but you can also enter any Device42 API endpoint as a filter including custom fields. For a full list please visit" %} <a href="http://api.device42.com/#get-all-devices-with-brief-output" class="ext-link" target="_blank">Device42 API Reference</a></p>
+    </div>
+</div>
+<div class="row flat-top">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 vert-offset-bottom-2">
+        <a href="{% static 'img/sections/support/integrations/rundeck/rundeck-2.gif' %}" data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/rundeck/rundeck-2.gif' %}" class="img-border img-responsive" alt="{% trans 'Rundeck Integration' %}">
+        </a>
+        <br>
+        <p class="text-muted text-center">{% trans "Using predefined filters from Device42 in Rundeck" %}</p>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0">
+        <a href="{% static 'img/sections/support/integrations/rundeck/rundeck-3.gif' %}" data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/rundeck/rundeck-3.gif' %}" class="img-border img-responsive" alt="{% trans 'Rundeck Integration' %}">
+        </a>
+        <br>
+        <p class="text-muted text-center">{% trans "Configuring custom filter parameters based on Device42 API endpoints" %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Working with Device42 nodes in Rundeck" %}</h3>
+        <p>{% trans "After adding the filters, you will now be able to see which nodes Rundeck is pulling into Device42 by selecting the “Nodes” option in Rundeck" %}</p>
+        <br>
+        <a href="{% static 'img/sections/support/integrations/rundeck/rundeck-4.gif' %}" data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/rundeck/rundeck-4.gif' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Rundeck Integration' %}">
+        </a>
+        <br>
+        <p>{% trans "By drilling down to one of the nodes we could also see the synchronized information about node data including building, room and rack information about a device, operating system information, device type, and other information when applicable such as a virtual machine’s host." %}</p>
+    </div>
+</div>
+<div class="row image-right-8x4">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/rundeck/rundeck-4.gif' %}" data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/rundeck/rundeck-4.gif' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Rundeck Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8 vert-offset-top-1 vert-offset-bottom-1">
+        <p>{% trans "Now when creating Rundeck jobs you no longer have to worry about tracking down your node data to make sure you run it on the proper systems. Device42 will keep your data up-to-date, eliminating one more hurdle form your devops workflow." %}</p>
+    </div>
+</div>
+

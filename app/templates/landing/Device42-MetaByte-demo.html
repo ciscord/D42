@@ -1,0 +1,240 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Creating and managing an accurate and up-to-date configuration management database (CMDB) is a vital component in effectively managing today’s data center and IT Infrastructure. Device42 software does just that and a lot more.' %}"/>
+{% endblock %}
+{% block title %}{% trans "Start doing more with your data center" %}{% endblock %}
+{% block script %}
+    <style>
+        .media-left i.fa {
+            color: #00b6ff;
+            padding-top: 5px;
+        }
+
+        .media-left, .media-right, .media-body {
+            padding-right: 12px;
+            padding-top: 6px;
+        }
+
+        .media-body {
+            vertical-align: middle !important;
+        }
+
+        ul.square-style {
+            font-weight: 300;
+        }
+
+        .blue-back.box {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .media {
+            margin-left: 24px;
+            margin-top: 6px;
+        }
+
+        img.shadow {
+            box-shadow: 0 0 6px #333333;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("i.fa").tooltip();
+        });
+    </script>
+{% endblock %}
+
+
+{% block landingHeadingText %}{% trans "Schedule your demo today!" %}{% endblock %}
+{% block landingSubHeadingText %}
+    <strong>{% trans "…and start doing more with your data center." %}</strong>{% endblock %}
+{% block landingfeature %}
+    <section class="row landing-section">
+        <div class="col-md-8">
+            <p class="lead">{% trans "If you are looking for a better tool for managing your IT infrastructure, there are several reasons to consider Device42..." %}</p>
+
+            <div class="row">
+                <div class="col-sm-6">
+                  <ul class="checklist">
+                        <li>{% trans "Virtualization and Cloud Support" %}</li>
+                        <li>{% trans "Power and Environmental Monitoring" %}</li>
+                        <li>{% trans "Map out your physical, virtual, cloud and application layer automatically" %}</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="checklist">
+                        <li>{% trans "Rapid Implementation" %}</li>
+                        <li>{% trans "Comprehensive Auto-Discovery" %}</li>
+                        <li>{% trans "Clear, Accurate Visualizations" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <br>
+            {% with 'img/partners/'|add:partner|add:'.png' as partner_logo %}
+            <img src="{% static partner_logo %}" class="img-responsive center-block" alt="{{ partner }}">
+            {% endwith %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <h3>{% trans "Server Room Management" %}</h3>
+            <ul class="square-style lead-small">
+                <li>{% trans "Manage and visualize your data center room layout with ease" %}</li>
+                <li>{% trans "Add new objects by dragging" %} &amp; {% trans "dropping from the object palette" %} </li>
+                <li>{% trans "Move existing objects with drag" %} &amp; {% trans "drop" %}</li>
+                <li>{% trans "Quickly expand or contract room grid with simple zoom in/out controls" %}</li>
+                <li>{% trans "Mouse-over for object summary and access to object details, layout, power/utilization, and the rotate object orientation action" %}</li>
+                <li>{% trans "Device42 is a web based solution that works with all popular browsers" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <img src="{% static 'img/sections/features/roommanagement.gif' %}"
+                 alt="{% trans 'Server Room Layout' %}" class="img-responsive center-block shadow">
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-xs-12"><h3>{% trans "Interactive Rack Diagrams" %}</h3></div>
+        <div class="col-sm-6">
+            <img src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                 alt="{% trans 'Rack Layout' %}" class="img-responsive">
+        </div>
+        <div class="col-sm-6">
+            <h4 class="text-muted">{% trans "Quickly create accurate rack diagrams with ease:" %}</h4>
+            <ul class="square-style">
+                <li>{% trans "Leverage the power of visualization by viewing your rack documentation in a web based diagram." %} </li>
+                <li>{% trans "Informative tooltips over rack devices reveal quick links to object details and impact charts." %}</li>
+                <li>{% trans "Mouse-over a chassis to reveal the blades installed and quick link to device details on that blade." %}</li>
+                <li>{% trans "Show PDUs in and/or around a rack" %}</li>
+                <li>{% trans "Show filler panels and patch panels" %}</li>
+                <li>{% trans "See available U space" %}</li>
+            </ul>
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-7">
+            <h3>{% trans "Power and Environmental Monitoring" %}</h3>
+            <p class="lead">{% trans "Power and thermal management in the data center has never been easier.  Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities." %}</p>
+        </div>
+        <div class="col-sm-5">
+            <img src="{% static 'img/landing/pdu-graphs.png' %}" class="img-responsive center-block">
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "IP Address Management" %}</h3>
+            <p class="lead">{% trans "Device42’s IP Address Management" %}
+                (<em>{% trans "IPAM" %}</em>) {% trans "capabilities provide an easy to use, intuitive console for centralized IP visibility and control including IP tracking, IP assignments, and many other IP management functions." %}
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <ul class="clean square-style">
+                <li>{% trans "IPv4/IPv6 IP address management" %}</li>
+                <li>{% trans "Auto-discovery tools to keep IP records accurate and up-to-date" %}</li>
+                <li>{% trans "Overlapping IP ranges and nested subgroups management" %}</li>
+                <li>{% trans "Subnet tree view with nested subnets and IPs" %}</li>
+                <li>{% trans "Auto assignment of IPs to devices" %}</li>
+                <li>{% trans "Powerful APIs enable IP search, find, and integration with other tools" %}</li>
+                <li>{% trans "Graphic visualizations of network connectivity connections" %}</li>
+            </ul>
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Automated Service Impact Discovery" %}</h3>
+            <p class="lead">{% trans "With our powerful agent-less auto-discovery methods, you can easily map services, listening ports on the services and remote connections for windows and linux machines." %}</p>
+            <h4 class="text-muted">{% trans "Some of the benefits of this feature listed below:" %}</h4>
+            <ul class="clean square-style">
+                <li>{% trans "Know what services are listening on what ports" %}</li>
+                <li>{% trans "Find out all the open ports on a machine" %}</li>
+                <li>{% trans "Visualize all the dependencies for a particular machine" %}</li>
+                <li>{% trans "Get a list view of the service and remote dependencies as well" %}</li>
+                <li>{% trans "No need to configure expensive span ports to get dependencies between servers" %}</li>
+                <li>{% trans "Easy migration path for your legacy systems" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <img src="{% static 'img/sections/features/app-map/automated_service_dependency.png' %}" alt="{% trans 'Automated Service Dependency' %}"" class="img-responsive center-block">
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-6">
+            <img class="img-responsive shadow" src="{% static 'img/landing/software_in_use.png' %}" alt="{% trans 'Software License Management' %}">
+        </div>
+        <div class="col-sm-6">
+            <h3 class="sub-heading">{% trans "Software License Management" %}</h3>
+            <p class="lead">{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure — from the server, to the desktop level." %}</p>
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-8">
+            <h3 class="sub-heading">{% trans "Load CI's Fast with Powerful Auto-Discovery Tools" %}</h3>
+            <p class="lead">{% trans "Populate your CMDB fast with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide" %}.</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="square-style">
+                        <li>{% trans "All discovery tools are agent-less" %}</li>
+                        <li>{% trans "Native support for blade chassis" %}</li>
+                        <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+                        <li>{% trans "Native support for virtualization platforms" %}</li>
+                        <li>{% trans "Result is a system that is always audit ready" %}</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="square-style">
+                        <li>{% trans "All discoveries can be scheduled so you're always up-to-date" %}</li>
+                        <li>{% trans "Multiple protocols supported (e.g. SNMP, WMI, SSH, Modbus" %}, ...)</li>
+                        <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                        <li>{% trans "Native support for public and private cloud platforms" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <img src="{% static 'img/sections/features/cmdb/impact-1.png' %}" class="img-responsive"
+                 alt="{% trans 'Device impact chart' %}"/>
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <h3 class="sub-heading" id="preconfigured-cmdb">{% trans "Pre-configured CMDB" %}</h3>
+            <p class="lead-small">{% trans "No need for a long, drawn-out CI design process because all your CI’s and relationships are pre-configured.  But Device42 does not simply lock you into an inflexible structure.  You can create your own CIs and relationships to complement the built-in structure provided. Additionally, you can define user, groups, passwords, and object-level permissioning" %}.</p>
+        </div>
+        <div class="col-sm-8">
+            <img class="img-responsive" src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}"/>
+        </div>
+    </section>
+    <hr />
+    <section class="row landing-section">
+        <div class="col-sm-4">
+            <img src="{% static 'img/landing/ip-address-tracking-software.png' %}"
+                 class="hidden-xs img-responsive"/>
+        </div>
+        <div class="col-sm-8">
+            <h3 class="sub-heading" id="visualizations">{% trans "Visualizations" %}</h3>
+            <p class="lead-small">{% trans "Once your data is loaded, it’s time to reap the benefits.  Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data.  But even better, Device42 provides an extensive set of visualizations including" %}....</p>
+            <ul class="square-style">
+                <li>{% trans "Your computer rooms and racks with power and capacity heatmaps" %}</li>
+                <li>{% trans "Your full IP connectivity and power chain" %}</li>
+                <li>{% trans "Your hardware, software, and application dependencies" %}</li>
+            </ul>
+        </div>
+    </section>
+    <hr />
+{% endblock %}

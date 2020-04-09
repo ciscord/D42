@@ -1,0 +1,75 @@
+{% load i18n static %}
+<h2>{% trans "Enhance JIRA for ITIL/ITSM with Device42 CMDB plugin" %}</h2>
+<p>{% trans "This connector syncs data between the Device42 CMDB and JIRA or JIRA Service Desk.  From within JIRA, users can directly select Device42 Configuration Items(CIs) when creating a JIRA issue or service request." %}</p>
+<div class="row is-table-row">
+    <div class="col-sm-8">
+        <p>{% trans "Users can easily add this free module to their server-based JIRA installations and schedule a data sync from Device42 into JIRA. With that sync, Device42 ITAM data is available when creating a service request, ticket or issue." %}</p>
+    </div>
+    <div class="col-sm-4 text-center">
+        <a href="https://marketplace.atlassian.com/plugins/com.device42.atlas.jira.d42jira/server/overview"
+           class="btn btn-primary" id="jira_download" type="button"
+           target="_blank">{% trans "Download" %}<br>JIRA {% trans "Connector" %}</a>
+    </div>
+</div>
+<h3 class="prelist vert-offset-bottom-2">{% trans "Some of the highlights of this integration are featured below..." %}</h3>
+<div class="row image-right-8x4">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/jira/jira-itsm-device42-cmdb.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/jira/jira-itsm-device42-cmdb.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'JIRA Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Link CMDB items to issues in JIRA" %}</h3>
+        <p>{% trans "Once the Device42 configuration management database is synced to JIRA, users can select any of the CIs to create issues in JIRA. Currently the sync encompasses devices, power units, parts and racks. When new issues are created in JIRA, users can select multiple CIs from a drop-down list or search for CIs by name to refine the list selections. User can add one or more Device42 custom fields as well." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/jira/jira-helpdesk-device42-ci.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/jira/jira-helpdesk-device42-ci.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'JIRA Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "View CI details from JIRA helpdesk issues" %}</h3>
+        <p>{% trans "Once the Device42 JIRA connection is made, users can see details from Device42 (such as serial #, asset #, and hardware model) for that CI in JIRA. Similarly, you can see the associated info for other CI types. Conversely, the CIs in JIRA can be linked to view the Device42 page for that Configuration Item enabling users to easily view configuration item details in Device42." %}</p>
+    </div>
+</div>
+<div class="row image-right-8x4">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/jira/device42-ci-jira-navigator.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/jira/device42-ci-jira-navigator.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'JIRA Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "CIs from the issue navigator" %}</h3>
+        <p>{% trans "If you add the Device42 custom field to the issue navigator, you will be able to see brief information about each CI that is linked to the ticket with the ability to follow the link to jump into the Device42 application. If you hover over the link you will see detailed information about the device." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/jira/jira-service-desk-device42-ci-search.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/jira/jira-service-desk-device42-ci-search.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'JIRA Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Search JIRA service requests by Configuration items" %}</h3>
+        <p>{% trans "Once the CIs from the Device42 IT Asset Management system are synced in JIRA, you can do simple search or advanced search based on JQL (JIRA Query Language). For simple search, you can go to “more” in the issue navigator and choose the Device42 custom field to query. For Advanced search, you can go to Advanced search mode and search using JQL." %}</p>
+    </div>
+</div>
+
+<hr>
+
+<h4>{% trans "Download JIRA CMDB Connector" %}
+    <small>{% trans "(for better ITSM)" %}</small>
+</h4>
+<p>{% trans "Users can download the JIRA Device42 connector from the" %} <a
+        href="https://marketplace.atlassian.com/plugins/com.device42.atlas.jira.d42jira/server/overview"
+        target="_blank">Atlassian Marketplace</a></p>

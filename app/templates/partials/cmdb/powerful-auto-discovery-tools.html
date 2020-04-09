@@ -1,0 +1,27 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }} {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-12">
+        <h3>{% trans "Load CI's Fast with Powerful Auto-Discovery Tools" %}</h3>
+        <p>{% trans "Device42's CMDB provides a single source of truth within your organization. This gives you a clear view into your IT ecosystem to identify, manage, and verify all configuration items (CI) in your environment." %}</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <ul class="dash">
+                    <li>{% trans "All discovery tools are agentless" %}</li>
+                    <li>{% trans "All discoveries can be scheduled so you're always up-to-date" %}</li>
+                    <li>{% trans "Multiple protocols supported (e.g. SNMP, WMI, SSH, Modbus, ...)" %}</li>
+                    <li>{% trans "Native support for virtualization platforms" %}</li>
+                    <li>{% trans "Native support for public and private cloud platforms" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul class="dash">
+                    <li>{% trans "Native support for blade chassis" %}</li>
+                    <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                    <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+                    <li>{% trans "Result is a system that is always audit ready" %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

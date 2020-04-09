@@ -1,0 +1,61 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: Capacity Planning" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Capacity Planning - Capacity planning for the both future need and peak transient loads can prove a tricky undertaking.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Capacity Planning" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container use-case">
+        <div class="row">
+            <div class="col-xs-12">
+                <article>
+                     <img src="{% static 'img/components/study-a/use-cases/capacity planning.png' %}" class="img-inline-right" alt="{% trans 'Capacity Planning' %}" />
+                    <h2>{% trans 'Challenge' %}</h2>
+                    <p>{% trans "Capacity planning for the both future need and peak transient loads can prove a tricky undertaking. Too much capacity, and your spend can quickly get out of control supporting idle machines, blowing your budget. Too little, and your company's site or services can experience embarrassing downtime, leaving you to answer to angry customers and executives alike." %}</p>
+
+                    <h2>{% trans 'Solution' %}</h2>
+                    {% blocktrans %}
+                    <p>Device42 allows you to make the most of your existing capacity or to create a capacity planning forecast with the lights on by answering questions such as:</p>
+                    <ul>
+                        <li>Where do I have rack space and power to put new equipment?</li>
+                        <li>Are there power spikes in my colo cage that put us over the power limit?</li>
+                        <li>Do I have space and power for 200 more machines?</li>
+                        <li>Do I have any zombie servers?</li>
+                        <li>Do I have in service IP addresses that aren't being used?</li>
+                        <li>Which /24 subnet should be assigned to an internal department to minimize fragmentation?</li>
+                        <li>Where are all the spare parts located and when should I reorder?</li>
+                    </ul>
+                    <p>Many products on the market today focus on CPU utilization and trending data to find underutilized servers. We believe that utilization is the wrong metric for the following reasons:</p>
+                    <ol>
+                        <li>You generally size capacity for peak times while normal utilization is low</li>
+                        <li>You might have an application with constant high utilization that has no users</li>
+                        <li>You might have a valid app that is business critical, but is low utilization</li>
+                    </ol>
+                    <p>With Device42's automated service to server or service to service mapping, you can find out exactly which servers have applications that are being utilized on the network, while easily identifying those that are just eating resources. The result: accurate capacity planning, happy customers, and a happy executive team.</p>
+                        <br>
+                    <h5>Device42: Better data - better decisions.</h5>
+                    {% endblocktrans %}
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

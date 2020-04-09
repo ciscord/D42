@@ -1,0 +1,92 @@
+{% load i18n static %}
+<h2>{% trans "Device42's Ansible Integration Scripts" %}</h2>
+<div class="row is-table-row">
+    <div class="col-xs-6 col-sm-8">
+        <div class="btn-group-vertical">
+            <button class="btn" data-jump="#staticInventory">{% trans 'Static Inventory Script' %}</button>
+            <button class="btn" data-jump="#dynamicInventory">{% trans 'Dynamic Inventory Script' %}</button>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <div class="center-block xs-center" style="height:60px;width:200px;max-width:100%;">
+            <img src="{% static 'img/branding/transparent-logo.png' %}" alt="{% trans 'Device42 logo' %}"
+                 class="img-responsive">
+        </div>
+        <div class="sprite-ansible center-block xs-center" style="height:60px;width:200px;"></div>
+    </div>
+</div>
+<p>{% trans "When you find yourself doing something over and over again, you should be thinking automation, and a good follow up thought is Ansible. Now, with Device42 integration, Ansible has near real-time access to your infrastructure's inventory, making it an even more capable automation solution." %}</p>
+
+<p>{% blocktrans %}The core of Ansible is a simple automation language that can both describe and carry out repeatable
+    building and provisioning of IT application infrastructures. It is very powerful, yet can be easier for a beginner
+    to learn than some of its alternatives, as it doesn't require one to be an accomplished programmer to use it &mdash;
+    as <a href="https://www.ansible.com/it-automation" target="_blank" class="ext-link">Ansible's website</a> puts it,
+    Ansible <em>"...doesn't require a grad-level computer science degree to read."</em>{% endblocktrans %}</p>
+
+<h3 class="text-strong">{% trans 'The Device42 Ansible repository features two functionally different scripts for generating inventories for use with Ansible:' %}</h3>
+<ol type="1">
+    <li><code>d42_ansible_inventory_hostfile.py</code> &ndash; {% trans 'This script can be used to create and pre-populate a static inventory file based on Device42’s Configuration Items for use by Ansible. More details and a usage example can be found in' %} <a href="http://www.device42.com/blog/2017/01/a-simple-automation-example-using-device42s-new-ansible-host-file-generation-script/" class="ext-link" target="_blank">{% trans 'this blog post' %}</a>.</li>
+    <li><code>d42_ansible_dynamic_inventory.py</code> &ndash; {% trans 'This script can be used dynamically in conjunction with the <kbd>$ansible</kbd> command, generating a real-time inventory based on data within Device42 - See' %} <a href="http://www.device42.com/blog/2017/01/make-servicenow-suck-less-sync-your-device42-ci-data-to-servicenow">{% trans 'this blog post' %}</a> {% trans 'for in depth details and a usage example.' %}</li>
+</ol>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="text-strong flat-top">{% trans 'Installation' %}</h3>
+        <p>{% trans 'You’ll need a working installation of Ansible to use these scripts. Ansible will run on any machine with Python 2.6 or 2.7 installed, but Device42’s scripts are only tested compatible with Python 2.7.x.' %}</p>
+        <small class="text-italic">{% trans 'You can install Ansible with your package manager, e.g.' %}</small>
+        <ul class="no-style">
+            <li><label class="label label-default">.rpm-based distro</label> <span class="font-stack-mono">$ yum install ansible</span></li>
+            <li><label class="label label-default">.deb-based distro</label> <span class="font-stack-mono">$ apt-get install ansible</span></li>
+        </ul>
+        <p>{% trans "Consult Ansible's installation instructions for other distros, to build from source, or if more information is needed." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-strong">{% trans 'Integration Steps' %}</h3>
+        <ol type="1">
+            <li>{% trans 'Create a working directory <code>foo</code>. At minimum, copy the file <code>lib.py</code> into it, as well as the two inventory scripts, <code>d42_ansible_inventory_hostfile.py</code> & <code>d42_ansible_dynamic_inventory.py</code>. Both of the scripts rely on <code>lib.py</code> as a dependency.' %}</li>
+            <li>{% trans "Copy and rename the conf.sample example from the repo into your working directory <code>foo</code> & populate the file with your Device42 Instance Info <em>[URL, username, password]</em>. Enable or Disable logging (your choice), and set your output grouping choice <em>[by tag, building, customer, or service_level]</em> &mdash;this setting will affect how the output list of hosts is organized." %}</li>
+            <li>{% trans "Mark the script(s) executable: " %}<code>$ chmod +x d42_ansible_*.py</code></li>
+        </ol>
+    </div>
+</div>
+<h3 class="text-strong">{% trans 'Working with the Device42 scripts in Ansible' %}</h3>
+<h4 class="text-strong" id="staticInventory">1. {% trans "Static Inventory" %} <em>'hosts'</em> {% trans 'generation script' %}</h4>
+<p>{% trans 'The first run of the static inventory script, d42_ansible_inventory_hostfile.py will cause the creation of a file called hosts in your working directory containing the same inventory of machines. Its only visible output, however, is <code>[!] Done</code>' %}</p>
+
+<pre class="prettyprint lang-bsh wrap">
+    [root@MMA-CentOS6 d42_inv]# python d42inv.py
+
+    [!] Done!
+</pre>
+<p>{% trans 'Note that you will have to copy the generated <em>hosts</em> file to <code>/etc/ansible/hosts</code> to use it without specifying its location via the <kbd>-i</kbd> flag.' %}</p>
+<h4 class="text-strong" id="dynamicInventory">2. {% trans "Dynamic Inventory Script" %}</h4>
+<p>{% trans "Ansible will also happily execute and use the output of any program that outputs a valid JSON dictionary of hosts to stdout, and the executable can be written in any programming language. When an executable instead of a list follows the <kbd>-i</kbd> flag, it executes the program, automatically passing the <kbd>--list</kbd> flag.  This is precisely the argument Device42's <code>d42_ansible_dynamic_inventory.py</code> is expecting. When properly configured, the output of the dynamic inventory script <em>(outside of Ansible)</em> looks as such:" %}</p>
+<pre class="prettyprint lang-bsh wrap">
+    [devtest@MMA-CentOS d42inv]$ ./autoInv_d42.py --list
+    {"production": ["freebsd-93-001", "rundeck-001", "oracle-7-001", "centos-68-001", "localhost.localdomain", "centos-7-001", "ubuntu-1404-001.device42.pbt", "centos-7-002.device42.pvt", "ansible-001.device42.pvt"]}
+</pre>
+<p>{% trans 'Either the generated hostfile or the dynamic inventory script can be used to execute any Ansible action that requires a list of hosts. ' %}</p>
+<p>{% trans 'The following will ping all hosts in the list, the first command example using the static hosts file we generated prior, and the second using the dynamic script:' %}</p>
+<ol type="1">
+    <li>
+        <strong>{% trans 'Static' %} <em>{% trans 'hosts' %}</em> {% trans 'generated via script:' %}</strong>
+            <code>$ ansible all -i hosts -m ping</code>
+        <div class="clearfix"></div>
+<mark class="prelist">{% trans 'Tip' %}</mark><small>{% trans 'If the generated hosts file is placed in <code>/etc/ansible/hosts</code>, the same can be accomplished without the <kbd>-i</kbd> flag as such:' %}</small>
+        <code>$ ansible -m ping</code>
+    </li>
+    <li>
+        <strong>{% trans 'Dynamic Script' %}</strong>
+        <code>$ ansible all -i d42_ansible_dynamic_inventory.py -m ping</code>
+    </li>
+</ol>
+
+<h3 class="text-strong">{% trans "Device42 + Ansible: Leverage your CI's for easier automation" %}</h3>
+<p>{% trans "Whether you are pushing out new software to all the hosts in your environment, refreshing SSH keys, updating configurations, or just verifying a setting. All these tasks are made easier with the Device42 + Ansible static & dynamic inventory scripts. No matter the use case, there's no longer a need to manually create lists of machines to perform your desired action against." %}</p>
+<hr>
+<h3 class="text-strong text-default">{% trans "Download our new static and dynamic Ansible inventory scripts today!" %}</h3>
+<p class="vert-offset-bottom-1 font-stack-roboto">{% trans "Both scripts can be found on our" %} <a
+        href="https://github.com/device42/ansible_device42" target="_blank" class="ext-link">Github repo</a> &mdash;{% trans "and while you are there, check out all of our other open source integrations, too!" %}
+</p>

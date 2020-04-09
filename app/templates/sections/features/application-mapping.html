@@ -1,0 +1,59 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Application Dependency Mapping Software" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Application dependency mapping software to record what is running where and what would be the impact of a single server, or virtual host, full rack or a room using Device42 software.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "Application Dependency Mapping" %}</h1>
+                    <p class="text-italic text-primary font-stack">{% trans 'Automated service impact discovery, dependency flow diagrams, application impact lists, easy impact visualizations, and more!' %}</p>
+                    <p class="flat-top lead-small">{% trans 'Device42 enables data center managers to create a centralized repository of application, service and device relationships and dependencies whether running on premises on physical machines, on virtual machines, or in the cloud.  You can confidently retire or consolidate assets only if you understand their inter-dependencies and business impact. You can facilitate effective migrations by having a clear understanding of application interdependencies.' %}</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#continuousdiscovery" data-offset="top-nav">{% trans "Continuous Discovery" %}</a>
+            <a href="#" data-jump="#discoverymethods" data-offset="top-nav">{% trans "Discovery Methods" %}</a>
+            <a href="#" data-jump="#autoservice" data-offset="top-nav">{% trans "Auto Service Impact Discovery" %}</a>
+            <a href="#" data-jump="#dependencyflow" data-offset="top-nav">{% trans "Dependency Flow" %}</a>
+            <a href="#" data-jump="#impactlists" data-offset="top-nav">{% trans "Impact Lists" %}</a>
+            <a href="#" data-jump="#visualizedimpact" data-offset="top-nav">{% trans "Visualized Impact" %}</a>
+        </div>
+    </div>
+
+    <div class="container featurette-wrap">
+        {% include_partial "partials/app-map/app-overview.html" vcenter=True id="overview" %}
+        {% include_partial "partials/app-map/app-continuous-discovery.html" vcenter=True image="left" id="continuousdiscovery" %}
+        {% include_partial "partials/app-map/app-discovery-methods.html" vcenter=True id="discoverymethods" %}
+        {% include_partial "partials/app-map/app-automated-service-impact-discovery.html" image="left" vcenter=True id="autoservice" %}
+        {% include_partial "partials/app-map/app-dependency-flow.html" vcenter=True id="dependencyflow" %}
+        {% include_partial "partials/app-map/app-impact-lists.html" vcenter=True image="left" id="impactlists" %}
+        {% include_partial "partials/app-map/app-visual-impacts.html" vcenter=True id="visualizedimpact" %}
+        <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small>
+                <br>
+                <a href="{% url 'features_role_based_access' %}"><i
+                        class="fa fa-chevron-left"></i> {% trans 'Role Based Access' %}
+                </a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'features_software_license' %}">{% trans 'Software License Management' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

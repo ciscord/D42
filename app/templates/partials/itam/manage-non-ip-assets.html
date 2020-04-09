@@ -1,0 +1,13 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+<div class="col-xs-12 col-sm-5">
+        <img class="img-responsive center-block img-border"
+             alt="{% trans 'Manage Non-IP Assets' %}"
+             src="{% static 'img/sections/features/itam/non-ip-asset.png' %}">
+    </div>
+    <div class="col-sm-7">
+        <h2 class="featurette-heading">{% trans "Manage Non-IP Asset" %}</h2>
+        <p>{% trans "Manage the complete lifecycle of all non-IP based assets.  Because Device42 does not count non-IP devices, an unlimited number of non-IP devices can be supported." %}</p>
+    </div>
+
+</div>

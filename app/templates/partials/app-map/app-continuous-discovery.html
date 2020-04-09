@@ -1,0 +1,23 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }} {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block animated box-shadow"
+             src="{% static 'img/sections/features/app-map/continous-discovery.png' %}"
+             alt="{% trans 'Application Outlined Impact' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Continuous Discovery" %}</h2>
+        <p>{% trans "Discoveries are continuously run on a schedule, automatically detecting changes to your infrastructure as they are made." %}</p>
+        <ul class="bullet-blue text-small">
+            <li>{% trans 'Focus on executing changes, not documenting them' %}</li>
+            <li>{% trans 'Run discoveries on a schedule, and never think about them again' %}</li>
+            <li>{% trans 'Trigger automation based on any infrastructure change' %}</li>
+            <li>{% trans 'Device42 can fire a webhook to trigger automation based on just about any infrastructure change' %}</li>
+            <li>{% trans 'Automatically' %} <a href="http://www.device42.com/blog/2016/11/automating-a-workflow-with-device42s-continuous-discovery-and-stackstorm/" class="ext-link" target="_blank">{% trans 'create a ticket in your ITSM system' %}</a> {% trans 'based on detection of a new piece of hardware' %}</li>
+            <li>{% trans 'Quickly detect installation of prohibited software' %}</li>
+            <li>{% trans 'Get alerted if an important service isn’t running and have it back up before anyone notices' %}</li>
+            <li>{% trans 'Your infrastructure data is always up to date, and always audit-ready' %}</li>
+
+        </ul>
+    </div>
+</div>

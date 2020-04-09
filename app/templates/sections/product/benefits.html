@@ -1,0 +1,31 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Benefits of Device42" %}{% endblock %}
+{% block site_section_product %}active{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Benefits" %}
+                        <small>{% trans "of Device42" %}</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="container featurette-wrap">
+            {% include_partial "partials/product/benefits/say-hello-to-automated-dcm.html" vcenter="true" %}
+            {% include_partial "partials/product/benefits/it-anarchy-into-it-organization.html" vcenter="true" image="left" %}
+            {% include_partial "partials/product/benefits/powerful-capacity-planning-tools.html" vcenter="true" %}
+            {% include_partial "partials/product/benefits/reduce-data-entry.html" vcenter="true" image="left" %}
+            {% include_partial "partials/product/benefits/enhance-it-service-management.html" vcenter="true" %}
+            {% include_partial "partials/product/benefits/deep-application-mapping.html" vcenter="true" image="left" %}
+            {% include_partial "partials/product/benefits/manage-asset-life-cycles.html" vcenter="true" %}
+            {% include_partial "partials/product/benefits/resolve-technical-issues-faster.html" vcenter="true" image="left" %}
+            {% include_partial "partials/product/benefits/manage-share-credentials.html" vcenter="false" %}
+        </div>
+    </section>
+{% endblock %}

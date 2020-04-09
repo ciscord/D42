@@ -1,0 +1,65 @@
+{% load i18n static %}
+<div class="row">
+    <section class="container">
+        <div class="home-carousel owl-carousel owl-theme vert-offset-bottom-2">
+    <div class="row is-table-row">
+        <div class="col-sm-8">
+            <h1 class="text-primary-dark">{% trans "Data Center Management" %}</h1>
+            <h3>{% trans "Comprehensive. Easy. Integrated." %}</h3>
+            <p>{% trans "Device42 is a comprehensive data center management tool that helps centralize all your IT Infrastructure related info in one place - " %}<em>{% trans "With live power monitoring and control!" %}</em>
+            </p>
+            <a href="{% url 'download' %}" class="btn btn-warning btn-block-xs">{% trans "Try" %} Device42</a>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+            <img src="{% static 'img/components/study-a/use-cases/data-center-and-cloud-migration.png' %}"
+                 class="img-responsive center-block"
+                 alt="{% trans 'Data Center Management' %}">
+        </div>
+    </div>
+    <div class="row is-table-row">
+        <div class="col-sm-8">
+            <h2 class="h1 text-primary-dark">{% trans "CMDB for the Cloud Era" %}</h2>
+            <h3>{% trans "With REST APIs. Pre-defined. Customizable." %}</h3>
+
+            <p>{% trans "Device42’s CMDB provides a single source of truth within your organization.  This gives you a clear view into your IT ecosystem to identify, manage, and verify all configuration items (CI) in your environment." %}</p>
+            <a href="{% url 'features_cmdb_for_cloud_era' %}"
+               class="btn btn-warning btn-block-xs">{% trans "Learn More" %}</a>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+            <img src="{% static 'img/components/study-a/callouts/cmdb-for-cloud-era.png' %}"
+                 class="img-responsive"
+                 alt="{% trans 'CMDB for the Cloud Era' %}">
+        </div>
+    </div>
+    <div class="row is-table-row">
+        <div class="col-sm-8">
+            <h2 class="h1 text-primary-dark">{% trans "IP Address Management" %}</h2>
+            <h3>{% trans "Simple. Automated. Integrated." %}</h3>
+            <p><em>{% trans "IP Address Management (IPAM) made easy." %}</em></p>
+            <p>{% trans "IPv4 & IPv6, VRF groups, and nested subnets with powerful auto-discovery options." %}</p>
+            <a href="{% url 'features_ipam' %}"
+               class="btn btn-warning btn-block-xs">{% trans "Learn More" %}</a>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+            <img src="{% static 'img/components/study-a/callouts/ip-address-management.png' %}"
+                 class="img-responsive"
+                 alt="{% trans 'IP Address Management' %}">
+        </div>
+    </div>
+    <div class="row is-table-row">
+        <div class="col-sm-8">
+            <h2 class="h1 text-primary-dark">{% trans "Application Dependency Mapping" %}</h2>
+            <h3>{% trans "Know what's running" %} <em>{% trans "(and it's impact)" %}</em>.</h3>
+            <p>{% trans "Device42 lets you visualize application dependency mappings on Windows, Linux, BSD, and Mac. Auto-discover dependencies in the physical, virtual, and cloud layers all the way down to service and relationship details." %}</p>
+            <a href="{% url 'features_app_mapping' %}"
+               class="btn btn-warning btn-block-xs">{% trans "Learn More" %}</a>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+            <img src="{% static 'img/components/study-a/callouts/application-topology-mapping.png' %}"
+                 class="img-responsive"
+                 alt="{% trans 'Application Dependency Mapping' %}">
+        </div>
+    </div>
+</div>
+    </section>
+</div>

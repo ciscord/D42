@@ -1,0 +1,70 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "IP Address Management (IPAM) Software" %}{% endblock %}
+{% block meta %}
+<meta name="description"
+          content="{% trans 'Device42 is a powerful IP Address management solution that integrates server room asset management' %}."/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container featurette-wrap">
+            <div class="row featurette is-table-row">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "IP Address Management" %}
+                        <small>(IPAM)</small>
+                    </h1>
+                    <p>{% trans "Device42’s IP Address Management (IPAM) capabilities provide an easy to use, intuitive console for centralized IP visibility and control including IP tracking, IP assignments, and many other IP management functions." %}</p>
+                    <h3>{% trans "Features include:" %}</h3>
+                    <ul class="checklist font-stack-condensed">
+                        <li>{% trans "IPv4/IPv6 IP address management" %}</li>
+                        <li>{% trans "Auto-discovery tools to keep IP records accurate and up-to-date" %}</li>
+                        <li>{% trans "Overlapping IP ranges and nested subgroups management" %}</li>
+                        <li>{% trans "Subnet tree view with nested subnets and IPs" %}</li>
+                        <li>{% trans "Auto assignment of IPs to devices" %}</li>
+                        <li>{% trans "Powerful APIs enable IP search, find, and integration with other tools" %}</li>
+                        <li>{% trans "Graphic visualizations of network connectivity connections" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-4">
+                    <img class="featurette-image hidden-xs img-responsive center-block"
+                         alt="{% trans 'IT Asset Management' %}"
+                         src="{% static 'img/generic/anarchy-to-organization.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#overlappingip" data-offset="top-nav">{% trans "Overlapping IP Ranges" %}</a>
+            <a href="#" data-jump="#autoassignips" data-offset="top-nav">{% trans "Auto-Assign IPs" %}</a>
+            <a href="#" data-jump="#visualizeswitch" data-offset="top-nav">{% trans "Visualize Switch Ports" %}</a>
+            <a href="#" data-jump="#dnsintegration" data-offset="top-nav">{% trans "DNS Integration" %}</a>
+            <a href="#" data-jump="#ipamcmdline" data-offset="top-nav">{% trans "IPAM from Command Line" %}</a>
+        </div>
+    </div>
+
+    <div class="container featurette-wrap">
+        {% include_partial "partials/ipam/overlapping-ip-and-nested-subnets.html" vcenter=True id="overlappingip" %}
+        {% include_partial "partials/ipam/autoassign-ips.html" vcenter=True image="left" id="autoassignips" %}
+        {% include_partial "partials/ipam/visualize-switch-port.html" vcenter=True id="visualizeswitch" %}
+        {% include_partial "partials/ipam/dns-integration.html" vcenter=True image="left" id="dnsintegration" %}
+        {% include_partial "partials/ipam/ipam-from-cmd-line.html" vcenter=True id="ipamcmdline" %}
+        <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small>
+                <br>
+                <a href="{% url 'features_itam' %}"><i class="fa fa-chevron-left"></i> {% trans 'IT Asset Management' %}
+                </a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'features_discovery' %}">{% trans 'Device Discovery' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

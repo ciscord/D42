@@ -1,0 +1,35 @@
+{% load i18n static %}
+<h2 class="featurette-heading xs-center text-right">{% trans "Configuration Management Integrations" %}</h2>
+<h4 class="prelist xs-center text-right">...{% trans "with Puppet, Chef, Ansible, and System Center" %}</h4>
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }} {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-sm-6">
+        <ul class="bullet-blue">
+            <li>{% trans 'Utilize system information data stored in puppet manifests to populate asset inventory' %}</li>
+            <li>{% trans 'Sync Puppet Facts and Ohai Node data from Chef Server with Device42' %}</li>
+            <li>{% trans 'Eliminate the need to run redundant discovery processes across the IT infrastructure' %}</li>
+            <li>{% trans 'Streamline the task of provisioning, configuring, and maintaining servers' %}</li>
+            <li>{% trans 'Utilize Chef-discovered system information data to populate asset inventory' %}</li>
+            <li>{% trans 'Integration connector works with all Chef-supported versions of Chef software' %}</li>
+            <li>{% trans 'Import existing Microsoft System Center information into Device42' %}</li>
+        </ul>
+    </div>
+    <div class="col-sm-6 padded">
+        <div class="row integration-logos">
+            <div class="col-xs-6">
+                <div class="sprite-sccm"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-puppetlabs"></div>
+            </div>
+            <div class="col-xs-12 padded">
+                <div class="sprite-rundeck"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-chef"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="sprite-ansible"></div>
+            </div>
+        </div>
+    </div>
+</div>

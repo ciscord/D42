@@ -1,0 +1,22 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-{{ image|default:'right' }}-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block img-xs-restrict"
+             src="{% static 'img/sections/product/mascot_checklist.png' %}"
+             alt="{% trans 'Effectively Manage Asset Life Cycles' %}">
+    </div>
+    <div class="col-md-6">
+        <h2>{% trans "Effectively Manage Asset Life Cycles" %}</h2>
+        <p>{% trans "Make the most out of your budget.  Track Software and Support Entitlements, and full Hardware Asset Life Cycles." %}</p>
+        <ul class="checklist font-stack-roboto bullet-blue">
+            <li>{% trans "Record purchases" %}</li>
+            <li>{% trans "Asset lifecycle tracking from the day of purchase to the day it’s retired" %}</li>
+            <li>{% trans "Associate a service contract with the actual asset it applies to" %}</li>
+            <li>{% trans "Automatically generate a smartphone readable QR code for physical inventory" %}</li>
+            <li>{% trans "Improve planning with accurate financial data for budgeting and auditing" %}</li>
+            <li>{% trans "Proactively manage contracts and maintenance renewals with powerful reporting and renewal notices" %}</li>
+            <li>{% trans "Track software licensing and ensure compliance" %}</li>
+            <li>{% trans "Eliminate waste and save money" %}</li>
+        </ul>
+    </div>
+</div>

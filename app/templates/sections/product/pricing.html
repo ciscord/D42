@@ -1,0 +1,231 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% lang_code as context_language %}
+{% block title %}{% trans "Pricing" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 software provides Server room asset management integrated with IP address management and application mapping.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Pricing" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="container pricing-page">
+        <div class="row padded">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-4 col-sm-push-8">
+                <img class="img-responsive center-block img-restrict" alt="{% trans 'Pricing' %}"
+                     src="{% static 'img/sections/product/pricing_icons.png' %}">
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-pull-4">
+                <p class="font-stack-condensed lead-small">{% trans 'Device42 software is licensed as an annual subscription.  Pricing tiers are based on the number of devices and the number of IP addresses in-use in the software. You must purchase a higher tier if either your expected number of devices or your expected number of IP addresses exceeds the limit for the tier. All tiers enable unlimited numbers of available IPs, switch ports, non-IP based assets, hardware components, and all other types of data that can be stored in Device42.' %}</p>
+                <p class="font-stack-roboto text-muted light-weight">
+                    {% trans 'All pricing tiers include annual email and online support along with the updates for the software.' %}
+                </p>
+            </div>
+        </div>
+        <div class="row flat-bottom">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+                <div class="photo-card vert-offset-bottom-1">
+                    <div class="inner">
+                        <div class="core-package" style="min-height:initial;">
+                            <h3 class="h2 text-capitalize">{% trans 'Core' %}</h3>
+{#                            <div class="price core">#}
+{#                                <span class="currency text-italic">{% trans 'Starts<br>At' %}</span>#}
+{#                                <span class="value core-price">$1</span>#}
+{#                                <br>#}
+{#                                <label class="subtitle">#}
+{#                                    <span>{% trans "per device / per month" %}</span>#}
+{#                                </label>#}
+{#                            </div>#}
+                            <table class="table table-hover text-strong col-sm-12 vert-offset-top-2"
+                                   style="border:0;overflow:hidden;display:table;float:none;margin:1em auto;">
+                                <thead>
+                                <tr class="text-center">
+                                    <th class="text-center text-muted text-strong text-capitalize" style="line-height:1;">{% trans 'Devices' %}</th>
+                                    <th class="text-center text-muted text-strong text-capitalize" style="line-height:1;">{% trans 'IPs' %}</th>
+                                    <th class="text-center text-muted text-strong text-capitalize" style="line-height:1;">{% trans 'Annual Price' %}</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="core-pricing-row">
+                                    <td>1-100</td>
+                                    <td>1 - 1k</td>
+                                    <td><a href="https://registration.device42.com/order/D42100/" target="_blank">$1499</a></td>
+                                </tr>
+                                <tr>
+                                    <td>101-500</td>
+                                    <td>1k - 5k</td>
+                                    <td><a href="https://registration.device42.com/order/D42500/" target="_blank">$2999</a></td>
+                                </tr>
+                                <tr>
+                                    <td>501-1000</td>
+                                    <td>5k - 10k</td>
+                                    <td><a href="https://registration.device42.com/order/D421000/" target="_blank">$4999</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1001-2500</td>
+                                    <td>10k - 25k</td>
+                                    <td><a href="https://registration.device42.com/order/D422500/" target="_blank">$9999</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2500+</td>
+                                    <td>25k+</td>
+                                    <td><a href="{% url 'company_contact' %}">{% trans 'Request Quote' %}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="prelist">{% trans 'Features Included' %}</h4>
+                            <ul class="checklist flat-top vert-offset-top-1 vert-offset-bottom-1 dark-blue">
+                                <li>{% trans 'Data Center Asset Management' %}</li>
+                                <li>{% trans 'Data Center Visualization' %}</li>
+                                <li>{% trans 'Structured Cable Management' %}</li>
+                                <li>{% trans 'IT Asset & Inventory Management' %}</li>
+                                <li>{% trans 'Device & IP Discovery' %}</li>
+                                <li>{% trans 'Spare Parts Management' %}</li>
+                                <li>{% trans 'QR Codes and Asset Tags' %}</li>
+                                <li>{% trans 'Asset Lifecycle Management' %}</li>
+                                <li>{% trans 'IP Address Management' %}</li>
+                                <li>{% trans 'Role-Based Management' %}</li>
+                                <li>{% trans 'Contract & Purchase Management' %}</li>
+                                <li>{% trans 'Password Management' %}</li>
+                                <li>{% trans 'REST APIs' %}</li>
+                            </ul>
+                            <h4 class="text-strong text-muted flat-bottom">{% trans 'Not Included' %}</h4>
+                            <ul class="text-left dark-blue dash" style="font-weight:400;margin-top:3px;">
+                                <li>{% trans 'Software License Management' %}</li>
+                                <li>{% trans 'Software Vulnerability Management' %}</li>
+                                <li>{% trans 'Services Auto-Discovery' %}</li>
+                                <li>{% trans 'Automated Application Mapping' %}</li>
+                                <li>{% trans 'Power Monitoring and Control' %}</li>
+                                <li>NetFlow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-0">
+                <div class="row flat-top">
+                    <div class="col-sm-6 vert-offset-bottom-1">
+                        <div class="photo-card">
+                            <div class="inner">
+                                <h3 style="letter-spacing:-1.5px;line-height:2em;">{% trans 'Power' %}</h3>
+{#                                <div class="price">#}
+{#                                    <span class="currency text-italic">{% trans 'Add' %}</span>#}
+{#                                    <span class="value">$2</span>#}
+{#                                    <br>#}
+{#                                    <label class="subtitle">#}
+{#                                        <span>{% trans "per device / per month" %}</span>#}
+{#                                    </label>#}
+{#                                </div>#}
+                                <hr>
+                                <ul class="checklist dark-blue">
+                                    <li>{% trans 'Includes all CORE features' %}</li>
+                                </ul>
+                                <br>
+                                <i class="fa fa-plus"></i>
+                                <br><br>
+                                <strong>{% trans "Power Monitoring" %}</strong>
+                                <br><br>
+                                <i class="fa fa-plus"></i>
+                                <br><br>
+                                <strong>{% trans "Power Control" %}</strong>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 vert-offset-bottom-1">
+                        <div class="photo-card">
+                            <div class="inner">
+                                <h3 style="letter-spacing:-1.5px;line-height:1em;">{% trans "Enterprise<br>App Mapping" %}</h3>
+                                <hr>
+                                <ul class="checklist dark-blue">
+                                    <li>{% trans 'Includes all CORE features' %}</li>
+                                </ul>
+                                <br>
+                                <i class="fa fa-plus"></i>
+                                <br><br>
+                                <strong>{% trans 'Continuous Discovery' %}</strong>
+                                <br><br>
+                                <i class="fa fa-plus"></i>
+                                <br><br>
+                                <strong>{% trans 'Application Mapping' %}</strong>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 vert-offset-bottom-1">
+                        <div class="photo-card">
+                            <div class="inner">
+                                <h3 class="text-center">{% trans "Other Available Modules" %}</h3>
+                                <ul class="dash dark-blue text-left" style="display:block;">
+                                    <li class="h4">{% trans 'Software License Management' %}</li>
+                                    <li class="h4">{% trans 'Services Discovery' %}</li>
+                                    <li class="h4">{% trans 'Software Vulnerability Management' %}</li>
+                                </ul>
+                            </div>
+                            <a href="{% url 'company_contact' %}"
+                               class="purchase btn btn-default btn-block">{% trans "Contact us for more details" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row bg-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="h2 text-center">{% trans 'Frequently Asked Questions' %}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{% trans "What counts as a device" %}?</h3>
+                    <p>{% trans "The term “device” refers to any physical, virtual, blade, or cluster device. Switch ports, non-IP based assets (e.g. monitors, projectors, software) and other data center components do not count against licenses" %}.</p>
+                    <h3>{% trans "What is a used IP" %}?</h3>
+                    <p>{% trans "Any IP address that is marked as not available in the Device42 software is counted as a used IP for purposes of determining the correct pricing tier above. The number of used IPs for any pricing tier is 10 times the number of devices for that license tier. However, an unlimited number of available IPs can be recorded" %}.</p>
+                    <h3>{% trans "Does core product include everything" %}?</h3>
+                    <p>{% trans "Software license management, services discovery and dependency mapping, deep application mapping, and power monitoring and control are separate add-ons and are priced separately. Please reach out to us to get more information on these add-ons" %}.</p>
+                    <h3>{% trans "Refund Policy and Satisfaction Guarantee" %}</h3>
+                    <a name="money_back_guarantee"></a>
+                    <p>{% trans "We are so confident that you'll be delighted with our software that we make ordering our software totally risk-free, with our 30-day Risk Free Unconditional Money-Back Guarantee! That's right - if you are not satisfied with our software for any reason whatsoever, just let us know within 30 days of purchase and we will refund your order in full. No questions asked" %}.</p>
+                    <h3>{% trans "Before ordering please review the following information" %}:</h3>
+                    <ul class="dash dark-blue">
+                        <li><p><a
+                                href="{% url 'legal_eula' %}">{% trans "End user License Agreement" %}.</a>
+                        </p></li>
+                        <li><p>{% trans "All products are covered by our 30 days 100% money back guarantee" %}.</p></li>
+                        <li><p>{% trans "Please" %} <a
+                                href="{% url 'company_contact' %}">{% trans "contact us" %}</a> {% trans "if you want to order by check, money order, or purchase order" %}.
+                        </p></li>
+                        <li>
+                            <p>{% trans "For credit card payments: we use Stripe for online card processing. Stripe accepts credit payments through Visa, Mastercard" %}&reg;, {% trans "American Express" %}&reg;, {% trans "Discover" %}&reg; {% trans "and other major card types. Credit card information doesn't touch our servers and is directly handled by Stripe" %}.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row vert-offset-top-1 vert-offset-bottom-1">
+                <div class="col-xs-6 text-left">
+                    <a class="text-strong" href="{% url 'product_pricing' %}">{% trans 'Core Product Pricing' %}</a>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <a class="text-strong label label-primary" href="{% url 'faq_sales' %}">{% trans 'Sales FAQ' %} <i
+                            class="fa fa-info-circle text-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

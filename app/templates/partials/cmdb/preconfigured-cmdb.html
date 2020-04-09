@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block animated"
+             src="{% static 'img/sections/features/Solution-Components.png' %}"
+             alt="{% trans 'Pre-configured CMDB' %}">
+    </div>
+    <div class="col-md-6">
+        <h3>{% trans "Pre-configured CMDB" %}</h3>
+        <p>{% trans "No need for a long, drawn-out CI design process because all your CI's and relationships are pre-configured. But Device42 does not simply lock you into an inflexible structure. You can create your own CIs and relationships to complement the built-in structure provided. Additionally, you can define user, groups, passwords, and object-level permissioning." %}</p>
+    </div>
+</div>

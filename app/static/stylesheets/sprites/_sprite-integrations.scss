@@ -1,0 +1,108 @@
+    $total_width: 1004;
+    $total_height: 706;
+
+        .sprite-ansible {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-504 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-bmc {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-504 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-chef {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-402 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-confluence {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-402 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-infoblox {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-402 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-jira {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-402 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-puppet-labs {
+        background-size: (($total_width / 400) * 100%) (($total_height / 400) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((0 / ($total_width - 400)) * -100%) ((0 / ($total_height - 400)) * -100%);
+        width: 400px;
+        height: 400px;
+        }
+        .sprite-puppetlabs {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-402 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-rundeck {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-704 / ($total_width - 300)) * -100%) ((0 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-sccm {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-704 / ($total_width - 300)) * -100%) ((-102 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-servicenow-express {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-704 / ($total_width - 300)) * -100%) ((-204 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-servicenow {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-704 / ($total_width - 300)) * -100%) ((-306 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-stackstorm {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-704 / ($total_width - 300)) * -100%) ((-408 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-zapier {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((0 / ($total_width - 300)) * -100%) ((-606 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }
+        .sprite-zendesk {
+        background-size: (($total_width / 300) * 100%) (($total_height / 100) * 100%);
+        @include image('sprites/sprite-integrations.png');
+        background-position: ((-302 / ($total_width - 300)) * -100%) ((-606 / ($total_height - 100)) * -100%);
+        width: 300px;
+        height: 100px;
+        }

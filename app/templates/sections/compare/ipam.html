@@ -1,0 +1,131 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}
+    {% trans "Picking the right IPAM solution for your IT Infrastructure" %}
+{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="A simple comparison and overview of IPAM alternatives, along with reviews to help you make the right choice."/>
+{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Picking the right IPAM Tool" %}</h1>
+                    <h4 class="text-white text-italic">{% trans "A simple comparison (including reviews) to help you make the right choice." %}</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-info">
+        <div class="container">
+            <div class="infobox shadow-1 col-sm-10 col-sm-offset-1">
+                <p>{% trans "If you're thinking about how your business should manage your IP addresses, you've probably seen a lot of options." %}</p>
+                <p>{% trans "From regular old Excel to the fanciest enterprise IPAM tools, there are dozens of alternatives out there that promise that to help you track your complex mapping of IPs and subnets." %}</p>
+                <p>{% trans "We want to make your decision as easy as possible, so we've put together some info that'll help you decide which option is best for you." %}</p>
+                <p>{% trans "Below, you'll find details on the differences between Device42, Excel, and enterprise IPAM tools such as Infoblox and Bluecat, including features, customer experience, pricing and thoughts from current Device42 customers who have made the switch." %}</p>
+                <p class="prelist">{% trans "We hope this helps…" %}</p>
+            </div>
+        </div>
+    </div>
+    <article class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "Simplicity" %}</h2>
+                <p>{% trans "On one end of the spectrum, Excel is the absolute simplest solution; it's what you've been using for years, and it's what you know best." %}</p>
+                <p>{% trans "The problem that many teams run into is that Excel can be too simple." %}</p>
+                <p>{% trans "Without a built-in ability to collaborate, it's hard to keep track of who's editing what, multiple people can't edit at same time and eventually as you start tracking complex relationships between different subnets and IP ranges - Excel just can't handle it. And don't get us started on IPv6 and Excel.  Most importantly, as your network grows due to virtualization and cloud computing, it usually becomes next to impossible to keep the spreadsheets up to date manually." %}</p>
+                <p>{% trans "At the other end of the spectrum are enterprise IPAM tools like Infoblox and Bluecat that offer tons of features." %}</p>
+                <p>{% trans "While they may be feature-rich, they aren't simple." %}</p>
+                <p>{% trans "In fact, we started Device42 precisely because we were tired of having to manage IPs with pings and mis-hits, hire a consulting agency to help do the setup and then see it all fall apart because it was too tough to keep the information up-to-date." %}</p>
+                <p>{% trans "We built Device42 with powerful auto-discoveries so you don't have to worry about manual entry, manual pinging, and/or your data ever being stale." %}</p>
+                <p>{% trans "On top of that, we added awesome core features like simple interface, powerful reporting, without having to navigate a maze of features you don't need." %}</p>
+                <p>{% trans "And if you ever want to enhance Device42 beyond our core IPAM capabilities, you can do that with custom fields, custom form layouts, and rich REST based APIs." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "Auto-discovery" %}</h2>
+                <p>{% trans "Talk about beating a horse to death :) While you may be saying enough already about auto-discovery (and many enterprise tools claim to have auto-discovery built-in), there are key differences:" %}</p>
+                <ul class="dash bullet-gray">
+                    <li><span
+                            class="prelist">{% trans "Device42 is agentless." %}</span> {% trans "No need to put an agent on the devices and network components you need to discover." %}
+                        <em class="text-muted">{% trans "(In fact, if you need to find out what's out there, agents completely defeat the purpose!)" %}</em>
+                    </li>
+                    <li class="vert-offset-top-1"><span
+                            class="prelist">{% trans "Holistic approach." %}</span> {% trans "We connect to your network devices, hypervisors (VMWare, HyperV, Citrix, Xen, Openstack, Cloudstack), cloud platforms (Amazon, Azure, Joyent, Linode, Digital Ocean and more), blade systems, UCS, IPMI, DNS, Windows, Linux & Unix OS and correlate the dependencies automatically. For example, if Device42 finds a mac address on a switch port from a network device, it automatically correlates that with a windows VM, which is on a blade sitting in a particular slot in a chassis.   Device42 also automatically finds what services on that machine depend on other machines on your network.  The results are available through reports, inquiry screens, and through automatically generated visualizations of your network (including device names) and application dependencies." %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <a href="{% static 'img/sections/compare/vmware-auto-discovery.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block box-shadow"
+                         src="{% static 'img/sections/compare/vmware-auto-discovery.png' %}"
+                         alt="{% trans 'Auto-discovery' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "IPAM for Enterprises and ISP/MSPs" %}</h2>
+                <p>{% trans "Plenty of tools other than Device42 address enterprise and data center customers with lot of features. But, we want to point out a few key that are often required for large enterprises or ISPs:" %}</p>
+                <ol type="a">
+                    <li>{% trans "Ability to handle overlapping IP ranges across VRF groups." %}</li>
+                    <li>{% trans "Ability to assign/allocate subnets and create powerful reports and visualizations." %}</li>
+                    <li>{% trans "Ability to automatically suggest the best possible nesting for subnets without compromising future availability of larger subnet blocks." %}</li>
+                    <li>{% trans "Ability to specify view, change, add, and delete capabilities for subnets, subnet categories, and vrf groups to specific users and groups." %}</li>
+                </ol>
+                <h4 class="vert-offset-top-2 text-center">{% trans "Device42 excels <em>(no pun intended)</em> at all of these requirements." %}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{% trans "Visualizations" %}</h2>
+                <p>{% trans "Admit it - you manage a complex IT Infrastructure. Keeping that Visio file up-to-date hasn't happened recently and may never happen. Device42 provides infrastructure visualizations that make Visio-like diagrams available at your finger tips - all dynamically generated without manual effort." %}</p>
+                <p>{% trans "Complex service to service relationships, rack layouts, room capacity heatmaps, applications dependency maps, and IP and power chain maps are some of the things that Device42 provides and most of it is automatically laid out for you.  These tools help you make effective business decisions with right data presented in the right way." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-5 col-sm-offset-1">
+                <a href="{% static 'img/sections/compare/impact_chart.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block box-shadow" style="max-height:220px;width:auto!important;"
+                         src="{% static 'img/sections/compare/impact_chart.png' %}" alt="{% trans 'Impact Charts' %}">
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-5 col-sm-offset-0">
+                <a href="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive center-block box-shadow" style="max-height:220px;width:auto!important;"
+                         src="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                         alt="{% trans 'IP Address Tracking Software' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "Integrations" %}</h2>
+                <p>{% trans "A true enterprise IPAM tool can't be a self-contained application like Excel. On the other hand, some enterprise-level IPAM tools make integrations a hugely time-consuming exercise. With Device42, you get a lot of integrations out of the box. And REST APIs that make it a breeze to integrate with other tools." %}</p>
+            </div>
+        </div>
+        {% include 'partials/integration-logos.html' %}
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "Pricing" %}</h2>
+                <p><span
+                        class="prelist text-primary">{% trans 'We get it' %}:</span> {% trans "Excel is free. Free is a great price." %}
+                </p>
+                <p>{% trans "But we believe that the value you'll get from Device42 far outweighs the cost." %}</p>
+                <p>{% trans "And more than a thousand happy users in 33 countries agree. If our auto-disovery and collaboration features can save your team just ten hours per month, then Device42 will more than pay for itself." %}</p>
+            </div>
+        </div>
+
+        {# TODO: Quote Slider #}
+        {% include 'partials/try-free-callout.html' %}
+    </article>
+
+{% endblock %}

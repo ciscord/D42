@@ -1,0 +1,65 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+	<meta name="description" content="{% trans 'Comprehensive software license management with Device42 to accurately keep track of your software license usage across the IT enterprise.' %}"/>
+{% endblock %}
+{% block title %}{% trans "Software License Management" %}{% endblock %}
+{% block landingHeadingText %}{% trans "Software License Management" %}{% endblock %}
+{% block landingLeadText %}{% trans "Using Device42's powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure from the server, to the desktop level" %}.{% endblock %}
+{% block landingfeature %}
+    <p class="ul-heading">{% trans "Device42's software management functionality provides key organizational benefits" %}:</p>
+    <section class="row">
+        <div class="col-xs-12 col-sm-4">
+            <ul class="checklist bullet-blue">
+                <li><strong>{% trans "License compliance" %}</strong><br>{% trans "Identify over-licensed, unlicensed, and expired licenses" %}</li>
+                <li><strong>{% trans "Standards assurance" %}</strong><br>{% trans "Identify prohibited and approved software" %}</li>
+                <li><strong>{% trans "Cost management" %}</strong><br>{% trans "Report license costs and minimize under-licensed software" %}</li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+             <ul class="checklist bullet-blue">
+                <li>{% trans "Compare current usage to license counts" %}</li>
+                <li>{% trans "Detect prohibited software" %}</li>
+                <li>{% trans "Track license agreements and expiration dates" %}</li>
+                <li>{% trans "Identify purchased vs. installed software" %}</li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border" src="{% static 'img/sections/features/software-license/Software_Licensing_tracking.png' %}" alt="{% trans 'Software License Tracking' %}' %}">
+        </div>
+    </section>
+
+{% endblock %}
+{% block maincontent %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h2 class="section-heading">{% trans "Comprehensive Licensing Tracking" %}</h2>
+            <p class="lead">{% trans "Device42's license tracking models provide optimal flexibility in tracking software licenses - making accurate software auditing easier and faster" %}.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h4 class="prelist">{% trans "Licensing models include" %}:</h4>
+            <ul class="bullet-blue flat-top">
+                <li><strong>{% trans "User based" %}</strong> – {% trans "perpetual or subscription, restricted to specific user, or free software" %}</li>
+                <li><strong>{% trans "Device or CPU based" %}</strong> - {% trans "device license count, CPU count (by socket/core/virtual" %})</li>
+                <li><strong>{% trans "Key based" %}</strong> - {% trans "usage counting based on key (as opposed to counting the software component instances" %})</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h2 class="section-heading">{% trans "User-defined Alerts and Notifications" %}</h2>
+            <p class="lead">{% trans "Software license alerting and monitoring allows organizations to create set it, and forget it notifications that make ongoing network software management easy and effective" %}.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h4 class="prelist">{% trans "Alerting thresholds include" %}:</h4>
+            <ul class="bullet-blue">
+                <li>{% trans "The absolute number of licenses deployed" %}</li>
+                <li>{% trans "The percentage of licenses deployed" %}</li>
+                <li>{% trans "Prohibited software deployed" %}</li>
+                <li>{% trans "Pending and current license expirations" %}</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="text-default text-center">{% trans "Download Your Free Trial and we'll migrate your data into Device42," %} <span class="text-italic text-primary-alt">{% trans 'free of charge!' %}</span></h3>
+{% endblock %}

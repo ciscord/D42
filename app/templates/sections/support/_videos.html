@@ -1,0 +1,241 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Take video tours of Device42, the most comprehensive solution for data center infrastructure management.' %}">
+{% endblock %}
+{% block body_scripts %}
+    <script>
+        D42.setSiteSection('resources');
+        D42.tools.loadJs('//fast.wistia.com/assets/external/E-v1.js', true);
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h1>{% trans "Video Library" %}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row videos-listing">
+        <div class="container featurette-wrap">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <a href="{% url 'videos_introduction' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/intro-video-screenshot.jpg' %}"
+                                     alt="{% trans 'Device42 Intro' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Introduction to Device42" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "An overview of Device42's capabilities, features, and use-cases." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <a href="{% url 'videos_dcim_demo' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/Device42-DCIM-demo.png' %}"
+                                     alt="{% trans 'DCIM Quick Demo' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "DCIM Quick Demo" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Watch a Quick Device42 DCIM functionality demo. Duration ~ 12 minutes." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <a href="{% url 'videos_hierarchy' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/hierarchy.png' %}"
+                                     alt="{% trans 'Hierarchy' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Hierarchy" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Gain a basic understanding of Device42's hierarchy and terminology." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_basic_navigation' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/basic-navigation.png' %}"
+                                     alt="{% trans 'Basic Navigation' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Basic Navigation" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Basic navigation explains the simple and consistent user interface in Device42. The video introduces Device42's navigation, including list views, search, filter, and bulk actions. See how easy it is to manage your IT Infrastructure." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_server_room' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/server-rooms.png' %}"
+                                     alt="{% trans 'Server Rooms' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Server Room" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "An overview of rooms in Device42, including room details, room layout view, and features like drag and drop." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_rack_management' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/managing-racks.png' %}"
+                                     alt="{% trans 'Rack Management' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Rack Management" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Web based rack layouts with drag and drop support." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_patch_panel_management' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/patch-panel-management.png' %}"
+                                     alt="{% trans 'Patch Panel Management' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Patch Panel Management" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Cable Management with web based interface." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_ip_address_management' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/switch_impact_chart.png' %}"
+                                     alt="{% trans 'IP Address Management' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "IP Address Management" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "IP Address Management(IPAM) with IPv4/IPv6 and overlapping IP ranges support with Device42." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_enterprise_password_management' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/enterprise-password-management.png' %}"
+                                     alt="{% trans 'Enterprise Password Management' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Enterprise Password Management" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "Manage network passwords securely with granular permission control." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <a href="{% url 'videos_autodiscovery' %}" class="card-container">
+                        <div class="photo-card row">
+                            <div class="col-xs-4 col-sm-2">
+                                <img class="img-responsive vert-offset-top-1 vert-offset-bottom-1"
+                                     src="{% static 'img/sections/support/videos/Device42-auto-discovery-process.png' %}"
+                                     alt="{% trans 'Device42 Auto-discovery Introduction' %}">
+                            </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div class="heading">
+                                    <h3 class="text-default">{% trans "Device42 Auto-discovery Introduction" %}</h3>
+                                </div>
+                                <div class="description">
+                                    <p class="text-muted font-roboto">{% trans "This video Introduces Device42 IT infrastructure management software's auto-discovery functionality. In this video we will discuss the process of auto-discovery, the best practices for running the initial Device42 auto-discovery, and demonstrate how discoveries build a comprehensive, accurate asset database in Device42 DCIM software. We'll also address a few frequently asked questions and provide links to additional auto-discovery resources." %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+
+    <div class="col-sm-5">
+        <img class="img-responsive center-block img-border"
+             src="{% static 'img/sections/features/itam/asset-lifecycle.png' %}"
+             alt="{% trans 'Asset Lifecycle Management' %}">
+    </div>
+    <div class="col-sm-7">
+        <h2 class="featurette-heading">{% trans "IT Asset Lifecycle Management" %}</h2>
+        <p>{% trans "Track the lifecycle of your devices and non-IP based assets from their purchase, to all the way to their decommissioning." %}</p>
+    </div>
+
+</div>

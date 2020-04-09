@@ -1,0 +1,252 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 is a powerful IP Address management solution that integrates IT Infrastructure management.' %}"/>
+{% endblock %}
+{% block title %}{% trans "Device42 vs Nylte DCIM Solutions" %}{% endblock %}
+{% block scripts %}
+    <script>
+        $(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+    </script>
+{% endblock %}
+{% block landingHeadingText %}{% trans "Nlyte vs. Device42 DCIM" %}{% endblock %}
+{% block landingLeadText %}
+    {% trans "Automated data center management has been redefined by Device42 software. Now, organizations can, centrally manage their data center while increasing visibility and control of their IT environment – without breaking the bank!" %}
+{% endblock %}
+{% block landingfeature %}
+    <section class="row flat-top">
+        <div class="col-xs-12">
+            <h4 class="lead">{% trans "Automated data center management has been redefined by Device42 software. Now, organizations can centrally manage their data center while increasing visibility and control of their IT environment – without breaking the bank!" %}</h4>
+        </div>
+    </section>
+    <section class="row flat-top">
+        <div class="col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1">
+            <div class="table-responsive">
+                <table class="table table-condensed table-hover d42-sw-compare">
+                    <thead>
+                    <tr>
+                        <th class="table-title"><p class="dark-blue text-left alt-text"
+                                                   style="margin:0;font-size:24px;">{% trans "Solution Comparison" %}</p>
+                        </th>
+                        <th class="product-heading blue">{% trans "Device42" %}</th>
+                        <th class="product-heading blue">{% trans "Nlyte" %}<sup>&reg;</sup></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="comp-feature">{% trans "Data Center Management" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Manage hybrid Infrastucture with cloud" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "IP Address Management" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Agentless Auto-Discovery" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Hardware/Software Dependency Maps" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Multi-tenancy" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Workflow Management" %}</td>
+                        <td class="text-center"><a href="#" data-toggle="tooltip" data-placement="top"
+                                                   title="{% trans 'Service integrations with JIRA and ServiceNow' %}"><i
+                                class="fa fa-2x fa-exclamation-triangle text-warning"></i></a></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "Power Control" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature">{% trans "REST based APIs" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td class="comp-feature">{% trans "Cost" %} <em
+                                class="text-muted">({% trans "TCO, with implementation services, based on publicly available data" %})</em>
+                        </td>
+                        <td class="text-center"><i class="fa fa-2x fa-money text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-money text-danger"></i> <i
+                                class="fa fa-2x fa-money text-danger"></i><i class="fa fa-2x fa-money text-danger"></i>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block maincontent %}
+    <section class="row image-right-8x4 is-table-row">
+    <div class="col-sm-5">
+            <img class="img-responsive center-block" alt="{% trans 'Auto-generate Rack Diagrams' %}"
+                 src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}">
+        </div>
+        <div class="col-sm-7">
+            <h3>{% trans "Intuitive User Experience" %}</h3>
+            <ul class="dash">
+                <li>{% trans "Infrastructure records that are accurate and up-to-date" %}</li>
+                <li>{% trans "Increased visibility and control of all IT assets" %}</li>
+                <li>{% trans "Improved response to planned and unplanned service outages" %}</li>
+                <li>{% trans "Increased user satisfaction levels" %}</li>
+                <li>{% trans "Improved budgeting, cost visibility, and control" %}</li>
+                <li>{% trans "Centralized awareness and control of power and environmental factors" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row image-right-4x8 is-table-row">
+        <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "Power & Thermal Management" %}</h3>
+            <p class="lead">{% trans "Power and thermal management in the data center has never been easier.  Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities" %}.</p>
+            <p class="ul-heading">{% trans "Capabilities include" %}:</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ul class="square-style clean">
+                        <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+                        <li>{% trans "Track historical power and thermal data" %}</li>
+                        <li>{% trans "Power estimation for server" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="square-style clean">
+                        <li>{% trans "Better capacity planning" %}</li>
+                        <li>{% trans "Power On/Off PDU outlets" %} (<em>{% trans "for supported models" %}</em>)</li>
+                        <li>{% trans "Add-on module - additional cost" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/device_energy.jpg' %}"
+                 alt="Power & Thermal Management">
+        </div>
+    </section>
+    <section class="row image-right-8x4 ">
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border"
+                 src="{% static 'img/sections/features/cable_management.png' %}" alt="{% trans 'Cable Management' %}">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "IT Patch Panel Management" %}</h3>
+            <p class="lead">{% trans "Visualize IT patch panel connections and with Device42 software.  Manage structured cabling with easy data entry via UI or APIs and update back connectivity using bulk operations" %}.</p>
+            <ul class="dash">
+                <li>{% trans "Hover over images to see full connectivity paths" %}</li>
+                <li>{% trans "Color coded for easier planning" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row image-left-4x8 is-table-row">
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/device_details.png' %}"
+                 alt="Detailed Device Information">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "Detailed Device Information" %}</h3>
+            <p class="lead">{% trans "Document physical, virtual, blade, clustered, and more device types.  Easy to use network switch or server selections.  Record server processing power and connection properties along with asset tags, serial numbers, and support information. Robust integration with built-in IPAM" %}.</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ul class="checklist">
+                        <li>{% trans "Complete device details" %}</li>
+                        <li>{% trans "CPU, memory HDD, IP" %} &amp; {% trans "MAC address" %}</li>
+                        <li>{% trans "Hardware components" %}</li>
+                        <li>{% trans "Network switch and PDU port connectivity" %}</li>
+                        <li>{% trans "Check out/assign to users" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="checklist">
+                        <li>{% trans "Assign and store passwords" %}</li>
+                        <li>{% trans "Add device URLs" %}</li>
+                        <li>{% trans "Assign custom values" %}</li>
+                        <li>{% trans "Categorize per customer/department" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row image-right-8x4 is-table-row">
+        <div class="col-xs-12 col-sm-5">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/spare_parts.png' %}"
+                 alt="Spare Parts Information">
+        </div>
+        <div class="col-xs-12 col-sm-7">
+            <h3>{% trans "Manage Spare Parts" %}</h3>
+            <p class="lead">{% trans "Easily manage IT spare parts hardware inventory. Track what spares are in use or check out spares for deployment" %}.</p>
+            <ul class="square-style clean">
+                <li>{% trans "Supports CPU, RAM, HDD and customizable hardware components" %}</li>
+                <li>{% trans "Manage devices globally and/or by individual device(s" %})</li>
+                <li>{% trans "Sort and view inventory by custom criteria" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row image-left-4x8 is-table-row">
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block img-border" src="{% static 'img/landing/device_energy.jpg' %}"
+                 alt="Power & Thermal Management">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "Power & Thermal Management" %}</h3>
+            <p class="lead">{% trans "Power and thermal management in the data center has never been easier. Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities" %}:</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <ul class="checklist">
+                        <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+                        <li>{% trans "Track historical power and thermal data" %}</li>
+                        <li>{% trans "Power estimation for servers" %}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    <ul class="checklist">
+                        <li>{% trans "Better capacity planning" %}</li>
+                        <li>{% trans "Power On/Off PDU outlets for supported models" %}</li>
+                        <li>{% trans "Add-on module" %} (<em>{% trans "additional cost" %}</em>)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-xs-12 col-sm-8">
+            <h3>{% trans "Automated Data Center Management" %}</h3>
+            <p class="lead">{% trans "Automate data center management with a variety of auto-discovery tools for network, physical, or virtual infrastructures. Use powerful REST APIs to integrate with other tools and keep accurate data center documentation" %}.</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <img class="img-responsive center-block hidden-xs"
+                 src="{% static 'img/landing/automated-data-center-management-with-apis.png' %}"
+                 alt="Automated Data Center Management APIs">
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-xs-12">
+            <h3 class="sub-heading">{% trans "Our Solution vs Nlyte" %}</h3>
+            <p class="light-weight">{% trans "Nlyte focuses on DCIM - mostly physical infrastructure. While many customers use just the DCIM portion of Device42, the product is in fact a fully-integrated suite of products including data center asset management, IT asset management, IPAM, software license management, application dependency management, and password management.  The architects of Device42 believe that you can't effectively manage your IT infrastructure using different products even if there is some level of integration.  IT infrastructure data is so interrelated that it requires a tightly unified and holistic approach.  Device42’s approach to IT infrastructure management leads to IT operations efficiencies, better migration planning, more informed decision making, optimal risk mitigation, and faster compliance and auditing response" %}.</p>
+        </div>
+    </section>
+
+{% endblock %}

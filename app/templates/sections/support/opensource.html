@@ -1,0 +1,363 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans 'Open Source Resources' %}{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("resources");</script>
+{% endblock %}
+{% block styles %}
+    <style>
+
+
+        .card {
+            margin: 11px 0 11px;
+            padding: 6px 0;
+            border-bottom: 1px solid #cecece;
+        }
+
+        .card h4 {
+            vertical-align: middle;
+            display: inline-block;
+
+            margin: 4px 0;
+        }
+
+        .card .card-inner p {
+            margin: 0;
+        }
+
+        .card .card-link {
+            font-size: 90%;
+            margin: 0;
+        }
+
+        .projects-table td:first-child {
+            width: 100px;
+        }
+
+        .projects-table td:nth-child(2) {
+            width: 30%;
+        }
+
+        .projects-table td:nth-child(2) a {
+
+            font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+            font-weight: 300 !important;
+            font-size: 1em !important;
+            letter-spacing: 0;
+            color: #246e90 !important;
+
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
+
+        .projects-table .h3 {
+            font-size: 1.1em;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1 class="text-info">{% trans "Open Source Projects" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="container vert-offset-bottom-2">
+            <h2 class="text-strong bg-alt">{% trans 'Service Integration Scripts' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/ansible_device42" class="ext-link h3 text-strong text-dark-blue" target="_blank">ansible_device42</a></td>
+                    <td>{% trans 'Scripts to generate static inventory file or generate dynamic inventory for ansible from Device42 data' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/st2contrib" class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">st2contrib</a></td>
+                    <td>{% trans 'StackStorm / Device42 integration pack.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/Sync-From-Infoblox"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Sync-From-Infoblox</a></td>
+                    <td>{% trans 'The script reads data from Infoblox IPAM and keeps D42 up to date.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-default">JAVA</label></td>
+                    <td><a href="https://github.com/device42/rundeck-device42-nodes-plugin"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">rundeck-device42-nodes-plugin</a></td>
+                    <td>{% trans 'Device42 Rundeck Resource plugin allows to collect nodesets from the Device42 instance and set them up as the node sets for particular projects in Rundeck.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/SolarwindsWHD"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">SolarwindsWHD</a></td>
+                    <td>{% trans 'Send CI data from Device42 to Solarwinds Web Help Desk.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/splunk_to_device42"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">splunk_to_device42</a></td>
+                    <td>{% trans 'Helper tool to sync Splunk data into Device42.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/servicenow_device42_mapping"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">servicenow_device42_mapping</a></td>
+                    <td>{% trans 'Sync data between ServiceNow and Device42(Bi-directional).' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/device42_to_servicenow_express"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">device42_to_servicenow_express</a></td>
+                    <td>{% trans 'Sync data from Device42 to ServiceNow Express.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/chef_to_device42_sync_py"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">chef_to_device42_sync_py</a></td>
+                    <td>{% trans 'This script takes the node(s) data from Chef server and sends to Device42 instance.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/puppet_to_device42_sync_py"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">puppet_to_device42_sync_py</a></td>
+                    <td>{% trans 'Sync Puppet data into Device42.' %}</td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="text-strong bg-alt">{% trans 'Data Migration Scripts' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/OpenDCIM-to-Device42-Migration"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">OpenDCIM-to-Device42-Migration</a></td>
+                    <td>{% trans 'OpenDCIM to Device42 migration script.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/Racktables-to-Device42-Migration"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Racktables-to-Device42-Migration</a></td>
+                    <td>{% trans 'Migrate your Racktables data into Device42.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/RackMonkey-to-Device42-Migration"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">RackMonkey-to-Device42-Migration</a></td>
+                    <td>{% trans 'Migrate your RackMonkey data into Device42.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/SolarWinds_IPAM_to_Device42_Migration"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">SolarWinds_IPAM_to_Device42_Migration</a></td>
+                    <td>{% trans 'Migrate your subnets and IPs from Solarwinds IPAM to Device42.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/RedBeam_Asset_Inventory-to-Device42-Migration"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">RedBeam_Asset_Inventory-to-Device42-Migration</a></td>
+                    <td>{% trans 'Migrate RedBeam assets to Device42.' %}</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/phpIPAM2Device42"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">phpIPAM2Device42</a></td>
+                    <td>{% trans 'Migrate phpIPAM IP inventory into Device42.' %}</td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="text-strong bg-alt">{% trans 'Device42 API Samples' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/API_Helpers"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">API_Helpers</a></td>
+                    <td>{% trans 'API Helper utilities to make it easy to upload data via RESTful APIs to Device42' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/Misc_D42_Python_Scripts"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Misc_D42_Python_Scripts</a></td>
+                    <td>{% trans 'Miscellaneous Python scripts that interact with Device42 APIs' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-default">JAVA</label></td>
+                    <td><a href="https://github.com/device42/Device42_API_Java_Sample"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Device42_API_Java_Sample</a></td>
+                    <td>{% trans "Sample Java code to show how to access Device42 APIs" %}.</td>
+                </tr>
+<tr>
+                    <td><label class="label label-info">PowerShell</label></td>
+                    <td><a href="https://github.com/device42/D42-PowerShell-Samples"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">D42-PowerShell-Samples</a></td>
+                    <td>{% trans "Example script for running Windows PowerShell scripts against the Device42 APIs" %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-default">JAVA</label></td>
+                    <td><a href="https://github.com/device42/d42-java-client"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">d42-java-client</a></td>
+                    <td>{% trans "This is a Java client for working with Device42 API" %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-black">BASH</label></td>
+                    <td><a href="https://github.com/device42/demo-data-shell-scripts"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">demo-data-shell-scripts</a></td>
+                    <td>{% trans "Shell/bash scripts to load demo data to Device42 instance." %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-danger">Ruby</label></td>
+                    <td><a href="https://github.com/device42/D42-Ruby-Samples"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">D42-Ruby-Samples</a></td>
+                    <td>{% trans "Ruby samples" %}.</td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="text-strong bg-alt">{% trans 'Inventory & Discovery' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-purple">C#</label></td>
+                    <td><a href="https://github.com/device42/Open-Discovery-Client"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Open-Discovery-Client</a></td>
+                    <td>{% trans 'C# .NET based Open discovery client to enumerate network objects in an Excel spreadsheet' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/nix_bsd_mac_inventory"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">nix_bsd_mac_inventory</a></td>
+                    <td>{% trans 'Collect Inventory data from *Nix, BSD and mac OS and upload to Device42' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/Device42-AutoDiscovery-Scripts"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Device42-AutoDiscovery-Scripts</a></td>
+                    <td>{% trans 'Python scripts to help auto-discover devices on the network, and upload to Device42 appliance using APIs. Script for windows, linux and puppet master.' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/Warranty_check"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Warranty_check</a></td>
+                    <td>{% trans 'Python script to pull warranty information from Dell, HP, IBM and Lenovo' %}.</td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="text-strong bg-alt">{% trans 'Health Check' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-info">Perl</label></td>
+                    <td><a href="https://github.com/device42/Device42-Nagios-Health-Check"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">Device42-Nagios-Health-Check</a></td>
+                    <td>{% trans 'Device42 Health Checks in Nagios' %}.</td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="text-strong bg-alt">{% trans 'Misc. Sample Scripts' %}</h2>
+            <table class="table table-hover projects-table">
+                <thead>
+                <tr>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Language' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Project' %}</th>
+                    <th class="h3 text-dark-blue text-strong">{% trans 'Description' %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label class="label label-white">RAW</label></td>
+                    <td><a href="https://github.com/device42/AutoDiscoverIgnoreFiles"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">AutoDiscoverIgnoreFiles</a></td>
+                    <td>{% trans 'Files that specify what to ignore during the auto-discovery process' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/ResetDevice42Data"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">ResetDevice42Data</a></td>
+                    <td>{% trans 'This clears existing data in Device42. Use for reset only. Limited to certain categories for now' %}.</td>
+                </tr>
+                <tr>
+                    <td><label class="label label-success">Python</label></td>
+                    <td><a href="https://github.com/device42/jira-oauth-access-token-generator"
+                           class="ext-link h3 text-strong text-dark-blue"
+                           target="_blank">jira-oauth-access-token-generator</a></td>
+                    <td>{% trans 'A tool to generate JIRA OAuth1 access token' %}.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

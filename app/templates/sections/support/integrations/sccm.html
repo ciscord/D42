@@ -1,0 +1,115 @@
+{% load i18n static %}
+<h2>Microsoft SCCM + Device42 {% trans "Integration Plugin" %}</h2>
+<div class="row is-table-row">
+    <div class="col-sm-9">
+        <p>{% trans "Already have Microsoft Systems Center Configuration Manager (SCCM) set up and populated with an inventory of all or a majority of your systems?" %}</p>
+        <p class="text-strong text-italic text-muted">{% trans "Avoid duplicate auto-discovery, and take advantage of the D42-SCCM Integration to pull existing data and CIs directly into Device42" %}!</p>
+    </div>
+    <div class="col-sm-3 text-center">
+        <a href="{% url 'software' %}autodiscovery/" class="btn btn-sm btn-primary" id="sccm_download">{% trans "Download" %}<br>SCCM {% trans "Plugin" %}</a>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>{% trans "With this integration you can now visualize your SCCM asset inventory in a better way, leveraging more value from the data you already have:" %}</h3>
+        <ul class="dash">
+            <li>{% trans "Associate purchase and contract info to your assets" %}</li>
+            <li>{% trans "Visualize your devices in racks and hypervisors, tracking full logical to physical relationships." %}</li>
+            <li>{% trans "Track network and power connectivity." %}</li>
+            <li>{% trans "Manage SSL/TLS certificates, passwords and Operating system licenses." %}</li>
+            <li>{% trans "Software licensing and compliance management with comprehensive reporting and alerting capabilities." %}</li>
+            <li>{% trans "Get started in few minutes without making any changes to your SCCM implementation." %}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Importing your CI data is as easy as" %} <em>1, 2, 3!</em></h3>
+        <ol type="1">
+            <li><p>{% trans "Put your" %} <a
+                    href="#d42_info">Device42 {% trans "instance information" %}</a> {% trans "into the D42 auto-import tool." %}
+            </p></li>
+            <li><p>{% trans "Put your" %} <a href="#sccm_info">Microsoft
+                SCCM {% trans "instance information" %}</a> {% trans "into the D42 auto-import tool." %}</p></li>
+            <li><p><a href="#go">{% trans "Go!" %}</a> {% trans "Let the Device42 SCCM Import tool do all the work." %}
+            </p></li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="text-muted text-center">
+            <em>{% trans "Our one-way import process utilizes the SCCM API directly, leaving the DB untouched." %}</em>
+        </h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3 id="d42_info">{% trans "Device42 instance information" %}</h3>
+        <p>{% trans "Select <strong>Settings</strong> in the lower left; <strong>System</strong> in the upper left.  Then enter your Device42 instance information into the Device42 Auto-Discovery tool - IP or FQDN of the instance URL, username, and password." %}</p>
+    </div>
+</div>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/sccm/windows-sccm-plugin.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/sccm/windows-sccm-plugin.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Microsoft SCCM Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3 id="sccm_info">{% trans "Microsoft SCCM instance information" %}</h3>
+        <p>{% trans "Next, head over to <strong>Credentials</strong> in the settings sub-menu on the upper-left. Add a set of Windows credentials that has sufficient access to query your SCCM Instance." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8">
+    <div class="col-sm-4">
+        <h3 id="go">{% trans "Go!" %}</h3>
+        <a href="{% static 'img/sections/support/integrations/sccm/sccm-table-populated.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/sccm/sccm-table-populated.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Microsoft SCCM Integration' %}">
+        </a>
+        <br>
+        <small>
+            <em>{% trans "All relevant device information that was stored in SCCM is now available in Device42!" %}</em>
+        </small>
+    </div>
+    <div class="col-sm-8">
+        <p>{% trans "Choose SCCM from the <strong>Discovery menu</strong>. Input your SCCM Instance Info, and from the Credentials Drop Down, select the credentials you saved in the previous step. Lastly, enter the FQDN or IP address of your SCCM Instance in <strong>Criteria</strong>. <strong>Save</strong>, and then <strong>Run Now</strong>! You can monitor the discovery status in the Tasks as your Device42 instance populates." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="text-center text-muted">
+            <em>{% trans "Now you can enjoy the many benefits of Device42’s Comprehensive CMDB, extracting more value from the data you already had in SCCM!" %}</em>
+        </h4>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>{% trans "Every detail of the asset lifecycle from purchase to retirement can be tracked with Device42. Associate the purchase order for a device with the actual device itself, which can be quickly and easily located down to the room and actual rack that it is mounted in. Passwords to administer it are at your fingertips, as well as software that is running, and licenses for that software. Quickly locate spare parts, tracking spare part inventory as well." %}</p>
+        <p>{% trans "Plan your new deployments by looking at which racks have free space, and ensure license and security compliance for those upcoming audits by leveraging powerful reporting capabilities." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="text-muted text-center"><em>{% trans "The more data you give Device42, the more powerful it becomes!" %}</em></h4>
+    </div>
+</div>
+<hr>
+<div class="row">
+
+    <div class="col-md-12">
+        <h4>{% trans "Download Device42 Auto-Discovery Software" %}
+            <small>{% trans "(now with SCCM Auto-Import)" %}</small>
+        </h4>
+        <p>{% trans "Users can download the Device42 Auto-Discovery Software from " %} <a
+                href="{% url 'software' %}autodiscovery/">here</a></p>
+
+    </div>
+</div>

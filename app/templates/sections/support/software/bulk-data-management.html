@@ -1,0 +1,29 @@
+{% load i18n static %}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well">
+            <h2 class="flat-top">Device42 {% trans "Generic Import Tool" %}</h2>
+            <p>{% trans "The Device42 import tool allows users to take current data in spreadsheets whether they are" %}
+                <code>XLS/XLSX/CSV</code> {% trans "formats and seamlessly map columns from the spreadsheet(s) to fields in Device42 and automatically import the data." %}
+            </p>
+            <p class="vert-offset-bottom-1">{% trans "This runs on a Windows machine.  There are no installs, just a portable executable file to run." %}</p>
+            <div class="row is-table-row">
+                <div class="col-xs-9">
+                    <p>{% trans "Current Version" %} <code><strong>7.2.4</strong></code> <a
+                            href="http://blog.device42.com/tag/generic-import-tool/"
+                            target="_blank">{% trans "Latest Notes" %}</a>
+                    </p>
+                </div>
+                <div class="col-sm-3 xs-center">
+                    <form action="." method="post" role="form">{% csrf_token %}
+                        <input style="display:none;" type="text" name="main" maxlength="64">
+                        <button type="submit" name="download" value="generic import tool"
+                                class="btn btn-warning btn-block">{% trans "Download" %}</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

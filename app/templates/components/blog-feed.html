@@ -1,0 +1,37 @@
+{% load i18n static custom_tags %}
+<div class="row bg-alt">
+    <div class="container blog-feed">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="h1 text-center text-uppercase">{% trans "Latest Blog Posts" %}</h3>
+                </div>
+            </div>
+            <div class="row padded">
+                {% for entry in feeds.entries %}
+                    {% if forloop.counter|lt:3 %}
+                        <div class="col-sm-6 {% if not forloop.counter|divisibleby:2 %}col-md-offset-1{% endif %} col-md-5 vert-offset-bottom-1">
+                            <div class="media blog-feed">
+                                <div class="media-left">
+                                    <div class="media-object media-object-date box-shadow">
+                                        <h4 class="h1 bg-primary text-white">{{ entry.published|to_date|date:'d' }}</h4>
+                                        <h5 class="h2 bg-white text-uppercase">{{ entry.published|to_date|date:'M' }}</h5>
+                                    </div>
+
+                                </div>
+                                <div class="media-body">
+                                    <h5><a href="{{ entry.link }}" target="_blank"
+                                           class="text-primary text-uppercase font-stack-roboto ext-link">{{ entry.title|safe }}</a>
+                                    </h5>
+                                    <p class="font-stack-roboto small">{{ entry.description|safe|truncatewords:22 }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:4 %}
+                            </div>
+                            <div class="row">
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                </div>
+        </div>
+</div>

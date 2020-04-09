@@ -1,0 +1,46 @@
+{% load i18n static %}
+<h3 class="text-strong">{% trans "Why Device42?" %}</h3>
+<div class="panel-group" id="homeAccordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading1">
+            <a role="button" data-toggle="collapse" data-parent="#homeAccordion" href="#collapse1"
+               aria-expanded="false" aria-controls="collapse1">
+
+                <h4 class="panel-title">
+                    {% trans "Intuitive web-based interface" %}
+                </h4>
+            </a>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+            <div class="panel-body">
+                {% trans "No complicated client installs. No need to spend money on training. Get started in a jiffy by importing the ready-to-go virtual appliance." %}
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading2">
+            <a role="button" data-toggle="collapse" data-parent="#homeAccordion" href="#collapse2"
+               aria-expanded="false" aria-controls="collapse2">
+                <h4 class="panel-title">{% trans "RESTful APIs" %}<br><small><strong>{% trans "Multi user support" %}</strong></small></h4>
+            </a>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+            <div class="panel-body">
+                {% trans "Easy data population from language of your choice using REST APIs. Integrates with AD/LDAP with role based access." %}
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading" role="tab" id="heading3">
+            <a role="button" data-toggle="collapse" data-parent="#homeAccordion" href="#collapse3"
+               aria-expanded="false" aria-controls="collapse3">
+                <h4 class="panel-title">{% trans "Simple licensing model" %}<br><small><strong>{% trans "No lock in." %}</strong></small></h4>
+            </a>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+            <div class="panel-body">
+                {% trans "Simple licensing based on number of devices. No vendor lock in. Easily export your data anytime." %}
+            </div>
+        </div>
+    </div>
+</div>

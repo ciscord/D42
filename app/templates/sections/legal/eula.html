@@ -1,0 +1,270 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "End User License Agreement for Device42 Software" %}{% endblock %}
+{% block site_section_legal %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'End User License Agreement for Device42 Software' %}"/>
+{% endblock %}
+{% block styles %}
+    <style>
+        .eula-copy p {
+            font-family: Georgia, serif;
+            font-size: 1.2em;
+            letter-spacing: -0.5px;
+            line-height: 1.33em;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>{% trans "END USER LICENSE AGREEMENT" %}
+                        <small>{% trans "FOR DEVICE42 SOFTWARE" %}</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-12 font-stack-serif">
+                    {% blocktrans %}
+                        <p>IMPORTANT-READ CAREFULLY: BY DOWNLOADING, INSTALLING, OR USING THE SOFTWARE, YOU AND THE
+                            BUSINESS ENTITY YOU REPRESENT(COLLECTIVELY, &ldquo;You&rdquo; or "Licensee") AGREE TO BE
+                            BOUND BY THE TERMS OF THIS END USER LICENSE AGREEMENT ("EULA"). IF YOU DO NOT AGREE TO THE
+                            TERMS OF THIS EULA, YOU MUST NOT DOWNLOAD, INSTALL, OR USE THE SOFTWARE.</p>
+                        <p><br/> This End User License Agreement (the "EULA") is hereby entered into and agreed upon by
+                            You&nbsp;and the business entity you represent(collectively, &ldquo;You&rdquo; or
+                            "Licensee") and Device42, Inc. and its Affiliates, directors, officers, agents, employees,
+                            and its suppliers and licensors (collectively "device42") for the Software.</p>
+                        <p><br/> EVALUATION LICENSE: If you are licensing the Software for evaluation purposes, your use
+                            of the Software is only permitted for the period limited by the Software License Key.
+                            Notwithstanding any other provision in this EULA, an Evaluation License of the Software is
+                            provided "AS-IS" without support or warranty of any kind, expressed or implied.</p>
+                        <p><strong>1. DEFINITIONS </strong></p>
+                        <p>1.1 "Documentation" means, collectively, the operation instructions, release notes, user
+                            manuals and/or help files for the Software in electronic or written form.</p>
+                        <p>1.2 "Software" means software products that are licensed to Licensee under this Agreement,
+                            including, but not limited to, device42 virtual appliance, any related components purchased
+                            or provided with the Software, Documentation, and any maintenance releases thereto. The term
+                            <br/> &ldquo;Software&rdquo; includes the Open Source Software and the APIs except where the
+                            context or this Agreement indicates otherwise.</p>
+                        <p>1.3 "Software License Key" means a valid license key issued to License to activate and use
+                            the Software.</p>
+                        <p>1.4 "Open Source Software" means various software components including open source software,
+                            that may be part of the Software.</p>
+                        <p>2. <strong>General Use. </strong></p>
+                        <p>2.1 Open source Software and/or Components.Portions of the Software provided to Licensee
+                            contain open source software or publicly available content under separate license and
+                            copyright requirements which can be found at <a href="/open_source_license.txt"
+                                                                            target="_blank">http://www.device42.com/open_source_license.txt</a>.
+                            Nothing in this Agreement limits an end user&rsquo;s rights under, or grants the Licensee
+                            rights that supersede, the terms of any applicable Open Source Program end user license
+                            agreement.</p>
+                        <p>2.2 Application Programming Interface (APIs) The APIs are provided for Licensee's use solely
+                            for the purpose of creating programs or scripts that communicate with device42 Software.
+                            Licensee&rsquo;s use of such programs or scripts is "AS-IS" without support or warranty of
+                            any kind, expressed or implied.</p>
+                        <p>3. <strong>GRANT OF LICENSE. </strong>Upon payment of the fees applicable under this
+                            Agreement, device42 hereby grants to Licensee a one-year, non-exclusive, nontransferable
+                            license to use the Software and any related documentation ("Documentation"), subject to the
+                            following terms:</p>
+                        <p>For each Software license key that Licensee purchases, Licensee may: (i) use the Software on
+                            any single Server; and (ii) copy the Software for back-up and archival purposes, provided
+                            any copy must contain all of the original Software's proprietary notices.</p>
+                        <p>The Software is "in use" on a Server when it is loaded into temporary memory or installed in
+                            permanent memory (Hard Drive, CD-ROM or other storage device). Licensee agrees to use
+                            Licensee's best efforts to prevent and protect the contents of the Software and
+                            Documentation from unauthorized use or disclosure. Licensee agrees to only install a
+                            Software license key obtained directly from device42.</p>
+                        <p>Licensee is responsible for ensuring that all individuals who access the Software through
+                            Licensee are familiar with the terms of this Agreement and for use by such individuals in
+                            compliance with these terms.</p>
+                        <p>4. <strong>LICENSE RESTRICTIONS </strong></p>
+                        <p>4.1 Licensee may not: (i) permit other individuals to use the Software or Documentation
+                            except under the terms listed above; (ii) modify, translate, reverse engineer, decompile,
+                            disassemble (except to the extent that this restriction is expressly prohibited by law) or
+                            create derivative works based upon the Software or Documentation; (iii) copy the Software or
+                            Documentation (except for back-up or archival purposes); (iv) rent, lease, transfer, or
+                            otherwise grant rights to the Software or Documentation except to the extent expressly
+                            permitted under this Agreement; (v) remove any proprietary notices or labels on the Software
+                            or Documentation; or (vi) break out of the virtual machine console menu or gain access to
+                            the shell via any other means in order to execute commands from the command line.</p>
+                        <p>Any violation of such license restrictions or other violation of this Agreement shall be
+                            grounds for immediate termination of Licensee's license to the Software.</p>
+                        <p>4.2 Export Restrictions. Licensee represents that it is not a national or resident of any
+                            country subject to U.S. export restrictions.Licensee agree that it will not export or
+                            re-export, or allow the export or re-export of, the Software or any technology or
+                            information contained therein, or any direct product thereof, to any country, person, entity
+                            or end user subject to U.S. export restrictions.Licensee represents that neither the U.S.
+                            Bureau of Export Administration nor any other federal agency has suspended, revoked or
+                            denied Licensee&rsquo;s export privileges.Licensee agree to comply with all applicable
+                            export laws, restrictions, and regulations of any United States or foreign agency or
+                            authority. Licensee agree not to export or re-export, or allow the export or re-export of,
+                            the Software or any technology or information contained therein, or any direct product
+                            thereof, from the country in which Licensee has installed and is using the Software in
+                            violation of any such laws, restrictions, or regulations.</p>
+                        <p>4.3 Compliance with Applicable Laws. Licensee agrees that it will only use the Software and
+                            Documentation in a manner that complies with all applicable laws in the jurisdictions in
+                            which Licensee will use the Software and Documentation, including, but not limited to,
+                            applicable restrictions concerning copyright and other intellectual property rights.</p>
+                        <p>4.4 Use by Services Providers.If Licensee is an IT consultant, IT solution provider, or
+                            facilities management provider, who deploys or maintains networks, security solutions,
+                            communications solutions, hardware, software components, upgrades, or the like to its
+                            customers, then such customers are required to individually license the device42 Software
+                            and each such customer must acknowledge an online version of this Agreement prior to gaining
+                            access to the Software.</p>
+                        <p>5. <strong>Rights, Title, and Interest to Intellectual Property.</strong> Unless as conveyed
+                            herein, all rights, title, and interest in and to the Software, Documentation, and
+                            corresponding intellectual property shall remain in device42 or its suppliers or are
+                            publicly available. This Agreement does not grant Licensee any rights, title, or interest in
+                            or to any trademarks, service marks, or trade secrets of device42 or its suppliers. The
+                            Software and Documentation are protected by the copyright and intellectual property laws of
+                            the United States and international copyright and intellectual property laws and treaties.
+                            All rights not expressly granted under this Agreement are reserved by device42, its
+                            suppliers, or third parties.</p>
+                        <p>6. <strong>Limited Warranties.</strong> Device42 warrants to Licensee that for a period of
+                            thirty (30) days following delivery of the Software to Licensee that the Software will
+                            perform substantially in conformance with the Documentation. Device42 does not warrant that
+                            the Software will meet all of Licensee&rsquo;s requirements or that the use of the Software
+                            will be uninterrupted or error-free. The foregoing warranty applies only to failures in
+                            operation of the Software that are reproducible in standalone form and does not apply to:
+                            (i) a failure by Licensee to operate the Software within the systems requirements provided
+                            for the Software or Licensee&rsquo;s use of the Software in combination with other products
+                            not provided or expressly approved by device 42; (ii) Software that is modified or altered
+                            by Licensee or any third party that is not authorized, in writing, by device42; (iii)
+                            Software that is operated in violation of this Agreement or other than in accordance with
+                            the Documentation; (iv) failures that are caused by other software or hardware products; or
+                            (v) Licensee&rsquo;s failure or refusal to implement maintenance releases. To the maximum
+                            extent permitted under applicable law, as device42 and its supplier&rsquo;s entire
+                            liability, and as Licensee&rsquo;s exclusive remedy for any breach of the foregoing
+                            warranty, device42 will, at its sole option and expense, promptly repair or replace any
+                            Software that fails to meet this limited warranty or, if device42 is unable to repair or
+                            replace the Software, refund to Licensee the applicable license fees paid upon return, if
+                            applicable, of the nonconforming item to device42. The warranty is void if failure of the
+                            Software has resulted from accident, abuse, or misapplication. Any replacement Software will
+                            be warranted for 30 days. Device42 further warrants to Licensee that when and as delivered
+                            to Licensee, the Software will not contain any virus, Trojan horse, trap doors, disabling
+                            code or similar program or mechanism the effect of which is to disable, erase or otherwise
+                            harm or disclose any data or systems of Licensee.</p>
+                        <p>EXCEPT AS EXPRESSLY STATED IN THIS SECTION, DEVICE42 IS PROVIDING AND LICENSING THE SOFTWARE
+                            TO LICENSEE &ldquo;AS IS&rdquo; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+                            INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT,
+                            AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+                        <p>7. <strong>Limitation of Liability</strong>. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+                            LAW, IN NO EVENT WILL EITHER PARTY BE LIABLE TO THE OTHER FOR MORE THAN THE AMOUNT OF
+                            LICENSE FEES THAT LICENSEE HAS PAID TO DEVICE42 IN THE PRECEDING (12) TWELVE MONTHS OR BE
+                            LIABLE TO THE OTHER FOR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, INCLUDING LOST
+                            PROFITS, LOST SAVINGS, BUSINESS INTERRUPTION, LOSS OF DATA, COSTS OF PROCUREMENT OF GOODS OR
+                            SERVICES OR OTHER SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, ARISING OUT OF THE USE OR
+                            INABILITY TO USE THE SOFTWARE OR SOFTWARE PROGRAMS, EVEN IF SUCH PARTY OR A DEALER
+                            AUTHORIZED BY DEVICE42 HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS PARAGRAPH
+                            DOES NOT LIMIT LIABILITY FOR BODILY INJURY TO A PERSON OR TO EITHER PARTY&rsquo;S
+                            INDEMNIFICATION OBLIGATIONS UNDER THIS AGREEMENT OR TO LICENSEE&rsquo;S OBLIGATIONS UNDER
+                            SECTIONS 3 AND 4.</p>
+                        <p>8. <strong>IP Indemnity.</strong> device42 shall defend Licensee against any third party
+                            claim that Licensee&rsquo;s use of the Software in accordance with the terms of this
+                            Agreement infringes any U.S. copyright, trademark or patent, and device42 will indemnify
+                            Licensee against damages awarded on any such claim, provided that device42 is promptly
+                            notified of any and all threats, claims and proceedings against Licensee related thereto and
+                            given reasonable assistance (at device42&rsquo;s expense) with, and sole control over, the
+                            defense and all negotiations for a settlement or compromise. device42 will not be
+                            responsible for any settlement it does not approve in writing. This Section sets forth
+                            Licensee&rsquo;s sole and exclusive remedy and device42&rsquo;s sole obligation with respect
+                            to claims of infringement. In the event that Licensee&rsquo;s use of the Software is
+                            determined to infringe any third party&rsquo;s intellectual property rights, device42 will,
+                            at its option, and at no cost to Licensee, either (a) procure for Licensee a license
+                            enabling Licensee to continue to use the Software, (b) replace the Software with
+                            substantially equivalent software, or (c) refund the fee paid by Licensee hereunder. The
+                            obligations of device42 under this Section 8 do not apply with respect to Software or
+                            portions or components thereof (1) intentionally omitted, (2) that are modified or altered
+                            by Licensee or any third party that is not authorized, in writing, by device42, (3) that are
+                            combined with other products, processes or materials to the extent that the alleged
+                            infringement is based on such combination, (4) to the extent that Licensee continued
+                            allegedly infringing activity after being notified thereof or of the availability of
+                            maintenance releases or other modifications that would have avoided the alleged
+                            infringement, or (5) where Licensee uses the Software in violation of this Agreement or
+                            other than in accordance with the Documentation.</p>
+                        <p>9. <strong>Licensee&rsquo;s Indemnity.</strong> Licensee is responsible for the consequences
+                            of its use of the Software. Licensee agrees to defend, indemnify and hold harmless device42,
+                            and any of its directors, officers, employees, affiliates, suppliers or agents, from and
+                            against any and all claims, losses, damages, liabilities and other expenses (including
+                            reasonable attorneys' fees) based on any claim brought by a third party, arising from
+                            Licensee's use, modification or distribution of the Software except to the extent device42
+                            is required to indemnify Licensee under Section 8, provided that Licensee is promptly
+                            notified of any and all threats, claims and proceedings against device42 related thereto and
+                            given reasonable assistance (at Licensee&rsquo;s expense) with, and sole control over, the
+                            defense and all negotiations for a settlement or compromise. Licensee will not be
+                            responsible for any settlement it does not approve in writing.</p>
+                        <p>10. <strong>Confidentiality.</strong> Device42 will not use any information provided by
+                            Licensee that is marked confidential or that a reasonable person would presume is
+                            confidential for any purpose other than to provide the Software and Maintenance under this
+                            Agreement. Further, device42 will restrict disclosure of such confidential information to
+                            employees or contractors of device42 who have a need to know such information for purposes
+                            of this Agreement and who are under a duty of confidentiality no less restrictive than
+                            device42&rsquo;s duty hereunder.</p>
+                        <p>11.0<strong>Support And Maintenance terms and conditions.</strong></p>
+                        <p>11.1Maintenance Services. device42 agrees to provide to Licensee, during the validity of the
+                            license and term of this Agreement, support and maintenance (collectively "Maintenance") as
+                            follows:</p>
+                        <p>11.2.1 Support: device42 will provide email and online support to Licensee for current
+                            versions of the Software. Licensee agrees to provide adequate information to device42 to
+                            assist in the investigation and to confirm that any problems have been resolved. device42
+                            does not provide guaranteed response time but will make good faith effort to answer emails
+                            and online support tickets within forty-eight (48) hours or less during weekdays, excluding
+                            holidays.</p>
+                        <p>11.2.2 Maintenance: device42 will supply, at no additional charge, any improvements,
+                            upgrades, or modifications to the Software that device42 makes generally available. Any such
+                            improvements, upgrades, or modifications shall become part of the Software for all purposes
+                            of this Agreement.</p>
+                        <p>11.2.3 Licensee acknowledges and agrees that the Maintenance to be provided by device42
+                            hereunder is limited to the most current version of the Software.</p>
+                        <p>11.3 Exclusions. device42's obligation to provide Support is contingent upon proper use of
+                            the Software and full compliance with this Agreement. Moreover, device42 shall be under no
+                            obligation to provide Support should such services be required due to (a) failure to operate
+                            the Software within the systems requirements provided for the Software or use of the
+                            Software in combination with other products not provided or expressly approved by device 42
+                            (b) any modification or attempted modification of the Software by Licensee or any third
+                            party that is not authorized, in writing, by device42 (c) Licensee's failure or refusal to
+                            implement maintenance releases(d) Software that is operated in violation of this Agreement
+                            or other than in accordance with the Documentation or (e) failures that are caused by other
+                            software or hardware products.</p>
+                        <p>12 <strong>Miscellaneous.</strong> If any provision of this Agreement is held to be
+                            unenforceable, that shall not affect the enforceability of the remaining provisions, and
+                            such provision shall be limited or eliminated to the minimum extent necessary so that this
+                            Agreement shall otherwise remain in full force and effect while most nearly adhering to the
+                            intent expressed herein. This Agreement shall be governed by the laws of the State of New
+                            York and of the United States, without regard to any conflict of laws provisions, except
+                            that the United Nations Convention on the International Sale of Goods shall not apply.
+                            Licensee hereby consents to jurisdiction of the courts of both the state or federal courts
+                            of Connecticut. Licensee may not assign, sublicense or otherwise transfer this Agreement or
+                            any of its rights hereunder without device42&rsquo;s prior written consent except to a
+                            purchaser of substantially all of Licensee&rsquo;s assets. The provisions of Sections 5, 7,
+                            8, 9 and 10 shall survive the expiration or termination of this Agreement.</p>
+                        <p>13.<strong>Complete Agreement.</strong> This Agreement constitutes the entire agreement
+                            between the Parties and supersedes all prior or contemporaneous communications, agreements
+                            and understandings, written or oral, with respect to the subject matter hereof including
+                            without limitation any purchase order issued in connection with this Agreement unless
+                            otherwise expressly agreed by device42 in such purchase order or other written document.
+                            This Agreement shall not be amended or modified except in a writing signed by authorized
+                            representatives of each party.</p>
+                        <p>14.<strong>Restricted Rights.</strong> Software is provided to non-DOD agencies with
+                            RESTRICTED RIGHTS and its supporting documentation is provided with LIMITED RIGHTS. Use,
+                            duplication, or disclosure by the government is subject to the restrictions as set forth in
+                            subparagraph "C" of the Commercial Computer Software - Restricted Rights clause at FAR
+                            52.227-19. In the event the sale is to a DOD agency, the government's rights in software,
+                            supporting documentation, and technical data are governed by the restrictions in the
+                            Technical Data Commercial Items clause at DFARS 252.227-7015 and DFARS 227.7202.
+                            Manufacturer is device42, 760 Chapel St, New Haven CT 06611.</p>
+
+                    {% endblocktrans %}
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock %}

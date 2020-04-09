@@ -1,0 +1,240 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Web based IT Inventory Management Software" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'IT Inventory Management Software with Device42, a Comprehensive DCIM Software' %}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{% trans "IT Inventory Management Software" %}</h1>
+                <p>{% trans "Device42 provides comprehensive IT Asset Management" %}
+                    <em>({% trans "ITAM" %})</em> {% trans "capabilities that establish and maintain a centralized system of record for managing the entire lifecycle of any IT asset type within your data center infrastructure. Device42’s powerful auto-discovery capabilities also ensure IT asset inventories, whether physical, logical, or cloud, are accurate and up-to-date." %}
+                </p>
+            </div>
+        </div>
+        <div class="row featurette">
+            <div class="col-sm-8">
+                <p class="alt-font">{% trans "Using Device42’s comprehensive ITAM capabilities, companies can" %}:</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul>
+                            <li>{% trans "Agentless auto-discovery" %}</li>
+                            <li>{% trans "Hardware and Software inventory" %}</li>
+                            <li>{% trans "Both Physical and Virtual" %}</li>
+                            <li>{% trans "Inventory assets on premise or in the cloud" %}</li>
+                            <li>{% trans "Container inventory" %}</li>
+                            <li>{% trans "Track and Visualize relationships between assets" %}</li>
+                            <li>{% trans "QR codes and barcodes with smart phone support for inventory management" %}</li>
+                            <li>{% trans "Integrate with popular ITSM tools  (change history)" %}</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul>
+                            <li>{% trans "Scalability, from small to huge – No inventory too large" %}</li>
+                            <li>{% trans "Warranty check, reporting and tracking" %}</li>
+                            <li>{% trans "Ensure compliance and audit security" %}</li>
+                            <li>{% trans "Audits just got a LOT easier via customizable reports, at your fingertips" %}</li>
+                            <li>{% trans "Go beyond just assets with our fully integrated CMDB" %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <a href="{% static 'img/sections/solutions/itassetmanagement/it-asset-management.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/itassetmanagement/it-asset-management.png' %}"
+                         alt="{% trans 'IT Asset Management' %}" class="img-border center-block img-responsive">
+                </a>
+            </div>
+        </div>
+
+        {% include 'partials/try-free-callout.html' %}
+
+        <div class="row is-table-row image-right-8x4 featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/app-deps/automated_service_dependency.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/app-deps/automated_service_dependency.png' %}"
+                         alt="{% trans 'Automated Service Dependency' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Agentless Auto-Discovery " %}<br>
+                    <small>{% trans "An accurate inventory that is " %}<strong>{% trans "always" %}</strong>
+                        audit-ready!
+                    </small>
+                </h2>
+                <p>{% trans "Populate your Infrastructure and inventory quickly and effortlessly with an extensive range of auto-discovery tools for physical, virtual, and cloud infrastructures. Increase efficiency and maximize productivity by getting clear visibility into what you have while promoting transparency companywide." %}</p>
+                <ul class="dash">
+                    <li>{% trans "All discovery tools are agentless" %}</li>
+                    <li>{% trans "All discoveries can be scheduled so your inventory is always up-to-date" %}</li>
+                    <li>{% trans "Multiple discovery protocols supported (e.g. SNMP, WMI, SSH, Modbus, ...)" %}</li>
+                    <li>{% trans "Native support for all popular virtualization platforms, both public and private cloud included" %}</li>
+                    <li>{% trans "Native support for blade chassis" %}</li>
+                    <li>{% trans "Granular APIs with sample scripts for custom discovery" %}</li>
+                    <li>{% trans "Fast, flexible and easy to deploy" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-md-12">
+                <h2>{% trans "Hardware inventory" %}</h2>
+                <p>{% trans "Device42 locates and updates your devices automatically, making it easy to document physical, virtual, blade, clusters, switches or any other device types." %}</p>
+                <br>
+                <a href="{% static 'img/sections/features/itam/hardware-inventory.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/itam/hardware-inventory.png' %}"
+                         alt="{% trans 'Hardware Inventory' %}" class="img-responsive center-block img-border">
+                </a>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/features/itam/software-inventory.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/itam/software-inventory.png' %}"
+                         alt="{% trans 'Software Inventory' %}" class="img-responsive center-block img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Software Inventory" %}</h2>
+                <p>{% trans "Using Device42’s powerful agentless software discovery process, organizations can create and maintain a comprehensive, accurate profile of the software deployed on Windows and Linux machines across the entire IT infrastructure — from the server to the desktop." %}</p>
+                <ul class="checklist">
+                    <li>{% trans "Compare current usage to license counts" %}</li>
+                    <li>{% trans "Detect prohibited software" %}</li>
+                    <li>{% trans "Track license agreements and expiration dates" %}</li>
+                    <li>{% trans "Identify purchased vs. installed software" %}</li>
+                    <li>{% trans "Provide customizable notification alerts" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-12">
+                <h2>{% trans "Virtual machines, containers and cloud inventory" %}</h2>
+                <p>{% trans "Effortlessly enumerate data from your Hosts and Virtual Machines across all widely used Hypervisors and Cloud Providers with Device42’s Cloud and vServer Auto-Discovery.  Built upon native vendor API’s, you can run on-demand or scheduled jobs to reach and grab data from your Hosts and VM’s alike, keeping your inventory up to date with new deployments and changes to your virtual and cloud environments." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/features/itam/asset-relationships.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/itam/asset-relationships.png' %}"
+                         alt="{% trans 'Track relationships between assets' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Track relationships between assets" %}</h2>
+                <p>{% trans "With flexible and far reaching methods of gathering network and device data, Device42 is a powerful platform to visualize concrete information on all operational dependencies." %}</p>
+                <p>{% trans "Using multiple methods of Auto-Discovery, API, and integration data, Device42 will put the pieces together for detailed Impact Charts displaying the downward dependency of a Virtual Host or Blade Chassis to all contained VM’s or Servers and the service connections between. See a map of your operations and quickly understand what occurs if a blade or service becomes unavailable and the trickle-down effect of outages or service interruptions." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/features/itam/qr-codes.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/itam/qr-codes.png' %}"
+                         alt="{% trans 'QR Codes, Asset tags' %}" class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "QR Codes, Asset tags" %}</h2>
+                <p>{% trans "Say goodbye to traditional barcode readers - use your mobile devices for ITAM procedures. Print customized QR codes and auto-assign customizable asset numbers. Ensure that asset audits are both fast and accurate. With an optimized web portal for mobile devices, view device and asset inventory while you walk down the aisles of your data center." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/features/itam/contract-management.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/itam/contract-management.png' %}"
+                         alt="{% trans 'Contract and Purchase Management' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Manage Purchases and Support Contracts" %}</h2>
+                <p>{% trans "Centrally manage all IT contract information for devices, hardware, and software assets within the enterprise infrastructure." %}</p>
+                <ul class="checklist">
+                    <li>{% trans "Track purchases and contracts for all asset types" %}</li>
+                    <li>{% trans "Generate and schedule reports based on purchase data" %}</li>
+                    <li>{% trans "Receive contract expiration reminders to ensure timely renewals" %}</li>
+                    <li>{% trans "Easily generate reports that support IT audits" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-12">
+                <h2>{% trans "Integrate with ITSM tools " %}
+                    <small><em>({% trans "change history" %})</em></small>
+                </h2>
+                <p>{% trans "More effectively manage IT service details and quality of response with detailed info provided from Device42 to integrations such as JIRA, Zendesk and ServiceNow. Leverage Device42 as your " %} {% trans "single source of truth" %}.</p>
+                <p>{% trans "Select Configurations Items to associate them when creating service requests. Sync data such as devices, power units, parts and racks then search for and navigate to requests that include CI from Device42. All changes can be viewed through a detailed audit log with a defined source of change and the properties that were updated." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-12">
+                <h2>{% trans "Scalability" %}</h2>
+                <p>{% trans "Device42 was designed from the ground up to be scalable and versatile. Using auto-discovery, environments of all sizes can have all desired data scanned and updated as needed, ensuring no properties are out of date. Our Virtual Appliance supports many popular hypervisors, so you are up and running in minutes, highly availability, and can count on reliable performance." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-12">
+                <h2>{% trans "Warranty check and tracking" %}</h2>
+                <p>{% trans "Centrally manage all IT contract information for devices, hardware, and software assets within the enterprise infrastructure." %}</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>{% trans "Device42 also offers a" %} <a href="https://github.com/device42/warranty_check"
+                                                                   target="_blank"
+                                                                   class="ext-link">{% trans "Warranty Check Script" %}</a> {% trans "to automate warranty checking. Customers can query Device42 for their assets then retrieve warranty information from vendors -- which is then automatically added into the Device42 database. This script simply requires API keys from vendors, and has been tested to work with Dell." %}
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="checklist">
+                            <li>{% trans "Track purchases and contracts for all asset types" %}</li>
+                            <li>{% trans "Generate and schedule reports based on purchase data" %}</li>
+                            <li>{% trans "Receive contract expiration reminders to ensure timely renewals" %}</li>
+                            <li>{% trans "Easily create reports to support IT audits" %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <h2>{% trans "Compliance and security" %}</h2>
+                <p>{% trans "Granular and detailed reporting is a powerful tool that provides insight into the daily operations of your IT and infrastructure. Create change history and password reports, keep all needed parties involved and up to date with device and password expiration audits. Easily maintain an environment focused on security and best practices. Expansive feature set to manage contracts and licensing based upon variables such as user count, licensed CPUs, and whether a given license is perpetual or subscription based." %}</p>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Audits and reports at your fingertips" %}</h2>
+                <p>{% trans "Whether you use a PC or Mobile device, select anywhere between one and all objects from any list view and export data to a .csv or audit log. Be ready for any meeting or presentation on the fly. Bring along a rack audit of any selected racks and easily see all devices, power units, and locations information for each rack. Define on-demand or scheduled reports to view right from your browser, or export to a spreadsheet. Custom reports available for all objects within Device42." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-md-12">
+                <h2>{% trans "Go beyond just assets with our fully integrated CMDB" %}</h2>
+                <p>{% trans "Device42’s CMDB becomes the single source of truth within your organization, which provides a clear view into your IT ecosystem. Identify, manage, and verify all configuration items (CI) in your environment. Track all IT assets and configurations within the company and its services in one place, ensuring configuration records are accurate for greater control over your infrastructure. Unify data and process across teams and across departments, fostering alignment companywide." %}</p>
+                <br>
+                <img class="img-responsive center-block col-sm-10 col-sm-offset-1" alt="{% trans 'Solution Components' %}"
+                     src="{% static 'img/sections/features/Solution-Components.png' %}">
+            </div>
+        </div>
+
+        {% include 'components/brands-you-trust.html' %}
+
+       <div class="row featurette">
+            <div class="col-xs-6 col-xs-offset-3">
+                <blockquote>
+                    Device42 is taking us from anarchy to organization.
+                    <hr>
+                    <cite>
+                        Matt Iles<br><span>Network Systems Manager<br>International School of Beijing</span>
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+{% endblock %}

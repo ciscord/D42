@@ -1,0 +1,201 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Web-based Patch Panel Cable Management" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Patch Panel Cable Management with Device42, a Comprehensive DCIM Software. Document end to end physical connectivity with a comprehensive and user friendly solution from Device42.' %}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{% trans "Patch Panel Cable Management Software" %}</h1>
+                <p>{% trans "Data center teams often find themselves tracing cables within their data center due to outdated, inaccurate patch panel records (usually Excel or Visio files). Worse yet, some data centers lack any tools for managing the ever expanding, ever changing sea of patch panel connections" %}.</p>
+                <p>{% trans "Fortunately, data center cable management doesn’t have to be daunting, time consuming, and error prone" %}.</p>
+                <p>{% trans "With Device42 software, keeping track of your patch panel cable connections is fast, easy, and accurate. Device42 removes cable management complexity and increases the visibility, control, and efficiency of data center cable management" %}.</p>
+            </div>
+        </div>
+        <div class="row featurette">
+            <div class="col-sm-8">
+                <ul>
+                    <li>{% trans "Manage your patch panels efficiently and effectively" %}</li>
+                    <li>{% trans "Support templates for fiber, Ethernet, or any patch panel type" %}</li>
+                    <li>{% trans "Load cabling data using spreadsheet imports" %}</li>
+                    <li>{% trans "Manage cabling data using easy-to-use web-based GUI" %}</li>
+                    <li>{% trans "Visualize end-to-end connectivity using patch panel layouts" %}</li>
+                    <li>{% trans "Quickly determine port availability and port status" %}</li>
+                    <li><a href="#section-2" data-jump="#s2"> {% trans "Read more below" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <a href="{% static 'img/sections/solutions/patch-panel-cable-management-software.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/patch-panel-cable-management-software.png' %}"
+                         alt="{% trans 'Patch Panel Management' %}" class="img-border center-block img-responsive">
+                </a>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+        <div id="s2" class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/Create-Patch-Panel.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/Create-Patch-Panel.gif' %}"
+                         alt="{% trans 'Patch Panel' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans 'Template Based Patch Panels' %}</h2>
+                <p>{% trans "Device42’s template-based, data center patch panel diagrams allow IT staff to quickly create custom patch panel diagrams that provide instant clarity to cable connections. When creating new patch panel records, IT staff can chose an existing patch panel template or create an entirely new patch panel model “on the fly”. Patch panel templates make building patch panel documentation easy, and fast" %}:</p>
+                <ul>
+                    <li>{% trans "Flexible port types - singular (all ports the same), or modular (mixed port types" %})</li>
+                    <li>{% trans "User-defined port types provide complete flexibility" %}</li>
+                    <li>{% trans "User-defined port types allow you to create the port type to suit your needs" %}</li>
+                    <li>{% trans "Track individual fiber strands with paired ports" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/patch-panel-visualization.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/patch-panel-visualization.gif' %}"
+                         alt="{% trans 'Powerful Patch Panel Visualization' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Powerful Patch Panel Visualization" %}</h2>
+                <p>{% trans "Device42’s template-based data center patch panel diagrams make patch panel record keeping easy and fast. Patch panel diagrams clearly display connections and instantly convey connection details needed for effective patch panel management" %}.
+                <p>
+
+                <ul>
+                    <li>{% trans "Visual patch panel layouts are easy to use" %}</li>
+                    <li>{% trans "Users can quickly access detailed port information" %}</li>
+                    <li>{% trans "Color coded icons clearly show connection status" %} </li>
+                    <li>{% trans "Mouse-over cables to view local or remote – ports and devices" %}</li>
+                    <li>{% trans "View physical connections to local devices" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette image-right">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/patch-panel-create-connection.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/patch-panel-create-connection.gif' %}"
+                         alt="{% trans 'Patch panel drag and drop connection' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Drag and Drop Port Connections" %}</h2>
+                <p>{% trans "In addition to providing clear patch panel visualizations, Device42 enables easy management of routine port connection changes using familiar drag and drop functionality" %}:
+                <p>
+                <ul>
+                    <li>{% trans "Drag and drop to create connections from patch panel ports to devices" %}</li>
+                    <li>{% trans "Connect patch panel with switch ports, and switch ports with devices" %}</li>
+                    <li>{% trans "Confirmation checks eliminate accidental connection overwrites" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/Patch-Panel-Edit.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/Patch-Panel-Edit.png' %}"
+                         alt="{% trans 'Detailed Patch Panel Port Information' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Detailed Patch Panel Port Information" %}</h2>
+                <p>{% trans "With Device42 software, data center managers can confidently access patch panel port information making service and support operations fast, easy, and accurate. Device42 provides important details with simply a click" %}:</p>
+                <ul>
+                    <li>{% trans "Add/change port information" %} </li>
+                    <li>{% trans "Supported content types: device, patch panel port, switch port, TAP ports" %}</li>
+                    <li>{% trans "MAC address look up for associated devices" %}</li>
+                    <li>{% trans "Mouse-over to view full connection path" %}</li>
+                    <li>{% trans "User-defined port types" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette image-right">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/Patch-Panel-Bulk-Connectivity.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/Patch-Panel-Bulk-Connectivity.png' %}"
+                         alt="{% trans 'Patch Panel to Patch Panel Connectivity is Easy' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Make Patch Panel to Patch Panel Connectivity Easier" %}</h2>
+                <p>{% trans "Device42’s bulk connectivity feature makes it easy to perform back connections (e.g. patch panel to patch panel). For data center managers that means patch panel management just got better" %}.</p>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/color-coded-connectivity-status.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/color-coded-connectivity-status.png' %}"
+                         alt="{% trans 'Color Coded Port Connection Status' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Color Coded Port Connection Status" %} </h2>
+                <p>{% trans "Device42 provides simple and easy to identify color coding of port connections that make port connection management clear and simple to understand. With mouse over details, data center support personnel have the information they need, when they need it" %}!</p>
+                <ul>
+                    <li>{% trans "Color coded status icons for easy status identification" %}</li>
+                    <li>{% trans "Mouse-over for full path information" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette image-right">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/view-update-patch-panel-iPAD.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/view-update-patch-panel-iPAD.png' %}"
+                         alt="{% trans 'View, Add, Update Patch Panel with iOS and Android Devices' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Use iOS and Android Devices for Patch Panel Management" %}</h2>
+                <p>{% trans "While Device42 provides centralized visibility and control of data center infrastructure, it also provides mobile workers with access to the data center information they need while away from their desk – making patch panel adds, changes, and audit work both faster and easier" %}.+</p>
+                <ul>
+                    <li>{% trans "Use iOS or Android devices to access data while inside the data center" %}</li>
+                    <li>{% trans "Web-based UI works with all the popular browsers and is great on tablets" %}</li>
+                    <li>{% trans "Provide data center with the information they need in real-time" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/solutions/cablemanagement/patch-panel-cable-management.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/solutions/cablemanagement/patch-panel-cable-management.png' %}"
+                         alt="{% trans 'Complete Patch Panel Cable Management Software' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Complete Patch Panel Cable Management" %}</h2>
+                <p>{% trans "Device42 enables proactive patch panel management. Clear visualizations and linked detailed information allow data center managers to take control of complex patch panel wiring and avoid the likely problems and costs associated with poor patch panel management" %}.</p>
+                <ul>
+                    <li>{% trans "Manage your patch panels efficiently and effectively" %} </li>
+                    <li>{% trans "Load cabling data quickly using spreadsheet imports" %}</li>
+                    <li>{% trans "Manage cabling data using easy-to-use web-based GUI" %} </li>
+                    <li>{% trans "Visualize end-to-end connectivity using patch panel layouts" %}</li>
+                    <li>{% trans "Quickly determine port availability and port status" %}</li>
+                </ul>
+            </div>
+        </div>
+        {% include 'components/brands-you-trust.html' %}
+
+         <div class="row featurette">
+            <div class="col-xs-6 col-xs-offset-3">
+                <blockquote>
+                    Device42 is taking us from anarchy to organization.
+                    <hr>
+                    <cite>
+                        Matt Iles<br><span>Network Systems Manager<br>International School of Beijing</span>
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+{% endblock %}

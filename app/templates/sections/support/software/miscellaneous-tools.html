@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div class="well">
+    <h2 class="flat-top">Device42 {% trans "QR Code Print Utility" %}</h2>
+    <p>{% trans "The Device42 QR code print utility allows users to have fine grained control over printing QR codes using your defined Device42 print profiles or generate codes on a ad-hoc basis." %}</p>
+    <p>{% trans "This is a Windows-based application <em>(Microsoft Software Installer)</em>, and is compatible with Device42 9.6.0+ and above." %}</p>
+    <div class="row">
+        <div class="col-sm-8">
+            <p>{% trans "Current Version" %} <code><strong>1.0.1</strong></code> <span
+                    class="label label-warning text-uppercase">Beta</span></p>
+        </div>
+        <div class="col-sm-4 text-center">
+            <form action="." method="post" role="form">{% csrf_token %}
+                <input style="display:none;" type="text" name="main" maxlength="64">
+                <button type="submit" name="download" value="d42 print utility"
+                        class="btn btn-warning">{% trans "Download" %}</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+{% load i18n static %}
+<h2>{% trans "Better IT Service Management with the BMC Remedy + Device42 CMDB Plugin" %}</h2>
+<div class="row is-table-row">
+    <div class="col-sm-8">
+        <p>{% trans "If you are using BMC Remedy for your ITSM or even as a part of your ITIL framework- one of the biggest challenges is keeping the configuration item info up-to-date." %}</p>
+    </div>
+    <div class="col-sm-4">
+        <form action="." method="POST" role="form">{% csrf_token %}
+        	<button class="btn btn-sm btn-primary center-block" type="submit">{% trans "Download" %}<br>BMC {% trans "Integration" %}<br>{% trans "Package" %}</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>{% trans "Device42’s powerful and agentless auto-discovery options make it super easy to automagically maintain the true state of all your hardware and software assets and all the metadata around it. With this plugin, you can now enhance your BMC Remedy workflow with real time asset data from Device42." %}</p>
+        <p class="text-muted text-center"><em>{% trans "Add this free module to your BMC Remedy installation and begin attaching the relevant Device42 CI to your BMC Remedy tickets today!" %}</em></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>{% trans "Connecting Device42 to BMC Remedy at a glance" %}</h3>
+        <ul>
+            <li>{% trans "Associate individual or multiple configuration items (CIs) from Device42, including devices, racks, parts, and PDUs with BMC Remedy tickets" %}</li>
+            <li>{% trans "View device name, type, and service level from Device42 directly in BMC Remedy" %}</li>
+            <li>{% trans "Click through from your BMC Remedy ticket to view the full CI details in Device42" %}</li>
+            <li>{% trans "Direct visibility and historical accountability into exactly which devices a ticket affected, even if the device has been moved, renamed, or retired" %}</li>
+        </ul>
+    </div>
+</div>
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/bmc-remedy/bmc-remedy-1.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/bmc-remedy/bmc-remedy-1.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'BMC Remedy Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Link CMDB items and CI to issues in BMC Remedy" %}</h3>
+        <p>{% trans "Now you can associate auto-discovered IT assets (or Configuration Items; CI) including devices, parts, PDUs and racks from Device42 with BMC Remedy tickets. Within BMC Remedy, Device42 Configuration Items can be directly selected when creating a BMC Remedy ticket." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/bmc-remedy/bmc-remedy-2.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/bmc-remedy/bmc-remedy-2.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'BMC Remedy Integration' %}">
+        </a>
+        <br>
+        <small><em>{% trans "Upon clicking View icon, device NHCTDC1R4 opens in Device42" %}</em></small>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "View CI details from BMC Remedy tickets" %}</h3>
+        <p>{% trans "With the Device42 BMC Remedy connector, all of your detailed device information within Device42 for that Configuration Item is just a click away from your BMC Remedy ticket. Each CI in includes a link to view the Device42 page for that Configuration Item, enabling quick navigation to a detailed view of a given configuration item’s details in Device42." %}</p>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-8">
+        <h3>{% trans "Download the BMC Remedy / Device42 CMDB connector for better ITSM today!" %}</h3>
+    </div>
+    <div class="col-sm-4">
+        <button class="btn btn-sm btn-primary center-block" name="bmc_download" type="submit">{% trans "Download" %}<br>BMC {% trans "Integration" %}<br>{% trans "Package" %}!</button>
+    </div>
+</div>

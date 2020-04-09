@@ -1,0 +1,44 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans 'Introducing Device42' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'An overview of Device42s capabilities, features, and use-cases.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('igc5qfvoyr');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Introducing Device42" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "An overview of Device42's capabilities, features, and use-cases." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,178 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Web-based Data Center Power Management" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'DataCenter Power Management with Device42, a Comprehensive DCIM Software' %}"/>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row featurette">
+            <div class="col-sm-8">
+                <h1>{% trans "Data Center Power Management" %}</h1>
+                {% blocktrans %}
+                    <p><em>"Playing tetris"</em> with your servers in racks with no visibility into power consumption?
+                        Wasting money and resources on under-optimized data center power? Device42's comprehensive DCIM
+                        solution can help you take the complexity out of your data center energy management giving you
+                        full visibility and control. Optimize your data center power and add efficiency to your capacity
+                        planning.</p>
+                {% endblocktrans %}
+            </div>
+            <div class="col-sm-4">
+                <a href="{% static 'img/sections/features/server-room-layout.gif' %}">
+                    <img src="{% static 'img/sections/features/server-room-layout.gif' %}" alt="{% trans 'Server Room Layout' %}"
+                         class="img-responsive center-block img-border">
+                </a>
+            </div>
+        </div>
+        <div class="row featurette">
+            <div class="col-sm-5 col-sm-offset-1">
+                <ul>
+                    <li>{% trans "Monitor your smart PDUs, UPSs, CRACs, branch circuits and other devices" %} </li>
+                    <li>{% trans "View reports and charts showing historical data" %}</li>
+                    <li>{% trans "View room- and rack-level color heatmaps showing infeed-level detail" %}</li>
+                    <li>{% trans "Setup automated alerts to warn you about anomalous conditions" %}</li>
+                    <li>{% trans "Monitor sensors (e.g. temperature and humidity) with historical data and alerts" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-5">
+                <ul>
+                    <li>{% trans "Visualize your power chain" %}</li>
+                    <li>{% trans "Power-On / Power-Off PDU ports" %}</li>
+                    <li>{% trans "Support for all SNMP-based power devices" %}</li>
+                    <li>{% blocktrans %}“Device42 stands out for the simplicity of its implementation and operation”
+                        (Gartner){% endblocktrans %}</li>
+                    <li>{% trans "Lowest-cost fully-featured DCIM tool" %}</li>
+                    <li><a href="#section-2" data-jump="#s2">{% trans "Read more below" %}</a></li>
+                </ul>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+        <div id="s2" class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                         alt="{% trans 'Photo-Realistic Rack Layout Views' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Photo-Realistic Rack Layout Views" %}</h2>
+                <p>{% trans "Managing data center racks has never been easier or more accurate!  Device42's automatically generated rack diagrams make manual drawings and spreadsheet records a thing of the past.  Creating accurate rack diagrams is now fast and easy:" %}</p>
+                <ul class="checklist">
+                    <li>{% trans "Support for &frac12; U devices" %}</li>
+                    <li>{% trans "Back to back devices(&frac12; depth" %})</li>
+                    <li>{% trans "Show filler panels, patch panels" %}</li>
+                    <li>{% trans "See available rack units" %} </li>
+                    <li>{% trans "Show PDUs in and around the rack" %}</li>
+                    <li>{% trans "Drag and drop objects between racks" %}</li>
+                    <li>{% trans "Find next available slot" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row image-left-4x8 featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/datacenterpower/vendor-agnostic.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/datacenterpower/vendor-agnostic.png' %}"
+                         alt="{% trans 'Supported devices for data center energy management' %}"
+                         class="img-responsive img-border center-block">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Vendor Agnostic Management" %}</h2>
+                <p class="flat">{% blocktrans %}There are multiple proprietary power measurement and control protocols
+                    supported
+                    by different OEMs, which make it challenging to have a single solution for power management
+                    across ALL devices in the data center.
+                    Device42's Energy Management Module works across different
+                    vendors.
+                    It provides accurate, real time power and thermal monitoring and management for individual
+                    servers, group of servers, racks and IT equipment such as PDUs in the data
+                    centers{% endblocktrans %}.</p>
+            </div>
+        </div>
+        <div class="row is-table-row image-right featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/datacenterpower/pdu-graphs.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/datacenterpower/pdu-graphs.png' %}"
+                         alt="{% trans 'Thermal and Power Heatmaps' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Thermal and Power Heatmaps" %}</h2>
+                <ul>
+                    <li>{% trans "Rack Level Heat maps based on power and thermal data from individual servers" %}</li>
+                    <li>{% trans "Heap maps on the room layout view based on capacity, power usage and thermal data" %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row is-table-row featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/datacenterpower/pdu-port-power-control.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/datacenterpower/pdu-port-power-control.png' %}"
+                         alt="{% trans 'PDU Port Power Control' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Power Control for Servers and PDU Ports" %}</h2>
+                <p>{% trans "PDU Ports power on/off supported via SNMP for supported PDU models" %}.</p>
+            </div>
+        </div>
+        <div class="row is-table-row image-right-8x4 featurette">
+            <div class="col-sm-4">
+                <a href="{% static 'img/landing/datacenterpower/power-chain-maps.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/datacenterpower/power-chain-maps.png' %}"
+                         alt="{% trans 'Power Chain Maps' %}" class="img-responsive center-block img-border">
+                </a>
+            </div>
+            <div class="col-sm-8">
+                <h2>{% trans "Power Chain Maps" %}</h2>
+                <p>{% trans "Power and thermal management in the data center has never been easier. Using Device42 software, data center managers can anticipate and avoid thermal- and power-related problems with proactive real-time and historical management capabilities:" %}</p>
+                <ul class="checklist">
+                    <li>{% trans "Instant power monitoring from supported PDUs using SNMP" %}</li>
+                    <li>{% trans "Track historical power and thermal data" %}</li>
+                    <li>{% trans "Power estimation for servers" %}</li>
+                    <li>{% trans "Better capacity planning" %}</li>
+                    <li>{% trans "Power On/Off PDU outlets for supported models" %}</li>
+                    <li>({% trans "Add-on module - additional cost" %})</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row image-left featurette">
+            <div class="col-sm-6">
+                <a href="{% static 'img/landing/datacenterpower/power-data-charts.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/datacenterpower/power-data-charts.png' %}"
+                         alt="{% trans 'Server Room Power Usage Charts' %}" class="img-responsive img-border">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Historical Energy Data" %}</h2>
+                <ul>
+                    <li>{% trans "Look at historical data for predictive modeling" %}</li>
+                    <li>{% trans "Powerful charts with zoom in/out options" %}</li>
+                </ul>
+            </div>
+        </div>
+
+
+        {% include 'components/brands-you-trust.html' %}
+
+        <div class="row featurette">
+            <div class="col-xs-6 col-xs-offset-3">
+                <blockquote>
+                    Device42 is taking us from anarchy to organization.
+                    <hr>
+                    <cite>
+                        Matt Iles<br><span>Network Systems Manager<br>International School of Beijing</span>
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+{% endblock %}

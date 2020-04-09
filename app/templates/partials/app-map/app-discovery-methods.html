@@ -1,0 +1,34 @@
+{% load i18n static %}
+<h2 class="featurette-heading">{% trans "Discovery Methods" %}</h2>
+<p>{% trans "Discoveries are continuously run on a schedule, automatically detecting changes to your infrastructure as they are made." %}</p>
+
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4">
+    <div class="col-sm-3 text-center">
+        <img src="{% static 'img/sections/features/app-map/win.png' %}"
+             class="img-responsive inline-block img-xs-restrict-100 img-restrict-150 vert-offset-bottom-1">
+        <div style="display:block;" class="hidden-xs"></div>
+        <img src="{% static 'img/sections/features/app-map/tux.png' %}"
+             class="img-responsive inline-block img-xs-restrict-100 img-restrict-150">
+    </div>
+    <div class="col-xs-9">
+        <ul class="text-small bullet-blue">
+            <li>{% trans 'WMI for native Windows discovery' %}</li>
+            <li>{% trans 'SSH for native Linux/UNIX discovery' %}</li>
+            <li>{% trans 'SNMP Discovery (v1/v2c/v3):' %}
+                <ul class="bullet-gray">
+                    <li>{% trans 'Network switches, routers, and firewalls' %}</li>
+                    <li>{% trans 'Load Balancers (F5 BIG-IP, Cisco Netscaler, etc.)' %}</li>
+                    <li>{% trans 'Blade systems for chassis and blade information' %}</li>
+                    <li>{% trans 'Discovery & monitoring of power and environmental devices like PDUs, UPS, CRAC, etc.' %}</li>
+                </ul>
+            </li>
+            <li>{% trans 'Netflow & NMAP discovery' %}</li>
+            <li>{% trans 'Native hypervisor and VM discovery with support for all major virtualization platforms' %}</li>
+            <li>{% trans 'Cloud discovery support for Amazon, Azure, Joyent, Linode, Digital Ocean, etc.' %}</li>
+            <li>{% trans 'Cisco UCS, Cisco discovery protocol (CDP), and LLDP neighbors' %}</li>
+            <li>{% trans 'IPMI discovery for BMC boards' %}</li>
+            <li>{% trans 'DNS and ping sweep for network discovery' %}</li>
+            <li>{% trans 'Pull inventory data from tools like Puppet, Chef, Microsoft SCCM, monitoring systems, and more!' %}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans 'Server Rooms' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video introdction to Server Rooms in Device42, the most comprehensive solution for data center infrastructure management.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('s1a7jglham');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Server Rooms" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "An overview of rooms in Device42, including room details, room layout view, and features like drag and drop." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p class="text-strong text-italic">Device42 Server Room Layout Video</p>
+
+                        <p>This video will demonstrate Device42 software’s server room management capabilities.</p>
+
+                        <p>Let’s start with an introduction to the server room layout view.</p>
+
+                        <p>From the Device42 dashboard, we will select “ Rooms” then from the “rooms” list we’ll select
+                            a specific room to show.</p>
+
+                        <p class="text-strong">Server Room Layout Introduction</p>
+
+                        <p>Here you can see a “top-down” view of the server room where the racks and other server room
+                            equipment is shown from above. The yellow, green and red colored objects are racks. The
+                            other grey colored objects in the diagram represent common data center equipment such as the
+                            UPS, DMARK, or CRAC units.</p>
+
+                        <p>The rack colors denote space availability that we’ll explore in a minute. The tapered side of
+                            the rack depicts the front of the rack while the flat side of the rack denotes the back.</p>
+
+                        <p>Hovering your cursor over a rack displays detailed information about the rack including how
+                            many Us are available, and how many devices are installed in the rack. The hover box also
+                            contains links that to connectivity or layout details for the rack.</p>
+
+                        <p class="text-strong">Rack Availability</p>
+
+                        <p>Let’s take a look at how Device42 manages rack availability.</p>
+
+                        <p>As mentioned before, the rack colors denote availability of each rack. Green represents high
+                            availability, and as the colors move to yellow, orange, and red, the availability of the
+                            rack decreases.</p>
+
+                        <p>For example, in this red rack, we see there are only six of 42 Us available.</p>
+
+                        <p class="text-strong">Power Monitoring</p>
+
+                        <p>Now let’s explore some of Device42’s power monitoring capabilities!</p>
+
+                        <p>In this data center example, we see that one of the racks, equipped with intelligent PDUs, is
+                            monitored by Device42.</p>
+
+                        <p>This rack has six bars that denote 2 smart PDUs with 3 phases each. The vertical bars
+                            indicate the power consumption of the PDUs. This illustrates how both space and power
+                            availability can be considered when placing new servers in the data center.</p>
+
+                        <p class="text-strong">Power Utilization</p>
+
+                        <p>We can also view power utilization in a rack. By clicking on the “Power Utilization Charts”
+                            menu, we can view the trending data on all of the PDU infeeds and outlets that in the
+                            rack.</p>
+
+                        <p>Historical power data is kept for a year and we can easily change the reporting period. In
+                            this case, we’ll select 1 month’s data and update our display.</p>
+
+                        <p>In any of our power charts we can select a specific period and zoom for a more detailed
+                            view.</p>
+
+                        <p class="text-strong">Room View Options</p>
+
+                        <p>Now lets take a look at few of the other room view options.</p>
+
+                        <p class="text-strong">Moving Objects</p>
+
+                        <p>With the edit mode turned on, we can move objects anywhere in the room and change the layout
+                            as required.</p>
+
+                        <p>We can also select multiple objects at a time and move them to any location in the room.</p>
+
+                        <p class="text-strong">Object Templates</p>
+
+                        <p>We can also drag objects from the object templates area (on the left). In this case, we’ll
+                            add an AC unit and then add a name for the object. Next we’ll add a rack and give it a name
+                            and a U size, and then decide which direction the rack is facing.</p>
+
+                        <p class="text-strong">Resize Objects</p>
+
+                        <p>Objects can also be resized on the room grid. We can determine how much space an object takes
+                            up, and this ability applies to any object in the room.</p>
+
+                        <p class="text-strong">Perspective Zooming</p>
+
+                        <p>We can also change my view perspective by zooming in or zooming out allowing us to see both
+                            large and small rooms in a single screen.</p>
+
+                        <p class="text-strong">Room Sizing</p>
+
+                        <p>Returning to the room view, we can also change the room size Using the room size tool we can
+                            increase or decrease the room on any side that we choose in order to match the actual data
+                            center layout.</p>
+
+                        <p>Well, that wraps this brief introduction of the server room management capabilities found in
+                            Device42 software.</p>
+
+                        <p>We hope you will contact us to learn more about how Device42 software can transform the
+                            management of your IT Infrastructure.</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

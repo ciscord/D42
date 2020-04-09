@@ -1,0 +1,19 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-left-4x8 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block"
+             src="{% static 'img/sections/product/mascot_checklist.png' %}"
+             alt="{% trans 'User-defined Alerts and Notifications' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "User-defined Alerts and Notifications" %}</h2>
+        <p>{% trans "Software license alerting and monitoring allows organizations to create set it, and forget it notifications that make ongoing network software management easy and effective." %}</p>
+        <h4 class="text-muted">{% trans "Alerting thresholds include" %}:</h4>
+        <ul class="checklist dark-blue">
+            <li>{% trans "The absolute number of licenses deployed" %}</li>
+            <li>{% trans "The percentage of licenses deployed" %}</li>
+            <li>{% trans "Prohibited software deployed" %}</li>
+            <li>{% trans "Pending and current license expirations" %}</li>
+        </ul>
+    </div>
+</div>

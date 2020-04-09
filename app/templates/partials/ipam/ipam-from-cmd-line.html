@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="featurette-image img-responsive center-block img-border"
+             alt="{% trans 'IP Address Management from the Command Line' %}"
+             src="{% static 'img/sections/features/ipam/ipam-curl-example.png' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "IP Address Management from <code>&lt;cmd/&gt;</code>" %}</h2>
+        <p>{% trans "Device42's IP address management tool provides simple API calls to find next available IP, search for an IP, or assign a new IP using scripting language." %}</p>
+    </div>
+</div>

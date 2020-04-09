@@ -1,0 +1,77 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Use Case: Budgeting and Finance" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 has capabilities at many levels to help build your relationship with the CFO.  Offering visibility into technical areas with financial impact, Device42 can help improve and optimize economic efficiency.' %}"/>
+{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Budgeting and Finance" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+<div class="container use-case">
+        <div class="row flat-top">
+            <div class="col-xs-12">
+                <article>
+                    <img src="{% static 'img/components/study-a/use-cases/Budget and Finance.png' %}"
+                     class="img-inline-right" alt="{% trans 'Budget and Finance' %}"/>
+                <h2>Challenge</h2>
+                <h3 class="text-muted">{% trans "How do you convince the CFO that IT is spending its dollars wisely?" %}</h3>
+                <h3 class="text-italic">{% trans "It's a big help if you can easily respond to questions like these:" %}</h3>
+                <ul>
+                    <li>{% trans "Can you provide a departmental cost report so that I can implement chargebacks or at least understand how IT assets are being used?" %}</li>
+                    <li>{% trans "How are you making IT more efficient so that we spend less and get more?" %}</li>
+                    <li>{% trans "Can you show me how last year's $1M of CapEx was spent and who is using it?" %}</li>
+                    <li>{% trans "Can you project energy costs for next year's budget?" %}</li>
+                    <li>{% trans "According to your refresh cycle, what servers are coming up for replacement or warranty extension?" %}</li>
+                    <li>{% trans "Are you certain you don't have unused or underused servers and/or IP segments?" %}</li>
+                    <li>{% trans "What user hardware is up for refresh this year?" %}</li>
+                    <li>{% trans "Are we spending more on software then we really need to be? (SLM)" %}</li>
+                </ul>
+                <h2>{% trans "Solution" %}</h2>
+                {% blocktrans %}
+                    <p>Offering visibility into technical areas with financial impact, Device42 can help improve and
+                        optimize economic efficiency.</p>
+                    <p>The Device42 system tracks all your IT purchase orders by cost center and department at the line
+                        item level. You can easily produce reports showing capital and operating costs by cost center
+                        and department for chargebacks, analyzing departmental usage, and creating budgets. Reports are
+                        always available to provide the CFO how last year's and all prior year capex expenditures are
+                        being used.</p>
+                    <p>Device42 can help ensure that IT assets and staff are used efficiently. For example, as much as
+                        75% of the time needed to process tickets is used trying to figure out where assets are located,
+                        who is using them, who needs to be notified if a server needs to be serviced, where the service
+                        contract is located, who to call at the vendor site, finding the root password and remote url,
+                        and many, many other activities that no longer require time and effort when you have Device42 in
+                        place.</p>
+                    <p>The comprehensive ITAM (IT Asset Management) system bundled with Device42 tracks the entire asset
+                        lifecycle from purchase to decommissioning, making it easy to produce reports showing devices
+                        near end of life. The Software License Management add-on module can track a variety of license
+                        formats from per-seat to per CPU, and can identify over-licensed, unlicensed, and expired
+                        licenses, ensuring you don't spend more than you have to and that you remain in compliance.</p>
+                    <p>From a risk management perspective, Device42 provides a complete audit trail. It provides a basis
+                        for DR and fault tolerance planning. It provides reporting on proper password policies. It
+                        ensures that the organization is aware of every piece of software that has reported
+                        vulnerabilities. Device42 also tracks power usage which includes notifications and alerts
+                        regarding imminent overages, bad battery packs, high temperatures, and much more.</p>
+                {% endblocktrans %}
+                </article>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5><a href="{% url 'use_cases' %}" class="dir-arrow text-capitalize"><i class="fa fa-chevron-left"></i> {% trans "Back to Use Cases" %}</a></h5>
+            </div>
+        </div>
+    </div>
+    </section>
+{% endblock %}
+

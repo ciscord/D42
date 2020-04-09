@@ -1,0 +1,96 @@
+{% extends 'base/_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load include_partial %}
+{% block title %}{% trans "An Easier Alternative to BMC Atrium" %}{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Device42 is a BMC Atrium alternative. Here's why you should consider switching…"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <h1>Device42 &mdash;{% trans "An Easier Alternative to BMC Atrium" %}</h1>
+            <h5>{% trans "Device42 Is An Easier BMC Atrium Alternative. Here's Why You Should Consider Switching…" %}</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-info padded">
+        <div class="container">
+            <div class="infobox shadow-1 col-sm-10 col-sm-offset-1">
+                <p>{% trans "Thinking of making the switch to Device42 or one of the other BMC Atrium competitors?" %}</p>
+                <p>{% trans "We want to make your decision as easy as possible, so we’ve put together some info that will help you decide which option is best for you." %}</p>
+                <p>{% trans "Below, you will find information to help you compare Device42 and BMC Atrium, including features, customer experiences, pricing and reviews from current Device42 customers who have made the switch." %}</p>
+                <p>{% trans "We hope this helps…" %}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <article class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 is easier than way-too-complicated BMC Atrium" %}</h3>
+                <p>{% trans "Tired of having to struggle your way through clunky and complex BMC Atrium user guides, training classes, and lengthy implementation plans?" %}</p>
+                <p>{% trans "With Device42, you won’t have to. Configuration Item(CI) relationships are pre-defined. Auto-discovery will get nearly all your data into the system in an afternoon." %}</p>
+                <p>{% trans "You’ll get awesome core features like powerful reporting, great visualizations, and integrations with monitoring, automation, and ticketing tools without having to navigate a maze of features you don’t need." %}</p>
+                <p>{% trans "And if you ever want to enhance Device42 beyond the core CMDB, you can do that with custom fields, custom form layouts, and rich REST based API." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 text-center padded">
+                <a href="{% static 'img/sections/compare/web-based-rack-layout-with-drag-and-drop.gif' %}" data-featherlight="image">
+                    <img class="box-shadow img-responsive"
+                     src="{% static 'img/sections/compare/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                     alt="{% trans 'Simplicity' %}">
+                </a>
+            </div>
+            <div class="col-sm-6 text-center padded">
+                <a href="{% static 'img/sections/compare/patch-panel-create-connection.gif' %}" data-featherlight="image">
+                    <img class="box-shadow img-responsive"
+                         src="{% static 'img/sections/compare/patch-panel-create-connection.gif' %}"
+                         alt="{% trans 'Simplicity' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 helps you manage your IT Infrastructure as a whole" %}</h3>
+                <p>{% trans "With the advent of virtualization, containers, cloud computing, and software-defined networks, your IT infrastructure is orders of magnitude more complex than it was 10 years ago. It is no longer practical to manage your IT infrastructure using separate tools for asset management, IP management, cloud management, application dependency management, and software license management. The interrelationships are too important and too complex and can only be adequately captured in a single integrated tool like Device42. Too much time is wasted trying to manage all these interrelationships in different tools." %}</p>
+                <p>{% trans "Device42 looks at IT Infrastructure holistically and gives you a single console to manage your Data center (DCIM), IP addresses(IPAM) and passwords in addition to ITAM (IT asset management) and CMDB." %}</p>
+            </div>
+        </div>
+        <div class="row is-table-row">
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-1 text-center">
+                 <a href="{% static 'img/sections/compare/impact_chart.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border" src="{% static 'img/sections/compare/impact_chart.png' %}" alt="{% trans 'Impact Charts' %}">
+                </a>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-1 text-center">
+                <a href="{% static 'img/sections/compare/ip-address-tracking-software.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border" src="{% static 'img/sections/compare/ip-address-tracking-software.png' %}" alt="{% trans 'IP Address Tracking Software' %}">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Integrations" %}</h3>
+                <p>{% trans "A true CMDB should not be an isolated application. You likely have monitoring tools, automation tools, ticketing tools, finance tools, and so on that can benefit from the information in your CMDB. Many enterprise CMDBs make these integrations time consuming and expensive. With Device42, you get a lot of integrations out of the box plus REST APIs that make it a breeze to integrate with other tools." %}</p>
+            </div>
+        </div>
+        {% include 'partials/integration-logos.html' %}
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 is more affordable" %}</h3>
+                <p>{% trans "With BMC Atrium you have a big initial product cost and a large implementation cost as well." %}</p>
+                <p>{% trans "Also we believe that the value you’ll get from Device42 far outweighs the cost." %}</p>
+                <p>{% trans "And more than a thousand happy users in 33 countries agree. If our auto-discovery and collaboration features can save your team just ten hours per month, then Device42 will more than pay for itself." %}</p>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </article>
+
+{% endblock %}

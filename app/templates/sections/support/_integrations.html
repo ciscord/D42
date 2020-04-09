@@ -1,0 +1,109 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% if slug %}{{ integrations|get_key:slug }} {% trans "Integration" %}{% else %}Device42
+    {% trans "Integrations" %}{% endif %}{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Service integration with' %} Device42{% if slug %} and {{ integrations|get_key:slug }}{% endif %}"/>
+{% endblock %}
+{% block body_scripts %}
+    <style>
+        /* tmp otg add */
+        {#        .head-home { display:none!important;}#}
+        .ints-detail h2 {
+            display: none;
+        }
+
+        /* end tmp otg add */
+    </style>
+    <script>
+        jQuery(function ($) {
+            $("img").on("click", function () {
+                var _this = $(this);
+                $(".ints-detail").fadeOut().remove();
+                var r = _this.parents(".integrations");
+                $(".int-logo").removeClass("active");
+                _this.parent().addClass("active");
+                var t_outer = $("<div class='bg-info ints-detail row animated slideDown' style='display:none;'></div>");
+                var t_inner = $("<div class='col-xs-12 ints-detail--inner'></div>");
+                t_inner.append($("<h2>" + _this.data("title") + "</h2>"));
+                t_inner.append($("<p>" + _this.data("description") + "</p>"));
+                t_inner.append($("<a href='" + _this.data("link") + "' class='btn btn-primary btn-sm'>Learn More</a>"));
+                t_outer.append(t_inner);
+                t_outer.insertAfter(r).show();
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>{% if slug %}
+                        {{ integrations|get_key:slug }}{% endif %} {% trans "Integrations with Device42" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 {% if not slug %}hidden{% endif %}">
+                    <h2 class="hidden-xs"><a href="{% url 'integrations' %}">{% trans "Integrations" %}</a></h2>
+                    <div class="custom-collapse">
+                        <button class="collapse-toggle visible-xs btn btn-block btn-info sharp" type="button"
+                            data-toggle="collapse" data-parent="custom-collapse" data-target="#side-menu-collapse">{% trans 'Integrations' %} <i class="fa fa-chevron-circle-down fa-pull-right" aria-hidden="true"></i></button>
+                        <ul class="dash tight bullet-blue section-menu collapse" id="side-menu-collapse">
+                        {% for i in integrations %}
+                            <li class="{% if integrations|get_key:slug == i %}active-item{% endif %}"><a
+                                    href="{% url 'integrations_detail' slug=integrations|get_item:i %}">{{ i }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="{% if slug %}col-sm-9{% else %}col-xs-12{% endif %}">
+                    {% if slug %}
+                        {% include 'sections/support/integrations/'|add:slug|add:'.html' with product=integrations|get_key:slug %}
+                    {% else %}
+                        <section class="col-xs-10 col-xs-offset-1 clearfix vert-offset-top-1">
+                            <h3 class="text-center text-default light-weight font-stack-roboto">{% trans "Device42 integrates with other applications used in managing IT Infrastructure such as ITSM and orchestration. These integrations can enhance performance and useability of IT management systems. In addition to an extensive API library, Device42 provides connectors that make integrations easy and effective." %}</h3>
+                        </section>
+                        <div class="integrations row">
+                            {% for i in integration_details %}
+                                <div class="col-xs-4 int-logo">
+                                    <img src="{{ i.image }}" class="img-responsive" data-title="{{ i.title }}"
+                                         data-description="{{ i.description }}" data-link="{{ i.link }}"
+                                         alt="{{ i.title }}">
+                                </div>
+                                {% if forloop.counter|divisibleby:3 %}
+                                    </div>
+                                    <div class="integrations row flat-bottom">
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 vert-offset-top-2">
+                                <p class="text-muted text-italic "><span
+                                        class="text-strong">{% trans "In addition" %}</span>, {% trans "we have provided links (below) to some of the frequently requested automation tool synchronization scripts:" %}
+                                </p>
+                                <ul class="font-stack-condensed bullet-yellow">
+                                    <li><p>{% trans "Send Ohai node data from Chef server to" %} Device42: <a
+                                            href="https://github.com/device42/chef_to_device42_sync_py"
+                                            class="ext-link">{% trans "Sync node data from Chef" %}</a></p></li>
+                                    <li><p>{% trans "Sync puppet facts to" %} Device42: <a
+                                            href="https://github.com/device42/puppet_to_device42_sync_py"
+                                            class="ext-link">{% trans "Script to sync Puppet nodes information" %}</a>
+                                    </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

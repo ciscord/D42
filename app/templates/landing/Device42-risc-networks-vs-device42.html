@@ -1,0 +1,147 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 is a better alternative to RISC Networks CloudScape.  Here is why you should consider switching…' %}"/>
+{% endblock %}
+{% block body_scripts %}
+    <script>
+    $(function() {
+       $("[data-toggle='tooltip']").tooltip();
+    });
+    </script>
+{% endblock %}
+{% block title %}{% trans "Device42 vs RISC Networks Discovery" %}{% endblock %}
+{% block landingHeadingText %}{% trans "Device42 vs RISC Networks Discovery" %}{% endblock %}
+{% block landingLeadText %}
+    {% trans "While RISC Networks provides tools centered around workload migration, and RISC’s tools focus on helping to compare prices of migrating identified workloads (e.g. discovered VMs and/or applications) to competing cloud providers, Device42 focuses first and foremost on complete and accurate discovery, identifying all the details about what you have running in your environment today, and clearly highlighting the interdependencies." %}
+{% endblock %}
+
+{% block landingfeature %}
+    <section class="row landing-section">
+        <div class="col-xs-12">
+            <p class="lead-small">{% trans 'Once you have identified, with a high degree of certainty, what you have running and where, identifying candidates for migration is much more straightforward process. The hardest and most important part of any migration project is gaining a thorough understanding of the current state of your network, and Device42 outshines RISC Networks in this regard as highlighted in the table below.' %}</p>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-12">
+            <div class="table-responsive" style="margin: 0 0 24px 0;">
+                <table class="table table-hover table-condensed d42-sw-compare table-striped">
+                    <thead>
+                    <tr>
+                        <th class="h4 text-strong text-primary" style="text-align:left;">{% trans "Solution Comparison" %}</th>
+                        <th class="h4 text-center text-strong">Device42</th>
+                        <th class="h4 text-center text-strong">RISC Networks CloudScape</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Option To Keep Data On-Premise" %}</td>
+                        <td class="text-center "><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Native Windows Discovery" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Native Linux Discovery" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Other OS Discovery <em>(Mac, BSD)</em>" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Native Discovery for Popular Hypervisors" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><a data-toggle="tooltip" data-placement="top"
+                                                   title="{% trans 'RISC currently only supports native discovery for VMware.  No other hypervisors are supported.' %}"><i
+                                class="fa fa-2x fa-exclamation-triangle text-warning"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Cisco UCS Support" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "SNMP Support" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans 'NetFlow Support' %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans 'Workload Migration Suggestions' %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "RESTful API" %}</td>
+                        <td class="text-center"><i class="fa fa-2x fa-check text-success"></i></td>
+                        <td class="text-center"><i class="fa fa-2x fa-times text-danger"></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row">
+        <div class="col-xs-12">
+            <h3 class="text-primary">{% trans 'Our Solution' %}</h3>
+            <p class="lead-small">{% trans 'Unlike RISC, Device42 is a comprehensive CMDB solution.  Offering more than just the ability to discover your infrastructure, Device42 is your one-stop single source of truth because it includes a fully integrated suite of enterprise CMDB features: A DCIM, IPAM, Password Management, Certificate Management, Inventory and Lifecycle Management, Automatic Rack Diagrams, Cable Management, Drag-and-drop Room Layouts, Advanced Visualizations, Powerful, Customizable Reporting, and an advanced, well documented RESTful API.  Device42 provides <em>far more value</em> than any single solution "point product" ever could' %}.</p>
+        </div>
+    </section>
+    <section class="row landing-section">
+        <div class="col-sm-7">
+            <p class="lead-small flat-top">{% trans 'Device42 can quickly and thoroughly discover your entire network using a variety of auto-discovery methods, automatically correlating the information:' %}</p>
+            <ul>
+                <li>{% trans "SNMP Discovery (v1/v2c/v3)" %}:</li>
+                <ul class="dash tight">
+                    <li>{% trans "Network switches, routers and firewalls" %}</li>
+                    <li>{% trans "Load balancers (such as " %} BIG-IP F5 & Cisco NetScaler</li>
+                    <li>{% trans "Blade systems to get chassis/blade system information" %}</li>
+                    <li>{% trans "Discovery and monitoring of power devices like PDUs, UPS, CRAC, etc." %}</li>
+                    <li>{% trans "Console switches, fiber switches, SAN switches, etc." %}</li>
+                </ul>
+                <li>{% trans "WMI based discovery for Windows based machines (and servers)" %}</li>
+                <li>{% trans "SSH based discovery for different UNIX and Linux flavors." %}</li>
+                <li>{% trans "Hypervisor and VMs discovery with support for all major virtualization platforms" %}</li>
+                <li>{% trans "Cloud discovery support for Amazon, Azure, Joyent, Linode, Digital Ocean etc." %}</li>
+                <li>{% trans "Cisco UCS" %}</li>
+                <li>{% trans "DNS sync and ping sweep for network discovery" %}</li>
+                <li>{% trans "Pull inventory data from tools like Puppet, Chef, Microsoft SCCM, monitoring systems" %}</li>
+                <li>{% trans "IPMI discovery for BMC boards" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-5">
+            <img src="{% static 'img/sections/solutions/network-discovery-01.png' %}"
+                     alt="{% trans 'Switch Port Map Visualization' %}" class="img-responsive">
+        </div>
+    </section>
+    <section class="row landing-section is-table-row">
+        <div class="col-sm-7">
+            <img src="{% static 'img/sections/features/cmdb/Solution-Components.png' %}"
+                     alt="{% trans 'Solution Components' %}" class="img-responsive">
+        </div>
+        <div class="col-sm-5">
+            <h3 class="text-italic text-primary">{% trans 'See' %} <span
+                    style="font-style:normal;">IT</span> {% trans 'All in One Place' %}!</h3>
+            <p>{% trans "Once your data is loaded, it's time to reap the benefits. Device42 offers an extensive and highly-customizable set of reports and inquiry screens to access your CI data. But even better, Device42 provides an extensive set of visualizations including:" %}</p>
+            <ul>
+                <li>{% trans 'Your computer rooms and racks with power and capacity heatmaps' %}</li>
+                <li>{% trans 'Your full IP connectivity and power chain' %}</li>
+                <li>{% trans 'Your hardware, software, and application dependencies' %}</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

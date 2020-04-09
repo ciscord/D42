@@ -1,0 +1,68 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Schedule an online demo" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 software helps you manage your IT inventory and assets with web based rack diagrams and centralized password store.' %}"/>
+{% endblock %}
+{% block site_section_product %}active{% endblock %}
+{% block head_scripts %}
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Schedule Online Demo" %}
+
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row vert-offset-top-2">
+
+            <div class="col-sm-6 col-sm-offset-1">
+                <form role="form" id="scheduleDemo" action="." method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group {% if field.errors %}has-errors{% endif %}">
+                            <label class="control-label font-roboto" style="font-weight:400;text-align:left;"
+                                   for="id_{{ field.name }}">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                {% for error in field.errors %}
+                                    <span class="text-danger text-strong">{{ error|escape }}</span>
+                                {% endfor %}
+                            {% endif %}
+                            {% if field.help_text %}
+                                <p class="help-block">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                    <div class="form-group">
+                        <hr>
+                        <div class="btn-group text-right clearfix pull-right">
+                            <button type="submit" id="btnSubmit" name="btnSubmit" data-action="schedule-demo"
+                                    class="btn btn-primary">{% trans "Submit" %}</button>
+                        </div>
+                    </div>
+                    <input style="display:none;" id="id_main" type="text" name="main" maxlength="64"/>
+                </form>
+            </div>
+            <div class="col-sm-5">
+                <p class="lead text-dark-blue">{% trans "Want to see a live web demonstration of Device42?" %}</p>
+                <p class="text-dark-blue">{% trans "Fill out the form and we will get back to you with our next available time slots." %}</p>
+                <p class="text-muted">
+                    <small>{% trans "We respect your privacy and will not misuse or sell your personal information.  Read our " %}<a
+                            href="{% url 'legal_privacy' %}">{% trans "Privacy Policy" %}</a></small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

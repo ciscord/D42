@@ -1,0 +1,32 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "D42 Open Discovery End User License Agreement" %}{% endblock %}
+{% block site_section_legal %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'End User License Agreement for D42 Open Discovery Software that enumerates network devices and creates an excel sheet with related info.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>{% trans "END USER LICENSE AGREEMENT" %} <small>{% trans "for D42 Open Discovery Software" %}</small></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="container">
+        <div class="row">
+            <article class="col-md-12 font-stack-serif">
+                <p>{% trans "D42 Open Discovery Client enumerates Windows and Linux devices based on user input and creates an Excel spreadsheet with device related info and IP properties." %}<br>{% trans "Copyright" %} &copy; {% now "Y" %} Device42, Inc.</p>
+                <p>{% trans "This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version." %}</p>
+                <p>{% trans "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details." %}</p>
+                <p>{% trans "You should have received a copy of the GNU General Public License along with this program. If not, visit" %} <a href="http://www.gnu.org/licenses/" target="_blank" class="ext-link">http://www.gnu.org/licenses/</a>.</p>
+            </article>
+        </div>
+    </div>
+    </div>
+{% endblock %}

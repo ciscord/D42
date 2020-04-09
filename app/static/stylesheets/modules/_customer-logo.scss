@@ -1,0 +1,31 @@
+.customer-logo-panel {
+  @include make-row();
+  text-align: center;
+  margin: 0 auto;
+  > .logo-panel {
+    @include make-xs-column(6);
+    @include make-sm-column(3);
+    margin: 24px 0;
+
+      max-height:90px;
+    img {
+      @extend .img-thumbnail, .grayscale, .animated;
+      &:hover {
+        @extend .pulse;
+      }
+    }
+  }
+}
+
+.customers-info {
+  padding: 12px;
+  border-radius: $border-radius-large;
+  background-color: $brand-primary-dark;
+  h2, h3, h4 {
+    color: $brand-primary-light !important;
+  }
+}
+
+.bg-primary a {
+
+}

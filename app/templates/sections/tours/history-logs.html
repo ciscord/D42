@@ -1,0 +1,150 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "History Log" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 incorporates a comprehensive history log providing an audit trail by recording user and API activities.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "History Log" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tour-page">
+        <div class="row flat-top is-table-row">
+            <div class="col-sm-8">
+                <h2>{% trans "History Log" %}</h2>
+                <p>{% trans "Maintaining data center infrastructure documentation is essential, and using the information both planning and operational purposes can add tremendous value.  The ability to track activities related to your documentation is also important -  Device42 features comprehensive history tracking of user activity, making it easy to find out what has been done when and by whom" %}.</p>
+            </div>
+            <div class="col-sm-4 text-center">
+                <a href="{% static 'img/landing/history-logs/audit-log.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/history-logs/audit-log.png' %}"
+                         alt="{% trans 'History Log' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+
+                <ul class="font-stack-alt checklist text-muted bullet-gray">
+                    <li>{% trans "Device42 is a web based solution that works with all popular browsers" %}</li>
+                    <li class="vert-offset-top-1 vert-offset-bottom-1">{% trans "All records are time-stamped and include user, content type, object, description, and action taken <small>(view/add/change/delete)</small>" %}</li>
+                    <li>{% trans "API calls and imports are also recorded as history, in addition to tracking activity via the user interface." %}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/history-logs/search-history.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/history-logs/search-history.png' %}"
+                         alt="{% trans 'Search History' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Search" %}</h2>
+
+                <ul>
+                    <li>{% trans "Use the search box to quickly locate specific entries" %}:</li>
+                    <ul class="text-primary-alt light-weight text-italic">
+                        <li>{% trans "By User name" %} </li>
+                        <li>{% trans "By Type of content" %}</li>
+                    </ul>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/history-logs/filter-history.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/history-logs/filter-history.png' %}"
+                         alt="{% trans 'Filter History' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Filter" %} </h2>
+
+                <ul>
+                    <li>{% trans "Use the filter functionality to drill-down into history to quickly find what you are looking for" %} </li>
+                    <li>{% trans "Filter by action time, action from or by user name" %}</li>
+                    <li>{% trans "Sortable columns provide an additional option to view results, sort by time, user, content type, or object" %} </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/history-logs/device-history.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/history-logs/device-history.png' %}"
+                         alt="{% trans 'Object History' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Object History" %}</h2>
+
+                <ul>
+                    <li>{% trans "Convenient access to log entries for any object, examples: building, room, rack, device, contract, ip address, password, group, and end-user" %}</li>
+                    <li>{% trans "On an object's View Page, select History to view the object's history log" %}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/AutoDiscovery.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/AutoDiscovery.png' %}"
+                         alt="{% trans 'Server Auto-Discovery Client' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Server Auto-Discovery Client" %}</h2>
+                <ul>
+                    <li>{% trans "Use the Device42 Auto-Discovery client to discover Windows, Linux, and HyperV systems.  The client will discover host name, OS, Manufacturer, Hardware model and serial, processor, memory, and IP configuration" %}</li>
+                    <li>{% trans "Data will be fed directly into your Device42 appliance and correlated with existing data" %}</li>
+                    <li>{% trans "Run as a service and schedule recurring scans" %}</li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/deviceinfoassetlm.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/deviceinfoassetlm.png' %}"
+                         alt="{% trans 'Device Contract and Life Cycle Management' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Device Contract and Life Cycle Management" %}</h2>
+                <ul>
+                    <li>{% trans "Track your support contracts and warranty information per device" %}</li>
+                    <li>{% trans "Record contract start and end dates, plus renew by date" %}</li>
+                    <li>{% trans "Never miss a renewal date for your devices, create reports for contract end dates and schedule email notification at 30, 60, or 90 days prior to expiration" %} </li>
+                    <li>{% trans "Record purchase info" %}</li>
+                    <li>{% trans "Track the asset lifecycle with user-defined Type, e.g.: inventory, installed, retired, etc" %}.</li>
+                    <li>{% trans "View asset QR code information, assign QR code profile for automated code generation and association" %}</li>
+                </ul>
+
+            </div>
+
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </div>
+{% endblock %}

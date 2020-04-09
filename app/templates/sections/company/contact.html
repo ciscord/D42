@@ -1,0 +1,118 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Contact" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Contact Device42 - Online, by email, or phone.' %}"/>
+{% endblock %}
+{% block site_section_company %}active{% endblock %}
+{% block head_scripts %}
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+{% endblock %}
+{% block body_scripts %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+    jQuery(function ($) {
+            $("#contactForm").validate({
+                ignore: ".ignore",
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true
+                    },
+                    message: {
+                        required: true
+                    },
+                    hiddenRecaptcha: {
+                        required: {
+                            depends: function () {
+                                if (window.grecaptcha.getResponse() == '') {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1 class="flat-top text-primary-dark">{% trans "Contact Us" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="container padded">
+            <div class="row">
+                <div class="col-sm-9 left-col">
+                    <p class="lead">{% trans "Please enter your contact details and message.  We will get back to you as soon as possible." %}</p>
+                     <form class="form-horizontal vert-offset-bottom-2" role="form" action="." method="POST" id="contactForm">{% csrf_token %}
+                       {% for field in form %}
+                            <div class="form-group col-xs-12 {% if field.errors %}has-errors{% endif %}">
+                                <label class="control-label col-md-4 font-roboto" style="font-weight:400;text-align:left;"
+                                       for="id_{{ field.name }}">{{ field.label }}</label>
+                                <div class="field-wrap">
+                                    {{ field }}
+                                </div>
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <span class="text-danger text-strong">{{ error|escape }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if field.help_text %}
+                                    <p class="help-block">{{ field.help_text|safe }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <input style="display:none;" id="id_address" type="text" name="address" maxlength="32"/>
+                        <hr>
+                         <div class="row is-table-row">
+                             <div class="col-xs-8">
+                                 <div class="recaptcha-wrap">
+                                    <div class="g-recaptcha" data-sitekey="6Lfs5SMTAAAAAG5H_Gkz48BR4G-iQQBSs5QZdwZH"></div>
+                                     <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha"
+                                       id="hiddenRecaptcha">
+                                </div>
+                             </div>
+                             <div class="col-xs-4 text-right">
+                                <button type="submit" id="btnSubmit" class="btn btn-success">{% trans 'Submit' %}</button>
+                             </div>
+                         </div>
+                    </form>
+                </div>
+                <div class="col-sm-3 right-col text-right center-xs font-stack-roboto">
+                    <h4 class="font-stack-condensed text-uppercase text-strong">{% trans "Headquarters" %} - USA <i class="fa fa-map-marker fa-pull-right" style="color:inherit!important;"></i></h4>
+                    <address>
+                        <strong>Device42, Inc.</strong><br>
+                        <span>{% trans "600 Saw Mill Road" %}</span><br>
+                        <span>{% trans "West Haven, CT 06516" %}</span><br>
+                        <span><a href="tel:1-844-424-2422">1 (844) 424-2422</a> <i class="fa fa-phone" style="color:#ddd!important;"></i></span><br>
+                        <span><a href="tel:1-203-409-7242">1 (203) 409-7242</a> <i class="fa fa-phone" style="color:#ddd!important;"></i></span><br>
+                        <span><a href="mailto:info@device42.com">info@device42.com</a> <i class="fa fa-envelope" style="color:#ddd!important;"></i></span>
+                    </address>
+                    <h4 class="font-stack-condensed text-uppercase"><strong>{% trans "Business Hours" %}</strong><i class="fa fa-clock-o fa-pull-right" style="color:inherit!important;"></i></h4>
+                    <div class="business-hours">
+                        <span><strong>{% trans "Weekdays" %}:</strong> <span class="inline-block">9am - 6pm EST (GMT-5)</span></span><br>
+                        <span><strong>{% trans "Saturday, Sunday" %}:</strong> <br><span class="inline-block">{% trans "closed" %}</span></span>
+                    </div>
+                    <div class="social-networking">
+                        <h4><strong>{% trans "Social Network" %}</strong></h4>
+                        <span><a href="https://www.facebook.com/device42" class="ext-link" target="_blank"><i class="fa fa-3x fa-facebook-square"></i></a></span>
+                        <span><a href="https://twitter.com/device42" class="ext-link" target="_blank"><i class="fa fa-3x fa-twitter-square"></i></a></span>
+                        <span><a href="https://plus.google.com/+Device42" class="ext-link" target="_blank"><i class="fa fa-3x fa-google-plus-square"></i></a></span>
+                        <span><a href="https://www.linkedin.com/company/device42" class="ext-link" target="_blank"><i class="fa fa-3x fa-linkedin-square"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

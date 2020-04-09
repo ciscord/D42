@@ -1,0 +1,49 @@
+{% load i18n static %}
+<h2>{% trans "Device42’s Integration with StackStorm" %}</h2>
+<p>{% trans "StackStorm is a powerful if-this-then-that type tool that helps you automate your workflows and changes to your infrastructure based on predefined “trigger” criteria taking place anywhere across your environment. Device42 is an ideal companion for this type of tool because you need a single source of truth to correctly and reliably orchestrate these automated workflows." %}</p>
+<p>{% trans "StackStorm is likewise a perfect complement to Device42, utilizing the always up-to-date information in your Device42 CMDB instance as both a source of data to drive automation, and at the same time, a source of triggers to drive automation via Device42’s powerful webhook functionality, kicking off jobs across your organization in response to device, network, software, and application adds, deletes, and changes. Automation has never before been more efficient, accurate, or flexible." %}</p>
+<hr>
+
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-sm-4">
+        <a href="{% static 'img/sections/support/integrations/stackstorm/stackstorm-1.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/stackstorm/keep-calm-automate-all-things.png' %}"
+                 class="img-responsive center-block img-border hidden-xs" alt="{% trans 'StackStorm Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Open Sourced Code" %}</h3>
+        <p>{% trans "Our StackStorm plugin source code is open-source and available in StackStorm's" %} <a href="https://github.com/StackStorm/st2contrib/" class="ext-link">{% trans 'GitHub repository' %}.</a></p>
+        <p>{% trans "Detailed configuration and usage information can be found in the packaged <code>README.md</code> file. Installation and configuration info is also available in the next section, below." %}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h3>{% trans "Installation and Configuration" %}</h3>
+        <p>{% trans "Installing the new pack is simple as can be since it's in the official StackStorm (ST2) repo. Therefore, the installation can be accomplished with a single command using ST2's <code>packs.install</code> functionality:" %}</p>
+        <pre class="text-left">$ st2 run packs.install packs=device42</pre>
+        <a href="{% static 'img/sections/support/integrations/stackstorm/stackstorm-1.png' %}" data-featherlight="image" class="vert-offset-bottom-1">
+            <img src="{% static 'img/sections/support/integrations/stackstorm/stackstorm-1.png' %}" class="img-responsive">
+        </a>
+        <p>{% trans 'Once installed, you need only edit the configuration file to specify credentials & the URL of your Device42 instance, and you are off to the races. Look for the <code>README.md</code> file, as referenced above, in the default packs install directory for more information.' %}</p>
+        <h3>{% trans 'Working with Device42 actions in StackStorm' %}</h3>
+        <p>{% trans 'After installing you can see the new actions available in StackStorm using the following command:' %}</p>
+        <pre class="text-left">$ st2 action list --pack=device42</pre>
+        <a href="{% static 'img/sections/support/integrations/stackstorm/stackstorm-2.png' %}" data-featherlight="image" class="vert-offset-bottom-1">
+            <img src="{% static 'img/sections/support/integrations/stackstorm/stackstorm-2.png' %}" data-featherlight="image" class="img-responsive">
+        </a>
+        <h3>{% trans 'Device instance information' %}</h3>
+        <p>{% trans 'Select <strong>Settings</strong> in the lower left; <strong>System</strong> in the upper left. Put your Device42 instance information into the Device42 Auto-Discovery tool - IP or FQDN of the instance URL, username, and password.' %}</p>
+        <p>{% trans 'The <code>device_name_list</code> action accepts optional filtering parameters. For example, to query for all FreeBSD systems:' %}</p>
+        <pre class="text-left">$ st2 run device42.device_name_list os=freebsd</pre>
+        <p>{% trans 'The command would return all devices running the FreeBSD operating system, room name, room_id, service level, device tags, device types (physical, virtual, blade, etc), and more. This makes it simple to automate updates to, say, all servers running Windows Server 2012, or to deploy a new piece of software to all servers running CentOS. If your devices are tagged, say, according to function, getting a list of all “web” servers and pushing out a new configuration file is a breeze, too.' %}</p>
+        <p>{% trans 'The <code>device42.suggest_next_ip</code> call also accepts a wide range of parameters. Subnet can be specified by name, VLAN, by the actual subnet in slash notation (192.168.1.0/24), and by vrf_group or vrf_group_id. In addition, if the ‘reserved_ip=yes’ flag is passed, the IP suggested becomes reserved, is marked as such within Device42, and will therefore not be suggested again. Conversely, you can leave that flag off when you are testing your script. IP suggestions will still be returned, but they won’t be reserved.' %}</p>
+        <p>{% trans 'Both commands, when passed with the <strong>--help</strong> flag, will return full details on their usage and the parameters they accept.' %}</p>
+        <pre class="text-left">$ st2 run device42.device_name_list --help</pre>
+        <h3>{% trans "Device42's Webhooks + Stackstorm: A recipe for automation success" %}</h3>
+        <p>{% trans "Device42's webhook functionality make endless automation scenarios a reality with StackStorm. Webhooks are a way for one application to provide another application with near-realtime data. Webhooks deliver data to other applications immediately as an occurring event triggers them." %}</p>
+        <p>{% trans 'A webhook can be configured to trigger, for example, upon detection of a new IP on the network, or when a new device is discovered by Device42. Rules can be configured within StackStorm to trigger any action you desire upon receipt of the webhook. Another scenario might be to immediately reroute traffic if an event occurs on a device, such as the absence of an expected service.' %}</p>
+        <p>{% trans 'Taking it a step further, a ticket can be automatically created in the ITSM system of your choice to record work to be done, or an escalation chain configured so that a certain set of events triggers a page or text message to support staff. The possibilities combining Device42’s webhooks with StackStorm events are only limited by your imagination, and they make many automation tasks more easily realizable.' %}</p>
+    </div>
+</div>

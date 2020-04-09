@@ -1,0 +1,54 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% if package == None %}{% trans "Software Utilities and Tools" %}{% else %}Device42
+    {{ tools|get_key:package }} {% trans "Software Utility" %}{% endif %}{% endblock %}
+{% block site_section_software %}active{% endblock %}
+{% block meta %}
+    {% if package == None %}
+        <meta name="description" content="Device42 {% trans 'Software Utilities and Tools' %}">
+    {% else %}
+        <meta name="description" content="Device42 {{ tools|get_key:package }} {% trans 'Software Utility' %}">
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-xs-12">
+                    {% if package == None %}
+                        <h1>{% trans "Software Utilities" %}</h1>
+                    {% else %}
+                        <h1>{{ tools|get_key:package }}</h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="hidden-xs"><a href="{% url 'software' %}">{% trans "Utilities" %}</a></h2>
+                    <div class="custom-collapse">
+                        <button class="collapse-toggle visible-xs btn btn-block btn-info sharp" type="button"
+                                data-toggle="collapse" data-parent="custom-collapse" data-target="#side-menu-collapse">{% trans 'Utilities' %} <i class="fa fa-chevron-circle-down fa-pull-right" aria-hidden="true"></i></button>
+                        <ul class="dash tight bullet-blue section-menu collapse" id="side-menu-collapse">
+                            <li class=""><a href="{% url 'download' %}">{% trans 'Download' %} Device42</a></li>
+                            {% for i in tools %}
+                                <li class="{% if tools|get_key:package == i %}active-item{% endif %} dropdown-toggle"><a
+                                        href="{% url 'software' %}{{ tools|get_item:i }}/">{{ i }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    {% if package %}
+                        {% with packageSlug=tools|get_item:package %}
+                            {% include 'sections/support/software/'|add:package|add:'.html' %}
+                        {% endwith %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Rack Management" %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Web-based rack layouts with drag and drop support.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('hwni7jvebp');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Rack Management" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "Web based rack layouts with drag and drop support." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p>Hi, this is Marc from Device42. In this video we are going to take a look at managing
+                            racks.</p>
+
+                        <p>Let's start with the list of all racks - you see here the familiar list format consistent
+                            throughout Device42. One thing unique on the list for both Rooms and Racks is the option to
+                            Show Layout. We will return to this Rack Layout shortly}.</p>
+
+                        <p>First, let's take a look at the Rack View page. Here we have the Rack View page, let's review
+                            this page in edit mode. </p>
+                        <p>At the top of the page we see basic rack information: rack name, rack size in Us, and several
+                            options that affect the rack layout view such as: orientation of the numbering, starting
+                            number, and where to display the U labels.</p>
+
+                        <p>Next we have row, room, manufacturer, and notes. In Device42, a green plus symbol signifies a
+                            user-defined element, for example: the green plus sign next to manufacturer opens the Add
+                            Vendor dialog page.</p>
+
+                        <p>Moving on to the next section, we see all devices in this rack. Let's add a device to this
+                            rack...next we need to input the Starting U Location, or simply use the Find next slot
+                            button. We will leave the orientation as-is, as this device is installed in the front of the
+                            rack.</p>
+
+                        <p>Next we see the assets and PDU's in this rack. This rack has one patch panel installed at the
+                            back of the rack. Then we have two power distribution units, also installed at the back of
+                            the rack, one on either side. Let's go ahead and save the changes. Now let's take a look at
+                            the Rack layout...</p>
+
+                        <p>Here you can see both the front and the back of the rack. On the top right you will see the
+                            rack information, including available Us. We can edit the rack - returning to the rack
+                            details page, and add new device. We can also return to the Rack List. Next we see the power
+                            details and heat map options - both are available with add-on modules for power monitoring
+                            and power control. Finally, on the lower right we have Nameplate Options: no nameplate,
+                            asset tag, serial number, and device name.</p>
+
+                        <p>Next, let's take a look at moving devices within a rack using drag and drop. As I hover-over
+                            a device, this being the device we just added to the rack, you will see useful information
+                            as well as links to the device view page, and the device impact chart.</p>
+
+                        <p>I am going to move this device, but first I need to park it outside the rack and make some
+                            room. Drag and drop moves can be done within a rack - including from back to front, front to
+                            back - as seen here. Moves can also be made between racks, which we will look at next.</p>
+
+                        <p>To view multiple racks, return to the rack list and click on the racks you would like to
+                            view. In the actions drop-down select show front layout of selected racks and click go. Here
+                            we see the fronts of racks four, five, and six. To demonstrate moving devices between racks,
+                            I am going to move this router from rack five to rack six.</p>
+
+                        <p>This concludes the managing racks video, thanks for watching!</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+/**
+ * website - feature-pages
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+.qf-check {
+
+}
+
+.stuck-feature-menu {
+  position:fixed;
+  top: $navigation-height;
+  z-index:10;
+  width:100%;
+}
+
+.feature-menu {
+  font-size:0.9em;
+  text-align:center;
+  padding-top:7px;
+  padding-bottom:7px;
+  border-top:1px solid $gray-light;
+  border-bottom:1px solid $gray-light;
+  @include box-shadow(0px 1px 3px #cccccc);
+  background-color:lighten($brand-warning, 30%);
+  display:inline-table;
+  width:100%;
+
+  a {
+    @media screen and (min-width:$screen-sm)  {
+      display:initial!important;
+    }
+
+    display:table-cell;
+    line-height:initial!important;
+    font-size:0.9em;
+    vertical-align:middle;
+    width:20%;
+    text-transform: capitalize;
+    margin:12px 6px;
+    height:auto;
+    letter-spacing:initial;
+    font-weight:$weight-bold;
+
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      border-bottom:3px solid $brand-warning;
+    }
+  }
+
+}

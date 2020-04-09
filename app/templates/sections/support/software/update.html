@@ -1,0 +1,57 @@
+{% load i18n static custom_tags %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>{% trans "Update for Device42 Software" %}</h2>
+        <p class="font-stack-condensed text-muted">{% trans "Please note that the following form is for our current customers only.  If you are a trial user, please open a support ticket to get the update file." %}</p>
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-strong flat-top">{% trans "Device42 Appliance" %}</h3>
+                    <hr class="flat-top">
+                    <p><span class="label label-default">{% trans "Latest Version" %}</span> <code><strong>11.7.0.1483732141</strong></code> <a class="small"
+                            href="http://www.device42.com/blog/tag/release/"
+                            target="_blank">{% trans "Release Notes" %}</a></p>
+                    <p class="font-stack-alt">{% trans "The following update is for v10.1.0 and above <em>(and 64 bit only)</em>.  If you are on a version prior to 10.1.0 or on 32 bit appliance, please " %}
+                        <a href="https://support.device42.com/anonymous_requests/new"
+                           target="_blank">{% trans "open a support ticket" %}</a> {% trans "with your current version and we will work with you to get you updated." %}
+                    </p>
+                    <form action="." method="POST" role="form" class="col-sm-8 col-sm-offset-2">{% csrf_token %}
+                    <input style="display:none;" type="text" name="main" maxlength="64">
+                        <label for="email" class="col-xs-2">{% trans "Email" %}</label>
+
+                        <input type="email" class="form-control" name="email" required="required"
+                               placeholder="{% trans 'Work Email' %}">
+                        {% if error == 'regular' %}<span class="text-danger text-strong">Not a valid email address.</span>{% endif %}
+                        <button type="submit" class="btn btn-sm btn-primary form-control" name="download" value="update-regular">{% trans "Send Update Link" %}</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-strong flat-top">{% trans "Device42 Power Monitoring Appliance" %}</h3>
+                    <p><span class="label label-default">{% trans "Latest Version" %}</span> <code><strong>4.0.4.1482420556</strong></code> <a
+                            href="http://www.device42.com/blog/tag/power-appliance/" class="small"
+                            target="_blank">{% trans "Release Notes" %}</a></p>
+                    <hr class="flat-top">
+                    <form action="." method="POST" name="form2" role="form" class="col-sm-8 col-sm-offset-2">{% csrf_token %}
+                    <input style="display:none;" type="text" name="main" maxlength="64"/>
+                        <label for="email_update" class="col-xs-2">{% trans "Email" %}</label>
+                        <input type="email" class="form-control" name="email" required="required"
+                               placeholder="{% trans 'Work Email' %}">
+                        {% if error == 'pma' %}<span class="text-danger text-strong">Not a valid email address.</span>{% endif %}
+                        <button type="submit" class="btn btn-sm btn-primary form-control" name="download" value="update-pma">{% trans "Send Update Link" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="small text-muted text-strong">{% trans "We respect your privacy and will not misuse or sell your personal information.  Please read our" %}
+                        <a href="{% url 'legal_privacy' %}" target="_blank">{% trans "privacy policy" %}</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>

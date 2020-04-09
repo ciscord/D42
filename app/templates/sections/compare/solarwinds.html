@@ -1,0 +1,160 @@
+{% extends 'base/_base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load include_partial %}
+{% block title %}{% trans "An Easier Alternative to Solarwinds" %}{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="Device42 is a Solarwinds IPAM alternative. Here's why you should consider switching…"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <h1>Device42 &mdash;{% trans "A powerful alternative to SolarWinds IPAM" %}</h1>
+            <h5>{% trans "Device42 is a Powerful SolarWinds IPAM Alternative.  Here's Why You Should Consider Switching…" %}</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-info padded">
+        <div class="container">
+            <div class="infobox shadow-1 col-sm-10 col-sm-offset-1">
+                <p>{% trans "Thinking of making the switch to Device42 or one of the other SolarWinds IPAM competitors?" %}</p>
+                <p>{% trans "We want to make your decision as easy as possible, so we’ve put together some info that will help you decide which option is best for you." %}</p>
+                <p>{% trans "Below, you will find information to help you compare Device42 and SolarWinds IPAM, including features, customer experiences and reviews from current Device42 customers who have made the switch." %}</p>
+                <p class="prelist">{% trans "We hope this helps…" %}</p>
+            </div>
+        </div>
+    </div>
+
+
+    <article class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 lets you track overlapping IP ranges" %}</h3>
+                <p>{% trans "With the Device42 IP Address Management (IPAM) you can:" %}</p>
+            </div>
+        </div>
+        <div class="row font-stack-condensed">
+            <div class="col-sm-6">
+                <ul class="checklist">
+                    <li>{% trans "Create overlapping IP ranges with VRF groups" %}</li>
+                    <li>{% trans "Create nested IPv4 and IPv6 subnets with a single click" %}</li>
+                    <li>{% trans "View subnets in a tree view with nested subnets & IPs" %}</li>
+                    <li>{% trans "Assign subnets to customer/departments" %}</li>
+                    <li>{% trans "Easily track usage per subnet" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul class="checklist">
+                    <li>{% trans "Keep accurate IP information using auto-discovery tools" %}</li>
+                    <li>{% trans "Merge subnets into parents" %}</li>
+                    <li>{% trans "Relocate subnets" %}</li>
+                    <li>{% trans "Merge VLANs" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row flat-bottom">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 helps you manage your IT Infrastructure as a whole" %}</h3>
+                <p>{% trans "With the advent of virtualization, containers, cloud computing, and software-defined networks, your IT infrastructure is orders of magnitude more complex than it was 10 years ago. It is no longer practical to manage your IT infrastructure using separate tools for asset management, IP management, cloud management, application dependency management, and software license management. The interrelationships are too important and too complex and can only be adequately captured in a single integrated tool like Device42. Too much time is wasted trying to manage all these interrelationships in different tools." %}</p>
+                <p>{% trans "Device42 looks at IT Infrastructure holistically and gives you a single console to manage your Data center (DCIM), IP addresses(IPAM) and passwords in addition to ITAM (IT asset management) and CMDB." %}</p>
+                <p>{% trans "SolarWinds provides add-on tools like device tracker and others to see relationships between different configuration items(CIs) in your IT infrastructure." %}</p>
+            </div>
+        </div>
+
+        <div class="row is-table-row">
+            <div class="col-sm-4 col-sm-offset-1 padded">
+                <a href="{% static 'img/sections/compare/impact_chart.png' %}" data-featherlight="image">
+                    <img class="img-responsive img-border center-block" style="max-height:230px;"
+                         src="{% static 'img/sections/compare/impact_chart.png' %}" alt="{% trans 'Impact Chart' %}">
+                </a>
+
+            </div>
+            <div class="col-md-4 col-sm-offset-2 padded">
+                <a href="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                   data-featherlight="image">
+                    <img class="img-responsive img-border center-block" style="max-height:230px;"
+                         src="{% static 'img/sections/compare/ip-address-tracking-software.png' %}"
+                         alt="{% trans 'IP Address Tracking Software' %}">
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>{% trans "Device42 lets you manage your IPs from " %}<code>&lt;cmd/&gt;</code></h3>
+                <p>{% trans "Device42's IP address management tool provides simple API calls to find next available IP, search for an IP, or assign a new IP using scripting language." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <a href="{% static 'img/sections/compare/ip-address-management-apis.png' %}" data-featherlight="image">
+                    <img class="img-responsive center-block img-border"
+                         src="{% static 'img/sections/compare/ip-address-management-apis.png' %}"
+                         alt="{% trans 'IP Address Management APIs' %}">
+                </a>
+            </div>
+        </div>
+        <h4 class="vert-offset-top-2 prelist text-center">{% trans "A quick tabular comparison of features between Device42 and Solarwinds IPAM" %}</h4>
+        <div class="row">
+
+            <div class="col-sm-10 col-sm-offset-1">
+
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th class="h4 text-primary-dark">{% trans "Solution Comparison" %}</th>
+                        <th class="h4 text-primary-dark text-center">Device42</th>
+                        <th class="h4 text-primary-dark text-center">SolarWinds IPAM</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "VRF Groups" %}</td>
+                        <td class="text-center "><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Subnet Tree Functionality" %}</td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Comprehensive Device Information" %}</td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Integrated DNS and DHCP Management" %}</td>
+                        <td class="text-center"><span class="red-x" style="color:yellow;"></span></td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Powerful REST APIs" %}</td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Bulk Data Management" %}</td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="comp-feature alt-font">{% trans "Single/Unified Product" %}</td>
+                        <td class="text-center"><span class="checkmark"></span></td>
+                        <td class="text-center"><span class="red-x"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {% include 'partials/try-free-callout.html' %}
+
+    </article>
+
+{% endblock %}

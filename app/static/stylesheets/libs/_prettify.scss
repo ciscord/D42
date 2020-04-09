@@ -1,0 +1,238 @@
+// Styles for <code> <pre> and <mark> elements
+
+kbd {
+  font-weight: bold!important;
+}
+code, .code {
+  padding: 0 .3em!important;
+  color: $code-color;
+  font-weight:bold;
+  background-color: $code-bg;
+  border-radius: $border-radius-base;
+  font-family: $font-stack-mono;
+}
+
+mark, .mark {
+  border-radius:$border-radius-base;
+  padding: 0 .3em!important;
+}
+.prettyprint {
+  @media screen and (min-width: $screen-sm) {
+    width:90%;
+    margin:12px auto;
+  }
+}
+/*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+.prettyprint {
+  //background: #1d1f21;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  border: 0 !important;
+   background-color: $pre-bg;
+  //font-family: $font-stack-mono;
+  font-size: 12px;
+  line-height: 1.3;
+  padding: 12px 3px!important;
+  &.wrap {
+    white-space:pre-line;
+  }
+}
+
+.pln {
+  color: #c5c8c6;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #969896;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  padding-left: 1em;
+  background-color: #1d1f21;
+  list-style-type: decimal;
+}
+
+@media screen {
+
+  /* string content */
+
+  .str {
+    color: #b5bd68;
+  }
+
+  /* keyword */
+
+  .kwd {
+    color: #b294bb;
+  }
+
+  /* comment */
+
+  .com {
+    color: #969896;
+  }
+
+  /* type name */
+
+  .typ {
+    color: #81a2be;
+  }
+
+  /* literal value */
+
+  .lit {
+    color: #de935f;
+  }
+
+  /* punctuation */
+
+  .pun {
+    color: #c5c8c6;
+  }
+
+  /* lisp open bracket */
+
+  .opn {
+    color: #c5c8c6;
+  }
+
+  /* lisp close bracket */
+
+  .clo {
+    color: #c5c8c6;
+  }
+
+  /* markup tag name */
+
+  .tag {
+    color: #cc6666;
+  }
+
+  /* markup attribute name */
+
+  .atn {
+    color: #de935f;
+  }
+
+  /* markup attribute value */
+
+  .atv {
+    color: #8abeb7;
+  }
+
+  /* declaration */
+
+  .dec {
+    color: #de935f;
+  }
+
+  /* variable name */
+
+  .var {
+    color: #cc6666;
+  }
+
+  /* function name */
+
+  .fun {
+    color: #81a2be;
+  }
+}
+.prettyprint {
+
+
+  @media screen and (min-width: $screen-sm) {
+    margin: 24px auto;
+    width:90%;
+  }
+}
+/* Plain text */
+.pln {
+  color: #F1F2F3!important;
+}
+@media screen, print, projection {
+/* String content */
+  .str {
+    color: #EC7600!important;
+  }
+/* Keyword */
+  .kwd {
+    color: #93C763!important;
+  }
+/* Comment */
+  .com {
+    color: #66747B!important;
+  }
+/* Type name */
+  .typ {
+    color: #678CB1!important;
+  }
+/* Literal value */
+  .lit {
+    color: #FACD22!important;
+  }
+/* Punctuation */
+  .pun {
+    color: #F1F2F3!important;
+  }
+/* Lisp open bracket */
+  .opn {
+    color: #333333!important;
+  }
+/* Lisp close bracket */
+  .clo {
+    color: #333333!important;
+  }
+/* Mark-up tag name */
+  .tag {
+    color: #8AC763!important;
+  }
+/* Mark-up attribute name */
+  .atn {
+    color: #E0E2E4!important;
+  }
+/* Markup attribute value */
+  .atv {
+    color: #EC7600!important;
+  }
+/* Declaration */
+  .dec {
+    color: purple!important;
+  }
+/* Variable name */
+  .var {
+    color: white!important;
+  }
+/* Function name */
+  .fun {
+    color: white!important;
+  }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* IE indents via margin-left */
+ul.linenums li {
+    color: #555!important;
+    list-style-type: decimal;
+}
+
+/* Alternate shading for lines */
+ul.linenums li:nth-child(odd) {
+    background: #111;
+}

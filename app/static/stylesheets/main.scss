@@ -1,0 +1,40 @@
+/**
+ * device42.com - root style file
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+
+/* bootstrap */
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/bootstrap';
+@import 'base/custom-overrides';
+@import 'base/custom-buttons';
+@import 'base/fonts';
+/* global components and vendor styles */
+@import 'base/home-pages';
+@import 'components/navigation';
+@import 'components/logoScroller';
+@import 'components/lists';
+@import 'components/tooltips';
+@import 'components/misc';
+/* sprites */
+@import 'sprites/sprite-logos';
+@import 'sprites/sprite-integrations';
+@import 'sprites/sprite-home';
+/* base customizations */
+@import 'base/layout';
+@import 'base/footer';
+@import 'base/typography';
+@import 'base/flag-icons';
+@import 'base/landing-page';
+/* misc customizations */
+@import 'modules/img-effects';
+@import 'modules/feature-pages';
+@import 'modules/customer-logo';
+/* vendor libraries */
+@import 'libs/prettify';
+@import 'libs/featherlight';
+@import 'libs/owl-carousel';
+@import 'libs/font-awesome';
+@import 'libs/animate';

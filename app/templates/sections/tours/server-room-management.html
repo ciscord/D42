@@ -1,0 +1,108 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Server Room Management" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Data Center Management Software.  Document and view your data center room layout with a comprehensive and user friendly solution from Device42.' %}" />
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Server Room Management" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tour-page">
+        <div class="row is-table-row">
+            <div class="col-sm-7">
+                <h2>{% trans "Server Room Layout" %}</h2>
+                <ul>
+                    <li>{% trans "Manage and visualize your data center room layout with ease" %}</li>
+                    <li>{% trans "Add new objects by dragging" %}
+                        &amp; {% trans "dropping from the object palette" %} </li>
+                    <li>{% trans "Move existing objects with drag" %} &amp; {% trans "drop" %}</li>
+                    <li>{% trans "Quickly expand or contract room grid with simple zoom in/out controls" %}</li>
+                    <li>{% trans "Mouse-over for object summary and access to object details, layout, power/utilization, and the rotate object orientation action" %}</li>
+                    <li>{% trans "Device42 is a web based solution that works with all popular browsers" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-5 text-center">
+                <a href="{% static 'img/tours/room-layout.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/tours/room-layout.png' %}"
+                         alt="{% trans 'Server Room Layout' %}" class="center-block img-responsive img-xs-restrict">
+                </a>
+            </div>
+        </div>
+        <div class="row flat-top flat-bottom">
+            <div class="col-sm-12">
+                <h2>{% trans "Interactive Room Layout" %}</h2>
+                <div class="center-block vert-offset-top-1">
+                    <a href="{% static 'img/sections/features/server-room-layout.gif' %}"
+                       data-featherlight="image">
+                        <img src="{% static 'img/sections/features/server-room-layout.gif' %}"
+                             alt="{% trans 'Server Room Layout' %}"
+                             class="img-responsive box-shadow center-block img-xs-restrict">
+                    </a>
+                </div>
+                <p class="prelist text-center vert-offset-top-1 text-muted">{% trans "Allows for quick and easy adds, moves, and changes!" %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>{% trans "Color-Coded Rack Space Availability" %}</h2>
+                <p class="font-stack-roboto">{% trans "Rack space utilization is color-coded enabling quick assessment of rack space availability." %}</p>
+                <div class="center-block vert-offset-top-1">
+                     <a href="{% static 'img/landing/server-room-management/rackcolorcodes.png' %}"
+                       data-featherlight="image">
+                        <img src="{% static 'img/landing/server-room-management/rackcolorcodes.png' %}"
+                             alt="{% trans 'Color-Coded Rack Space Availability' %}"
+                             class="img-responsive center-block img-xs-restrict">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+               <h2>{% trans "Color-Coded Power Conditions" %}</h2>
+                <ul>
+                    <li>{% trans "With the add-on Power Monitoring Module, view and track real-time power utilization per object" %}</li>
+                    <li>{% trans "High and Critical power thresholds are user-defined, default settings are 70% and 80% respectively" %}</li>
+                </ul>
+                 <div class="center-block vert-offset-top-1">
+                     <a href="{% static 'img/landing/server-room-management/powerheatmaps.png' %}"
+                       data-featherlight="image">
+                        <img src="{% static 'img/landing/server-room-management/powerheatmaps.png' %}"
+                             alt="{% trans 'Color-Coded Power Conditions' %}"
+                             class="img-responsive center-block img-xs-restrict">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row is-table-row">
+            <div class="col-sm-5">
+                <h2>{% trans "Rack Diagrams" %}</h2>
+                 <ul class="font-stack-condensed">
+                    <li>{% trans "Leverage the power of visualization by viewing your rack documentation in a web based diagram" %} </li>
+                    <li>{% trans "Mouse-over for device summary, access links to object details, impact chart" %}</li>
+                    <li>{% trans "Mouse-over a chassis and see the blades installed with links to the blade device details" %}</li>
+                    <li>{% trans "Device42 is a web based solution that works with all popular browsers" %}</li>
+                    <li>{% trans "Support for 1/2 depth and back to back devices" %}</li>
+                    <li>{% trans "Show PDUs in and/or around the rack" %}</li>
+                    <li>{% trans "Show filler panels, patch panels" %}</li>
+                    <li>{% trans "See available U space" %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-7">
+                <a href="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/sections/features/web-based-rack-layout-with-drag-and-drop.gif' %}"
+                         alt="{% trans 'Web Based Rack Layouts with Drag and Drop' %}" class="img-responsive img-xs-restrict center-block box-shadow">
+                </a>
+            </div>
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </div>
+{% endblock %}

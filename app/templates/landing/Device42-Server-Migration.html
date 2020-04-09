@@ -1,0 +1,98 @@
+{% extends "base/_base-landing.html" %}
+{% load i18n static %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42’s automated and agent-less application mapping makes server migrations easier, ensuring you know all of your dependencies and have all your configurations squared away ahead of time, uncovering the hidden issues before they cause unnecessary downtime.' %}"/>
+{% endblock %}
+{% block title %}{% trans "Server Migration" %}{% endblock %}
+
+
+{% block landingHeadingText %}{% trans "Server Migration" %}{% endblock %}
+{% block landingfeature %}
+    <section class="row flat-bottom">
+        <div class="col-sm-12">
+            <p class="lead">{% trans "Device42’s automated and agent-less application mapping makes server migrations easier, ensuring you know all of your dependencies and have all your configurations squared away ahead of time, uncovering the hidden issues"%} <em class='text-muted font-stack-serif text-strong'>{% trans "before" %}</em> {% trans "they cause unnecessary downtime." %}</p>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block maincontent %}
+    <section class="row is-table-row">
+        <div class="col-sm-6">
+            <h3 style="font-weight:400;" class="flat-bottom">{% trans "Device42 is here to help with your migrations, whether you are..." %}</h3>
+            <ul class="dash bullet-gray light-weight">
+                <li>{% trans "Migrating Windows servers, Linux servers, BSD, or Mac’s" %}</li>
+                <li>{% trans "Upgrading Servers (e.g. migrating Windows Server 2003 to 2012 or newer)" %}</li>
+                <li>{% trans "Consolidating existing infrastructure" %}</li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'img/landing/v2imgs/server-migrations.png' %}"
+                 alt="{% trans 'Server Migrations' %}" class="img-responsive img-restrict center-block">
+        </div>
+    </section>
+
+    <section class="row is-table-row">
+        <div class="col-sm-4">
+            <h2 class="light-weight">{% trans "Device42 helps you build a complete picture of your infrastructure." %}</h2>
+        </div>
+        <div class="col-sm-8">
+            <ul class="lead-small bullet-blue light-weight">
+                <li>{% trans "Agent-lessly discovering all of your application dependencies via automated Application Dependency Mapping" %}</li>
+                <li>{% trans "Analyzing thousands of servers without installing software and without needing to configure expensive span ports" %}</li>
+                <li>{% trans "Automatically generating dependency flow diagrams that show the relationship between devices, servers, applications, and application components" %}</li>
+                <li>{% trans "Showing what services are listening on what ports, and all open ports on each server" %}</li>
+                <li>{% trans "Augmenting the discovery process with netflow data, generating comprehensive application dependency maps even if certain servers can’t be accessed directly" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row padded">
+        <div class="col-sm-8">
+            <p>
+                <strong>{% trans 'Lean on Device42 both during and after your migration.' %}</strong>  {% trans 'Quickly determine who needs to be notified and their contact information is at your fingertips. As the server migration process gets underway, turn again to Device42 for each server’s credentials, and generate a secure new set for the migrated server. When your migration is nearing completion, launch (or re-schedule) an auto-discovery, and allow Device42’s self-documenting CMDB to automatically map out everything you’ve changed, and then verify all your changes appear as they should.' %}
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <img src="{% static 'img/landing/v2imgs/anarchy-to-organization.png' %}"
+                     class="img-restrict center-block" >
+        </div>
+    </section>
+    <p class="text-muted lead-small">{% trans 'Between 50-80% of outages are self-inflicted via "ill-planned" changes. With the help of Device42’s self-documenting CMDB, you can ensure your server migration project doesn’t become part of this statistic. Device42 makes it easy to formulate a migration strategy, validate approved changes, and expose unapproved changes alike, ensuring nothing slips under the radar.' %}</p>
+    <section class="row is-table-row image-left-5x7">
+    <div class="col-sm-5">
+            <img src="{% static 'img/landing/v2imgs/ApplicationDependencyFlowCharts.png' %}"
+                 class="img-responsive center-block img-xs-restrict">
+        </div>
+        <div class="col-sm-7">
+            <h3>{% trans 'Application Dependency Mapping' %}</h3>
+            <p class="lead-small">{% trans 'With our powerful agent-less auto-discovery methods, you can easily map services, listening ports on the services and remote connections for windows and linux machines.' %}</p>
+            <h4 class="prelist">{% trans 'Some of the benefits of this feature listed below' %}:</h4>
+            <ul class="bullet-blue light-weight">
+                <li>{% trans "Know what services are listening on what ports" %}</li>
+                <li>{% trans "Find out all the open ports on a machine" %}</li>
+                <li>{% trans "Visualize all the dependencies for a particular machine" %}</li>
+                <li>{% trans "Get a list view of the service and remote dependencies as well" %}</li>
+                <li>{% trans "No need to configure expensive span ports to get dependencies between servers" %}</li>
+                <li>{% trans "Easy migration path for your legacy systems" %}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="row image-right-7x5 is-table-row">
+            <div class="col-sm-5">
+              <img src="{% static 'img/landing/v2imgs/icons_cog_randoms.png' %}"
+                 class="img-responsive center-block img-xs-restrict">
+        </div>
+        <div class="col-sm-7">
+            <h3>{% trans 'Powerful, Agent-less Device Discovery' %}</h3>
+            <p class="lead-small">{% trans 'Device42’s discovery tools enable SNMP discovery for network devices ...and more. SNMP discovery provides comprehensive capabilities to identify and track physical and logical components, and their relationship inter-dependencies. The .Net based agent-less software discovers devices on the network, compiles detailed device information and automatically uploads the information to the Device42 appliance.' %}</p>
+            <ul class="checklist lead-small bullet-blue light-weight">
+                <li>{% trans "Windows servers & devices using WMI" %}</li>
+                <li>{% trans "Linux, UNIX, BSD, and Mac servers using SSH" %}</li>
+                <li>{% trans "Hyper-V hosts and VMs" %}</li>
+                <li>{% trans "Custom discovery scheduling" %}</li>
+                <li>{% trans "Run discoveries from remote locations" %}</li>
+            </ul>
+        </div>
+    </section>
+{% endblock %}

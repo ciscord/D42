@@ -1,0 +1,46 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %} - {% trans 'Auto-discovery' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video introduction to Device42 IT infrastructure management software’s auto-discovery functionality.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('qr7ght1mcz');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Device42 Auto-discovery Introduction" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "This video Introduces Device42 IT infrastructure management software's auto-discovery functionality. In this video we will discuss the process of auto-discovery, the best practices for running the initial Device42 auto-discovery, and demonstrate how discoveries build a comprehensive, accurate asset database in Device42 DCIM software. We'll also address a few frequently asked questions and provide links to additional auto-discovery resources." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="wistia_embed" id="wistia_video"></div>
+{#                            <iframe src="http://fast.wistia.net/embed/iframe/qr7ght1mcz?videoFoam=true&playerColor=22a3df&stillUrl=https%3A%2F%2Fd42cdn.s3.amazonaws.com%2Fimg%2Fbranding%2Ftransparent-logo.png" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="360"></iframe>#}
+                        </div>
+                    </div>
+{#                    <script src="http://fast.wistia.net/static/iframe-api-v1.js"></script>#}
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,180 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Server Inventory" %}{% endblock %}
+
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Data Center Management Software.  Document and manage your server inventory with a comprehensive solution from Device42.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Server Inventory" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container tour-page">
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/home-page-device-widget.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/home-page-device-widget.png' %}"
+                         alt="{% trans 'Server Inventory Management' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Server Inventory Management" %}</h2>
+                <ul>
+                    <li>{% trans "Document the details of every device in your infrastructure" %}</li>
+                    <li>{% trans "Support for multiple device types, physical, virtual, clustered and more" %}</li>
+                    <li>{% trans "Device42's web based UI is fast and easy to use" %}</li>
+                    <li>{% trans "Access devices from the Device42 Home Page via the devices menu, links, or via search" %} <em class='text-muted'>{% trans '(almost everything is searchable in Device42, and the search box is available at the top of every page)' %}</em>.</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/alldevicespage.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/alldevicespage.png' %}"
+                         alt="{% trans 'Server Inventory Management' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Device Navigation" %}</h2>
+
+                <ul>
+                    <li>{% trans "Navigation in Device42 is a breeze" %}</li>
+                    <li>{% trans "Lists are searchable and columns sortable" %}</li>
+                    <li>{% trans "List filters enable quick and easy drill-down into your device data" %}</li>
+                    <li>{% trans "Add a device" %}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/deviceinfoviewtop.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/deviceinfoviewtop.png' %}"
+                         alt="{% trans 'Device Information' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Device Information" %}</h2>
+
+                <ul>
+                    <li>{% trans "Device42 supports all types of devices, including physical, virtual, and clusters" %}  </li>
+                    <li>{% trans "One or more attributes may be associated with a given device, e.g.: network switch, fiber switch, blade chassis, virtual host" %} </li>
+                    <li>{% trans "Hardware models are template based, when adding a new device chose and existing hardware template or create a new hardware model on the fly" %}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row">
+            <div class="col-xs-12">
+                <h2>{% trans "Device Properties" %}</h2>
+                 <div class="row flat-top">
+                    <div class="col-xs-12 text-center">
+                        <a href="{% static 'img/landing/server-inventory/deviceinfoproperties.png' %}"
+                           data-featherlight="image">
+                            <img src="{% static 'img/landing/server-inventory/deviceinfoproperties.png' %}"
+                                 alt="{% trans 'Device Properties' %}"
+                                 class="center-block box-shadow img-responsive img-restrict">
+                        </a>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-sm-6 flat-top">
+                        <ul>
+                            <li>{% trans "Record detailed information about your devices" %}</li>
+                            <li>{% trans "CPU, Memory, HDD and RAID Level" %}</li>
+                            <li>{% trans "Track OS Version and Licensing" %} </li>
+                            <li>{% trans "Assign IP and MAC addresses, another of Device42's great features is full IPAM functionality - automatically assign next available IP address to your device.  No more spreadsheets" %}.</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 flat-top">
+                        <ul>
+                            <li>{% trans "Hardware components tracking" %}</li>
+                            <li>{% trans "View and change Network Switch and PDU port connectivity" %}</li>
+                            <li>{% trans "Check out/Assign devices to users" %}</li>
+                            <li>{% trans "Assign and store passwords for your device with 256 bit encryption and control who has access" %}</li>
+                            <li>{% trans "Add device urls and attachments, assign custom values" %}</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/AutoDiscovery1-001.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/AutoDiscovery1-001.png' %}"
+                         alt="{% trans 'Auto Discovery' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Auto Discovery" %}</h2>
+                <ul>
+                    <li>{% trans "Easily pull the information from your Cisco UCS, VMWare, and Citrix Xen environments into Device42" %}</li>
+                    <li>{% trans "Create recurring schedules to keep the data current, select one or multiple days and time of day.  Maintain multiple schedule" %}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/AutoDiscovery.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/AutoDiscovery.png' %}"
+                         alt="{% trans 'Server Auto-Discovery Client' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Server Auto-Discovery Client" %}</h2>
+                <ul>
+                    <li>{% trans "Use the Device42 Auto-Discovery client to discover Windows, Linux, and HyperV systems.  The client will discover host name, OS, Manufacturer, Hardware model and serial, processor, memory, and IP configuration" %}</li>
+                    <li>{% trans "Data will be fed directly into your Device42 appliance and correlated with existing data" %}</li>
+                    <li>{% trans "Run as a service and schedule recurring scans" %}</li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="row flat-top is-table-row image-right-8x4">
+            <div class="col-sm-6 text-center">
+                <a href="{% static 'img/landing/server-inventory/deviceinfoassetlm.png' %}"
+                   data-featherlight="image">
+                    <img src="{% static 'img/landing/server-inventory/deviceinfoassetlm.png' %}"
+                         alt="{% trans 'Device Contract and Life Cycle Management' %}"
+                         class="center-block box-shadow img-responsive img-xs-restrict">
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <h2>{% trans "Device Contract and Life Cycle Management" %}</h2>
+                <ul>
+                    <li>{% trans "Track your support contracts and warranty information per device" %}</li>
+                    <li>{% trans "Record contract start and end dates, plus renew by date" %}</li>
+                    <li>{% trans "Never miss a renewal date for your devices, create reports for contract end dates and schedule email notification at 30, 60, or 90 days prior to expiration" %} </li>
+                    <li>{% trans "Record purchase info" %}</li>
+                    <li>{% trans "Track the asset lifecycle with user-defined Type, e.g.: inventory, installed, retired, etc" %}.</li>
+                    <li>{% trans "View asset QR code information, assign QR code profile for automated code generation and association" %}</li>
+                </ul>
+
+            </div>
+
+        </div>
+        {% include 'partials/try-free-callout.html' %}
+    </div>
+{% endblock %}

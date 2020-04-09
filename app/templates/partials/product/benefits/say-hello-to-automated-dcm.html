@@ -1,0 +1,26 @@
+{% load i18n static %}
+<div class="row">
+    <div class="col-xs-12">
+        <h2><em>{% trans "Say Hello" %}</em> {% trans "to Automated Data Center Management" %}</h2>
+        <p>{% trans "Say goodbye to spreadsheets and manual drawings which are, at best, inefficient and outdated. Device42 auto-generates accurate infrastructure and inter-dependencies diagrams making data center management faster, easier, and more accurate." %}</p>
+    </div>
+</div>
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %} flat-top">
+    <div class="col-sm-8">
+        <img class="img-responsive center-block img-xs-restrict"
+             src="{% static 'img/sections/product/no_more_spreadsheets.png' %}"
+             alt="{% trans 'No more spreadsheets' %}">
+    </div>
+    <div class="col-sm-4">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="checklist bullet-blue">
+                    <li>{% trans "<strong>Gain</strong> accurate infrastructure visibility &mdash;know what you have, where it's located, how it's connected, and who owns it" %}.</li>
+                    <li>{% trans "Go <em><strong>beyond</strong></em> just the physical &mdash;gain visibility into blades, virtual machines, cloud instances, and applications running on them" %}.</li>
+                    <li>{% trans "Support and document the entire lifecycle from purchase order to retirement" %}.</li>
+                    <li>{% trans "Device42's <strong>comprehensive</strong> infrastructure management enables more informed decision making" %}.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

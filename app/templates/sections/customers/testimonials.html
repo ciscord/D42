@@ -1,0 +1,116 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Our Happy Customers" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 review and Customer testimonials for Device42,  a comprehensive Data Center Documentation Software that integrates IP address management and application mapping.' %}"/>
+{% endblock %}
+{% block site_section_customers %}active{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Customer Testimonials" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li class="active-item"><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2 class="text-center vert-offset-bottom-1"><em>{% trans "What people are saying about Device42" %}...</em></h2>
+                <div class="row flat-top">
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Device42 eliminates hours of manually taking and updating inventory and I like its ease of use and having everything in one application.  I’m also very satisfied with the support I receive from Device42 and would definitely recommend Device42 to others!" %}
+                            <hr>
+                            <cite>Nick Frederick<br><span>{% trans "Network Engineer" %}<br>OneChicago</span></cite>
+                        </blockquote>
+                    </div>
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Everyone has been so professional, courteous and willing to accommodate above and beyond my expectations. I’ve had numerous questions and problems but each inquiry was returned with such enthusiasm and eagerness to help. Thank you again for the wonderful customer service." %}
+                            <hr>
+                            <cite>Christina Sharp<br><span>Cox Communications</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <blockquote>
+                            {% trans "Device42 support has been unparalleled to any other vendor in my experience. They are agile and eager to help solve any problems I run into." %}
+                            <hr>
+                            <cite>Aaron Burton<br><span>{% trans "System Administrator" %}<br>ProQuest</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-md-12">
+                        <blockquote>
+                            {% trans "As an early adopter of Device42, we have found the product and it's development team to be extremely nimble in meeting our needs. Managing a limited staff, pressure from the business to meet a rapid speed to market, as well as increased complexities to meet our compliance needs, the traditional spreadsheets and big box solutions have not been able to provide an easy no hassle solution. Device42 has become our single system to manage all physical, virtual, software, vendor, and IP assets with strong search capabilities as well as graphical representations. Device42 has also become a significant aid in validating our documentation process for customer audits and I would highly recommend this software." %}
+                            <hr>
+                            <cite>Michael Loffredo<br><span>{% trans "Director of IT Infrastructure" %}<br>LifeCare Inc.</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-md-12">
+                        <blockquote>
+                            {% trans "Device42 is simple, light, responsive, easy to use and powerful to manage and record my data center information. I can manage list of my server whether it is a rack server, blade, virtual, even a cluster, complete with its specifications like CPU, memory, harddrive and OS plus manage its manufactures like the vendor, contact information, and warranty date. I can now find an available IP Address or server information and even the rack mapping now with just few simple clicks. Export support is also a big plus. The deployment of this software is very easy too. I'm looking forward to the future updates and gladly recommend this software to my friends." %}
+                            <hr>
+                            <cite>Mardelis Lubis<br><span>{% trans "IT Data Centre Officer" %}<br>PT Federal International Finance</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Feature rich. This is exactly what I needed." %}
+                            <hr>
+                            <cite>Rod Batalla<br><span>{% trans "Senior System Administrator" %}<br>Western Digital Technologies</span></cite>
+                        </blockquote>
+                    </div>
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Layout of the software web console is very clean and easy to follow." %}
+                            <hr>
+                            <cite>Brent Meints<br><span>{% trans "IT Senior Analyst" %}<br>Thyssenkrupp Bilstein of America</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row flat-top">
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Folks here like it because it fits most of our needs and understands blades and virtualization." %}
+                            <hr>
+                            <cite>ShaColby Jackson<br><span>Blue Jeans Network</span></cite>
+                        </blockquote>
+                    </div>
+                    <div class="col-sm-6">
+                        <blockquote>
+                            {% trans "Device42 is taking us from anarchy to organization." %}
+                            <hr>
+                            <cite>Matt Iles<br><span>{% trans "Network Systems Manager" %}<br>International School of Beijing</span></cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

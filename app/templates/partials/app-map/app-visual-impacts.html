@@ -1,0 +1,12 @@
+{% load i18n static %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-5x7 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6">
+        <img class="img-responsive center-block animated"
+             src="{% static 'img/sections/features/app-map/app-visualized-impact.png' %}"
+             alt="{% trans 'Visual Application Impacts' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Visual Application Impacts" %}</h2>
+        <p>{% trans "Device42 makes understanding network device relationships, fast, easy, and accurate. Using auto-generated diagrams, IT staff members have “anytime access” to impact charts that visually communicate the relationships between applications, hardware components (racks, servers, devices, etc.), and facilities (rooms, buildings)." %}</p>
+    </div>
+</div>

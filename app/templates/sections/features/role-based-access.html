@@ -1,0 +1,56 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Role Based Access" %}{% endblock %}
+{% block site_section_features %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Role based access to control who can see what category of objects, integrated with active directory, for your inventory management with Device42 Software.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-info">
+        <div class="container">
+            <div class="row featurette is-table-row">
+                <div class="col-sm-8">
+                    <span class="section-label">{% trans "Features Tour" %}</span>
+                    <h1 class="featurette-heading">{% trans "Role Based Access" %}</h1>
+                    <p class="vert-offset-bottom-2">{% trans "Device42 provides detailed role based access per category, for users and groups. IT administrators can assign view, add, edit, or delete permissions per category. Menu and object views can be customized based on access roles." %}</p>
+                </div>
+                <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-4">
+                    <img class="featurette-image img-responsive center-block"
+                         alt="{% trans 'Role Based Access' %}"
+                         src="{% static 'img/generic/icons_cog_monitor.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row bg-warning feature-menu-wrap flat-top flat-bottom">
+        <div class="feature-menu">
+            <a href="#" data-jump="#activedirectory" data-offset="top-nav">{% trans "Active Directory" %}</a>
+            <a href="#" data-jump="#audittrail" data-offset="top-nav">{% trans "Audit Trail" %}</a>
+            <a href="#" data-jump="#multitenancy" data-offset="top-nav">{% trans "Multitenancy" %}</a>
+        </div>
+    </div>
+
+    <div class="container featurette-wrap">
+        {% include_partial "partials/role-based-access/active-directory-integration.html" vcenter=True id="activedirectory" %}
+        {% include_partial "partials/role-based-access/audit-trail.html" vcenter=True image="left" id="audittrail" %}
+        {% include_partial "partials/role-based-access/multitenancy.html" vcenter=True id="multitenancy" %}
+        <div class="row foot-nav">
+            <div class="col-xs-6 text-left">
+                <small class="text-uppercase text-muted">{% trans 'Previous' %}</small>
+                <br>
+                <a href="{% url 'features_discovery' %}"><i
+                        class="fa fa-chevron-left"></i> {% trans 'Device Discovery' %}
+                </a>
+            </div>
+            <div class="col-xs-6 text-right">
+                <small class="text-uppercase text-muted">{% trans 'Next' %}</small>
+                <br>
+                <a href="{% url 'features_app_mapping' %}">{% trans 'Application Mappings' %} <i
+                        class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

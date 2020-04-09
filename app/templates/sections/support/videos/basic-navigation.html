@@ -1,0 +1,83 @@
+{% extends 'base/_base.html' %}
+{% load i18n static custom_tags %}
+{% block title %}{% trans "Videos" %}- {% trans 'Basic Navigation' %}{% endblock %}
+{% block meta %}
+    <meta name="description" content="{% trans 'Video introduction to basic navigation in Device42, the most comprehensive solution for data center infrastructure management.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+{% block body_scripts %}
+    <script>
+        $(function() {
+           D42.embedWistia('vzjs61pdgj');
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <a href="{% url 'videos' %}">
+                        <h2 class="h1 flat-top">{% trans "Video Library" %}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row bg-alt">
+        <div class="container vert-offset-bottom-1">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="flat-top">{% trans "Basic Navigation" %}</h1>
+                    <h4 class="font-roboto text-muted">{% trans "Basic navigation explains the simple and consistent user interface in Device42. The video introduces Device42's navigation, including list views, search, filter, and bulk actions. See how easy it is to manage your IT Infrastructure." %}</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div id="wistia_video" class="wistia_embed"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="prelist">{% trans 'Transcript' %} <i class="fa fa-pencil fa-muted"></i></h3>
+                    <article class="video-transcript vert-offset-bottom-2">
+                        <p>Hi, this is Marc from Device42. In this video we will review navigation, so let's get
+                            started. Here is a list of all devices, you can see high level information about each device
+                            - on the right side, you’ll see an Add button, below the Add button, you will see a set of
+                            filters. Next we have bulk actions, bulk actions can be performed on any number of items in
+                            the list. And last, we have the Search. You will see these same navigation components
+                            throughout the system, making it much easier to learn.</p>
+
+                        <p>Continuing with navigation...you can click on an individual device to see details. Here you
+                            see the type of physical device, service level, hardware, asset and serial #'s and notes. In
+                            Device42, we use hardware templates. The benefit is not having to enter the data each time
+                            you create a device, e.g.: you may have the ten servers of the same make and model, you
+                            enter the information once, creating a hardware template that can be used for all devices
+                            with the same make and model. As you can see here, this device is an Optiplex 910 mini
+                            tower. On the hardware view page, you can see information pertaining to it, as well as
+                            existing devices of the same make and model.</p>
+
+                        <p>Moving on, let's review the four tabs of details. On the properties tab, you can see basic
+                            hardware information such as processor, memory, and hard drives. Next you can see operating
+                            system information, and if applicable, rack info. Then we have MAC address and VLAN
+                            information - IP address and subnet info, navigate directly to any of these to view the
+                            details. Finally, we have device alias.</p>
+
+                        <p>On the Hardware Tab, you can assign components from inventory to a device.</p>
+
+                        <p>The Asset Life Cycle Management Tab enables you to track purchase information such as service
+                            contracts and purchase orders. Record and track related tasks; as you can see here, we are
+                            tracking purchase, receiving, and deployment dates. These are user-defined types, you can
+                            configure these to meet your needs. Finally, you can assign asset tag profiles, and view and
+                            print asset tags in QR format.</p>
+
+                        <p>The Other Tab has a place to store device URLs for quick and convenient access. Also on this
+                            page you can record PDU, patch panel, and switch port information, upload file attachments,
+                            and create any custom data you want to enter in the form of Key Value Pairs.</p>
+
+                        <p>This concludes the Device42 Navigation video, thanks for watching!</p>
+                    </article>
+                </div>
+            </div>
+            {% include 'partials/try-free-callout.html' %}
+        </div>
+    </div>
+{% endblock %}

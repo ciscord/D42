@@ -1,0 +1,12 @@
+{% load static i18n %}
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Migrate" %} {% if product %}{{ product }}{% endif %} {% trans "data into Device42" %}</h3>
+        <p>{% trans "If you are managing IP addresses with phpIPAM, you can easily migrate your IP inventory into Device42 using the script linked below. This script connects to the phpIPAM server (v1.2.1 and above), and extracts the data, sending it to Device42 via the REST based APIs." %}</p>
+        <p class="font-stack-condensed text-muted">{% trans "This python script can be run from either Windows or Linux machines with Python 2.7.x. Requires <code>netaddr</code>, <code>pymysql</code>, and <code>requests</code>. Full details can be found on the GitHub page & in the <code>README.md</code> file." %}</p>
+        <form action="." method="POST" role="form">{% csrf_token %}
+            <a class="btn btn-sm btn-block-xs btn-primary ext-link" href="https://api.github.com/repos/device42/phpIPAM2Device42/zipball/master"><i class="fa fa-download text-white"></i> {% trans 'Latest Build' %}</a>
+            <a class="btn btn-sm btn-block-xs btn-warning ext-link" href="https://www.github.com/device42/phpIPAM2Device42/" target="_blank"><i class="fa fa-share text-white"></i> {% trans 'Visit Repository' %}</a>
+        </form>
+    </div>
+</div>

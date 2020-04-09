@@ -1,0 +1,123 @@
+/**
+ * device42.com - landing page - root style overrides
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+.landing-page {
+  background: #FFFFFF;
+
+  .row.landing-section {
+    @extend .is-table-row;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+
+  #nav {
+    padding-top: 12px;
+    height: 70px;
+
+    .row {
+      padding: initial;
+    }
+    .navbar-brand {
+      margin: initial;
+      padding: 0;
+    }
+    .navbar-contact {
+      p {
+        @extend .text-primary-dark, .font-stack-roboto;
+      }
+    }
+    &:hover, &:focus {
+      .fa-phone {
+        @extend .tada, .animated, .infinite;
+      }
+    }
+  }
+
+  h1 {
+    @include font-size($landing-h1-font-sizes);
+    font-family: $font-stack-roboto;
+    color: $brand-primary;
+  }
+  h2 {
+    //font-weight: 400;
+  }
+
+  p {
+    font-family: $font-stack-roboto;
+    font-weight: 300;
+    //letter-spacing: .2px;
+  }
+  ul, ol {
+    margin-top: 11px;
+    font-family: $font-stack-roboto-condensed;
+    li {
+      margin-bottom: 3px;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  .navbar-contact {
+    p {
+      margin: 0;
+      font-family: $font-stack;
+      font-weight: 400;
+      font-size: 1em;
+      letter-spacing: 0px;
+    }
+  }
+
+  #top-container {
+    .row:first-child {
+      @extend .flat-top;
+    }
+  }
+
+  .media {
+    .media-left,
+    .media-right {
+      padding-top: 4px;
+    }
+    .media-left i.fa {
+      color: $brand-primary;
+    }
+    .media-body {
+      vertical-align: middle !important;
+      p.alt-font {
+        font-weight: 300;
+      }
+    }
+  }
+
+  .landing-section {
+    .media-body p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+
+img.restricted-250 {
+    max-width: 250px;
+    height: auto !important;
+  }
+img.restricted-350 {
+    max-width: 350px;
+    height: auto !important;
+}
+
+i.fa[data-toggle='tooltip'],
+.d42-sw-compare i.fa {
+  &.fa-exclamation-triangle {
+    color: $brand-warning!important;
+  }
+  &.fa-times {
+    color: $brand-danger!important;
+  }
+  &.fa-check {
+    color: $brand-success!important;
+  }
+}

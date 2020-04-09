@@ -1,0 +1,69 @@
+{% extends 'base/_base.html' %}
+{% load i18n static include_partial %}
+{% block title %}{% trans "Apply for Device42 Partner Program" %}{% endblock %}
+{% block site_section_partners %}active{% endblock %}
+{% block meta %}
+    <meta name="description" content="Apply to be a channel partner with Device42">
+{% endblock %}
+{% block head_scripts %}
+    <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
+{% endblock %}
+{% block styles %}
+    <style type="text/css">
+        .hbspt-form .field {
+            width: 50%;
+            dispaly: inline;
+            float: left;
+        }
+
+        .hbspt-form {
+            width: 100% !important;
+            display: table;
+        }
+
+        .hs-form .hs-button {
+            float: right;
+            margin-top: 1em;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Learn More About Partnering With Device42" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2 class="prelist flat-top"><a href="{% url 'partners' %}">{% trans "Sections" %}</a></h2>
+                <menu class="list-group">
+                    <a class="list-group-item" href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                    <a class="active list-group-item" href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                    <a class="list-group-item" href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a>
+                </menu>
+            </div>
+            <div class="col-sm-9">
+                <div class="well bg-alt">
+                     <p>{% trans "Device42 works closely with industry-leading technology resellers, distributors, service providers, and integrators to develop partnerships that create new partner revenue opportunities." %}</p>
+                    <p class="flat-bottom">{% trans "If you'd like to explore a partnership with Device42, please complete the form below. One of our channel managers will contact you within 24 business hours. You can also email us at" %}
+                        <a href="mailto:partners@device42.com">partners@device42.com</a>, {% trans "or call us at <strong>+1 203 779 6342</strong> or <strong>+1 866 343 7242</strong>." %}
+                    </p>
+                </div>
+                <script>
+                    hbspt.forms.create({
+                        sfdcCampaignId: '701o00000001yI6AAI',
+                        portalId: '433338',
+                        formId: 'd3246f17-5e98-42f0-9256-985cf002366c'
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

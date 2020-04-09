@@ -1,0 +1,45 @@
+{% load i18n static %}
+<h2>{% trans "Device42 Confluence Connector" %}</h2>
+        <p>{% trans "This connector makes the devices in Device42 to be added to Confluence articles. Users can choose links/details or tables from Device42 from within their Confluence articles. Users can easily add this free add-on to their server-based Confluence installations and cache the devices from Device42 into Confluence. Some of the highlights for this integration are featured below." %}</p>
+        <p>{% trans "Users can download the JIRA Device42 connector from the" %} <a href="https://marketplace.atlassian.com/plugins/com.device42.atlas.confluence.d42confluence/server/overview" class="ext-link" target="_blank">Atlassian Marketplace</a></p>
+<hr>
+<div class="row image-right-8x4 is-table-row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 vert-offset-bottom-1">
+        <a href="{% static 'img/sections/support/integrations/confluence/confluence_macro.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/confluence/confluence_macro.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Confluence Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Add Device42 links/details/tables using Macros" %}</h3>
+        <p>{% trans "Once you configure the plugin, you can select the macros to add device details, links or tables in the articles." %}</p>
+    </div>
+</div>
+<div class="row image-left-4x8 is-table-row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 vert-offset-bottom-1">
+        <a href="{% static 'img/sections/support/integrations/confluence/d42-details-confluence.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/confluence/d42-details-confluence.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Confluence Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Embed device details" %}</h3>
+        <p>{% trans "Embedded device details will show D42 ID, name, hardware model, asset tag, and other details." %}</p>
+    </div>
+</div>
+<div class="row image-right-8x4 is-table-row vert-offset-bottom-2">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 vert-offset-bottom-1">
+        <a href="{% static 'img/sections/support/integrations/confluence/device42-devices-table-filters-confluence.png' %}"
+           data-featherlight="image">
+            <img src="{% static 'img/sections/support/integrations/confluence/device42-devices-table-filters-confluence.png' %}"
+                 class="img-responsive center-block img-border" alt="{% trans 'Confluence Integration' %}">
+        </a>
+    </div>
+    <div class="col-sm-8">
+        <h3>{% trans "Embed device tables using extended filters" %}</h3>
+        <p>{% trans "You can use multiple filters to select certain set of devices and embed the resulting table as list of devices in the articles." %}</p>
+    </div>
+</div>
+

@@ -1,0 +1,150 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Device42 vs BMC Discovery" %}{% endblock %}
+{% block site_section_compare %}active{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Find information that will help familiarize you with the commonalities between Device42 & BMC Discovery, and will also highlight some of the main differences between the two solutions.' %}"/>
+{% endblock %}
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row">
+                <h1>{% trans 'Device42 vs BMC Discovery' %}</h1>
+            </div>
+        </div>
+    </header>
+    <article class="container vert-offset-top-1">
+        <p>{% trans "Bringing a powerful CMDB in house with advanced discovery features is a great idea, and we want to make your decision as easy as possible. Below, you will find information that will help familiarize you with the commonalities between Device42 & BMC Discovery, and will also highlight some of the main differences between the two solutions." %}</p>
+        <p>{% trans 'Device42 focuses on complete and accurate discovery, identifying all the details about what you have running in your environment today, and clearly highlighting the interdependencies.  Similarly, BMC Discovery automatically discovers your IT inventory and the details around it, including' %}
+            <em>{% trans 'software, hardware, network, storage, and versions' %}</em>.</p>
+        <p>{% trans "Both Device42 and BMC Discovery have a number of use cases and benefits. Some of the more common use cases, and their supporting features are found below:" %}</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>{% trans "Common Benefits & Use Cases" %}:</h4>
+                <ul class="bullet-blue tight font-stack-condensed">
+                    <li>{% trans 'Discover, consolidate, and decommission servers' %}</li>
+                    <li>{% trans 'Identify old, inefficient servers & save on operating expense' %}</li>
+                    <li>{% trans 'Orchestrate migration planning after discovery of applications & dependencies' %}</li>
+                    <li>{% trans 'Plan rack layouts to optimize utilization of space & power' %}</li>
+                    <li>{% trans 'Troubleshoot more efficiently with shorter MTTR' %}</li>
+                    <li>{% trans 'Reduce audit time & effort significantly' %}</li>
+                    <li>{% trans 'Eliminate the majority of manual infrastructure documentation' %}</li>
+                    <li>{% trans 'Ensure security by identifying & locating vulnerable software for remediation' %}</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <h4>{% trans "Common Features" %}:</h4>
+                <ul class="bullet-blue tight font-stack-condensed">
+                    <li>{% trans 'Advanced visualizations' %}</li>
+                    <li>{% trans 'Powerful, customizable reporting' %}</li>
+                    <li>{% trans 'IP address, MAC, Subnet, and other network details' %}</li>
+                    <li>{% trans 'Dependency diagrams' %}</li>
+                    <li>{% trans 'High level of well organized detail' %}</li>
+                    <li>{% trans 'Customizable fields' %}</li>
+                    <li>{% trans 'Integrations with 3rd party software' %}</li>
+                </ul>
+            </div>
+        </div>
+        <h4 class="vert-offset-top-1">{% trans 'Some of the more common use cases, and their supporting features are found below:' %}</h4>
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th class="h4 text-dark-blue text-strong">{% trans "Solution Comparison" %}</th>
+                <th class="h4 text-default text-center text-strong">Device42 Core</th>
+                <th class="h4 text-default text-center text-strong">BMC Discovery</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Native Windows Discovery" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Native Linux Discovery" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Other OS Discovery <em>(Mac, BSD)</em>" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Native Discovery for Popular Hypervisors" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Application Dependency Discovery" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Cisco UCS Support" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "SNMP Support" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Mainframe Support" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+                <td class="text-center"><a data-toggle="tooltip" data-placement="left"
+                                           title="{% trans 'Separate add-on license.' %}"><i
+                        class="fa fa-2x fa-exclamation-triangle"></i></a></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans 'Self-contained auto-discovery' %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><a data-toggle="tooltip" data-placement="left"
+                                           title="{% trans 'BMC requires deployment of a dedicated Credentials Server via installation of their proxy software on a computer that is on the network to be discovered.' %}"><i
+                        class="fa fa-2x fa-exclamation-triangle"></i></a></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Storage Discovery" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><a data-toggle="tooltip" data-placement="left"
+                                           title="{% trans 'Storage discovery is a separate add-on license.' %}"><i
+                        class="fa fa-2x fa-exclamation-triangle"></i></a></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Exportable Data" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Netflow Traffic Monitoring" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "Webhooks" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+            </tr>
+            <tr>
+                <td class="comp-feature alt-font">{% trans "RESTful API" %}</td>
+                <td class="text-center"><i class="fa fa-2x fa-check"></i></td>
+                <td class="text-center"><i class="fa fa-2x fa-times"></i></td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2>{% trans 'Ease of Setup & Use' %}</h2>
+        <p>{% trans 'Both Device42 and BMC Discovery ship as virtual appliances, and the downloads are similar in size.' %}</p>
+        <p>{% trans 'Setup for both simply entails import of the virtual appliance into your chosen virtualization platform, and a few brief configuration steps such as configuring DHCP vs. static IP assignments, re-naming the servers & creating DNS entries for them.' %}</p>
+        <p>{% trans 'Both products feature neat, modern, and responsive web-based user interfaces, accessible from all end user platforms with a modern web browser.' %}</p>
+        <h2>{% trans 'Pricing' %}</h2>
+        <p>{% trans 'BMC doesn’t list pricing on their website.  However, customers have told us that they were able to purchase Device42 and still slash their allotted budget by an order of magnitude when the switch was made away from BMC.' %}</p>
+        <h2>{% trans 'The Device42 Solution' %}</h2>
+        <p>{% trans 'A complete solution from BMC requires the purchase and integration of numerous standalone components including their Discovery product, their CMDB product, Riverbed Netflow, and storage discovery product.' %}</p>
+        <p>{% trans 'In contrast, Device42 is fully integrated with no standalone modules (though some components are licensed separately).  Device42 is truly a one-stop single source of truth because it includes a fully integrated suite of enterprise DCIM features: A CMDB, IPAM, Password Management, Certificate Management, Inventory and Lifecycle Management, Automatic Rack Diagrams, Cable Management, Drag-and-drop Room Layouts, Advanced Visualizations, Powerful, Customizable Reporting, and an advanced, well documented RESTful API.' %}</p>
+        {% include 'partials/try-free-callout.html' %}
+    </article>
+
+{% endblock %}

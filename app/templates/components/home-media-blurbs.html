@@ -1,0 +1,110 @@
+{% load i18n static %}
+<div class="row">
+    <div class="container vert-offset-bottom-1">
+        <div class="row home-callouts">
+            <div class="col-sm-4">
+                <a href="{% url 'features_cmdb_for_cloud_era' %}" class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/nhp-media-cloud.png' %}"
+                                 alt="{% trans 'CMDB for the Cloud Era' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark"> {% trans "CMDB for the Cloud Era" %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "A single source of truth within your organization. Get a clear view into your IT ecosystem to identify and manage all configuration items (CI) in your environment." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="visible-xs-block vert-offset-bottom-1"></div>
+            <div class="col-sm-4">
+                <a href="{% url 'features_dcim' %}"  class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/nhp-media-db.png' %}"
+                                 alt="{% trans 'Data Center Management' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark">{% trans 'Data Center Management' %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "Data center inventory and asset management.  No more manual, decentralized Visio diagrams and/or inconsistent Excel spreadsheets." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="visible-xs-block vert-offset-bottom-1"></div>
+            <div class="col-sm-4">
+                <a href="{% url 'features_ipam' %}" class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/home-media-tape.png' %}"
+                                 alt="{% trans 'IP Address Management' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark">{% trans "IP Address Management" %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "IPAM made easy. No more trying to make sense of multiple disparate and outdated spreadsheets. Support for IPv4 & IPv6." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="vert-offset-top-1 hidden-xs"></div>
+        <div class="row home-callouts">
+            <div class="col-sm-4">
+                <a href="{% url 'use_cases_capacity_planning' %}" class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/home-media-resize.png' %}"
+                                 alt="{% trans 'Capacity Planning' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark">{% trans "Capacity & Power Planning" %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "In addition to rack 'U' tracking, PDU outlet, and switch ports connections are recorded for capacity planning. Additionally, monitor power usage and control smart PDUs using SNMP." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="visible-xs-block vert-offset-bottom-1"></div>
+            <div class="col-sm-4">
+                <a href="{% url 'features_app_mapping' %}" class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/home-media-tree.png' %}"
+                                 alt="{% trans 'Application Topology Mapping' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark">{% trans "App Dependency Mapping" %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "Anticipate and understand the implications of a rack outage or downed server. Improve IT troubleshooting and MTTR with clear network, connectivity, dependency, and impact visualizations." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="visible-xs-block vert-offset-bottom-1"></div>
+            <div class="col-sm-4">
+                <a href="{% url 'features_itam' %}" class="callout-link">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="{% static 'img/icons/home-media-qr.png' %}"
+                                 alt="{% trans 'QR Code' %}">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading text-primary-dark">{% trans "IT Assets & QR Codes" %}</h3>
+                        </div>
+                        <div class="media-bottom">
+                            <p>{% trans "Powerful ITAM functionality supports management and tracking of all assets featuring custom QR codes with no need for proprietary barcode readers.  iOS, Android, and Windows devices are supported for inventory management." %}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+{% load i18n static custom_tags %}
+<footer>
+    <div class="container-fluid footer-links">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">
+                        <h5>{% trans "Solutions" %}</h5>
+                        <ul>
+                            <li>
+                                <a href="{% url 'tours_patch_cable_management' %}">{% trans "Patch Panel Cable Management" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'tours_it_inventory_management' %}">{% trans "Inventory Management Software" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'tours_data_center_power_management' %}">{% trans "Data Center Power Management" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'tours_ip_address_tracking_software' %}">{% trans "IP Address Tracking Software" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'tours_ssl_certificate_management' %}">{% trans "SSL Certificate Management" %}</a>
+                            </li>
+                            <li><a href="{% url 'vulnerability_management_software' %}">{% trans "Software Vulnerability Management" %}</a></li>
+                            <li><a href="{% url 'tours' %}">{% trans "Solution Tours" %}</a></li>
+                            <li>
+                                <a href="{% url 'roi_calculator' %}">{% trans "Savings Calculator" %}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <h5>{% trans "Quick Navigation" %}</h5>
+                        <ul>
+                            <li><a href="{% url 'schedule_form' %}">{% trans "Schedule Online Demo" %}</a>
+                            </li>
+                            <li><a href="{% url 'download' %}">{% trans "Try it Free" %}</a></li>
+                            <li><a href="{% url 'product_pricing' %}">{% trans "Pricing" %}</a></li>
+                            <li><a href="{% url 'company_contact' %}">{% trans "Contact us" %}</a></li>
+                            <li><a href="{% setting D42_BLOG_SITE %}" target="_blank">{% trans "Blog" %}</a></li>
+                            <li><a href="{% setting D42_DOCS_SITE %}" target="_blank">{% trans "Documentation" %}</a>
+                            </li>
+                            <li><a href="{% setting D42_APIDOCS_SITE %}"
+                                   target="_blank">{% trans "API Documentation" %}</a></li>
+{#                            <li><a href="{%  url 'opensource' %}">{% trans 'Open Source' %}</a></li>#}
+                        </ul>
+                    </div>
+                    <div class="clearfix visible-xs"></div>
+                    <div class="col-xs-6 col-sm-3">
+                        <h5>{% trans "Compare" %}</h5>
+                        <ul>
+                            <li><a href="{% url 'compare_nlyte' %}">Nlyte</a></li>
+                            <li><a href="{% url 'compare_sunbird' %}">Sunbird DCIM</a></li>
+                            <li><a href="{% url 'compare_servicenow' %}">ServiceNow</a></li>
+                            <li><a href="{% url 'compare_bmc_atrium' %}">BMC Atrium</a></li>
+                            <li><a href="{% url 'compare_hp_ucmdb' %}">HP uCMDB</a></li>
+                            <li><a href="{% url 'compare_solarwinds' %}">SolarWinds IPAM</a></li>
+                            <li><a href="{% url 'compare_infoblox' %}">Infoblox IPAM</a></li>
+                            <li><a href="{% url 'compare_risc' %}">RISC Networks</a></li>
+                            <li><a href="{% url 'compare_bmc_discovery' %}">BMC Discovery</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <h5>{% trans "Partners" %}</h5>
+                        <ul>
+                            <li><a href="{% url 'partners' %}">{% trans "Partner Program Overview" %}</a>
+                            </li>
+                            <li><a href="{% url 'partners_benefits' %}">{% trans "Partner Benefits" %}</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'partners_learnmore' %}">{% trans "Learn More About Partnering" %}</a>
+                            </li>
+                            <li><a href="{% url 'partners_register' %}">{% trans "Register a Deal" %}</a>
+                            </li>
+                            <li><a href="{% url 'partners_find' %}">{% trans "Find a Partner" %}</a></li>
+                        </ul>
+{#                        <ul class="language-select">#}
+{#                            {% get_current_language as LANGUAGE_CODE %}#}
+{#                            {% get_language_info for LANGUAGE_CODE as current_lang %}#}
+{#                            {% get_available_languages as LANGUAGES %}#}
+{#                            <li>#}
+{#                                <a href="" style="pointer-events: none;cursor: default;"><i#}
+{#                                        class="icon-flag-{% if current_lang.code == 'en' %}us{% else %}{{ current_lang.code }}{% endif %}"></i>#}
+{#                                    <span>{{ current_lang.name }}</span></a>#}
+{#                                <ul class="langs">#}
+{#                                    {% for lang_code, lang_name in LANGUAGES %}#}
+{#                                        {% ifnotequal lang_code|lower LANGUAGE_CODE|lower %}#}
+{#                                            <li>#}
+{#                                                <i class="icon-flag-{% if lang_code == 'en' %}us{% else %}{{ lang_code }}{% endif %}"></i>#}
+{#                                                <a href="{% if lang_code == 'en' %}/{% else %}/{{ lang_code }}{% endif %}"#}
+{#                                                   title="{{ lang_name }}">{{ lang_name }}</a>#}
+{#                                            </li>#}
+{#                                        {% endifnotequal %}#}
+{#                                    {% endfor %}#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        </ul>#}
+                        {% if debug %}
+                            <label class="label label-warning"><span class="text-danger">DEV</span> MODE</label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-floor">
+        <div class="row flat-top flat-bottom">
+            <div class="col-xs-6 text-left footer-legal">
+                <p>
+                    <strong>&copy; {% now 'Y' %} Device42, Inc.</strong>
+                    <span class="inline-block">{% trans "All rights are reserved." %}</span>
+                    <a class="inline-block text-muted"
+                       href="{% url 'legal_privacy' %}">{% trans "Privacy Policy" %}</a>
+                </p>
+            </div>
+            <div class="col-xs-6 text-right footer-social">
+                <div class="footer-social-wrap">
+                    <div class="inline-block">
+                        <a href="https://www.facebook.com/device42" target="_blank" class="ext-link" title="Facebook">
+                        <i class="fa fa-facebook "></i>
+                    </a>
+                    <a href="https://twitter.com/device42" target="_blank" class="ext-link" title="Twitter">
+                        <i class="fa fa-twitter "></i>
+                    </a>
+                    <a href="https://plus.google.com/+Device42" target="_blank" class="ext-link" title="Google+">
+                        <i class="fa fa-google-plus "></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/device42" target="_blank" class="ext-link"
+                       title="LinkedIn">
+                        <i class="fa fa-linkedin "></i>
+                    </a>
+                    </div>
+                    <div class="inline-block">
+                        <a href="https://github.com/device42" target="_blank" class="ext-link" title="GitHub">
+                            <i class="fa fa-github-alt "></i>
+                        </a>
+                        <a href="https://www.youtube.com/user/godevice42" target="_blank" class="ext-link"
+                           title="YouTube">
+                            <i class="fa fa-youtube "></i>
+                        </a>
+                        <a href="http://feeds.feedburner.com/Device42" target="_blank" class="ext-link" title="RSS">
+                            <i class="fa fa-rss "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+

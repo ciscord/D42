@@ -1,0 +1,48 @@
+/*
+ *  Logo Scroller Styles
+ */
+
+$scroller-logo-width: 160px;
+
+.logo-scroller {
+  background-color:$background-color-alt;
+  padding-top:24px;
+  padding-bottom: 24px;
+  border-bottom:1px solid #ddd;
+  border-top:1px solid #ddd;
+
+  h3 {
+    margin: 11px 0 22px 0;
+    color: $color-primary;
+    font-weight:700;
+    font-size:1.45em;
+  }
+
+  .logo-scroller-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 992px;
+    padding: 0 30px;
+    background: $background-color-alt;
+    position: relative;
+    margin: 0 auto;
+    .customer-logo {
+      padding: 0 6px;
+      max-width:100%!important;
+      width: $scroller-logo-width;
+      height: auto;
+    }
+  }
+
+  .owl-nav {
+    .owl-prev,
+    .owl-next {
+      margin:initial!important;
+      padding: initial!important;
+    }
+    .fa {
+      color: $color-primary !important;
+    }
+  }
+}
+

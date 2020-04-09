@@ -1,0 +1,146 @@
+/**
+ * website
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+var path = require('path');
+var $env = require('gulp-util').env;
+
+var debug = $env['debug'] || $env['d'] || process.env.NODE_ENV === 'development';
+var prod = $env['prod'] || $env['p'] || process.env.NODE_ENV === 'production';
+
+
+var env = {
+  serve: $env['serve'] || $env['s'],
+  watch: $env['watch'] || $env['w'],
+  skipcollect: $env['skipcollect'] || process.env.NODE_ENV === 'skipcollect'
+};
+
+var patterns = {
+  core: 'py',
+  images: '{jpg,jpeg,gif,png,svg}',
+  videos: '{ogv,mp4}',
+  scripts: 'js',
+  styles: '{css,scss,sass}',
+  templates: '{html,htm,php|xml|txt}',
+  data: '{json,yml,csv}',
+  fonts: '{eot,svg,ttf,woff,woff2}'
+};
+
+var paths = {
+  src: path.join(__dirname, '../', 'app'),
+  tmp: path.join(__dirname, '../', '.tmp'),
+  build: path.join(__dirname, '../', 'build'),
+  optimized: path.join(__dirname, '../', 'optimized')
+};
+
+module.exports = {
+  debug: debug,
+  env: env,
+  patterns: patterns,
+  paths: paths,
+  clean: {
+    entry: [paths.tmp, paths.build],
+    tmp: [paths.tmp]
+  },
+  sprites: {
+    logoSprites: path.join(paths.src, 'static', 'img', 'customers', '*.' + patterns.images),
+    folders: {
+      logos: path.join(paths.src, 'static', 'img', 'customers', '*.' + patterns.images),
+      integrations: path.join(paths.src, 'static', 'img', 'customers', 'integrations', '*.' + patterns.images),
+      home: [
+        path.join(paths.src, 'static','img','icons','*.'+patterns.images),
+        path.join(paths.src, 'static','img','components','study-a','tabs','*.'+patterns.images)
+      ]
+    },
+    imgOutput: path.join(paths.src, 'static', 'img', 'sprites'),
+    cssOutput: path.join(paths.src, 'static', 'stylesheets', 'sprites'),
+    template: path.join(paths.src, 'templates','base','sprites.scss.handlebars')
+  },
+  images: {
+    entry: path.join(paths.src, 'static', 'img', '**', '*.' + patterns.images),
+    output: path.join(paths.tmp, 'static', 'img'),
+    optimizeOutput: paths.optimized,
+  },
+  videos: {
+    entry: path.join(paths.src, 'static', 'videos', '**', '*.' + patterns.videos),
+    output: path.join(paths.tmp, 'static', 'img')
+  },
+  fonts: {
+    entry: [
+      path.join(paths.src, 'static', 'fonts', '*.' + patterns.fonts)
+    ],
+    output: path.join(paths.tmp, 'static', 'fonts')
+  },
+  core: {
+    entry: path.join(paths.src, '**', '*.' + patterns.core),
+    output: debug ? path.join(paths.tmp) : path.join(paths.build)
+  },
+  styles: {
+    // entry: path.join(paths.src, 'static', 'stylesheets', '*.' + patterns.styles),
+    entry: path.join(paths.src, 'static', 'stylesheets', 'main.scss'),
+    sass: {
+      outputStyle: debug ? 'nested' : 'compressed',
+      includePaths: [
+        // path.join(__dirname, '../', 'node_modules'),
+        path.join(paths.src, 'static', 'stylesheets')
+      ],
+    },
+    autoprefixer: {
+      browsers: ['last 2 version', 'ie >= 8']
+    },
+    output: path.join(paths.tmp, 'static')
+  },
+  scripts: {
+    // entry: path.join(paths.src, 'static', 'js', '**', '*.' + patterns.scripts),
+    entry: path.join(paths.src, 'static', 'js', 'main.js'),
+    output: path.join(paths.tmp, 'static')
+  },
+  templates: {
+    entry: path.join(paths.src, 'templates', '**', '*.' + patterns.templates),
+    output: (debug) ? path.join(paths.tmp, 'templates') : path.join(paths.build, 'templates'),
+    htmlmin: {
+      collapseWhitespace: true
+    }
+  },
+  build: {
+    entry: path.join(paths.build, '**', '*'),
+    output: paths.build
+  },
+  deploy: {
+    entry: path.join(paths.build, '**', '*'),
+    output: paths.deploy
+  },
+  serve: {
+    browserSync: {
+      notify: false,
+      open: false,
+      proxy: '0.0.0.0:3000',
+      port: 9000
+    }
+  },
+  watch: {
+    entries: [{
+      files: path.join(paths.src, 'project', '**', '*.' + patterns.core),
+      tasks: ['core']
+    }, {
+      files: path.join(paths.src, 'static', 'img', '**', '*.' + patterns.images),
+      tasks: ['images']
+    }, {
+      files: path.join(paths.src, 'static', 'videos', '*.' + patterns.videos),
+      tasks: ['videos']
+    }, {
+      files: path.join(paths.src, 'static', 'stylesheets', '*.' + patterns.styles),
+      tasks: ['styles']
+    }, {
+      files: path.join(paths.src, 'static', 'js', '**', '*.' + patterns.scripts),
+      tasks: ['browserify']
+    }, {
+      files: path.join(paths.src, 'static', 'fonts', '*.' + patterns.fonts),
+      tasks: ['fonts']
+    }, {
+      files: path.join(paths.src, 'templates', '**', '*.' + patterns.templates),
+      tasks: ['templates']
+    }]
+  }
+};

@@ -1,0 +1,563 @@
+/**
+ * website - typography styles
+ * (c) Device42 <dave.amato@device42.com>
+ */
+
+$breakpoints: (
+  xsmall : $screen-xs,
+  small: $screen-sm,
+  medium : $screen-md,
+  large: $screen-lg,
+);
+
+$p-font-sizes: (
+  //null : (15px, 1.13636364em),
+  null : (16px, 1.4em),
+  xsmall : (16px, 1.4em),
+  small: (16px, 1.4em),
+  medium : (18px, 1.4em),
+  large: (18px, 1.4em),
+);
+
+$h1-font-sizes: (
+  null : (28px, 1.20em),
+  xsmall : (28px, 1.20em),
+  small : (30px, 1.20em),
+  medium : (32px, 1.20em),
+  large : (34px, 1.10em),
+);
+
+$h2-font-sizes: (
+  null : (26px, 1.2em),
+  xsmall : (26px, 1.2em),
+  small : (26px, 1.2em),
+  medium : (28px, 1.3em),
+  large : (30px, 1.3em),
+);
+
+$h3-font-sizes: (
+  null : (20px, 1.25em),
+  xsmall : (20px, 1.13636364em),
+  small : (20px, 1.13636364em),
+  medium : (22px, 1.25em),
+  large : (24px, 1.25em),
+);
+$lead-font-sizes: (
+  null : (18px, 1.2em),
+  xsmall: (18px, 1.3em),
+  small: (20px, 1.4em),
+  medium: (22px, 1.4em),
+  large: (24px, 1.4em),
+);
+
+$landing-h1-font-sizes: (
+  null : (28px, 1.20em),
+  xsmall : (28px, 1.20em),
+  small : (30px, 1.20em),
+  medium : (36px, 1.20em),
+  large : (41px, 1.10em),
+);
+
+body {
+  font-family: $font-stack;
+}
+
+blockquote {
+  background-color: $color-primary-alt-light;
+  padding: 2em;
+  box-shadow: 0px 0px 2px #cccccc;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  margin-top: 2em;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: -0.4px !important;
+
+  &:hover {
+    &:before {
+      @extend .animated, .tada;
+    }
+  }
+  cite {
+    font-style: normal;
+    font-weight: 600;
+    span {
+      font-weight: normal;
+    }
+  }
+
+  &:before {
+    content: "\f10e";
+    color: $color-primary-alt;
+    font-family: 'FontAwesome';
+    font-size: 100px;
+    font-style: normal;
+    text-align: center;
+    display: block;
+    margin-top: -0.3em;
+    margin-bottom: 0.5em;
+
+  }
+
+  &.alt {
+    position: relative;
+    background-color: $color-primary;
+    border-left-color: $color-primary-dark;
+    border-radius: 6px;
+    padding: 24px;
+    margin: 12px;
+    @extend .animated, .zoomInUp, .box-shadow;
+    &:before {
+      font-family: FontAwesome;
+      left: 5px;
+      position: absolute;
+      top: 0;
+      content: "\f10d";
+      font-size: 24px;
+      color: $color-primary-dark;
+    }
+    &:after {
+      font-family: FontAwesome;
+      right: 5px;
+      position: absolute;
+      bottom: 0;
+      content: "\f10e";
+      font-size: 24px;
+      color: $color-primary-dark;
+    }
+
+    hr {
+      border-color: $brand-primary-light;
+      margin: 12px 0;
+    }
+    .client-quote {
+      color: $color-primary-dark;
+      font-weight: 300;
+      font-style: italic;
+      display: block;
+      font-family: $font-stack;
+    }
+    .cite-quote {
+      display: block;
+      font-family: $font-stack-alt;
+      color: $white-color;
+      font-weight: bold;
+    }
+
+  }
+
+}
+
+input[type='text'].error,
+input[type='tel'].error,
+input[type='number'].error,
+input[type='email'].error,
+textarea.error {
+  border: 1px solid $color-danger !important;
+}
+form label {
+  @extend .text-dark-blue;
+  padding: 0!important;
+}
+label.error {
+  font-size: 0.9em !important;
+  color: $color-danger !important;
+  font-weight: 700;
+  display: block;
+}
+
+.lead {
+  @include font-size($lead-font-sizes);
+  letter-spacing: initial;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+p, ol, blockquote, li {
+  @include font-size($p-font-sizes);
+  word-spacing: 0;
+  letter-spacing: $letter-spacing-default;
+}
+
+h1, .h1 {
+  @include font-size($h1-font-sizes);
+  color: $color-primary-dark;
+  letter-spacing: $letter-spacing-headings;
+  font-weight: 700;
+  word-spacing: 0;
+}
+
+h2, .h2 {
+  @include font-size($h2-font-sizes);
+  color: $color-primary-dark;
+  letter-spacing: $letter-spacing-headings;
+  font-weight: 700;
+  word-spacing: 0;
+}
+
+h3, .h3 {
+  @include font-size($h3-font-sizes);
+  color: $color-primary;
+  letter-spacing: $letter-spacing-headings;
+  font-weight: 400;
+  word-spacing: 0;
+}
+
+h4, .h4 {
+  font-weight: normal;
+  letter-spacing: $letter-spacing-headings;
+}
+h5, .h5 {
+  line-height:initial;
+}
+
+a {
+  color: $brand-primary;
+  @include transition(all 0.25s linear);
+  text-decoration: none;
+
+  &:hover {
+    color: $brand-primary-dark;
+    text-decoration: none;
+  }
+}
+
+.small-caps {
+  font-variant: small-caps;
+}
+
+.font-stack {
+  font-family: $font-stack;
+}
+
+.alt-font,
+.font-stack-alt {
+  font-family: $font-stack-alt;
+  letter-spacing: $letter-spacing-default;
+}
+
+.font-serif,
+.font-stack-serif {
+  font-family: $font-stack-serif;
+  letter-spacing: 0;
+}
+
+.font-roboto,
+.font-stack-roboto {
+  font-family: $font-stack-roboto;
+}
+
+.font-stack-condensed {
+  font-family: $font-stack-roboto-condensed;
+  letter-spacing: -0.4px;
+}
+.font-stack-mono {
+  font-family: $font-stack-mono;
+
+}
+
+.text-primary-dark {
+  //color: $color-primary-dark;
+  color: $text-color;
+}
+
+.text-dark-blue {
+  color: $brand-primary-dark !important;
+}
+
+a.text-dark-blue:hover {
+  color: $brand-primary;
+}
+
+.featurette-heading {
+  //@extend .flat-bottom;
+  color: $brand-primary-dark;
+  margin-bottom: initial!important;
+  margin-top:inherit!important;
+}
+
+.text-default {
+  color: $text-color !important;
+}
+
+.text-primary-alt {
+  color: $color-primary-alt;
+}
+
+.text-strong {
+  font-weight: bold!important;
+}
+
+.text-yellow {
+  color: $color-yellow !important;
+}
+
+.text-purple {
+  color: $color-purple!important;
+}
+
+.text-white {
+  color: $white-color !important;
+}
+
+.text-jumbo {
+  font-size:1.7em;
+}
+
+.bg-alt {
+  background-color: $background-color-alt !important;
+}
+.bg-yellow {
+  background-color: $color-yellow !important;
+}
+
+
+
+.bg-primary {
+  h1, h2 {
+    color: $white-color;
+
+    small {
+      color: $color-primary-light;
+      font-style: italic;
+    }
+  }
+  h3, .h3, h4, .h4 {
+    color: $brand-primary-dark;
+  }
+  .text-white {
+    color: $white-color;
+  }
+  .text-warning {
+    color: darken($brand-primary, 6%);
+  }
+  .text-primary {
+    color: $white-color;
+  }
+  .text-success {
+    color: #A1FF25;
+  }
+  .text-info {
+    color: $white-color;
+  }
+  .text-muted {
+    color: #333333;
+  }
+  .featurette-heading {
+    color: $color-primary-dark;
+  }
+  ul.checklist li {
+    @include font-size($p-font-sizes);
+  }
+  a {
+    color: $brand-warning;
+    &:hover {
+      font-weight: bold;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  .fa {
+    color: $white-color;
+  }
+}
+
+.bg-info {
+  h1 {
+    color: $brand-primary-dark;
+  }
+}
+
+.bg-muted {
+  background-color: $gray-lighter;
+}
+
+.bg-warning {
+  h1 {
+    color: $brand-primary-dark;
+  }
+}
+
+.fa {
+  @include font-size($p-font-sizes);
+  color: $color-primary;
+
+  &.fa-muted {
+    color: #CCCCCC;
+  }
+}
+
+.social-networking {
+  .fa {
+    @extend .animated;
+
+    &:hover {
+      @extend .swing;
+      color: $brand-primary-dark;
+    }
+  }
+}
+
+.home-carousel {
+  h2.h1,
+  h1 {
+    @extend .font-roboto;
+    font-weight: 300 !important;
+  }
+  h3 {
+    @extend .font-roboto, .flat-top;
+    font-weight: normal;
+    color: $brand-primary;
+  }
+
+  @media screen and (min-width: 1200px) {
+    .h1, h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+a.dir-arrow {
+  padding: 6px !important;
+  &:hover {
+    background: $background-color-alt;
+  }
+}
+
+@media screen and (max-width: $screen-xs-max) {
+   .xs-center {
+    text-align: center;
+  }
+  .btn-block-xs {
+    display:block;
+  }
+  .text-xs-left {
+    text-align: left;
+  }
+  .text-xs-right {
+    text-align: right;
+  }
+  .text-xs-center {
+    text-align: center;
+  }
+  .text-xs-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .text-sm-left {
+    text-align: left;
+  }
+  .text-sm-right {
+    text-align: right;
+  }
+  .text-sm-center {
+    text-align: center;
+  }
+  .text-sm-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .text-md-left {
+    text-align: left;
+  }
+  .text-md-right {
+    text-align: right;
+  }
+  .text-md-center {
+    text-align: center;
+  }
+  .text-md-justify {
+    text-align: justify;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-justify {
+    text-align: justify;
+  }
+}
+
+/* typography fixes */
+h1 {
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+
+a, p {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  // Non standard for webkit
+  word-break: normal;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  //margin-top: $line-height-computed;
+  //margin-bottom: ($line-height-computed / 2);
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  //margin-top: ($line-height-computed / 2);
+  //margin-bottom: ($line-height-computed / 2);
+}
+
+.video-transcript {
+  p {
+    @extend .alt-font;
+    font-size:1em;
+  }
+}
+
+h1 {
+  //margin-top:initial;
+}
+.lead-small {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3em;
+    margin: 22px 0 11px;
+    letter-spacing: 0.2px;
+    font-weight: 300;
+}
+
+.label-purple {
+  background-color:$color-purple;
+}
+.label-black {
+  background-color:#454545;
+}
+.label-white {
+  border: 1px solid #ddd;
+  background-color:$white-color;
+  color:$black-color!important;
+}
+

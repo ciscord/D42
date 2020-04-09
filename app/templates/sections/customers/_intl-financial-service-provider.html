@@ -1,0 +1,84 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Financial Services Provider Case Studies" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Case studies for Device42 - with a financial services provider' %}"/>
+{% endblock %}
+{% block body_scripts %}
+<script>D42.setSiteSection("customers");</script>
+{% endblock %}
+{% block body %}
+    <header class="row bg-primary head-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{% trans "Case Studies" %} - International Financial Services Provider</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <h3>{% trans "Customers" %}</h3>
+                <ul class="dash bullet-blue section-menu">
+                    <li><a href="{% url 'customers' %}">{% trans "Customers" %}</a></li>
+                    <li><a href="{% url 'customers_testimonials' %}">{% trans "Testimonials" %}</a></li>
+                    <li><a href="{% url 'customers_social_mentions' %}">{% trans "Social Mentions" %}</a>
+                    </li>
+                    <li class="active-item"><a href="{% url 'customers_case_studies' %}">{% trans "Case Studies" %}</a></li>
+                </ul>
+                <hr class="hidden-xs">
+                 <div class="list-group">
+                    <h3 class="list-group-heading">{% trans "Case Studies" %}</h3>
+                    <a class="list-group-item active" href="{% url 'case_studies_intl_financial_service_provider' %}">{% trans "International Financial Services Provider" %}</a>
+                    <a class="list-group-item" href="{% url 'case_studies_coventry_university' %}">{% trans "Coventry University" %}</a>
+                    <a class="list-group-item" href="{% url 'case_studies_maxihost' %}">{% trans "Maxihost Data Center Ltd." %}</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+<h3 class="text-muted">{% trans "Device42 User Case Study – International Financial Services Provider" %}</h3>
+    <ul class="case-brief">
+        <li><strong>{% trans "Company" %}</strong>: {% trans "International Financial Services Provider" %}</li>
+        <li><strong>{% trans "Industry" %}</strong>: {% trans "Financial Services" %}</li>
+        <li><strong>{% trans "Location" %}</strong>: {% trans "New York, NY" %}</li>
+        <li><strong>{% trans "Solution" %}</strong>: {% trans "Device42 Core" %}</li>
+    </ul>
+    <h2>{% trans "International Financial Services Provider" %}</h2>
+    <h3 class="text-muted">{% trans "About the Company" %}</h3>
+    <p>{% trans "This NY-based company is a provider of financial services with offerings and global operations servicing both US and non-US based financial markets. Due to the nature of the financial trading markets, data center operations are subject to strict regulatory requirements, a 100% uptime expectation, and hot stand-by capabilities – to name a few" %}.</p>
+    <h3 class="text-muted">{% trans "Data Center Challenges" %}</h3>
+    <p>{% trans "The company experienced challenges with not having a single repository to track and view infrastructure devices and configurations. This was due to the use of manually kept lists and databases which consumed too much time, were frustrating to manage, and were often out-of-sync with the actual infrastructure. Because information was stored in separate silos, it was nearly Impossible to obtain a singular comprehensive view of the data center environment" %}.</p>
+    <p>{% trans "Without a single, centralized tool for managing assets located throughout the data center, the company manually attempted to keep track of IP address spacing and host inventory using various custom scripts to collect device information. The collected data was placed into simple tables and configuration “dumps” which were then stored in a company wiki to allow access by data center team members. Both of these tactics had many limitations — the most significant was that, shortly after being collected, the information quickly became inaccurate due to operational infrastructure changes that were not properly notated" %}.</p>
+    <h3 class="text-muted">{% trans "The Solution" %}</h3>
+    <p>{% trans "The company decided to investigate data center management solutions in an effort to improve the effectiveness and response levels of its operations. A cross-functional IT team was formed to identify the requirements and then to evaluate solution providers that could meet these requirements" %}.</p>
+    <p>{% trans "As part of this process, the evaluation team placed high importance on" %}:</p>
+    <ul>
+        <li><span class="">{% trans "A unified solution providing a centralized console providing easy access to data center teams located in multiple locations" %}.</span></li>
+        <li><span class="">{% trans "A unified single solution that would replace the multiple disparate tools currently used (Visio, Excel and the wiki" %}).</span></li>
+        <li><span class="">{% trans "A solution with the ability to easily manage asset and infrastructure information and automatically keep that information accurate and up-to-date" %}.</span></li>
+        <li>
+            <p>{% trans "A solution providing comprehensive functionality needed for daily scheduled and unscheduled data center activities, including" %}:</p>
+            <ul>
+                <li>{% trans "Asset tracking and inventory management" %}</li>
+                <li>{% trans "Service and support resolution" %}</li>
+                <li>{% trans "IP address management" %}</li>
+                <li>{% trans "Infrastructure moves, adds, and changes" %}</li>
+            </ul>
+        </li>
+
+    </ul>
+    <p>{% trans "The team considered applications including: GLPI, ITDB, RackMonkey, Total Network Inventory, Kaseya Professional, Tracmor, and Device42. Initial testing and demonstrations revealed that Device42 had expansive capabilities, a clean and simple user interface, powerful features, robust customization abilities, relatively low cost, easy implementation, and minimal support requirements" %}.</p>
+    <p>{% trans "After \"live\" testing Device42 and another solution finalist, the team selected Device42" %}.</p>
+    <h3 class="text-muted">{% trans "Implementation" %}</h3>
+    <p>{% trans "When asked about the Device42 implementation, the company’s CIO reported" %}: <em>“{% trans "The implementation was extremely straightforward. The setup process was virtually non-existent since the application is provided on a VM customized for a hypervisor of our choice. From there, auto discovery tools were used to identify and import devices and all their configuration details. Network and blade enclosure SNMP discovery made adding most devices incredibly simple. There was a slight learning curve to understanding how all the many parts of Device42 worked together but, after a bit of use, that was quickly overcome. Device42’s immensely helpful support team always had an answer or a quick fix for customizations we needed" %}.”</em>.</p>
+    <h3 class="text-muted">{% trans "Device42 Solution Benefits" %}</h3>
+    <p>{% trans "With the implementation completed and the system operational for several months, the company’s CIO reported" %}, <em>“{% trans "For IT inventory tracking, there is no better solution. We were not able to find any other applications that fit into this space with all the features of Device42. Features critical to us were always missing with open source or free software alternatives (an API or auto discovery were most commonly missing). On the other end of the spectrum, many other data center management applications were well beyond what we needed, far too expensive to purchase, and too difficult to implement and support" %}.”</em>.</p>
+    <p>{% trans "The customer reported that Device42’s agentless auto-discovery did a great job of “connecting all the dots” of the known infrastructure items as well as finding and adding new devices (the unknown dots) to the data center asset repository. Now, the data center team refers to Device42 as the “golden source” of accurate data center information that makes managing their complex data center environment faster, easier, and better" %}.</p>
+    <p>{% trans "When asked about what advice the customer would offer others seeking to better manage their data center infrastructure, the CIO responded" %}, <em>“{% trans "Trying to manage IT inventory without an agentless auto-discovery tool that stores accurate device data in a centralized database is very difficult. Manually managed lists are burdensome and quickly become out of sync with the actual environment. Once the data is discovered, having a place to manage discovery and configuration data together is invaluable. Device42 does all that… and more" %}”</em>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

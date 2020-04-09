@@ -1,0 +1,11 @@
+# IMPORTANT!
+# Keep this file private and do not commit it to any public repo. This file
+# contains private data. Copy these environment variables to bin/activate of
+# your virtualenv instead.
+
+export DJANGO_SECRET_KEY="3KmeFgGa1LYNFetu6iMFMB/bC18inZQz5GwgAYgasl4k5OwDZ2E="
+export DJANGO_DB_NAME="d42"
+export DJANGO_DB_USER="d42"
+export DJANGO_DB_PASS="device42"
+export DJANGO_DB_HOST="localhost"
+export DJANGO_DB_PORT=""

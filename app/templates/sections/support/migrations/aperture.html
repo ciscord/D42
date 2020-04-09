@@ -1,0 +1,11 @@
+{% load static i18n %}
+<div class="row">
+    <div class="col-md-12">
+        <h3>{% trans "Migrate" %} {% if product %}{{ product }}{% endif %} {% trans "data into Device42" %}</h3>
+        <p>{% trans "Using pre-built SQL Server views and convenient import templates; migration to Device42 software can be completed in a minimal amount of time, with a maximum degree of reliability and success." %}</p>
+        <p class="font-stack-condensed vert-offset-top-1"><span class="text-dark-blue">{% trans "Data migration works in the following manner" %}:</span><br>{% trans "Data is exported from the Aperture VISTA application by first creating Device42 custom views in the Aperture SQL Server database. These views are then exported from Aperture VISTA and saved as .csv or Excel Spreadsheet files which are then easily imported and mapped into Device42’s data architecture." %}</p>
+        <form action="." method="POST" role="form">{% csrf_token %}
+            <button type="submit" name="" class="btn btn-sm btn-primary"><i class="fa fa-download text-white"></i> {% trans "Download Aperture Views" %}</button>
+        </form>
+    </div>
+</div>

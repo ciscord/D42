@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load staticfiles %}
+<div {% if id %}id="{{ id }}" {% endif %}class="row featurette image-right-8x4 {% if vcenter %}is-table-row{% endif %}">
+    <div class="col-md-6 vert-offset-bottom-1 vert-offset-top-1">
+        <img class="img-responsive center-block animated"
+             src="{% static 'img/sections/product/mascot_at_desk.png' %}"
+             alt="{% trans 'Active Directory Integration' %}">
+    </div>
+    <div class="col-md-6">
+        <h2 class="featurette-heading">{% trans "Active Directory Integration" %}</h2>
+        <p>{% trans "Increase data center staff productivity by minimizing data entry tasks and by eliminating low value data entry, IT staff can spend more time on high value business initiatives." %}</p>
+        <ul>
+            <li>{% trans "Our auto-discovery tools will do most of the work for you." %}</li>
+            <li>{% trans "The open (and powerful) REST API is well documented and easy to use - enabling input/output of data from external sources (and from the UI) with features like .XLS API imports." %}</li>
+            <li>{% trans "Without excessive data entry, you can build the next cool thing and make world a better place." %}</li>
+        </ul>
+    </div>
+</div>

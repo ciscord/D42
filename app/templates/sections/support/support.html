@@ -1,0 +1,50 @@
+{% extends 'base/_base.html' %}
+{% load i18n static %}
+{% block title %}{% trans "Support" %}{% endblock %}
+{% block meta %}
+    <meta name="description"
+          content="{% trans 'Device42 software provides Server room asset management integrated with IP address management and application mapping.' %}">
+{% endblock %}
+{% block site_section_support %}active{% endblock %}
+
+{% block body %}
+    <header class="row head-home bg-primary">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h1>{% trans "Support" %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="flat-top container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <section class="list-group">
+                        {% url 'videos' as videos_url %}
+                        {% url 'software_detail' 'update' as update_url %}
+                        {% url 'software_detail' 'autodiscovery' as ad_url %}
+                        {% url 'software_detail' 'bulk-data-management' as bdm_url %}
+                        {% url 'software_detail' 'miscellaneous-tools' as misc_url %}
+                        {% url 'software_detail' 'opendiscovery' as od_url %}
+                        {% url 'integrations' as integrations_url %}
+                        {% url 'migrations' as migrations_url %}
+                        <a class="list-group-item" href="https://support.device42.com/" target="_blank">{% trans "Support Portal Home" %}</a>
+                        <a class="list-group-item" href="http://www.device42.com/new_ticket/" target="_blank">{% trans "Open a new support ticket" %}</a>
+                        <a class="list-group-item" href="http://docs.device42.com/" target="_blank">{% trans "Documentation" %}</a>
+                        <a class="list-group-item" href="{{ videos_url }}" target="_blank">{% trans "Video Library" %}</a>
+                        <a class="list-group-item" href="{{ update_url}}" target="_blank">{% trans "Updates" %}</a>
+                        <a class="list-group-item" href="{{ ad_url }}" target="_blank">{% trans "Auto-Discovery" %}</a>
+                        <a class="list-group-item" href="{{ od_url }}" target="_blank">{% trans "Open-Discovery" %}</a>
+                        <a class="list-group-item" href="{{ bdm_url }}" target="_blank">{% trans "Bulk Data Management" %}</a>
+                        <a class="list-group-item" href="{{ misc_url }}" target="_blank">{% trans "Miscellaneous Tools" %}</a>
+                        <a class="list-group-item" href="{{ integrations_url }}" target="_blank">{% trans "Integrations" %}</a>
+                        <a class="list-group-item" href="{{ migrations_url }}" target="_blank">{% trans "Migrations" %}</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
