@@ -4,7 +4,7 @@ cryptography==1.5.2
 Django==1.11.28
 django-storages==1.5.1
 djangorestframework==3.9.1
-ecdsa==0.13
+ecdsa==0.13.3
 enum34==1.1.6
 feedparser==5.2.1
 geoip2==2.4.0
