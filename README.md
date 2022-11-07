@@ -1,5 +1,3 @@
-# DEVICE42.COM
-
 ## Initial Install
 
 Install Prerequisites:
@@ -38,10 +36,6 @@ $ python -m pip install virtualenv
 ### Initialize environment
 
 Clone this repository:
-```
-$ git clone git@bitbucket.org:daveamato/d42.git
-$ cd d42/
-```
 
 Initialize, set environment variables, and activate the virtual environment:
 ```

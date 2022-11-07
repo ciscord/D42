@@ -1,9 +1,9 @@
 boto==2.43.0
 cffi==1.8.3
 cryptography==1.5.2
-Django==1.10.3
+Django==1.11.28
 django-storages==1.5.1
-djangorestframework==3.5.2
+djangorestframework==3.9.1
 ecdsa==0.13
 enum34==1.1.6
 feedparser==5.2.1
@@ -14,13 +14,13 @@ ipaddress==1.0.17
 IPy==0.83
 maxminddb==1.2.1
 ndg-httpsclient==0.4.2
-paramiko==2.0.2
+paramiko==2.0.9
 psycopg2==2.6.2
 py==1.4.31
 pyasn1==0.1.9
 pycparser==2.17
 pycrypto==2.6.1
-pyOpenSSL==16.2.0
+pyOpenSSL==17.5.0
 pytest==3.0.3
 python-dateutil==2.5.3
 pytz==2016.7
