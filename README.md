@@ -1,5 +1,3 @@
-# DEVICE42.COM
-
 ## Initial Install
 
 Install Prerequisites:
