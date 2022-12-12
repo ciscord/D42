@@ -2,10 +2,6 @@
 
 """
 website
-(c) Device42 <dave.amato@device42.com>
-
-This software is released under the MIT License:
-http://www.opensource.org/licenses/mit-license.php
 """
 
 import os
