@@ -1,13 +1,4 @@
 """
-website
-(c) Device42 <dave.amato@device42.com>
-
-WSGI config for project project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-This software is released under the MIT License:
-http://www.opensource.org/licenses/mit-license.php
 """
 
 import os, sys
